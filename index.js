@@ -10,3 +10,10 @@ $(window).bind('beforeunload', function(){
 */
 
 
+var vid = document.getElementById("bgvid"),
+pauseButton = document.getElementById("vidpause");
+if (window.matchMedia('(prefers-reduced-motion)').matches) {
+    vid.removeAttribute("autoplay");
+    vid.pause();
+    pauseButton.innerHTML = "Paused";
+}
