@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="index.css">
 <link href="https://fonts.googleapis.com/css?family=Nixie+One" rel="stylesheet">
 
-<style>
+<!--<style>
 #pageBg {
     background: url('http://eugenesca.com/hosted/coollogo_com-22702724.gif') no-repeat 0 0 fixed;
     height: auto;
@@ -22,8 +22,8 @@
     position: fixed;
     top: 0;
     width: 100%;
-</style>
-<style>
+</style>-->
+<!--<style>
 @keyframes panning {
   0% {
     background-position: 0% 0%;
@@ -41,7 +41,6 @@
     background-position: 0 0;
   }
 }
-
 .test {
   position: relative;
   height: 100%;
@@ -93,9 +92,12 @@ strong {
 html, body {
   height: 100%;
 }
-</style>
+</style>-->
 </head>
 <body>
+  <video playsinline autoplay muted loop poster="eyes.png" id="bgvid">
+    <source src="eyes.webm" type="video/webm">
+  </video>
     <div class="cd-panel from-left">
       <div class="cd-panel-header">
       </div>
@@ -105,8 +107,9 @@ html, body {
       </div> <!-- cd-panel-container -->
     </div> <!-- cd-panel -->
 
-    <a href="http://uoneuro.uoregon.edu/wehr/"><div class="cd-panel-header-text-left fadeIn">Home</div></a>
+    <a href="http://jon-e.net"><div class="cd-panel-header-text-left fadeIn">Home</div></a>
 
+    <button id="vidpause">Pause</button>
 
 
 <div class="test">
