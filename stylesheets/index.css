@@ -1,0 +1,518 @@
+/* line 73, ../sass/index.scss */
+html,
+body {
+  height: 100%;
+  widtz: 100%;
+}
+
+/* line 79, ../sass/index.scss */
+html {
+  background-color: black;
+  overflow: hidden;
+}
+/* line 85, ../sass/index.scss */
+html:after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: #000;
+}
+
+/* line 96, ../sass/index.scss */
+.hexagon-link1 {
+  height: 30px;
+  padding: 0 80px;
+  background: #00A08A;
+  font-size: 15px;
+  display: inline-block;
+  line-height: 1.8;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+/* line 41, ../sass/index.scss */
+.hexagon-link1:before, .hexagon-link1:after {
+  position: absolute;
+  content: "";
+  height: 0;
+  width: 0;
+  top: 0;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  transform: rotateY(180deg);
+}
+/* line 51, ../sass/index.scss */
+.hexagon-link1:before {
+  left: 100%;
+  border-right: 15px solid #00A08A;
+}
+/* line 55, ../sass/index.scss */
+.hexagon-link1:after {
+  right: 100%;
+  border-left: 15px solid #00A08A;
+}
+
+/* line 106, ../sass/index.scss */
+.hexagon-link2 {
+  height: 30px;
+  padding: 0 80px;
+  background: #FF0000;
+  font-size: 15px;
+  display: inline-block;
+  line-height: 1.8;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+/* line 41, ../sass/index.scss */
+.hexagon-link2:before, .hexagon-link2:after {
+  position: absolute;
+  content: "";
+  height: 0;
+  width: 0;
+  top: 0;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  transform: rotateY(180deg);
+}
+/* line 51, ../sass/index.scss */
+.hexagon-link2:before {
+  left: 100%;
+  border-right: 15px solid #FF0000;
+}
+/* line 55, ../sass/index.scss */
+.hexagon-link2:after {
+  right: 100%;
+  border-left: 15px solid #FF0000;
+}
+
+/* line 116, ../sass/index.scss */
+.hexagon-link3 {
+  height: 30px;
+  padding: 0 80px;
+  background: #5BBCD6;
+  font-size: 15px;
+  display: inline-block;
+  line-height: 1.8;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+/* line 41, ../sass/index.scss */
+.hexagon-link3:before, .hexagon-link3:after {
+  position: absolute;
+  content: "";
+  height: 0;
+  width: 0;
+  top: 0;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  transform: rotateY(180deg);
+}
+/* line 51, ../sass/index.scss */
+.hexagon-link3:before {
+  left: 100%;
+  border-right: 15px solid #5BBCD6;
+}
+/* line 55, ../sass/index.scss */
+.hexagon-link3:after {
+  right: 100%;
+  border-left: 15px solid #5BBCD6;
+}
+
+/* line 129, ../sass/index.scss */
+.clubbing {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  width: 0.75em;
+  height: 0.75em;
+  -moz-transition: box-shadow 0.45s ease-in-out;
+  -o-transition: box-shadow 0.45s ease-in-out;
+  -webkit-transition: box-shadow 0.45s ease-in-out;
+  transition: box-shadow 0.45s ease-in-out;
+  -moz-transform: scale(3.5) rotate(0) translate(0);
+  -ms-transform: scale(3.5) rotate(0) translate(0);
+  -webkit-transform: scale(3.5) rotate(0) translate(0);
+  transform: scale(3.5) rotate(0) translate(0);
+}
+
+@keyframes animation--hex {
+  0% {
+    box-shadow: 1.5em 0em rgba(255, 0, 0, 0.2), 6.00522em 2.48744em rgba(255, 96, 0, 0.6), 1.06066em 1.06066em rgba(255, 191, 0, 0.3), 2.48744em 6.00522em rgba(223, 255, 0, 0.7), 0em 1.5em rgba(128, 255, 0, 0.9), -2.48744em 6.00522em rgba(32, 255, 0, 0.2), -1.06066em 1.06066em #00ff40, -6.00522em 2.48744em rgba(0, 255, 159, 0.3), -1.5em 0em rgba(0, 255, 255, 0.8), -6.00522em -2.48744em rgba(0, 159, 255, 0.6), -1.06066em -1.06066em rgba(0, 64, 255, 0.1), -2.48744em -6.00522em rgba(32, 0, 255, 0.3), 0em -1.5em rgba(128, 0, 255, 0.7), 2.48744em -6.00522em rgba(223, 0, 255, 0.3), 1.06066em -1.06066em rgba(255, 0, 191, 0.5), 6.00522em -2.48744em rgba(255, 0, 96, 0.4);
+    border-radius: 0.33em;
+    width: 1.5em;
+    height: 1.5em;
+    -moz-transform: scale(3.5) rotate(306deg) translate(2em);
+    -ms-transform: scale(3.5) rotate(306deg) translate(2em);
+    -webkit-transform: scale(3.5) rotate(306deg) translate(2em);
+    transform: scale(3.5) rotate(306deg) translate(2em);
+  }
+  6.25% {
+    box-shadow: 6.5em 0em rgba(255, 0, 0, 0.7), 1.38582em 0.57403em rgba(255, 96, 0, 0.7), 4.59619em 4.59619em rgba(255, 191, 0, 0.2), 0.57403em 1.38582em rgba(223, 255, 0, 0.6), 0em 6.5em rgba(128, 255, 0, 0.4), -0.57403em 1.38582em rgba(32, 255, 0, 0.7), -4.59619em 4.59619em rgba(0, 255, 64, 0.9), -1.38582em 0.57403em rgba(0, 255, 159, 0.8), -6.5em 0em rgba(0, 255, 255, 0.5), -1.38582em -0.57403em rgba(0, 159, 255, 0.7), -4.59619em -4.59619em rgba(0, 64, 255, 0.4), -0.57403em -1.38582em rgba(32, 0, 255, 0.1), 0em -6.5em rgba(128, 0, 255, 0.2), 0.57403em -1.38582em rgba(223, 0, 255, 0.3), 4.59619em -4.59619em rgba(255, 0, 191, 0.5), 1.38582em -0.57403em rgba(255, 0, 96, 0.5);
+    border-radius: 0.62em;
+    width: 4.5em;
+    height: 4.5em;
+    -moz-transform: scale(3.5) rotate(143deg) translate(6em);
+    -ms-transform: scale(3.5) rotate(143deg) translate(6em);
+    -webkit-transform: scale(3.5) rotate(143deg) translate(6em);
+    transform: scale(3.5) rotate(143deg) translate(6em);
+  }
+  12.5% {
+    box-shadow: 1.5em 0em rgba(255, 0, 0, 0.6), 6.00522em 2.48744em rgba(255, 96, 0, 0.3), 1.06066em 1.06066em rgba(255, 191, 0, 0.3), 2.48744em 6.00522em rgba(223, 255, 0, 0.6), 0em 1.5em rgba(128, 255, 0, 0.5), -2.48744em 6.00522em rgba(32, 255, 0, 0.2), -1.06066em 1.06066em rgba(0, 255, 64, 0.8), -6.00522em 2.48744em rgba(0, 255, 159, 0.1), -1.5em 0em rgba(0, 255, 255, 0.7), -6.00522em -2.48744em rgba(0, 159, 255, 0.9), -1.06066em -1.06066em rgba(0, 64, 255, 0.8), -2.48744em -6.00522em rgba(32, 0, 255, 0.3), 0em -1.5em rgba(128, 0, 255, 0.9), 2.48744em -6.00522em rgba(223, 0, 255, 0.1), 1.06066em -1.06066em #ff00bf, 6.00522em -2.48744em rgba(255, 0, 96, 0.7);
+    border-radius: 0.48em;
+    width: 1.5em;
+    height: 1.5em;
+    -moz-transform: scale(3.5) rotate(93deg) translate(5em);
+    -ms-transform: scale(3.5) rotate(93deg) translate(5em);
+    -webkit-transform: scale(3.5) rotate(93deg) translate(5em);
+    transform: scale(3.5) rotate(93deg) translate(5em);
+  }
+  18.75% {
+    box-shadow: 6.5em 0em rgba(255, 0, 0, 0.3), 1.38582em 0.57403em rgba(255, 96, 0, 0.5), 4.59619em 4.59619em rgba(255, 191, 0, 0.7), 0.57403em 1.38582em rgba(223, 255, 0, 0.2), 0em 6.5em rgba(128, 255, 0, 0.1), -0.57403em 1.38582em rgba(32, 255, 0, 0.9), -4.59619em 4.59619em rgba(0, 255, 64, 0.9), -1.38582em 0.57403em rgba(0, 255, 159, 0.9), -6.5em 0em rgba(0, 255, 255, 0.9), -1.38582em -0.57403em #009fff, -4.59619em -4.59619em rgba(0, 64, 255, 0.3), -0.57403em -1.38582em rgba(32, 0, 255, 0.3), 0em -6.5em rgba(128, 0, 255, 0.9), 0.57403em -1.38582em rgba(223, 0, 255, 0.3), 4.59619em -4.59619em rgba(255, 0, 191, 0.9), 1.38582em -0.57403em rgba(255, 0, 96, 0.3);
+    border-radius: 0.97em;
+    width: 2.5em;
+    height: 2.5em;
+    -moz-transform: scale(2.5) rotate(335deg) translate(1em);
+    -ms-transform: scale(2.5) rotate(335deg) translate(1em);
+    -webkit-transform: scale(2.5) rotate(335deg) translate(1em);
+    transform: scale(2.5) rotate(335deg) translate(1em);
+  }
+  25% {
+    box-shadow: 1.5em 0em red, 6.00522em 2.48744em rgba(255, 96, 0, 0.4), 1.06066em 1.06066em rgba(255, 191, 0, 0.7), 2.48744em 6.00522em rgba(223, 255, 0, 0.3), 0em 1.5em rgba(128, 255, 0, 0.2), -2.48744em 6.00522em rgba(32, 255, 0, 0.5), -1.06066em 1.06066em rgba(0, 255, 64, 0.6), -6.00522em 2.48744em rgba(0, 255, 159, 0.9), -1.5em 0em rgba(0, 255, 255, 0.1), -6.00522em -2.48744em rgba(0, 159, 255, 0.5), -1.06066em -1.06066em rgba(0, 64, 255, 0.4), -2.48744em -6.00522em rgba(32, 0, 255, 0.6), 0em -1.5em rgba(128, 0, 255, 0.5), 2.48744em -6.00522em rgba(223, 0, 255, 0.8), 1.06066em -1.06066em rgba(255, 0, 191, 0.7), 6.00522em -2.48744em rgba(255, 0, 96, 0.3);
+    border-radius: 0.83em;
+    width: 1.5em;
+    height: 1.5em;
+    -moz-transform: scale(2.5) rotate(69deg) translate(3em);
+    -ms-transform: scale(2.5) rotate(69deg) translate(3em);
+    -webkit-transform: scale(2.5) rotate(69deg) translate(3em);
+    transform: scale(2.5) rotate(69deg) translate(3em);
+  }
+  31.25% {
+    box-shadow: 6.5em 0em rgba(255, 0, 0, 0.7), 1.38582em 0.57403em rgba(255, 96, 0, 0.8), 4.59619em 4.59619em rgba(255, 191, 0, 0.3), 0.57403em 1.38582em rgba(223, 255, 0, 0.3), 0em 6.5em rgba(128, 255, 0, 0.2), -0.57403em 1.38582em rgba(32, 255, 0, 0.4), -4.59619em 4.59619em rgba(0, 255, 64, 0.9), -1.38582em 0.57403em rgba(0, 255, 159, 0.6), -6.5em 0em rgba(0, 255, 255, 0.3), -1.38582em -0.57403em rgba(0, 159, 255, 0.5), -4.59619em -4.59619em rgba(0, 64, 255, 0.4), -0.57403em -1.38582em rgba(32, 0, 255, 0.5), 0em -6.5em #8000ff, 0.57403em -1.38582em rgba(223, 0, 255, 0.3), 4.59619em -4.59619em rgba(255, 0, 191, 0.5), 1.38582em -0.57403em rgba(255, 0, 96, 0.2);
+    border-radius: 0.25em;
+    width: 3.5em;
+    height: 3.5em;
+    -moz-transform: scale(2.5) rotate(6deg) translate(1em);
+    -ms-transform: scale(2.5) rotate(6deg) translate(1em);
+    -webkit-transform: scale(2.5) rotate(6deg) translate(1em);
+    transform: scale(2.5) rotate(6deg) translate(1em);
+  }
+  37.5% {
+    box-shadow: 1.5em 0em rgba(255, 0, 0, 0.1), 6.00522em 2.48744em rgba(255, 96, 0, 0.2), 1.06066em 1.06066em rgba(255, 191, 0, 0.9), 2.48744em 6.00522em rgba(223, 255, 0, 0.5), 0em 1.5em rgba(128, 255, 0, 0.3), -2.48744em 6.00522em rgba(32, 255, 0, 0.1), -1.06066em 1.06066em rgba(0, 255, 64, 0.5), -6.00522em 2.48744em #00ff9f, -1.5em 0em cyan, -6.00522em -2.48744em rgba(0, 159, 255, 0.4), -1.06066em -1.06066em #0040ff, -2.48744em -6.00522em rgba(32, 0, 255, 0.8), 0em -1.5em rgba(128, 0, 255, 0.7), 2.48744em -6.00522em rgba(223, 0, 255, 0.2), 1.06066em -1.06066em rgba(255, 0, 191, 0.4), 6.00522em -2.48744em rgba(255, 0, 96, 0.4);
+    border-radius: 0.14em;
+    width: 3.5em;
+    height: 3.5em;
+    -moz-transform: scale(2.5) rotate(312deg) translate(3em);
+    -ms-transform: scale(2.5) rotate(312deg) translate(3em);
+    -webkit-transform: scale(2.5) rotate(312deg) translate(3em);
+    transform: scale(2.5) rotate(312deg) translate(3em);
+  }
+  43.75% {
+    box-shadow: 6.5em 0em rgba(255, 0, 0, 0.2), 1.38582em 0.57403em rgba(255, 96, 0, 0.8), 4.59619em 4.59619em rgba(255, 191, 0, 0.6), 0.57403em 1.38582em rgba(223, 255, 0, 0.7), 0em 6.5em rgba(128, 255, 0, 0.9), -0.57403em 1.38582em rgba(32, 255, 0, 0.5), -4.59619em 4.59619em rgba(0, 255, 64, 0.9), -1.38582em 0.57403em rgba(0, 255, 159, 0.2), -6.5em 0em cyan, -1.38582em -0.57403em rgba(0, 159, 255, 0.9), -4.59619em -4.59619em rgba(0, 64, 255, 0.4), -0.57403em -1.38582em #2000ff, 0em -6.5em rgba(128, 0, 255, 0.8), 0.57403em -1.38582em rgba(223, 0, 255, 0.1), 4.59619em -4.59619em rgba(255, 0, 191, 0.4), 1.38582em -0.57403em rgba(255, 0, 96, 0.8);
+    border-radius: 0.63em;
+    width: 4.5em;
+    height: 4.5em;
+    -moz-transform: scale(2.5) rotate(41deg) translate(1em);
+    -ms-transform: scale(2.5) rotate(41deg) translate(1em);
+    -webkit-transform: scale(2.5) rotate(41deg) translate(1em);
+    transform: scale(2.5) rotate(41deg) translate(1em);
+  }
+  50% {
+    box-shadow: 1.5em 0em rgba(255, 0, 0, 0.5), 6.00522em 2.48744em rgba(255, 96, 0, 0.6), 1.06066em 1.06066em #ffbf00, 2.48744em 6.00522em rgba(223, 255, 0, 0.6), 0em 1.5em rgba(128, 255, 0, 0.5), -2.48744em 6.00522em rgba(32, 255, 0, 0.4), -1.06066em 1.06066em rgba(0, 255, 64, 0.2), -6.00522em 2.48744em rgba(0, 255, 159, 0.8), -1.5em 0em rgba(0, 255, 255, 0.2), -6.00522em -2.48744em rgba(0, 159, 255, 0.3), -1.06066em -1.06066em rgba(0, 64, 255, 0.3), -2.48744em -6.00522em rgba(32, 0, 255, 0.9), 0em -1.5em rgba(128, 0, 255, 0.4), 2.48744em -6.00522em #df00ff, 1.06066em -1.06066em rgba(255, 0, 191, 0.9), 6.00522em -2.48744em rgba(255, 0, 96, 0.2);
+    border-radius: 0.9em;
+    width: 3.5em;
+    height: 3.5em;
+    -moz-transform: scale(2.5) rotate(57deg) translate(4em);
+    -ms-transform: scale(2.5) rotate(57deg) translate(4em);
+    -webkit-transform: scale(2.5) rotate(57deg) translate(4em);
+    transform: scale(2.5) rotate(57deg) translate(4em);
+  }
+  56.25% {
+    box-shadow: 6.5em 0em rgba(255, 0, 0, 0.5), 1.38582em 0.57403em rgba(255, 96, 0, 0.4), 4.59619em 4.59619em rgba(255, 191, 0, 0.6), 0.57403em 1.38582em rgba(223, 255, 0, 0.9), 0em 6.5em rgba(128, 255, 0, 0.4), -0.57403em 1.38582em rgba(32, 255, 0, 0.7), -4.59619em 4.59619em rgba(0, 255, 64, 0.8), -1.38582em 0.57403em #00ff9f, -6.5em 0em rgba(0, 255, 255, 0.1), -1.38582em -0.57403em rgba(0, 159, 255, 0.4), -4.59619em -4.59619em rgba(0, 64, 255, 0.2), -0.57403em -1.38582em rgba(32, 0, 255, 0.9), 0em -6.5em #8000ff, 0.57403em -1.38582em rgba(223, 0, 255, 0.9), 4.59619em -4.59619em #ff00bf, 1.38582em -0.57403em rgba(255, 0, 96, 0.3);
+    border-radius: 0.45em;
+    width: 2.5em;
+    height: 2.5em;
+    -moz-transform: scale(2.5) rotate(356deg) translate(1em);
+    -ms-transform: scale(2.5) rotate(356deg) translate(1em);
+    -webkit-transform: scale(2.5) rotate(356deg) translate(1em);
+    transform: scale(2.5) rotate(356deg) translate(1em);
+  }
+  62.5% {
+    box-shadow: 1.5em 0em rgba(255, 0, 0, 0.7), 6.00522em 2.48744em rgba(255, 96, 0, 0.3), 1.06066em 1.06066em rgba(255, 191, 0, 0.6), 2.48744em 6.00522em rgba(223, 255, 0, 0.4), 0em 1.5em rgba(128, 255, 0, 0.3), -2.48744em 6.00522em rgba(32, 255, 0, 0.5), -1.06066em 1.06066em rgba(0, 255, 64, 0.6), -6.00522em 2.48744em rgba(0, 255, 159, 0.6), -1.5em 0em rgba(0, 255, 255, 0.1), -6.00522em -2.48744em rgba(0, 159, 255, 0.4), -1.06066em -1.06066em rgba(0, 64, 255, 0.8), -2.48744em -6.00522em rgba(32, 0, 255, 0.8), 0em -1.5em #8000ff, 2.48744em -6.00522em rgba(223, 0, 255, 0.8), 1.06066em -1.06066em rgba(255, 0, 191, 0.9), 6.00522em -2.48744em rgba(255, 0, 96, 0.7);
+    border-radius: 0.07em;
+    width: 2.5em;
+    height: 2.5em;
+    -moz-transform: scale(2.5) rotate(354deg) translate(4em);
+    -ms-transform: scale(2.5) rotate(354deg) translate(4em);
+    -webkit-transform: scale(2.5) rotate(354deg) translate(4em);
+    transform: scale(2.5) rotate(354deg) translate(4em);
+  }
+  68.75% {
+    box-shadow: 6.5em 0em rgba(255, 0, 0, 0.4), 1.38582em 0.57403em rgba(255, 96, 0, 0.6), 4.59619em 4.59619em rgba(255, 191, 0, 0.6), 0.57403em 1.38582em rgba(223, 255, 0, 0.1), 0em 6.5em #80ff00, -0.57403em 1.38582em rgba(32, 255, 0, 0.5), -4.59619em 4.59619em #00ff40, -1.38582em 0.57403em rgba(0, 255, 159, 0.8), -6.5em 0em cyan, -1.38582em -0.57403em rgba(0, 159, 255, 0.7), -4.59619em -4.59619em rgba(0, 64, 255, 0.8), -0.57403em -1.38582em rgba(32, 0, 255, 0.8), 0em -6.5em rgba(128, 0, 255, 0.4), 0.57403em -1.38582em rgba(223, 0, 255, 0.5), 4.59619em -4.59619em rgba(255, 0, 191, 0.6), 1.38582em -0.57403em rgba(255, 0, 96, 0.9);
+    border-radius: 0.89em;
+    width: 1.5em;
+    height: 1.5em;
+    -moz-transform: scale(2.5) rotate(286deg) translate(6em);
+    -ms-transform: scale(2.5) rotate(286deg) translate(6em);
+    -webkit-transform: scale(2.5) rotate(286deg) translate(6em);
+    transform: scale(2.5) rotate(286deg) translate(6em);
+  }
+  75% {
+    box-shadow: 1.5em 0em rgba(255, 0, 0, 0.7), 6.00522em 2.48744em #ff6000, 1.06066em 1.06066em rgba(255, 191, 0, 0.9), 2.48744em 6.00522em rgba(223, 255, 0, 0.4), 0em 1.5em rgba(128, 255, 0, 0.1), -2.48744em 6.00522em rgba(32, 255, 0, 0.6), -1.06066em 1.06066em rgba(0, 255, 64, 0.7), -6.00522em 2.48744em #00ff9f, -1.5em 0em rgba(0, 255, 255, 0.4), -6.00522em -2.48744em rgba(0, 159, 255, 0.4), -1.06066em -1.06066em rgba(0, 64, 255, 0.1), -2.48744em -6.00522em rgba(32, 0, 255, 0.1), 0em -1.5em #8000ff, 2.48744em -6.00522em rgba(223, 0, 255, 0.3), 1.06066em -1.06066em rgba(255, 0, 191, 0.7), 6.00522em -2.48744em rgba(255, 0, 96, 0.9);
+    border-radius: 0.15em;
+    width: 4.5em;
+    height: 4.5em;
+    -moz-transform: scale(3.5) rotate(288deg) translate(3em);
+    -ms-transform: scale(3.5) rotate(288deg) translate(3em);
+    -webkit-transform: scale(3.5) rotate(288deg) translate(3em);
+    transform: scale(3.5) rotate(288deg) translate(3em);
+  }
+  81.25% {
+    box-shadow: 6.5em 0em red, 1.38582em 0.57403em rgba(255, 96, 0, 0.3), 4.59619em 4.59619em rgba(255, 191, 0, 0.6), 0.57403em 1.38582em rgba(223, 255, 0, 0.1), 0em 6.5em rgba(128, 255, 0, 0.1), -0.57403em 1.38582em rgba(32, 255, 0, 0.5), -4.59619em 4.59619em rgba(0, 255, 64, 0.9), -1.38582em 0.57403em rgba(0, 255, 159, 0.9), -6.5em 0em rgba(0, 255, 255, 0.9), -1.38582em -0.57403em rgba(0, 159, 255, 0.6), -4.59619em -4.59619em rgba(0, 64, 255, 0.9), -0.57403em -1.38582em rgba(32, 0, 255, 0.4), 0em -6.5em rgba(128, 0, 255, 0.6), 0.57403em -1.38582em #df00ff, 4.59619em -4.59619em rgba(255, 0, 191, 0.6), 1.38582em -0.57403em rgba(255, 0, 96, 0.8);
+    border-radius: 0.83em;
+    width: 4.5em;
+    height: 4.5em;
+    -moz-transform: scale(3.5) rotate(358deg) translate(6em);
+    -ms-transform: scale(3.5) rotate(358deg) translate(6em);
+    -webkit-transform: scale(3.5) rotate(358deg) translate(6em);
+    transform: scale(3.5) rotate(358deg) translate(6em);
+  }
+  87.5% {
+    box-shadow: 1.5em 0em rgba(255, 0, 0, 0.2), 6.00522em 2.48744em rgba(255, 96, 0, 0.3), 1.06066em 1.06066em rgba(255, 191, 0, 0.6), 2.48744em 6.00522em rgba(223, 255, 0, 0.6), 0em 1.5em rgba(128, 255, 0, 0.1), -2.48744em 6.00522em rgba(32, 255, 0, 0.4), -1.06066em 1.06066em rgba(0, 255, 64, 0.1), -6.00522em 2.48744em rgba(0, 255, 159, 0.8), -1.5em 0em rgba(0, 255, 255, 0.8), -6.00522em -2.48744em rgba(0, 159, 255, 0.9), -1.06066em -1.06066em rgba(0, 64, 255, 0.6), -2.48744em -6.00522em rgba(32, 0, 255, 0.4), 0em -1.5em rgba(128, 0, 255, 0.5), 2.48744em -6.00522em rgba(223, 0, 255, 0.1), 1.06066em -1.06066em rgba(255, 0, 191, 0.5), 6.00522em -2.48744em rgba(255, 0, 96, 0.8);
+    border-radius: 0.51em;
+    width: 2.5em;
+    height: 2.5em;
+    -moz-transform: scale(2.5) rotate(86deg) translate(5em);
+    -ms-transform: scale(2.5) rotate(86deg) translate(5em);
+    -webkit-transform: scale(2.5) rotate(86deg) translate(5em);
+    transform: scale(2.5) rotate(86deg) translate(5em);
+  }
+  93.75% {
+    box-shadow: 6.5em 0em rgba(255, 0, 0, 0.8), 1.38582em 0.57403em rgba(255, 96, 0, 0.8), 4.59619em 4.59619em rgba(255, 191, 0, 0.5), 0.57403em 1.38582em rgba(223, 255, 0, 0.5), 0em 6.5em rgba(128, 255, 0, 0.6), -0.57403em 1.38582em rgba(32, 255, 0, 0.2), -4.59619em 4.59619em rgba(0, 255, 64, 0.6), -1.38582em 0.57403em #00ff9f, -6.5em 0em rgba(0, 255, 255, 0.2), -1.38582em -0.57403em rgba(0, 159, 255, 0.1), -4.59619em -4.59619em rgba(0, 64, 255, 0.6), -0.57403em -1.38582em rgba(32, 0, 255, 0.3), 0em -6.5em rgba(128, 0, 255, 0.2), 0.57403em -1.38582em rgba(223, 0, 255, 0.8), 4.59619em -4.59619em rgba(255, 0, 191, 0.4), 1.38582em -0.57403em rgba(255, 0, 96, 0.5);
+    border-radius: 0.03em;
+    width: 0.5em;
+    height: 0.5em;
+    -moz-transform: scale(3.5) rotate(175deg) translate(6em);
+    -ms-transform: scale(3.5) rotate(175deg) translate(6em);
+    -webkit-transform: scale(3.5) rotate(175deg) translate(6em);
+    transform: scale(3.5) rotate(175deg) translate(6em);
+  }
+  100% {
+    box-shadow: 1.5em 0em rgba(255, 0, 0, 0.6), 6.00522em 2.48744em rgba(255, 96, 0, 0.6), 1.06066em 1.06066em #ffbf00, 2.48744em 6.00522em rgba(223, 255, 0, 0.5), 0em 1.5em rgba(128, 255, 0, 0.3), -2.48744em 6.00522em rgba(32, 255, 0, 0.9), -1.06066em 1.06066em rgba(0, 255, 64, 0.9), -6.00522em 2.48744em rgba(0, 255, 159, 0.6), -1.5em 0em rgba(0, 255, 255, 0.4), -6.00522em -2.48744em rgba(0, 159, 255, 0.6), -1.06066em -1.06066em rgba(0, 64, 255, 0.8), -2.48744em -6.00522em #2000ff, 0em -1.5em rgba(128, 0, 255, 0.3), 2.48744em -6.00522em rgba(223, 0, 255, 0.6), 1.06066em -1.06066em rgba(255, 0, 191, 0.4), 6.00522em -2.48744em rgba(255, 0, 96, 0.4);
+    border-radius: 0.48em;
+    width: 3.5em;
+    height: 3.5em;
+    -moz-transform: scale(3.5) rotate(288deg) translate(3em);
+    -ms-transform: scale(3.5) rotate(288deg) translate(3em);
+    -webkit-transform: scale(3.5) rotate(288deg) translate(3em);
+    transform: scale(3.5) rotate(288deg) translate(3em);
+  }
+  0% {
+    -moz-transform: scale(2.5) rotate(0) translate(0);
+    -ms-transform: scale(2.5) rotate(0) translate(0);
+    -webkit-transform: scale(2.5) rotate(0) translate(0);
+    transform: scale(2.5) rotate(0) translate(0);
+  }
+  100% {
+    -moz-transform: scale(2.5) rotate(360) translate(0);
+    -ms-transform: scale(2.5) rotate(360) translate(0);
+    -webkit-transform: scale(2.5) rotate(360) translate(0);
+    transform: scale(2.5) rotate(360) translate(0);
+  }
+}
+@keyframes animation--clubbing {
+  0% {
+    box-shadow: 1.5em 0em rgba(255, 0, 0, 0.8), 6.00522em 2.48744em rgba(255, 96, 0, 0.7), 1.06066em 1.06066em rgba(255, 191, 0, 0.1), 2.48744em 6.00522em rgba(223, 255, 0, 0.6), 0em 1.5em rgba(128, 255, 0, 0.4), -2.48744em 6.00522em rgba(32, 255, 0, 0.6), -1.06066em 1.06066em rgba(0, 255, 64, 0.9), -6.00522em 2.48744em rgba(0, 255, 159, 0.2), -1.5em 0em rgba(0, 255, 255, 0.3), -6.00522em -2.48744em rgba(0, 159, 255, 0.9), -1.06066em -1.06066em rgba(0, 64, 255, 0.3), -2.48744em -6.00522em rgba(32, 0, 255, 0.2), 0em -1.5em rgba(128, 0, 255, 0.2), 2.48744em -6.00522em rgba(223, 0, 255, 0.5), 1.06066em -1.06066em rgba(255, 0, 191, 0.8), 6.00522em -2.48744em rgba(255, 0, 96, 0.2);
+    border-radius: 0.1em;
+    width: 0.5em;
+    height: 0.5em;
+    -moz-transform: scale(3.5) rotate(74deg) translate(6em);
+    -ms-transform: scale(3.5) rotate(74deg) translate(6em);
+    -webkit-transform: scale(3.5) rotate(74deg) translate(6em);
+    transform: scale(3.5) rotate(74deg) translate(6em);
+  }
+  6.25% {
+    box-shadow: 6.5em 0em rgba(255, 0, 0, 0.3), 1.38582em 0.57403em rgba(255, 96, 0, 0.1), 4.59619em 4.59619em rgba(255, 191, 0, 0.3), 0.57403em 1.38582em #dfff00, 0em 6.5em rgba(128, 255, 0, 0.2), -0.57403em 1.38582em rgba(32, 255, 0, 0.4), -4.59619em 4.59619em rgba(0, 255, 64, 0.1), -1.38582em 0.57403em rgba(0, 255, 159, 0.2), -6.5em 0em rgba(0, 255, 255, 0.4), -1.38582em -0.57403em rgba(0, 159, 255, 0.2), -4.59619em -4.59619em rgba(0, 64, 255, 0.3), -0.57403em -1.38582em rgba(32, 0, 255, 0.4), 0em -6.5em rgba(128, 0, 255, 0.2), 0.57403em -1.38582em rgba(223, 0, 255, 0.9), 4.59619em -4.59619em rgba(255, 0, 191, 0.2), 1.38582em -0.57403em rgba(255, 0, 96, 0.4);
+    border-radius: 0.15em;
+    width: 3.5em;
+    height: 3.5em;
+    -moz-transform: scale(2.5) rotate(241deg) translate(4em);
+    -ms-transform: scale(2.5) rotate(241deg) translate(4em);
+    -webkit-transform: scale(2.5) rotate(241deg) translate(4em);
+    transform: scale(2.5) rotate(241deg) translate(4em);
+  }
+  12.5% {
+    box-shadow: 1.5em 0em rgba(255, 0, 0, 0.9), 6.00522em 2.48744em rgba(255, 96, 0, 0.2), 1.06066em 1.06066em rgba(255, 191, 0, 0.4), 2.48744em 6.00522em rgba(223, 255, 0, 0.2), 0em 1.5em #80ff00, -2.48744em 6.00522em rgba(32, 255, 0, 0.7), -1.06066em 1.06066em rgba(0, 255, 64, 0.2), -6.00522em 2.48744em rgba(0, 255, 159, 0.9), -1.5em 0em cyan, -6.00522em -2.48744em #009fff, -1.06066em -1.06066em rgba(0, 64, 255, 0.5), -2.48744em -6.00522em rgba(32, 0, 255, 0.8), 0em -1.5em rgba(128, 0, 255, 0.4), 2.48744em -6.00522em rgba(223, 0, 255, 0.1), 1.06066em -1.06066em rgba(255, 0, 191, 0.2), 6.00522em -2.48744em rgba(255, 0, 96, 0.8);
+    border-radius: 0.94em;
+    width: 1.5em;
+    height: 1.5em;
+    -moz-transform: scale(2.5) rotate(230deg) translate(3em);
+    -ms-transform: scale(2.5) rotate(230deg) translate(3em);
+    -webkit-transform: scale(2.5) rotate(230deg) translate(3em);
+    transform: scale(2.5) rotate(230deg) translate(3em);
+  }
+  18.75% {
+    box-shadow: 6.5em 0em rgba(255, 0, 0, 0.5), 1.38582em 0.57403em rgba(255, 96, 0, 0.1), 4.59619em 4.59619em rgba(255, 191, 0, 0.3), 0.57403em 1.38582em rgba(223, 255, 0, 0.1), 0em 6.5em rgba(128, 255, 0, 0.5), -0.57403em 1.38582em rgba(32, 255, 0, 0.6), -4.59619em 4.59619em rgba(0, 255, 64, 0.8), -1.38582em 0.57403em rgba(0, 255, 159, 0.8), -6.5em 0em rgba(0, 255, 255, 0.7), -1.38582em -0.57403em rgba(0, 159, 255, 0.1), -4.59619em -4.59619em rgba(0, 64, 255, 0.9), -0.57403em -1.38582em rgba(32, 0, 255, 0.7), 0em -6.5em rgba(128, 0, 255, 0.6), 0.57403em -1.38582em rgba(223, 0, 255, 0.4), 4.59619em -4.59619em rgba(255, 0, 191, 0.6), 1.38582em -0.57403em rgba(255, 0, 96, 0.7);
+    border-radius: 0.6em;
+    width: 3.5em;
+    height: 3.5em;
+    -moz-transform: scale(2.5) rotate(256deg) translate(2em);
+    -ms-transform: scale(2.5) rotate(256deg) translate(2em);
+    -webkit-transform: scale(2.5) rotate(256deg) translate(2em);
+    transform: scale(2.5) rotate(256deg) translate(2em);
+  }
+  25% {
+    box-shadow: 1.5em 0em rgba(255, 0, 0, 0.8), 6.00522em 2.48744em rgba(255, 96, 0, 0.5), 1.06066em 1.06066em rgba(255, 191, 0, 0.7), 2.48744em 6.00522em rgba(223, 255, 0, 0.8), 0em 1.5em rgba(128, 255, 0, 0.4), -2.48744em 6.00522em rgba(32, 255, 0, 0.7), -1.06066em 1.06066em rgba(0, 255, 64, 0.6), -6.00522em 2.48744em rgba(0, 255, 159, 0.1), -1.5em 0em rgba(0, 255, 255, 0.5), -6.00522em -2.48744em rgba(0, 159, 255, 0.3), -1.06066em -1.06066em rgba(0, 64, 255, 0.8), -2.48744em -6.00522em rgba(32, 0, 255, 0.8), 0em -1.5em rgba(128, 0, 255, 0.9), 2.48744em -6.00522em rgba(223, 0, 255, 0.1), 1.06066em -1.06066em rgba(255, 0, 191, 0.5), 6.00522em -2.48744em rgba(255, 0, 96, 0.2);
+    border-radius: 0.59em;
+    width: 1.5em;
+    height: 1.5em;
+    -moz-transform: scale(3.5) rotate(2deg) translate(4em);
+    -ms-transform: scale(3.5) rotate(2deg) translate(4em);
+    -webkit-transform: scale(3.5) rotate(2deg) translate(4em);
+    transform: scale(3.5) rotate(2deg) translate(4em);
+  }
+  31.25% {
+    box-shadow: 6.5em 0em rgba(255, 0, 0, 0.6), 1.38582em 0.57403em rgba(255, 96, 0, 0.2), 4.59619em 4.59619em #ffbf00, 0.57403em 1.38582em rgba(223, 255, 0, 0.4), 0em 6.5em rgba(128, 255, 0, 0.1), -0.57403em 1.38582em rgba(32, 255, 0, 0.7), -4.59619em 4.59619em rgba(0, 255, 64, 0.3), -1.38582em 0.57403em rgba(0, 255, 159, 0.9), -6.5em 0em cyan, -1.38582em -0.57403em rgba(0, 159, 255, 0.1), -4.59619em -4.59619em #0040ff, -0.57403em -1.38582em rgba(32, 0, 255, 0.7), 0em -6.5em rgba(128, 0, 255, 0.7), 0.57403em -1.38582em rgba(223, 0, 255, 0.6), 4.59619em -4.59619em rgba(255, 0, 191, 0.7), 1.38582em -0.57403em rgba(255, 0, 96, 0.4);
+    border-radius: 0.78em;
+    width: 0.5em;
+    height: 0.5em;
+    -moz-transform: scale(3.5) rotate(201deg) translate(6em);
+    -ms-transform: scale(3.5) rotate(201deg) translate(6em);
+    -webkit-transform: scale(3.5) rotate(201deg) translate(6em);
+    transform: scale(3.5) rotate(201deg) translate(6em);
+  }
+  37.5% {
+    box-shadow: 1.5em 0em rgba(255, 0, 0, 0.9), 6.00522em 2.48744em rgba(255, 96, 0, 0.7), 1.06066em 1.06066em #ffbf00, 2.48744em 6.00522em rgba(223, 255, 0, 0.4), 0em 1.5em rgba(128, 255, 0, 0.3), -2.48744em 6.00522em rgba(32, 255, 0, 0.5), -1.06066em 1.06066em rgba(0, 255, 64, 0.9), -6.00522em 2.48744em rgba(0, 255, 159, 0.3), -1.5em 0em rgba(0, 255, 255, 0.2), -6.00522em -2.48744em #009fff, -1.06066em -1.06066em rgba(0, 64, 255, 0.1), -2.48744em -6.00522em rgba(32, 0, 255, 0.4), 0em -1.5em rgba(128, 0, 255, 0.2), 2.48744em -6.00522em rgba(223, 0, 255, 0.2), 1.06066em -1.06066em rgba(255, 0, 191, 0.6), 6.00522em -2.48744em rgba(255, 0, 96, 0.1);
+    border-radius: 0.41em;
+    width: 4.5em;
+    height: 4.5em;
+    -moz-transform: scale(2.5) rotate(73deg) translate(6em);
+    -ms-transform: scale(2.5) rotate(73deg) translate(6em);
+    -webkit-transform: scale(2.5) rotate(73deg) translate(6em);
+    transform: scale(2.5) rotate(73deg) translate(6em);
+  }
+  43.75% {
+    box-shadow: 6.5em 0em rgba(255, 0, 0, 0.6), 1.38582em 0.57403em rgba(255, 96, 0, 0.2), 4.59619em 4.59619em rgba(255, 191, 0, 0.9), 0.57403em 1.38582em #dfff00, 0em 6.5em rgba(128, 255, 0, 0.5), -0.57403em 1.38582em rgba(32, 255, 0, 0.7), -4.59619em 4.59619em rgba(0, 255, 64, 0.6), -1.38582em 0.57403em rgba(0, 255, 159, 0.4), -6.5em 0em rgba(0, 255, 255, 0.9), -1.38582em -0.57403em rgba(0, 159, 255, 0.6), -4.59619em -4.59619em rgba(0, 64, 255, 0.4), -0.57403em -1.38582em rgba(32, 0, 255, 0.5), 0em -6.5em rgba(128, 0, 255, 0.8), 0.57403em -1.38582em rgba(223, 0, 255, 0.7), 4.59619em -4.59619em rgba(255, 0, 191, 0.8), 1.38582em -0.57403em rgba(255, 0, 96, 0.3);
+    border-radius: 0.85em;
+    width: 2.5em;
+    height: 2.5em;
+    -moz-transform: scale(2.5) rotate(325deg) translate(1em);
+    -ms-transform: scale(2.5) rotate(325deg) translate(1em);
+    -webkit-transform: scale(2.5) rotate(325deg) translate(1em);
+    transform: scale(2.5) rotate(325deg) translate(1em);
+  }
+  50% {
+    box-shadow: 1.5em 0em rgba(255, 0, 0, 0.4), 6.00522em 2.48744em rgba(255, 96, 0, 0.5), 1.06066em 1.06066em rgba(255, 191, 0, 0.9), 2.48744em 6.00522em rgba(223, 255, 0, 0.6), 0em 1.5em rgba(128, 255, 0, 0.3), -2.48744em 6.00522em rgba(32, 255, 0, 0.7), -1.06066em 1.06066em rgba(0, 255, 64, 0.6), -6.00522em 2.48744em rgba(0, 255, 159, 0.6), -1.5em 0em rgba(0, 255, 255, 0.7), -6.00522em -2.48744em rgba(0, 159, 255, 0.2), -1.06066em -1.06066em rgba(0, 64, 255, 0.2), -2.48744em -6.00522em rgba(32, 0, 255, 0.1), 0em -1.5em rgba(128, 0, 255, 0.6), 2.48744em -6.00522em #df00ff, 1.06066em -1.06066em rgba(255, 0, 191, 0.8), 6.00522em -2.48744em rgba(255, 0, 96, 0.2);
+    border-radius: 0.04em;
+    width: 1.5em;
+    height: 1.5em;
+    -moz-transform: scale(3.5) rotate(138deg) translate(4em);
+    -ms-transform: scale(3.5) rotate(138deg) translate(4em);
+    -webkit-transform: scale(3.5) rotate(138deg) translate(4em);
+    transform: scale(3.5) rotate(138deg) translate(4em);
+  }
+  56.25% {
+    box-shadow: 6.5em 0em red, 1.38582em 0.57403em rgba(255, 96, 0, 0.5), 4.59619em 4.59619em rgba(255, 191, 0, 0.5), 0.57403em 1.38582em rgba(223, 255, 0, 0.1), 0em 6.5em rgba(128, 255, 0, 0.1), -0.57403em 1.38582em rgba(32, 255, 0, 0.8), -4.59619em 4.59619em rgba(0, 255, 64, 0.8), -1.38582em 0.57403em rgba(0, 255, 159, 0.1), -6.5em 0em rgba(0, 255, 255, 0.2), -1.38582em -0.57403em rgba(0, 159, 255, 0.6), -4.59619em -4.59619em rgba(0, 64, 255, 0.2), -0.57403em -1.38582em rgba(32, 0, 255, 0.7), 0em -6.5em rgba(128, 0, 255, 0.6), 0.57403em -1.38582em rgba(223, 0, 255, 0.3), 4.59619em -4.59619em rgba(255, 0, 191, 0.7), 1.38582em -0.57403em rgba(255, 0, 96, 0.8);
+    border-radius: 0.91em;
+    width: 1.5em;
+    height: 1.5em;
+    -moz-transform: scale(2.5) rotate(85deg) translate(5em);
+    -ms-transform: scale(2.5) rotate(85deg) translate(5em);
+    -webkit-transform: scale(2.5) rotate(85deg) translate(5em);
+    transform: scale(2.5) rotate(85deg) translate(5em);
+  }
+  62.5% {
+    box-shadow: 1.5em 0em rgba(255, 0, 0, 0.6), 6.00522em 2.48744em rgba(255, 96, 0, 0.6), 1.06066em 1.06066em rgba(255, 191, 0, 0.3), 2.48744em 6.00522em #dfff00, 0em 1.5em rgba(128, 255, 0, 0.5), -2.48744em 6.00522em rgba(32, 255, 0, 0.4), -1.06066em 1.06066em rgba(0, 255, 64, 0.8), -6.00522em 2.48744em rgba(0, 255, 159, 0.1), -1.5em 0em rgba(0, 255, 255, 0.7), -6.00522em -2.48744em rgba(0, 159, 255, 0.9), -1.06066em -1.06066em rgba(0, 64, 255, 0.9), -2.48744em -6.00522em rgba(32, 0, 255, 0.4), 0em -1.5em #8000ff, 2.48744em -6.00522em rgba(223, 0, 255, 0.9), 1.06066em -1.06066em #ff00bf, 6.00522em -2.48744em rgba(255, 0, 96, 0.2);
+    border-radius: 0.78em;
+    width: 3.5em;
+    height: 3.5em;
+    -moz-transform: scale(3.5) rotate(43deg) translate(4em);
+    -ms-transform: scale(3.5) rotate(43deg) translate(4em);
+    -webkit-transform: scale(3.5) rotate(43deg) translate(4em);
+    transform: scale(3.5) rotate(43deg) translate(4em);
+  }
+  68.75% {
+    box-shadow: 6.5em 0em rgba(255, 0, 0, 0.8), 1.38582em 0.57403em rgba(255, 96, 0, 0.4), 4.59619em 4.59619em rgba(255, 191, 0, 0.2), 0.57403em 1.38582em #dfff00, 0em 6.5em rgba(128, 255, 0, 0.3), -0.57403em 1.38582em rgba(32, 255, 0, 0.1), -4.59619em 4.59619em rgba(0, 255, 64, 0.5), -1.38582em 0.57403em rgba(0, 255, 159, 0.5), -6.5em 0em rgba(0, 255, 255, 0.7), -1.38582em -0.57403em rgba(0, 159, 255, 0.2), -4.59619em -4.59619em rgba(0, 64, 255, 0.4), -0.57403em -1.38582em rgba(32, 0, 255, 0.5), 0em -6.5em rgba(128, 0, 255, 0.5), 0.57403em -1.38582em rgba(223, 0, 255, 0.2), 4.59619em -4.59619em rgba(255, 0, 191, 0.3), 1.38582em -0.57403em rgba(255, 0, 96, 0.9);
+    border-radius: 0.08em;
+    width: 2.5em;
+    height: 2.5em;
+    -moz-transform: scale(3.5) rotate(314deg) translate(5em);
+    -ms-transform: scale(3.5) rotate(314deg) translate(5em);
+    -webkit-transform: scale(3.5) rotate(314deg) translate(5em);
+    transform: scale(3.5) rotate(314deg) translate(5em);
+  }
+  75% {
+    box-shadow: 1.5em 0em rgba(255, 0, 0, 0.5), 6.00522em 2.48744em rgba(255, 96, 0, 0.9), 1.06066em 1.06066em rgba(255, 191, 0, 0.5), 2.48744em 6.00522em rgba(223, 255, 0, 0.6), 0em 1.5em rgba(128, 255, 0, 0.2), -2.48744em 6.00522em rgba(32, 255, 0, 0.9), -1.06066em 1.06066em rgba(0, 255, 64, 0.2), -6.00522em 2.48744em rgba(0, 255, 159, 0.1), -1.5em 0em cyan, -6.00522em -2.48744em rgba(0, 159, 255, 0.1), -1.06066em -1.06066em rgba(0, 64, 255, 0.5), -2.48744em -6.00522em rgba(32, 0, 255, 0.6), 0em -1.5em rgba(128, 0, 255, 0.5), 2.48744em -6.00522em rgba(223, 0, 255, 0.1), 1.06066em -1.06066em rgba(255, 0, 191, 0.9), 6.00522em -2.48744em rgba(255, 0, 96, 0.2);
+    border-radius: 0.82em;
+    width: 1.5em;
+    height: 1.5em;
+    -moz-transform: scale(3.5) rotate(346deg) translate(2em);
+    -ms-transform: scale(3.5) rotate(346deg) translate(2em);
+    -webkit-transform: scale(3.5) rotate(346deg) translate(2em);
+    transform: scale(3.5) rotate(346deg) translate(2em);
+  }
+  81.25% {
+    box-shadow: 6.5em 0em rgba(255, 0, 0, 0.1), 1.38582em 0.57403em rgba(255, 96, 0, 0.3), 4.59619em 4.59619em rgba(255, 191, 0, 0.5), 0.57403em 1.38582em #dfff00, 0em 6.5em rgba(128, 255, 0, 0.6), -0.57403em 1.38582em rgba(32, 255, 0, 0.4), -4.59619em 4.59619em rgba(0, 255, 64, 0.7), -1.38582em 0.57403em rgba(0, 255, 159, 0.8), -6.5em 0em rgba(0, 255, 255, 0.6), -1.38582em -0.57403em rgba(0, 159, 255, 0.9), -4.59619em -4.59619em rgba(0, 64, 255, 0.8), -0.57403em -1.38582em rgba(32, 0, 255, 0.5), 0em -6.5em rgba(128, 0, 255, 0.8), 0.57403em -1.38582em rgba(223, 0, 255, 0.8), 4.59619em -4.59619em #ff00bf, 1.38582em -0.57403em rgba(255, 0, 96, 0.4);
+    border-radius: 0.24em;
+    width: 1.5em;
+    height: 1.5em;
+    -moz-transform: scale(2.5) rotate(10deg) translate(6em);
+    -ms-transform: scale(2.5) rotate(10deg) translate(6em);
+    -webkit-transform: scale(2.5) rotate(10deg) translate(6em);
+    transform: scale(2.5) rotate(10deg) translate(6em);
+  }
+  87.5% {
+    box-shadow: 1.5em 0em rgba(255, 0, 0, 0.9), 6.00522em 2.48744em rgba(255, 96, 0, 0.7), 1.06066em 1.06066em rgba(255, 191, 0, 0.7), 2.48744em 6.00522em rgba(223, 255, 0, 0.1), 0em 1.5em rgba(128, 255, 0, 0.4), -2.48744em 6.00522em rgba(32, 255, 0, 0.1), -1.06066em 1.06066em #00ff40, -6.00522em 2.48744em rgba(0, 255, 159, 0.6), -1.5em 0em rgba(0, 255, 255, 0.6), -6.00522em -2.48744em rgba(0, 159, 255, 0.9), -1.06066em -1.06066em #0040ff, -2.48744em -6.00522em rgba(32, 0, 255, 0.4), 0em -1.5em rgba(128, 0, 255, 0.1), 2.48744em -6.00522em rgba(223, 0, 255, 0.5), 1.06066em -1.06066em rgba(255, 0, 191, 0.6), 6.00522em -2.48744em rgba(255, 0, 96, 0.4);
+    border-radius: 0.86em;
+    width: 1.5em;
+    height: 1.5em;
+    -moz-transform: scale(2.5) rotate(100deg) translate(3em);
+    -ms-transform: scale(2.5) rotate(100deg) translate(3em);
+    -webkit-transform: scale(2.5) rotate(100deg) translate(3em);
+    transform: scale(2.5) rotate(100deg) translate(3em);
+  }
+  93.75% {
+    box-shadow: 6.5em 0em rgba(255, 0, 0, 0.2), 1.38582em 0.57403em rgba(255, 96, 0, 0.1), 4.59619em 4.59619em rgba(255, 191, 0, 0.8), 0.57403em 1.38582em rgba(223, 255, 0, 0.7), 0em 6.5em rgba(128, 255, 0, 0.9), -0.57403em 1.38582em rgba(32, 255, 0, 0.9), -4.59619em 4.59619em #00ff40, -1.38582em 0.57403em rgba(0, 255, 159, 0.3), -6.5em 0em rgba(0, 255, 255, 0.3), -1.38582em -0.57403em rgba(0, 159, 255, 0.7), -4.59619em -4.59619em rgba(0, 64, 255, 0.7), -0.57403em -1.38582em rgba(32, 0, 255, 0.9), 0em -6.5em rgba(128, 0, 255, 0.1), 0.57403em -1.38582em rgba(223, 0, 255, 0.7), 4.59619em -4.59619em rgba(255, 0, 191, 0.4), 1.38582em -0.57403em rgba(255, 0, 96, 0.9);
+    border-radius: 0.59em;
+    width: 2.5em;
+    height: 2.5em;
+    -moz-transform: scale(3.5) rotate(355deg) translate(2em);
+    -ms-transform: scale(3.5) rotate(355deg) translate(2em);
+    -webkit-transform: scale(3.5) rotate(355deg) translate(2em);
+    transform: scale(3.5) rotate(355deg) translate(2em);
+  }
+  100% {
+    box-shadow: 1.5em 0em rgba(255, 0, 0, 0.6), 6.00522em 2.48744em rgba(255, 96, 0, 0.7), 1.06066em 1.06066em rgba(255, 191, 0, 0.5), 2.48744em 6.00522em rgba(223, 255, 0, 0.5), 0em 1.5em rgba(128, 255, 0, 0.2), -2.48744em 6.00522em rgba(32, 255, 0, 0.3), -1.06066em 1.06066em rgba(0, 255, 64, 0.6), -6.00522em 2.48744em rgba(0, 255, 159, 0.4), -1.5em 0em rgba(0, 255, 255, 0.4), -6.00522em -2.48744em rgba(0, 159, 255, 0.8), -1.06066em -1.06066em rgba(0, 64, 255, 0.3), -2.48744em -6.00522em rgba(32, 0, 255, 0.8), 0em -1.5em rgba(128, 0, 255, 0.5), 2.48744em -6.00522em rgba(223, 0, 255, 0.5), 1.06066em -1.06066em rgba(255, 0, 191, 0.6), 6.00522em -2.48744em rgba(255, 0, 96, 0.7);
+    border-radius: 0.23em;
+    width: 2.5em;
+    height: 2.5em;
+    -moz-transform: scale(3.5) rotate(186deg) translate(3em);
+    -ms-transform: scale(3.5) rotate(186deg) translate(3em);
+    -webkit-transform: scale(3.5) rotate(186deg) translate(3em);
+    transform: scale(3.5) rotate(186deg) translate(3em);
+  }
+  0% {
+    -moz-transform: scale(2.5) rotate(0) translate(0);
+    -ms-transform: scale(2.5) rotate(0) translate(0);
+    -webkit-transform: scale(2.5) rotate(0) translate(0);
+    transform: scale(2.5) rotate(0) translate(0);
+  }
+  100% {
+    -moz-transform: scale(3.5) rotate(360) translate(0);
+    -ms-transform: scale(3.5) rotate(360) translate(0);
+    -webkit-transform: scale(3.5) rotate(360) translate(0);
+    transform: scale(3.5) rotate(360) translate(0);
+  }
+}
+@keyframes animation--background {
+  0% {
+    background-position: -56em-2em;
+  }
+  100% {
+    background-position: 47em 12em;
+  }
+}
