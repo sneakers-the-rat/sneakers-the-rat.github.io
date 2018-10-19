@@ -3,7 +3,7 @@ layout: post
 title: "Northern Lights"
 date: 2018-10-18
 description:
-image: /assets/images/nlight.png
+image: https://jon-e.net/blog/assets/images/nlight.png
 author: Jonny Saunders
 tags:
   - art
