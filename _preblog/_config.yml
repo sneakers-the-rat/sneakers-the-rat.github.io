@@ -2,8 +2,8 @@
 email: JLSaunders987@gmail.com
 baseurl: ""
 paginate: 12
-paginate_path: "/page/:num"
-permalink: /:year/:month/:day/:title/
+paginate_path: "/blog/page/:num"
+permalink: /blog/:year/:month/:day/:title/
 google_analytics:
 
 name: Jonny Saunders
