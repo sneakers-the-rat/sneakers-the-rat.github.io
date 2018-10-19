@@ -87,10 +87,8 @@ jQuery.fn.extend(
     }
 
     //if ($(this).css("transform-origin") == '["0%", "50%"]')
-    console.log($(this).css("transform-origin"))
     if (lr < 0.5){
         if ($(this).css("transform-origin") == '0px 15px'){
-            console.log('switch 1')
             $(this).css('left',pos.left);
             if (curangle == 90 || curangle == -270){
                 $(this).css('left',pos.left-long_size+short_size/2);
