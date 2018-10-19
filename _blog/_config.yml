@@ -1,0 +1,66 @@
+# Site/SEO settings
+email: JLSaunders987@gmail.com
+baseurl: "jon-e.net/blog"
+paginate: 12
+paginate_path: "/page/:num"
+permalink: /:year/:month/:day/:title/
+google_analytics:
+
+name: Jonny Saunders
+title: Blog
+description: >
+  Things i gone and done
+url: http://jon-e.net/blog
+twitter_username: json_dirs
+default_img: /assets/images/seo.jpg
+social:
+  - name: twitter
+    url: https://twitter.com/json_durs
+  - name: github
+    url: https://github.com/sneakers_the_rat
+
+# Contact settings
+# contact_img: /assets/images/placeholder-28.jpg
+# formcarry: https://formcarry.com/s/HkIo0nMb7
+
+# Disqus settings
+disqus: jon-e
+
+# MailChimp settings
+# mailchimp_action: https://samesies.us17.list-manage.com/subscribe/post-json?u=66ddf555dab480e6a8606430b&amp;id=89b3ee034f
+# mailchimp_input: b_66ddf555dab480e6a8606430b_89b3ee034f
+
+# Author settings
+author:
+  - name: Jonny Saunders
+    bio: bad at programming and neuroscience in beautiful Oregon.
+    url: http://jon-e.net
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+compress_html:
+  clippings: all
+  comments: all
+  startings: [html, head, body]
+exclude:
+  - node_modules
+  - .DS_Store
+  - barber.jpg
+  - Gemfile
+  - Gemfile.lock
+  - gulpfile.js
+  - package.json
+  - README.md
+
+colors:
+  black:     '#111111'
+  white:     '#f8f8f8'
+  blue:      '#49a7e9'
+  green:     '#9bcf2f'
+  purple:    '#c869bf'
+  orange:    '#fab125'
+  turquoise: '#0fbfcf'
+
