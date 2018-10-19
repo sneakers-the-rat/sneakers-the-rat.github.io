@@ -1,6 +1,6 @@
 # Site/SEO settings
 email: JLSaunders987@gmail.com
-baseurl: "jon-e.net/blog"
+baseurl: ""
 paginate: 12
 paginate_path: "/page/:num"
 permalink: /:year/:month/:day/:title/
@@ -10,7 +10,7 @@ name: Jonny Saunders
 title: Blog
 description: >
   Things i gone and done
-#url: http://jon-e.net/blog
+url: https://jon-e.net/blog/
 twitter_username: json_dirs
 default_img: /assets/images/seo.jpg
 social:
