@@ -1,6 +1,6 @@
 # Site/SEO settings
 email: JLSaunders987@gmail.com
-baseurl: ""
+baseurl: "https://jon-e.net/blog"
 paginate: 12
 paginate_path: "/blog/page/:num"
 permalink: /blog/:year/:month/:day/:title/
