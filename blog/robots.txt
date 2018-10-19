@@ -1,1 +1,1 @@
-Sitemap: http://jon-e.net/blog/jon-e.net/blog/sitemap.xml
+Sitemap: /jon-e.net/blog/sitemap.xml
