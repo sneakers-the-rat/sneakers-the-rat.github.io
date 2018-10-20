@@ -6,8 +6,8 @@
 </description>
     <link>https://jon-e.net/bloghttps://jon-e.net/blog</link>
     <atom:link href="https://jon-e.net/bloghttps://jon-e.net/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 20 Oct 2018 00:14:05 -0700</pubDate>
-    <lastBuildDate>Sat, 20 Oct 2018 00:14:05 -0700</lastBuildDate>
+    <pubDate>Sat, 20 Oct 2018 00:49:53 -0700</pubDate>
+    <lastBuildDate>Sat, 20 Oct 2018 00:49:53 -0700</lastBuildDate>
     <generator>Jekyll v3.8.4</generator>
     
       <item>
@@ -16,6 +16,10 @@
     body {
         background-color: black;
         color: #F5F5F5;
+    }
+
+    a {
+        color: hotpink;
     }
 
     .header {
@@ -57,19 +61,19 @@
   &lt;tbody&gt;
     &lt;tr&gt;
       &lt;td&gt;LED Strips&lt;/td&gt;
-      &lt;td&gt;https://www.aliexpress.com/item/WS2811-IC-Strip-Vedio-show-addressable-individually-ip30-or-waterproof-ip67-5050-RGB-SMD-30/32624331128.html?spm=a2g0s.9042311.0.0.77624c4dozuwtS&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://www.aliexpress.com/item/WS2811-IC-Strip-Vedio-show-addressable-individually-ip30-or-waterproof-ip67-5050-RGB-SMD-30/32624331128.html?spm=a2g0s.9042311.0.0.77624c4dozuwtS&quot;&gt;get some leds&lt;/a&gt;&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;LED Stands (3d mesh)&lt;/td&gt;
-      &lt;td&gt;https://jon-e.net/blog/assets/hosted/fat_led_stand.stl&lt;/td&gt;
+      &lt;td&gt;[download an stl[(https://jon-e.net/blog/assets/hosted/fat_led_stand.stl)&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;Arduino Uno&lt;/td&gt;
-      &lt;td&gt;https://store.arduino.cc/usa/arduino-uno-rev3&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://store.arduino.cc/usa/arduino-uno-rev3&quot;&gt;arduinos here&lt;/a&gt;&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;Photodiode&lt;/td&gt;
-      &lt;td&gt;idk found in the lab try digikey https://www.digikey.com/products/en/sensors-transducers/optical-sensors-photodiodes/543&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://www.digikey.com/products/en/sensors-transducers/optical-sensors-photodiodes/543&quot;&gt;idk found in the lab try digikey&lt;/a&gt;&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;12V 3A DC Power Supply&lt;/td&gt;
@@ -86,16 +90,26 @@
 
 &lt;p&gt;is simple.&lt;/p&gt;
 
-&lt;p&gt;’'’Step 1:’’’&lt;/p&gt;
+&lt;h2 id=&quot;step-1-board-of-leds&quot;&gt;Step 1: Board of LEDs&lt;/h2&gt;
 
-&lt;p&gt;'’Print a bunch of these &lt;a href=&quot;https://jon-e.net/blog/assets/hosted/fat_led_stand.stl&quot;&gt;little stands&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Print a bunch of these [little stands]&lt;/em&gt;(https://jon-e.net/blog/assets/hosted/fat_led_stand.stl)&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://jon-e.net/blog/assets/images/led_stand.png&quot; alt=&quot;led stand&quot; /&gt;
 &lt;em&gt;moody as your mahogany past&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;and glue them onto a board thusly&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://jon-e.net/blog/assets/images/led_build_1.png&quot; alt=&quot;glued to board&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jon-e.net/blog/assets/images/led_build_1.jpg&quot; alt=&quot;glued to board&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;step-2-wire-it-up&quot;&gt;Step 2: Wire it up&lt;/h2&gt;
+
+&lt;p&gt;Like this&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://jon-e.net/blog/assets/images/led_build_circuit.jpg&quot; alt=&quot;yeah like this i said&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Do not do as I do, and behold this as a warning. This style of circuit is built to cause fires and generate solder fumes. I epoxied over the exposed solder and wire to avoid dust combustion. Disregard the capacitor, it proved to explode.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://jon-e.net/blog/assets/images/led_build_wired.jpg&quot; alt=&quot;disregard this&quot; /&gt;&lt;/p&gt;
 
 </description>
         <pubDate>Thu, 18 Oct 2018 00:00:00 -0700</pubDate>
