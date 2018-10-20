@@ -88,6 +88,22 @@ Do not do as I do, and behold this as a warning. This style of circuit is built 
 I stole a lot of this, hopefully I attributed as I went because I do not remember where it came from now. You will need the [FastLED library](http://fastled.io).
 
 <pre><code class="c">
+// Param for different pixel layouts
+#define kMatrixSerpentineLayout  false
+
+// https://learn.adafruit.com/photocells/arduino-code
+int photocellPin = 0;     // the cell and 10K pulldown are connected to a0
+int photocellReading;     // the analog reading from the sensor divider
+#define DATA_PIN_1 2
+#define DATA_PIN_2 3
+#define DATA_PIN_3 4
+
+long codetimes[3] = {10000, 10000, 10000};
+
+
+#define NUM_STRIPS 3
+#define NUM_PER_STRIP 22
+#define NUM_LEDS NUM_STRIPS*NUM_PER_STRIP
 
 
 </code></pre>
