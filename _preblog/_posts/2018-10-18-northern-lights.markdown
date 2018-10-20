@@ -16,7 +16,7 @@ tags:
     }
 
     a {
-        color: hotpink;
+        color: #F50000;
     }
 
     .header {
@@ -83,9 +83,14 @@ Do not do as I do, and behold this as a warning. This style of circuit is built 
 
 ![disregard this](https://jon-e.net/blog/assets/images/led_build_wired.jpg)
 
+## Step 3: Code
+
+I stole a lot of this, hopefully I attributed as I went because I do not remember where it came from now. You will need the [FastLED library](http://fastled.io).
+
+<pre><code class="c">
 
 
-
+</code></pre>
 
 
 
