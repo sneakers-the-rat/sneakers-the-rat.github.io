@@ -6,8 +6,8 @@
 </description>
     <link>https://jon-e.net/bloghttps://jon-e.net/blog</link>
     <atom:link href="https://jon-e.net/bloghttps://jon-e.net/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 20 Oct 2018 01:48:20 -0700</pubDate>
-    <lastBuildDate>Sat, 20 Oct 2018 01:48:20 -0700</lastBuildDate>
+    <pubDate>Sat, 20 Oct 2018 01:49:16 -0700</pubDate>
+    <lastBuildDate>Sat, 20 Oct 2018 01:49:16 -0700</lastBuildDate>
     <generator>Jekyll v3.8.4</generator>
     
       <item>
@@ -45,6 +45,12 @@
     font-size: 1.25em;
     color: #888888;
     line-height: 1.4;
+    }
+
+    .post__author a {
+    color: #B951D1;
+    -webkit-transition: color .2s ease-in-out;
+    transition: color .2s ease-in-out;
     }
 &lt;/style&gt;
 

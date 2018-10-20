@@ -43,6 +43,12 @@ tags:
     color: #888888;
     line-height: 1.4;
     }
+
+    .post__author a {
+    color: #B951D1;
+    -webkit-transition: color .2s ease-in-out;
+    transition: color .2s ease-in-out;
+    }
 </style>
 
 
