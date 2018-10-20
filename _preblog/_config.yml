@@ -12,7 +12,7 @@ description: >
   Things i gone and done
 url: "https://jon-e.net/blog"
 twitter_username: json_dirs
-default_img: /assets/images/seo.jpg
+default_img: /assets/images/nlight.png
 social:
   - name: twitter
     url: https://twitter.com/json_durs
@@ -20,8 +20,8 @@ social:
     url: https://github.com/sneakers_the_rat
 
 # Contact settings
-# contact_img: /assets/images/placeholder-28.jpg
-# formcarry: https://formcarry.com/s/HkIo0nMb7
+contact_img: /assets/images/placeholder-28.jpg
+formcarry: https://formcarry.com/s/x7yoFO6sk0n
 
 # Disqus settings
 disqus: jon-e
