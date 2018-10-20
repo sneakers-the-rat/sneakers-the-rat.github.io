@@ -28,8 +28,14 @@ tags:
         color: #F0F0F0;
     }
 
-    .post__content a{
+    .post__content a:link,
+    .post__content a:hover,
+    .post__content a:active,{
         color: #F50000;
+    }
+
+    .post__content a:visited{
+        color: #0000FF;
     }
 </style>
 
@@ -45,6 +51,12 @@ And they also twinkle:
 
 <video controls>
   <source src="/blog/assets/images/twinkle.mp4" type="video/mp4">
+</video>
+
+They only turn on rarely because they are magic, but if you need them on to feel the close glow of the north pole you can enter the secret code...
+
+<video controls>
+  <source src="/blog/assets/images/onoff.mp4" type="video/mp4">
 </video>
 
 # Ingredients
@@ -86,6 +98,12 @@ Do not do as I do, and behold this as a warning. This style of circuit is built 
 ## Step 3: Code
 
 I stole a lot of this, hopefully I attributed as I went because I do not remember where it came from now. You will need the [FastLED library](http://fastled.io).
+
+The idea is that we want to turn the lights on when the ambient light gets below a certain level. Except we don't want to just turn on, that would be too plain. Instead, we pick a random delay up to an hour and wait to turn on. We want to catch the northern lights by chance.
+
+But if you can't wait for luck, you make your own. Flicking the light on and off three times will trigger the light.
+
+Right now there are two modes, the northern lights, and twinkling. One picks a max value/saturation color in HSV space and fades its neighbors towards it. The other twinkles white lights. Who knows which is which. Each time the light turns on it picks a program at random.
 
 <pre><code class="c">
 #include <FastLED.h>
