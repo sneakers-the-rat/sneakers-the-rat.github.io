@@ -28,15 +28,6 @@ tags:
         color: #F0F0F0;
     }
 
-    a:link,
-    a:hover,
-    a:active,{
-        color: #F50000;
-    }
-
-    a:visited{
-        color: #0000FF;
-    }
 
     .posts__link, .related__link {
     display: block;
@@ -44,7 +35,7 @@ tags:
     }
 
     #markdown a {
-    color: #FF0000;
+    color: #B951D1;
     border-bottom: 2px solid #888888;
     -webkit-box-shadow: inset 0 -3px 0 #222222;
     box-shadow: inset 0 -3px 0 #222222;
