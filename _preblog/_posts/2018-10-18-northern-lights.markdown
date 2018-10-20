@@ -61,13 +61,13 @@ They look like this:
 
 And they also twinkle:
 
-<video controls>
+<video controls preload="none">
   <source src="/blog/assets/images/twinkle.mp4" type="video/mp4">
 </video>
 
 They only turn on rarely because they are magic, but if you need them on to feel the close glow of the north pole you can enter the secret code...
 
-<video controls>
+<video controls preload="none">
   <source src="/blog/assets/images/onoff.mp4" type="video/mp4">
 </video>
 
@@ -365,7 +365,7 @@ CRGB fadeTowardColor( CRGB& cur, const CRGB& target, uint8_t amount)
 
 Viola.
 
-<video controls>
+<video controls preload="none">
   <source src="/blog/assets/images/lightzoom.mp4" type="video/mp4">
 </video>
 
