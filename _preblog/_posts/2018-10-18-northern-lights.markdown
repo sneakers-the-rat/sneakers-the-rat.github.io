@@ -115,7 +115,7 @@ Do not do as I do, and behold this as a warning. This style of circuit is built 
 
 I stole a lot of this, hopefully I attributed as I went because I do not remember where it came from now. You will need the [FastLED library](http://fastled.io).
 
-The idea is that we want to turn the lights on when the ambient light gets below a certain level. Except we don't want to just turn on, that would be too plain. Instead, we pick a random delay up to an hour and wait to turn on. We want to catch the northern lights by chance.
+The idea is that we want to turn the lights on when the ambient light gets below a certain level. Except we don't want to just turn on, that would be too predictable for a lightswitch. Instead, we pick a random delay up to an hour and wait to turn on. You catch the northern lights by chance.
 
 But if you can't wait for luck, you make your own. Flicking the light on and off three times will trigger the light.
 
