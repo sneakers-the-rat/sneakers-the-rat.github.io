@@ -37,6 +37,12 @@ tags:
     a:visited{
         color: #0000FF;
     }
+
+    .posts__link, .related__link {
+    display: block;
+    color: #FF0000;
+    }
+
 </style>
 
 
