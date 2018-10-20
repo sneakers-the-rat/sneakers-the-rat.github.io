@@ -6,8 +6,8 @@
 </description>
     <link>https://jon-e.net/bloghttps://jon-e.net/blog</link>
     <atom:link href="https://jon-e.net/bloghttps://jon-e.net/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 20 Oct 2018 01:55:49 -0700</pubDate>
-    <lastBuildDate>Sat, 20 Oct 2018 01:55:49 -0700</lastBuildDate>
+    <pubDate>Sat, 20 Oct 2018 02:01:06 -0700</pubDate>
+    <lastBuildDate>Sat, 20 Oct 2018 02:01:06 -0700</lastBuildDate>
     <generator>Jekyll v3.8.4</generator>
     
       <item>
@@ -154,7 +154,7 @@
 &lt;p&gt;Right now there are two modes, the northern lights, and twinkling. One picks a max value/saturation color in HSV space and fades its neighbors towards it. The other twinkles white lights. Who knows which is which. Each time the light turns on it picks a program at random.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&quot;c&quot;&gt;
-#include &lt;FastLED.h&gt;
+#include &amp;lt;FastLED.h&amp;gt;
 
 #define NUM_STRIPS 3
 #define NUM_PER_STRIP 22
@@ -392,15 +392,15 @@ CRGB fadeTowardColor( CRGB&amp;amp; cur, const CRGB&amp;amp; target, uint8_t amo
   nblendU8TowardU8( cur.blue,  target.blue,  amount);
   return cur;
 }
-&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;
 
-Viola.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Viola.&lt;/p&gt;
 
 &lt;video controls=&quot;&quot;&gt;
   &lt;source src=&quot;/blog/assets/images/lightzoom.mp4&quot; type=&quot;video/mp4&quot; /&gt;
 &lt;/video&gt;
 
-&lt;/FastLED.h&gt;&lt;/code&gt;&lt;/pre&gt;
 </description>
         <pubDate>Thu, 18 Oct 2018 00:00:00 -0700</pubDate>
         <link>https://jon-e.net/bloghttps://jon-e.net/blog/2018/10/18/northern-lights/</link>
