@@ -28,17 +28,20 @@ tags:
         color: #F0F0F0;
     }
 
-
-    .posts__link, .related__link {
-    display: block;
-    color: #FF0000;
-    }
-
     #markdown a {
     color: #B951D1;
     border-bottom: 2px solid #888888;
     -webkit-box-shadow: inset 0 -3px 0 #222222;
     box-shadow: inset 0 -3px 0 #222222;
+    }
+
+    blockquote, q {
+    margin: 0 0 1.5rem;
+    font-family: Lora,serif;
+    font-weight: 400;
+    font-size: 1.25em;
+    color: #888888;
+    line-height: 1.4;
     }
 </style>
 
