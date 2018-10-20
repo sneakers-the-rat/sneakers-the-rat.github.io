@@ -6,8 +6,8 @@
 </description>
     <link>https://jon-e.net/bloghttps://jon-e.net/blog</link>
     <atom:link href="https://jon-e.net/bloghttps://jon-e.net/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 20 Oct 2018 01:50:37 -0700</pubDate>
-    <lastBuildDate>Sat, 20 Oct 2018 01:50:37 -0700</lastBuildDate>
+    <pubDate>Sat, 20 Oct 2018 01:55:49 -0700</pubDate>
+    <lastBuildDate>Sat, 20 Oct 2018 01:55:49 -0700</lastBuildDate>
     <generator>Jekyll v3.8.4</generator>
     
       <item>
@@ -394,7 +394,11 @@ CRGB fadeTowardColor( CRGB&amp;amp; cur, const CRGB&amp;amp; target, uint8_t amo
 }
 &amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;
 
+Viola.
 
+&lt;video controls=&quot;&quot;&gt;
+  &lt;source src=&quot;/blog/assets/images/lightzoom.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+&lt;/video&gt;
 
 &lt;/FastLED.h&gt;&lt;/code&gt;&lt;/pre&gt;
 </description>

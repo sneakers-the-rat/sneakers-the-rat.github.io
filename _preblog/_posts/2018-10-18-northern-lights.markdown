@@ -362,5 +362,9 @@ CRGB fadeTowardColor( CRGB& cur, const CRGB& target, uint8_t amount)
 }
 </code></pre>
 
+Viola.
 
+<video controls>
+  <source src="/blog/assets/images/lightzoom.mp4" type="video/mp4">
+</video>
 
