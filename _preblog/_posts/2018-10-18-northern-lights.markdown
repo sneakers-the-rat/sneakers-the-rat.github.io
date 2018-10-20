@@ -43,6 +43,12 @@ tags:
     color: #FF0000;
     }
 
+    #markdown a {
+    color: #FF0000;
+    border-bottom: 2px solid #888888;
+    -webkit-box-shadow: inset 0 -3px 0 #222222;
+    box-shadow: inset 0 -3px 0 #222222;
+    }
 </style>
 
 
