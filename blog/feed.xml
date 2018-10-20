@@ -6,8 +6,8 @@
 </description>
     <link>/bloghttps://jon-e.net</link>
     <atom:link href="https://jon-e.net/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 20 Oct 2018 14:36:57 -0700</pubDate>
-    <lastBuildDate>Sat, 20 Oct 2018 14:36:57 -0700</lastBuildDate>
+    <pubDate>Sat, 20 Oct 2018 14:38:49 -0700</pubDate>
+    <lastBuildDate>Sat, 20 Oct 2018 14:38:49 -0700</lastBuildDate>
     <generator>Jekyll v3.8.4</generator>
     
       <item>
@@ -63,13 +63,13 @@
 
 &lt;p&gt;And they also twinkle:&lt;/p&gt;
 
-&lt;video controls=&quot;&quot;&gt;
+&lt;video controls=&quot;&quot; preload=&quot;none&quot;&gt;
   &lt;source src=&quot;/blog/assets/images/twinkle.mp4&quot; type=&quot;video/mp4&quot; /&gt;
 &lt;/video&gt;
 
 &lt;p&gt;They only turn on rarely because they are magic, but if you need them on to feel the close glow of the north pole you can enter the secret code…&lt;/p&gt;
 
-&lt;video controls=&quot;&quot;&gt;
+&lt;video controls=&quot;&quot; preload=&quot;none&quot;&gt;
   &lt;source src=&quot;/blog/assets/images/onoff.mp4&quot; type=&quot;video/mp4&quot; /&gt;
 &lt;/video&gt;
 
@@ -397,7 +397,7 @@ CRGB fadeTowardColor( CRGB&amp;amp; cur, const CRGB&amp;amp; target, uint8_t amo
 
 &lt;p&gt;Viola.&lt;/p&gt;
 
-&lt;video controls=&quot;&quot;&gt;
+&lt;video controls=&quot;&quot; preload=&quot;none&quot;&gt;
   &lt;source src=&quot;/blog/assets/images/lightzoom.mp4&quot; type=&quot;video/mp4&quot; /&gt;
 &lt;/video&gt;
 
