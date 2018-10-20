@@ -28,13 +28,13 @@ tags:
         color: #F0F0F0;
     }
 
-    .post__content a:link,
-    .post__content a:hover,
-    .post__content a:active,{
+    a:link,
+    a:hover,
+    a:active,{
         color: #F50000;
     }
 
-    .post__content a:visited{
+    a:visited{
         color: #0000FF;
     }
 </style>
