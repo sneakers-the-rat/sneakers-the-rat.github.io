@@ -122,7 +122,7 @@ But if you can't wait for luck, you make your own. Flicking the light on and off
 Right now there are two modes, the northern lights, and twinkling. One picks a max value/saturation color in HSV space and fades its neighbors towards it. The other twinkles white lights. Who knows which is which. Each time the light turns on it picks a program at random.
 
 <pre><code class="c">
-#include <FastLED.h>
+#include &lt;FastLED.h>
 
 #define NUM_STRIPS 3
 #define NUM_PER_STRIP 22
@@ -166,7 +166,7 @@ void loop() {
   if (photocellReading > lightthresh){
     // if we're just getting light, turn the lights off.
     if (isdark == true){
-      for(int i=0; i<NUM_LEDS; i++){
+      for(int i=0; i&lt;NUM_LEDS; i++){
         leds[i] = CRGB(0, 0, 0);
 
       }
@@ -188,7 +188,7 @@ void loop() {
     if (isdark == false){
       // when it first gets dark...
       // pick a program
-      if (random8()<128){
+      if (random8()&lt;128){
         program = 1;
       } else {
         program = 2;
@@ -210,7 +210,7 @@ void loop() {
       ison = false;
     }
 
-    if (millis()<wentdark || millis()<ontime){
+    if (millis()&lt;wentdark || millis()&lt;ontime){
       // arduino clock flipped back to zero
       wentdark = 0;
       ontime = 0;
@@ -220,7 +220,7 @@ void loop() {
     if (ison == false && (millis()-wentdark)>waittime){
       // we're just turning on of our own accord
       // pick a program
-      if (random8()<128){
+      if (random8()&lt;128){
         program = 1;
       } else {
         program = 2;
@@ -239,7 +239,7 @@ void loop() {
 
     // if the light turns back on turn off.
     if (ison == true && (millis()-ontime)>waittime){
-      for(int i=0; i<NUM_LEDS; i++){
+      for(int i=0; i&lt;NUM_LEDS; i++){
         leds[i] = CRGB(0, 0, 0);
 
       }
@@ -287,12 +287,12 @@ void setup() {
 
   // setup leds
   delay(1000);
-  LEDS.addLeds<WS2811,DATA_PIN_1,BRG>(leds,0, NUM_PER_STRIP);
-  LEDS.addLeds<WS2811,DATA_PIN_2,BRG>(leds,NUM_PER_STRIP, NUM_PER_STRIP);
-  LEDS.addLeds<WS2811,DATA_PIN_3,BRG>(leds,NUM_PER_STRIP*2,NUM_PER_STRIP);
+  LEDS.addLeds&lt;WS2811,DATA_PIN_1,BRG>(leds,0, NUM_PER_STRIP);
+  LEDS.addLeds&lt;WS2811,DATA_PIN_2,BRG>(leds,NUM_PER_STRIP, NUM_PER_STRIP);
+  LEDS.addLeds&lt;WS2811,DATA_PIN_3,BRG>(leds,NUM_PER_STRIP*2,NUM_PER_STRIP);
   LEDS.setBrightness(255);
 
-  for(int i=0; i<NUM_LEDS; i++){
+  for(int i=0; i&lt;NUM_LEDS; i++){
         leds[i] = CRGB(0, 0, 0);
 
   }
@@ -303,7 +303,7 @@ void setup() {
 
 
 void northernLights(CRGB* leds){
-  for(int i=0; i<NUM_LEDS; i++){
+  for(int i=0; i&lt;NUM_LEDS; i++){
 
     if (i == NUM_LEDS-1) {
       fadeTowardColor(leds[i],leds[i-1],5);
@@ -315,7 +315,7 @@ void northernLights(CRGB* leds){
       fadeTowardColor(leds[i],(leds[i+1]+leds[i-1])/2,5);
     }
 
-    if(random16()<40){
+    if(random16()&lt;40){
         CRGB color = CHSV( random8(), 255, 255);
         fadeTowardColor(leds[i], color, 255);
   }
@@ -325,11 +325,11 @@ void northernLights(CRGB* leds){
 }
 
 void twinkle(CRGB* leds){
-  for(int i=0; i<NUM_LEDS; i++){
+  for(int i=0; i&lt;NUM_LEDS; i++){
 
     fadeTowardColor(leds[i],CRGB(0,0,0),16);
 
-    if(random16()<50){
+    if(random16()&lt;50){
         fadeTowardColor(leds[i], CRGB(255,255,255), 255);
     }
   }
@@ -360,6 +360,7 @@ CRGB fadeTowardColor( CRGB& cur, const CRGB& target, uint8_t amount)
   nblendU8TowardU8( cur.blue,  target.blue,  amount);
   return cur;
 }
+
 </code></pre>
 
 Viola.
