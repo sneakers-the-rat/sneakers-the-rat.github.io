@@ -6,8 +6,8 @@
 </description>
     <link>https://jon-e.net/bloghttps://jon-e.net/blog</link>
     <atom:link href="https://jon-e.net/bloghttps://jon-e.net/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 20 Oct 2018 00:49:53 -0700</pubDate>
-    <lastBuildDate>Sat, 20 Oct 2018 00:49:53 -0700</lastBuildDate>
+    <pubDate>Sat, 20 Oct 2018 00:52:19 -0700</pubDate>
+    <lastBuildDate>Sat, 20 Oct 2018 00:52:19 -0700</lastBuildDate>
     <generator>Jekyll v3.8.4</generator>
     
       <item>
@@ -92,10 +92,12 @@
 
 &lt;h2 id=&quot;step-1-board-of-leds&quot;&gt;Step 1: Board of LEDs&lt;/h2&gt;
 
-&lt;p&gt;&lt;em&gt;Print a bunch of these [little stands]&lt;/em&gt;(https://jon-e.net/blog/assets/hosted/fat_led_stand.stl)&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Print a bunch of these &lt;a href=&quot;https://jon-e.net/blog/assets/hosted/fat_led_stand.stl&quot;&gt;little stands&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://jon-e.net/blog/assets/images/led_stand.png&quot; alt=&quot;led stand&quot; /&gt;
-&lt;em&gt;moody as your mahogany past&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jon-e.net/blog/assets/images/led_stand.png&quot; alt=&quot;led stand&quot; /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;moody as your mahogany past&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;p&gt;and glue them onto a board thusly&lt;/p&gt;
 
@@ -105,7 +107,7 @@
 
 &lt;p&gt;Like this&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://jon-e.net/blog/assets/images/led_build_circuit.jpg&quot; alt=&quot;yeah like this i said&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jon-e.net/blog/assets/images/led_build_circuit.png&quot; alt=&quot;yeah like this i said&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Do not do as I do, and behold this as a warning. This style of circuit is built to cause fires and generate solder fumes. I epoxied over the exposed solder and wire to avoid dust combustion. Disregard the capacitor, it proved to explode.&lt;/p&gt;
 

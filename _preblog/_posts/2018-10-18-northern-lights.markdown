@@ -64,10 +64,10 @@ is simple.
 
 ## Step 1: Board of LEDs
 
-*Print a bunch of these [little stands]*(https://jon-e.net/blog/assets/hosted/fat_led_stand.stl)
+*Print a bunch of these [little stands](https://jon-e.net/blog/assets/hosted/fat_led_stand.stl)*
 
 ![led stand](https://jon-e.net/blog/assets/images/led_stand.png)
-*moody as your mahogany past*
+> *moody as your mahogany past*
 
 and glue them onto a board thusly
 
@@ -77,7 +77,7 @@ and glue them onto a board thusly
 
 Like this
 
-![yeah like this i said](https://jon-e.net/blog/assets/images/led_build_circuit.jpg)
+![yeah like this i said](https://jon-e.net/blog/assets/images/led_build_circuit.png)
 
 Do not do as I do, and behold this as a warning. This style of circuit is built to cause fires and generate solder fumes. I epoxied over the exposed solder and wire to avoid dust combustion. Disregard the capacitor, it proved to explode.
 
