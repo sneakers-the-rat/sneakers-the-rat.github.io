@@ -75,13 +75,14 @@ and glue them onto a board thusly
 
 ## Step 2: Wire it up
 
-Like this
+Like this. You need to 1) Power the LEDs, in my case with 12V and 3A split between 3 banks of 66 lights. 2) wire the DMX input lines to the arduino through some resistors and 3) attach a photodiode to sense when it gets dark. I used a 4.7kOhm resistor to get the photodiode in the luminance range of my kitchen, this will vary depending on your diode and ambient lighting conditions.
 
 ![yeah like this i said](https://jon-e.net/blog/assets/images/led_build_circuit.png)
 
 Do not do as I do, and behold this as a warning. This style of circuit is built to cause fires and generate solder fumes. I epoxied over the exposed solder and wire to avoid dust combustion. Disregard the capacitor, it proved to explode.
 
 ![disregard this](https://jon-e.net/blog/assets/images/led_build_wired.jpg)
+
 
 
 
