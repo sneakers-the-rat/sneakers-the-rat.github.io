@@ -6,8 +6,8 @@
 </description>
     <link>https://jon-e.net/bloghttps://jon-e.net/blog</link>
     <atom:link href="https://jon-e.net/bloghttps://jon-e.net/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 20 Oct 2018 01:45:29 -0700</pubDate>
-    <lastBuildDate>Sat, 20 Oct 2018 01:45:29 -0700</lastBuildDate>
+    <pubDate>Sat, 20 Oct 2018 01:46:44 -0700</pubDate>
+    <lastBuildDate>Sat, 20 Oct 2018 01:46:44 -0700</lastBuildDate>
     <generator>Jekyll v3.8.4</generator>
     
       <item>
@@ -120,7 +120,13 @@
 
 &lt;h2 id=&quot;step-2-wire-it-up&quot;&gt;Step 2: Wire it up&lt;/h2&gt;
 
-&lt;p&gt;Like this. You need to 1) Power the LEDs, in my case with 12V and 3A split between 3 banks of 66 lights. 2) wire the DMX input lines to the arduino through some resistors and 3) attach a photodiode to sense when it gets dark. I used a 4.7kOhm resistor to get the photodiode in the luminance range of my kitchen, this will vary depending on your diode and ambient lighting conditions.&lt;/p&gt;
+&lt;p&gt;Like this. You need to&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Power the LEDs, in my case with 12V and 3A split between 3 banks of 66 lights.&lt;/li&gt;
+  &lt;li&gt;Wire the DMX input lines to the arduino through some resistors and&lt;/li&gt;
+  &lt;li&gt;Attach a photodiode to sense when it gets dark. I used a 4.7kOhm resistor to get the photodiode in the luminance range of my kitchen, this will vary depending on your diode and ambient lighting conditions.&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://jon-e.net/blog/assets/images/led_build_circuit.png&quot; alt=&quot;yeah like this i said&quot; /&gt;&lt;/p&gt;
 
