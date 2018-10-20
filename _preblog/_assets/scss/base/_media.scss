@@ -23,7 +23,7 @@ iframe {
 
 //----------------------------------------------
 // Absolute Background
-//---------------------------------------------- 
+//----------------------------------------------
 .absolute-bg {
   position: absolute;
   top: 0;
@@ -35,7 +35,7 @@ iframe {
 
   background-position: 50%;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   overflow: hidden;
 }
 
@@ -49,7 +49,7 @@ iframe {
 
   &:before {
     content: "";
-    
+
     display: block;
     padding-bottom: 56.5%; // Widescreen
   }

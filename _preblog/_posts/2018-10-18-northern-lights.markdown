@@ -34,13 +34,13 @@ I needed to build the northern lights in my kitchen.
 
 They look like this:
 <video controls>
-  <source src="/assets/images/nlight.mp4" type="video/mp4">
+  <source src="/blog/assets/images/nlight.mp4" type="video/mp4">
 </video>
 
 And they also twinkle:
 
 <video controls>
-  <source src="/assets/images/twinkle.mp4" type="video/mp4">
+  <source src="/blog/assets/images/twinkle.mp4" type="video/mp4">
 </video>
 
 There will be more text and images later.
