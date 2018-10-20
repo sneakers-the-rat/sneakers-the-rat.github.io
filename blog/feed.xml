@@ -4,10 +4,10 @@
     <title>Blog</title>
     <description>Things i gone and done
 </description>
-    <link>https://jon-e.net/bloghttps://jon-e.net/blog</link>
-    <atom:link href="https://jon-e.net/bloghttps://jon-e.net/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 20 Oct 2018 14:25:39 -0700</pubDate>
-    <lastBuildDate>Sat, 20 Oct 2018 14:25:39 -0700</lastBuildDate>
+    <link>/bloghttps://jon-e.net</link>
+    <atom:link href="https://jon-e.net/blog/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sat, 20 Oct 2018 14:36:57 -0700</pubDate>
+    <lastBuildDate>Sat, 20 Oct 2018 14:36:57 -0700</lastBuildDate>
     <generator>Jekyll v3.8.4</generator>
     
       <item>
@@ -403,8 +403,8 @@ CRGB fadeTowardColor( CRGB&amp;amp; cur, const CRGB&amp;amp; target, uint8_t amo
 
 </description>
         <pubDate>Thu, 18 Oct 2018 00:00:00 -0700</pubDate>
-        <link>https://jon-e.net/bloghttps://jon-e.net/blog/2018/10/18/northern-lights/</link>
-        <guid isPermaLink="true">https://jon-e.net/bloghttps://jon-e.net/blog/2018/10/18/northern-lights/</guid>
+        <link>https://jon-e.net/blog/2018/10/18/northern-lights/</link>
+        <guid isPermaLink="true">https://jon-e.net/blog/2018/10/18/northern-lights/</guid>
         
         <category>art</category>
         
