@@ -6,8 +6,8 @@
 </description>
     <link>https://jon-e.net/bloghttps://jon-e.net/blog</link>
     <atom:link href="https://jon-e.net/bloghttps://jon-e.net/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 20 Oct 2018 01:04:22 -0700</pubDate>
-    <lastBuildDate>Sat, 20 Oct 2018 01:04:22 -0700</lastBuildDate>
+    <pubDate>Sat, 20 Oct 2018 01:05:38 -0700</pubDate>
+    <lastBuildDate>Sat, 20 Oct 2018 01:05:38 -0700</lastBuildDate>
     <generator>Jekyll v3.8.4</generator>
     
       <item>
@@ -118,6 +118,22 @@
 &lt;p&gt;I stole a lot of this, hopefully I attributed as I went because I do not remember where it came from now. You will need the &lt;a href=&quot;http://fastled.io&quot;&gt;FastLED library&lt;/a&gt;.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&quot;c&quot;&gt;
+// Param for different pixel layouts
+#define kMatrixSerpentineLayout  false
+
+// https://learn.adafruit.com/photocells/arduino-code
+int photocellPin = 0;     // the cell and 10K pulldown are connected to a0
+int photocellReading;     // the analog reading from the sensor divider
+#define DATA_PIN_1 2
+#define DATA_PIN_2 3
+#define DATA_PIN_3 4
+
+long codetimes[3] = {10000, 10000, 10000};
+
+
+#define NUM_STRIPS 3
+#define NUM_PER_STRIP 22
+#define NUM_LEDS NUM_STRIPS*NUM_PER_STRIP
 
 
 &lt;/code&gt;&lt;/pre&gt;
