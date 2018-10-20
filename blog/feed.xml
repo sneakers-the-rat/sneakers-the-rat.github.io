@@ -6,8 +6,8 @@
 </description>
     <link>https://jon-e.net/bloghttps://jon-e.net/blog</link>
     <atom:link href="https://jon-e.net/bloghttps://jon-e.net/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 20 Oct 2018 01:49:16 -0700</pubDate>
-    <lastBuildDate>Sat, 20 Oct 2018 01:49:16 -0700</lastBuildDate>
+    <pubDate>Sat, 20 Oct 2018 01:50:37 -0700</pubDate>
+    <lastBuildDate>Sat, 20 Oct 2018 01:50:37 -0700</lastBuildDate>
     <generator>Jekyll v3.8.4</generator>
     
       <item>
@@ -147,7 +147,7 @@
 
 &lt;p&gt;I stole a lot of this, hopefully I attributed as I went because I do not remember where it came from now. You will need the &lt;a href=&quot;http://fastled.io&quot;&gt;FastLED library&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;The idea is that we want to turn the lights on when the ambient light gets below a certain level. Except we don’t want to just turn on, that would be too plain. Instead, we pick a random delay up to an hour and wait to turn on. We want to catch the northern lights by chance.&lt;/p&gt;
+&lt;p&gt;The idea is that we want to turn the lights on when the ambient light gets below a certain level. Except we don’t want to just turn on, that would be too predictable for a lightswitch. Instead, we pick a random delay up to an hour and wait to turn on. You catch the northern lights by chance.&lt;/p&gt;
 
 &lt;p&gt;But if you can’t wait for luck, you make your own. Flicking the light on and off three times will trigger the light.&lt;/p&gt;
 
