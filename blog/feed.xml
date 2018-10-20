@@ -6,8 +6,8 @@
 </description>
     <link>https://jon-e.net/bloghttps://jon-e.net/blog</link>
     <atom:link href="https://jon-e.net/bloghttps://jon-e.net/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 19 Oct 2018 23:17:27 -0700</pubDate>
-    <lastBuildDate>Fri, 19 Oct 2018 23:17:27 -0700</lastBuildDate>
+    <pubDate>Sat, 20 Oct 2018 00:10:54 -0700</pubDate>
+    <lastBuildDate>Sat, 20 Oct 2018 00:10:54 -0700</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
     
       <item>
@@ -32,7 +32,7 @@
     }
 &lt;/style&gt;
 
-&lt;p&gt;I needed to build the northern lights in my kitchen.&lt;/p&gt;
+&lt;p&gt;I needed to build the northern lights in my kitchen. (localized entirely within my kitchen).&lt;/p&gt;
 
 &lt;p&gt;They look like this:&lt;/p&gt;
 &lt;video controls=&quot;&quot;&gt;
@@ -45,7 +45,58 @@
   &lt;source src=&quot;/blog/assets/images/twinkle.mp4&quot; type=&quot;video/mp4&quot; /&gt;
 &lt;/video&gt;
 
-&lt;p&gt;There will be more text and images later.&lt;/p&gt;
+&lt;h1 id=&quot;ingredients&quot;&gt;Ingredients&lt;/h1&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Object&lt;/th&gt;
+      &lt;th&gt;Link&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;LED Strips&lt;/td&gt;
+      &lt;td&gt;https://www.aliexpress.com/item/WS2811-IC-Strip-Vedio-show-addressable-individually-ip30-or-waterproof-ip67-5050-RGB-SMD-30/32624331128.html?spm=a2g0s.9042311.0.0.77624c4dozuwtS&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;LED Stands (3d mesh)&lt;/td&gt;
+      &lt;td&gt;https://jon-e.net/blog/assets/hosted/fat_led_stand.stl&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Arduino Uno&lt;/td&gt;
+      &lt;td&gt;https://store.arduino.cc/usa/arduino-uno-rev3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Photodiode&lt;/td&gt;
+      &lt;td&gt;idk found in the lab try digikey https://www.digikey.com/products/en/sensors-transducers/optical-sensors-photodiodes/543&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;12V 3A DC Power Supply&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;200 Ohm Resistor&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h1 id=&quot;makin-it&quot;&gt;Makin it&lt;/h1&gt;
+
+&lt;p&gt;is simple.&lt;/p&gt;
+
+&lt;p&gt;’'’Step 1:’’’&lt;/p&gt;
+
+&lt;p&gt;'’Print a bunch of these &lt;a href=&quot;https://jon-e.net/blog/assets/hosted/fat_led_stand.stl&quot;&gt;little stands&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://jon-e.net/blog/assets/images/led_stand.png&quot; alt=&quot;led stand&quot; /&gt;
+&lt;em&gt;moody as your mahogany past&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;and glue them onto a board thusly&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://jon-e.net/blog/assets/images/led_build_1.png&quot; alt=&quot;glued to board&quot; /&gt;&lt;/p&gt;
+
 </description>
         <pubDate>Thu, 18 Oct 2018 00:00:00 -0700</pubDate>
         <link>https://jon-e.net/bloghttps://jon-e.net/blog/2018/10/18/northern-lights/</link>
