@@ -6,8 +6,8 @@
 </description>
     <link>https://jon-e.net/bloghttps://jon-e.net/blog</link>
     <atom:link href="https://jon-e.net/bloghttps://jon-e.net/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 20 Oct 2018 00:55:15 -0700</pubDate>
-    <lastBuildDate>Sat, 20 Oct 2018 00:55:15 -0700</lastBuildDate>
+    <pubDate>Sat, 20 Oct 2018 01:04:22 -0700</pubDate>
+    <lastBuildDate>Sat, 20 Oct 2018 01:04:22 -0700</lastBuildDate>
     <generator>Jekyll v3.8.4</generator>
     
       <item>
@@ -19,7 +19,7 @@
     }
 
     a {
-        color: hotpink;
+        color: #F50000;
     }
 
     .header {
@@ -112,6 +112,15 @@
 &lt;p&gt;Do not do as I do, and behold this as a warning. This style of circuit is built to cause fires and generate solder fumes. I epoxied over the exposed solder and wire to avoid dust combustion. Disregard the capacitor, it proved to explode.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://jon-e.net/blog/assets/images/led_build_wired.jpg&quot; alt=&quot;disregard this&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;step-3-code&quot;&gt;Step 3: Code&lt;/h2&gt;
+
+&lt;p&gt;I stole a lot of this, hopefully I attributed as I went because I do not remember where it came from now. You will need the &lt;a href=&quot;http://fastled.io&quot;&gt;FastLED library&lt;/a&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;c&quot;&gt;
+
+
+&lt;/code&gt;&lt;/pre&gt;
 
 </description>
         <pubDate>Thu, 18 Oct 2018 00:00:00 -0700</pubDate>
