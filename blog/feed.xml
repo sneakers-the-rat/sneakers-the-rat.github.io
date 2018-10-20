@@ -6,8 +6,8 @@
 </description>
     <link>https://jon-e.net/bloghttps://jon-e.net/blog</link>
     <atom:link href="https://jon-e.net/bloghttps://jon-e.net/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 20 Oct 2018 01:18:52 -0700</pubDate>
-    <lastBuildDate>Sat, 20 Oct 2018 01:18:52 -0700</lastBuildDate>
+    <pubDate>Sat, 20 Oct 2018 01:33:13 -0700</pubDate>
+    <lastBuildDate>Sat, 20 Oct 2018 01:33:13 -0700</lastBuildDate>
     <generator>Jekyll v3.8.4</generator>
     
       <item>
@@ -31,8 +31,14 @@
         color: #F0F0F0;
     }
 
-    .post__content a{
+    .post__content a:link,
+    .post__content a:hover,
+    .post__content a:active,{
         color: #F50000;
+    }
+
+    .post__content a:visited{
+        color: #0000FF;
     }
 &lt;/style&gt;
 
@@ -47,6 +53,12 @@
 
 &lt;video controls=&quot;&quot;&gt;
   &lt;source src=&quot;/blog/assets/images/twinkle.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+&lt;/video&gt;
+
+&lt;p&gt;They only turn on rarely because they are magic, but if you need them on to feel the close glow of the north pole you can enter the secret code…&lt;/p&gt;
+
+&lt;video controls=&quot;&quot;&gt;
+  &lt;source src=&quot;/blog/assets/images/onoff.mp4&quot; type=&quot;video/mp4&quot; /&gt;
 &lt;/video&gt;
 
 &lt;h1 id=&quot;ingredients&quot;&gt;Ingredients&lt;/h1&gt;
@@ -116,6 +128,12 @@
 &lt;h2 id=&quot;step-3-code&quot;&gt;Step 3: Code&lt;/h2&gt;
 
 &lt;p&gt;I stole a lot of this, hopefully I attributed as I went because I do not remember where it came from now. You will need the &lt;a href=&quot;http://fastled.io&quot;&gt;FastLED library&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The idea is that we want to turn the lights on when the ambient light gets below a certain level. Except we don’t want to just turn on, that would be too plain. Instead, we pick a random delay up to an hour and wait to turn on. We want to catch the northern lights by chance.&lt;/p&gt;
+
+&lt;p&gt;But if you can’t wait for luck, you make your own. Flicking the light on and off three times will trigger the light.&lt;/p&gt;
+
+&lt;p&gt;Right now there are two modes, the northern lights, and twinkling. One picks a max value/saturation color in HSV space and fades its neighbors towards it. The other twinkles white lights. Who knows which is which. Each time the light turns on it picks a program at random.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&quot;c&quot;&gt;
 #include &lt;FastLED.h&gt;
