@@ -7,6 +7,10 @@ image: https://jon-e.net/blog/assets/images/nlight.png
 author: Jonny Saunders
 tags:
   - art
+  - LEDs
+  - arduino
+  - physical art
+  - light
 ---
 
 <style>

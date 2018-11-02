@@ -1,0 +1,3 @@
+bundle exec jekyll build -d ../blog
+bundle exec jekyll serve
+npm run gulp
