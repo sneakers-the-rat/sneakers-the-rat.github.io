@@ -175,13 +175,13 @@ header a, a:visited {
 
 /* line 148, ../sass/fingertips.scss */
 .stars {
-  background: #000 url(img/stars.png) repeat top center;
+  background: #000 url(../img/stars.png) repeat top center;
   z-index: 0;
 }
 
 /* line 153, ../sass/fingertips.scss */
 .twinkling {
-  background: transparent url(img/twinkling.png) repeat top center;
+  background: transparent url(../img/twinkling.png) repeat top center;
   z-index: 1;
   -moz-animation: move-twink-back 200s linear infinite;
   -ms-animation: move-twink-back 200s linear infinite;
@@ -192,7 +192,7 @@ header a, a:visited {
 
 /* line 164, ../sass/fingertips.scss */
 .clouds {
-  background: transparent url(img/clouds3.png) repeat top center;
+  background: transparent url(../img/clouds3.png) repeat top center;
   z-index: 3;
   -moz-animation: move-clouds-back 200s linear infinite;
   -ms-animation: move-clouds-back 200s linear infinite;
