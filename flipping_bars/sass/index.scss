@@ -1,0 +1,242 @@
+
+@import "compass/css3";
+
+$n: 16; // number of lights
+$m: 8; // number of graphical loops
+$d: .75em; // dot diam
+$r: 40em; // loop elongation
+
+$c: #00A08A;
+$c2: #FF0000;
+$c3: #5BBCD6;
+
+$hheight: 80px;
+$hwidth: 30px;
+
+
+
+
+$unit--animation-clubbing: 11.37s;
+$unit--animation-bg: 5%;
+
+
+//////////////////////////
+// Mixins
+//////////////////////////
+
+@mixin size($r) {
+  width: $r;
+  height: $r;
+}
+
+@mixin hexagon($width, $height, $color){
+  height: $height;
+  padding: 0 $width;
+  background: $color;
+  font-size: $height / 2;
+  display: inline-block;
+  //position: relative;
+  line-height: 1.8;
+
+  &:before, &:after {
+    position: absolute;
+    content: "";
+    height: 0;
+    width: 0;
+    top: 0;
+    border-top: $height / 2 solid transparent;
+    border-bottom: $height / 2  solid transparent;
+    transform:rotateY(180deg);
+  }
+  &:before {
+    left: 100%;
+    border-right: $height / 2 solid $color;
+  }
+  &:after {
+    right: 100%;
+    border-left: $height / 2 solid $color;
+  }
+}
+
+@mixin rotate($degrees) {
+    -webkit-transform: rotate($degrees);
+    -moz-transform: rotate($degrees);
+    -ms-transform: rotate($degrees);
+    -o-transform: rotate($degrees);
+    transform: rotate($degrees);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=#{cos($degrees)}, M12=#{-1*sin($degrees)}, M21=#{sin($degrees)}, M22=#{cos($degrees)})";
+    filter:  progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=#{cos($degrees)}, M12=#{-1*sin($degrees)}, M21=#{sin($degrees)}, M22=#{cos($degrees)});
+}
+
+
+
+html,
+body {
+  height: 100%;
+  widtz: 100%;
+}
+
+html {
+  //background-image: url("https://www.welovesolo.com/wp-content/uploads/2014/12/p16of4lqkpovl1o2l1ecbbh814s9-details1.jpg");
+  background-color: black;
+  overflow: hidden;
+  //animation: animation--background 10s linear infinite forwards;
+
+  &:after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: #000;
+  }
+}
+
+
+.hexagon-link1 {
+  @include hexagon($hheight, $hwidth, $c);
+  //font-family: 'Nixie One', cursive;
+  position: absolute;
+  //object-position:50% 50%;
+  top: 50%;
+  left: 50%;
+  //animation: animation--hex $unit--animation-clubbing ease-out infinite forwards;
+
+}
+.hexagon-link2 {
+  @include hexagon($hheight, $hwidth, $c2);
+  position: absolute;
+  //font-family: 'Nixie One', cursive;
+  //object-position:50% 50%;
+  top: 50%;
+  left: 50%;
+  //animation: animation--hex $unit--animation-clubbing ease-out infinite forwards;
+
+}
+.hexagon-link3 {
+  @include hexagon($hheight, $hwidth, $c3);
+  position: absolute;
+  //font-family: 'Nixie One', cursive;
+  //object-position:50% 50%;
+  top: 50%;
+  left: 50%;
+  //animation: animation--hex $unit--animation-clubbing ease-out infinite forwards;
+
+}
+
+
+
+.clubbing {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  //animation: animation--clubbing $unit--animation-clubbing ease-out infinite forwards;
+  background: rgba(#fff, .5);
+
+  @include size($d);
+  @include transition(box-shadow .45s ease-in-out);
+  @include transform(
+    scale(random($n / $m) + 1.5)
+    rotate(0)
+    translate(0)
+  );
+}
+
+@keyframes animation--hex {
+
+
+  @for $i from 0 through $n {
+    #{$i * 100% / $n} {
+      $sh: ();
+
+      @for $j from 0 to $n {
+        $cr: (($i + $j)%($n/$m))*2*$r/$n;
+        $cr: 2*$d + min($cr, 2*$r/$m - $cr);
+        $offx: $cr*cos($j*2*pi()/$n);
+        $offy: $cr*sin($j*2*pi()/$n);
+        $sh: $sh, $offx $offy hsla($j*360/$n, 100%, 50%, (random(10) * .1));
+      }
+
+      box-shadow: $sh;
+      border-radius: random(100) / 100 + em;
+
+      @include size(random(5) - .5 + em);
+      @include transform(
+        scale(random($n / $m) + 1.5)
+        rotate(random(360) + deg)
+        translate(random($n * 3 / $m) + em)
+      );
+
+    }
+  }
+
+  0% {
+    @include transform(
+      scale(random($n / $m) + 1.5)
+      rotate(0)
+      translate(0)
+    );
+  }
+
+  100% {
+    @include transform(
+      scale(random($n / $m) + 1.5)
+      rotate(360)
+      translate(0)
+    );
+  }
+}
+
+@keyframes animation--clubbing {
+  @for $i from 0 through $n {
+    #{$i * 100% / $n} {
+      $sh: ();
+
+      @for $j from 0 to $n {
+        $cr: (($i + $j)%($n/$m))*2*$r/$n;
+        $cr: 2*$d + min($cr, 2*$r/$m - $cr);
+        $offx: $cr*cos($j*2*pi()/$n);
+        $offy: $cr*sin($j*2*pi()/$n);
+        $sh: $sh, $offx $offy hsla($j*360/$n, 100%, 50%, (random(10) * .1));
+      }
+
+      box-shadow: $sh;
+      border-radius: random(100) / 100 + em;
+
+      @include size(random(5) - .5 + em);
+      @include transform(
+        scale(random($n / $m) + 1.5)
+        rotate(random(360) + deg)
+        translate(random($n * 3 / $m) + em)
+      );
+
+    }
+  }
+
+  0% {
+    @include transform(
+      scale(random($n / $m) + 1.5)
+      rotate(0)
+      translate(0)
+    );
+  }
+
+  100% {
+    @include transform(
+      scale(random($n / $m) + 1.5)
+      rotate(360)
+      translate(0)
+    );
+  }
+}
+
+@keyframes animation--background {
+  0% {
+    background-position: -(random(75) + em) -(random($unit--animation-bg) * 2 + em)
+  }
+
+  100% {
+    background-position: (random(75) + em) (random($unit--animation-bg) * 4 + em)
+  }
+}
+
