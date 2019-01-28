@@ -54,6 +54,19 @@ body {
   margin-top:10px;
 }
 
+.mainlink:hover {
+  filter: invert(100%);
+  cursor: hand;
+}
+
+a.divlink {
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  z-index: 10;
+}
+
+
 
 h1 {
   position:relative;
