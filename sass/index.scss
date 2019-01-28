@@ -8,64 +8,132 @@ body {
   padding: 0;
 }
 
+.container {
+  width: 100%;
+  overflow: hidden;
+  position:relative;
+}
+
+.h-container {
+  overflow: hidden;
+  position:relative;
+  width: 100%;
+}
+
+.hbar {
+  position:relative;
+  width: 80%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: solid 1px white;
+  border-color: white;
+  background-color:white;
+  margin-bottom: 25px;
+  /*mix-blend-mode: difference;*/
+}
+
+.link-container {
+
+  overflow: hidden;
+  position:relative;
+  height:100%;
+  width: 95%;
+
+}
+
+.mainlink {
+  font-family: 'IBM Plex Sans', sans-serif;
+  background-color: rgb(256,256,256);
+  mix-blend-mode: difference;
+  font-size: 62px;
+  margin-left:5%;
+}
+
+.mainlink + .mainlink {
+  margin-top:10px;
+}
+
 
 h1 {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin: 0;
-  z-index: 5;
-  font-family: "Nixie One";
-  font-size: 200px;
+  position:relative;
+  font-family: "Major Mono Display", monospace;
+  font-size: 72px;
   font-weight: 300;
-  line-height: 1.5;
+  line-height: 1.1;
   text-align: center;
   vertical-align: center;
   height: 100%;
+  color: rgb(256,256,256);
+  mix-blend-mode: difference;
   /*-webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: animate 15s linear alternate infinite;*/
   /*animation: animate 15s linear alternate infinite,moveSlideshow 10s linear alternate infinite;*/
 }
 
-#stripes {
- background: url("../img/bg_stripes-01.png");
- background-repeat: repeat;
- background-size: 100% auto;
- width: 100%;
- height: 100%;
- position: absolute;
- top: 0;
- left: 0;
- animation: slide 1s linear infinite;
-}
-
-
-
 h2 {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  position: relative;
+  font-family: "Major Mono Display", monospace;
   text-align: center;
-  font-size: 14px;
+  line-height: 2;
+  font-size: 28px;
   font-weight: 400;
   color: #fff;
 }
 
-h2:after {
-  color: rgb(255,255,255);
-  mix-blend-mode: difference;
+h1:after {
+
 }
 
-@keyframes .slide {
-  0%{
-    transform: translate3d(0, 0, 0);
-  }
+#stripes {
+ background: url("../img/bg_stripes-01.svg");
+ background-repeat: repeat;
+ background-size: 200% 200%;
+ width: 100%;
+ height: 100%;
+ position: fixed;
+ top: 0;
+ left: 0;
+  -webkit-animation:10s scroll infinite linear;
+  -moz-animation:10s scroll infinite linear;
+  -o-animation:10s scroll infinite linear;
+  -ms-animation:10s scroll infinite linear;
+  animation:10s scroll infinite linear;
+}
+
+
+
+
+
+
+@-webkit-keyframes scroll{
   100%{
-    transform: translate3d(1000px, 0, 0); /* The image width */
+    background-position:0px 100%;
+  }
+}
+
+@-moz-keyframes scroll{
+  100%{
+    background-position:0px 100%;
+  }
+}
+
+@-o-keyframes scroll{
+  100%{
+    background-position:0px 100%;
+  }
+}
+
+@-ms-keyframes scroll{
+  100%{
+    background-position:0px 100%;
+  }
+}
+
+@keyframes scroll{
+  100%{
+    background-position:0px 100%;
   }
 }
 /*
