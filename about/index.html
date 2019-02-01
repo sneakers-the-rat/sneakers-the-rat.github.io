@@ -78,7 +78,7 @@
 			var sphere;
 			var clothGeometry;
 			init();
-			//animate();
+			animate();
 
 
 			function init() {
@@ -159,10 +159,9 @@
 		            mesh.scale.set(100,100,100);
 		            mesh.rotation.x = Math.PI;
 		            scene.add( mesh );
-		            animate();
 		            //secondstage(mesh);
 
-				}, onProgress );
+				}, onProgress, onError );
 
 
 				var loader2 = new THREE.TextureLoader();
