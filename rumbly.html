@@ -11,6 +11,12 @@
 
       gtag('config', 'UA-127799940-1');
     </script>
+    <link type="text/css" rel="stylesheet" href="css/lightgallery.css" />
+
+    <script
+              src="https://code.jquery.com/jquery-3.3.1.min.js"
+              integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+              crossorigin="anonymous"></script>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/instafeed.js/1.4.1/instafeed.min.js"></script>
@@ -19,7 +25,7 @@
     <title>rumbly lawnmower - internet website</title>
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100i" rel="stylesheet">
 
-    <link type="text/css" rel="stylesheet" href="css/lightgallery.css" />
+
     <script src="js/lightgallery.min.js"></script>
     <script src="js/lg-thumbnail.min.js"></script>
 
@@ -50,6 +56,9 @@ userFeed.run();
 
 
 <script type="text/javascript">
+        $(document).ready(function() {
+        $("#rumblyfeed").lightGallery({thumbnail:true});
+    });
 lightGallery(document.getElementById('rumblyfeed'), {thumbnail:true});
 </script>
 
@@ -58,9 +67,10 @@ lightGallery(document.getElementById('rumblyfeed'), {thumbnail:true});
 <style>
 
 html, body {
-  margin: 0;
-  padding: 10px;
-  background: darken(whitesmoke, 10%);
+  background-color: #152836;
+  color: #eee;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
 }
 /*
 #rumblyfeed {
