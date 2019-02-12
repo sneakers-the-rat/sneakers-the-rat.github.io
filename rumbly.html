@@ -40,8 +40,7 @@ var userFeed = new Instafeed({
   sortBy: 'most-recent',
   links: false,
   target: 'rumblyfeed',
-  after: 'lightGallery(document.getElementById(\'rumblyfeed\'), {thumbnail:true});'
-});
+  after: '$(document).ready(function() {$("#rumblyfeed").lightGallery({thumbnail:true});});'});
 userFeed.run();
 
 
