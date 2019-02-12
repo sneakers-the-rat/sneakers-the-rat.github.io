@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127799940-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-127799940-1');
+    </script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/instafeed.js/1.4.1/instafeed.min.js"></script>
+
+
+    <title>rumbly lawnmower - internet website</title>
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100i" rel="stylesheet">
+
+    <link type="text/css" rel="stylesheet" href="css/lightgallery.css" />
+    <script src="js/lightgallery.min.js"></script>
+    <script src="js/lg-thumbnail.min.js"></script>
+
+    <script>
+
+var userFeed = new Instafeed({
+  get: 'user',
+  userId: '10918399464',
+  accessToken: '10918399464.7700d38.3f0692059bb841e6986d91609d594d8d',
+  resolution: 'standard_resolution',
+  template: '<a href="{{link}}"><img src="{{image}}" /></a>',
+  sortBy: 'most-recent',
+  links: false,
+  target: 'rumblyfeed',
+  after: 'lightGallery(document.getElementById(\'rumblyfeed\'), {thumbnail:true});'
+});
+userFeed.run();
+
+
+
+</script>
+</head>
+
+<body>
+
+
+
+
+
+<script type="text/javascript">
+lightGallery(document.getElementById('rumblyfeed'), {thumbnail:true});
+</script>
+
+
+
+<style>
+
+html, body {
+  margin: 0;
+  padding: 10px;
+  background: darken(whitesmoke, 10%);
+}
+/*
+#rumblyfeed {
+  max-width:1080px;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+
+
+  }
+
+#rumblyfeed a{
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 50%;
+    background: white;
+
+}
+
+#rumblyfeed a @media only screen and (min-width: $lg) {
+      width: 25%;
+}
+
+#rumblyfeed img{
+    display: block;
+    width: 100%;
+}*/
+</style>
+
+
+<div id="rumblyfeed"></div>
+
+
+
+
+</body>
+</html>
