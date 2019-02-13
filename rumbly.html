@@ -40,7 +40,7 @@ var userFeed = new Instafeed({
   sortBy: 'most-recent',
   links: false,
   target: 'rumblyfeed',
-  after: '$(document).ready(function() {$("#rumblyfeed").lightGallery({thumbnail:true});});'});
+  after: '$("#rumblyfeed").lightGallery({thumbnail:true});'});
 userFeed.run();
 
 
@@ -56,7 +56,7 @@ userFeed.run();
 
 <script type="text/javascript">
         $(document).ready(function() {
-        $("#rumblyfeed").lightGallery({thumbnail:true});
+        $("#rumblyfeed").lightGallery();
     });
 </script>
 
@@ -65,7 +65,7 @@ userFeed.run();
 <style>
 
 html, body {
-  background-color: #152836;
+  background-color: #000000;
   color: #eee;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
@@ -80,29 +80,54 @@ html, body {
 
 
   }
+  */
 
-#rumblyfeed a{
-    display: flex;
-    align-items: center;
-    position: relative;
-    width: 50%;
-    background: white;
+.lg-gallery{
+    text-align: center;
+}
 
+#rumblyfeed > a{
+  margin-bottom: 10px;
+  width: 360px;
+  display: inline-block;
+  margin-left: 5px;
+  margin-right: 5px;
+  list-style: outside none none;
+  border: 3px solid #FFF;
+  border-radius: 3px;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  float: left;
+}
+
+#rumblyfeed > a > img{
+  -webkit-transition: -webkit-transform 0.15s ease 0s;
+  -moz-transition: -moz-transform 0.15s ease 0s;
+  -o-transition: -o-transform 0.15s ease 0s;
+  transition: transform 0.15s ease 0s;
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+  height: 100%;
+  width: 100%;
+
+}
+
+#rumblyfeed > a:hover > img{
+  -webkit-transform: scale3d(1.1, 1.1, 1.1);
+  transform: scale3d(1.1, 1.1, 1.1);
 }
 
 #rumblyfeed a @media only screen and (min-width: $lg) {
       width: 25%;
 }
 
-#rumblyfeed img{
-    display: block;
-    width: 100%;
-}*/
+
 </style>
 
-
-<div id="rumblyfeed"></div>
-
+<div class="lb-gallery">
+<ul id="rumblyfeed"></ul>
+</div>
 
 
 
