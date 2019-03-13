@@ -6,8 +6,8 @@
 </description>
     <link>/bloghttps://jon-e.net</link>
     <atom:link href="https://jon-e.net/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 13 Mar 2019 02:13:46 -0700</pubDate>
-    <lastBuildDate>Wed, 13 Mar 2019 02:13:46 -0700</lastBuildDate>
+    <pubDate>Wed, 13 Mar 2019 02:20:09 -0700</pubDate>
+    <lastBuildDate>Wed, 13 Mar 2019 02:20:09 -0700</lastBuildDate>
     <generator>Jekyll v3.8.4</generator>
     
       <item>
@@ -41,57 +41,6 @@
         <category>python</category>
         
         <category>science</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Electricity To Make You Magic</title>
-        <description>&lt;p&gt;&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-
-&lt;p&gt;This is a workshop that I’ve developed for my&lt;/p&gt;
-
-&lt;div class=&quot;footnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot;&gt;
-      &lt;p&gt;Header image from https://youtu.be/VA3JrMG3J5A &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;
-</description>
-        <pubDate>Mon, 28 Jan 2019 00:00:00 -0800</pubDate>
-        <link>https://jon-e.net/blog/2019/01/28/Electricity-To-Make-You-Magic/</link>
-        <guid isPermaLink="true">https://jon-e.net/blog/2019/01/28/Electricity-To-Make-You-Magic/</guid>
-        
-        <category>electronics</category>
-        
-        <category>circuits</category>
-        
-        <category>arduino</category>
-        
-        <category>workshops</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Evolution of the Auditory System</title>
-        <description>&lt;p&gt;This was one of my favorite lessons to teach in my Music and the Brain class two summers ago: the unlikely evolutionary stumbling towards hearing.&lt;/p&gt;
-
-&lt;h1 id=&quot;why-hear-good-at-all&quot;&gt;Why hear good at all?&lt;/h1&gt;
-
-&lt;p&gt;Of all the physical phenomena you could sprout organs to perceive, what’s so good about sound?&lt;/p&gt;
-
-</description>
-        <pubDate>Tue, 06 Nov 2018 00:00:00 -0800</pubDate>
-        <link>https://jon-e.net/blog/2018/11/06/Evolution-of-Audition/</link>
-        <guid isPermaLink="true">https://jon-e.net/blog/2018/11/06/Evolution-of-Audition/</guid>
-        
-        <category>science</category>
-        
-        <category>audition</category>
-        
-        <category>evolution</category>
         
         
       </item>
