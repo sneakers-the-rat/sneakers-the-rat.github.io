@@ -38,9 +38,12 @@ author:
 
 # Build settings
 markdown: kramdown
+#redcarpet:
+#  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
+  - jekyll-jupyter-notebook
 compress_html:
   clippings: all
   comments: all

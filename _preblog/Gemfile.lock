@@ -27,6 +27,8 @@ GEM
       pathutil (~> 0.9)
       rouge (>= 1.7, < 4)
       safe_yaml (~> 1.0)
+    jekyll-jupyter-notebook (0.0.4)
+      jekyll
     jekyll-paginate (1.1.0)
     jekyll-sass-converter (1.5.2)
       sass (~> 3.4)
@@ -62,9 +64,10 @@ PLATFORMS
 DEPENDENCIES
   ffi (>= 1.9.24)
   jekyll (>= 3.6.3)
+  jekyll-jupyter-notebook (~> 0.0.4)
   jekyll-paginate
   jekyll-sitemap
   tzinfo-data
 
 BUNDLED WITH
-   1.16.6
+   2.0.1
