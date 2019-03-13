@@ -84,3 +84,6 @@ old/index copy.css
 old/index copy.html
 old/index copy.js
 old/index_old.css
+
+*.continuous
+bower_components

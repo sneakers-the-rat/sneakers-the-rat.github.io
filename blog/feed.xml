@@ -6,9 +6,95 @@
 </description>
     <link>/bloghttps://jon-e.net</link>
     <atom:link href="https://jon-e.net/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 02 Nov 2018 00:18:02 +0000</pubDate>
-    <lastBuildDate>Fri, 02 Nov 2018 00:18:02 +0000</lastBuildDate>
+    <pubDate>Wed, 13 Mar 2019 02:13:46 -0700</pubDate>
+    <lastBuildDate>Wed, 13 Mar 2019 02:13:46 -0700</lastBuildDate>
     <generator>Jekyll v3.8.4</generator>
+    
+      <item>
+        <title>Crudely converting OpenEphys to Neurodata Without Borders</title>
+        <description>&lt;p&gt;Our lab is toying with the idea of moving our data to &lt;a href=&quot;https://www.nwb.org/&quot;&gt;Neurodata Without Borders&lt;/a&gt;. Turns out it won’t be such a monumental task after all. I figured someone would have written a guide for converting the old OpenEphys &lt;code class=&quot;highlighter-rouge&quot;&gt;.continuous&lt;/code&gt; style of data, but I couldn’t find any. Behold, converting my lab’s cryptic metadata and OE data to NWB.&lt;/p&gt;
+
+&lt;h2 id=&quot;links&quot;&gt;Links&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;../../../../assets/notebooks/nwb_convert.ipynb&quot;&gt;notebook&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;../../../../assets/data/nwb.zip&quot;&gt;data&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;../../../../assets/notebooks/OpenEphys.py&quot;&gt;bugfixed OE loading script&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;../../../../assets/notebooks/convert_example.nwb&quot;&gt;generated .nwb file&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;jupyter-notebook&quot; style=&quot;position: relative; width: 100%; margin: 0 auto;&quot;&gt;
+  &lt;div class=&quot;jupyter-notebook-iframe-container&quot;&gt;
+    &lt;iframe src=&quot;../../../../assets/notebooks/nwb_convert.ipynb.html&quot; style=&quot;position: absolute; top: 0; left: 0; border-style: none;&quot; width=&quot;100%&quot; height=&quot;100%&quot; onload=&quot;this.parentElement.style.paddingBottom = (this.contentWindow.document.documentElement.scrollHeight + 10) + 'px'&quot;&gt;&lt;/iframe&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Tue, 12 Mar 2019 00:00:00 -0700</pubDate>
+        <link>https://jon-e.net/blog/2019/03/12/Crudely-Converting-OpenEphys-to-Neurodata-Without-Borders/</link>
+        <guid isPermaLink="true">https://jon-e.net/blog/2019/03/12/Crudely-Converting-OpenEphys-to-Neurodata-Without-Borders/</guid>
+        
+        <category>neurodata without borders</category>
+        
+        <category>data</category>
+        
+        <category>python</category>
+        
+        <category>science</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Electricity To Make You Magic</title>
+        <description>&lt;p&gt;&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;This is a workshop that I’ve developed for my&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;Header image from https://youtu.be/VA3JrMG3J5A &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Mon, 28 Jan 2019 00:00:00 -0800</pubDate>
+        <link>https://jon-e.net/blog/2019/01/28/Electricity-To-Make-You-Magic/</link>
+        <guid isPermaLink="true">https://jon-e.net/blog/2019/01/28/Electricity-To-Make-You-Magic/</guid>
+        
+        <category>electronics</category>
+        
+        <category>circuits</category>
+        
+        <category>arduino</category>
+        
+        <category>workshops</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Evolution of the Auditory System</title>
+        <description>&lt;p&gt;This was one of my favorite lessons to teach in my Music and the Brain class two summers ago: the unlikely evolutionary stumbling towards hearing.&lt;/p&gt;
+
+&lt;h1 id=&quot;why-hear-good-at-all&quot;&gt;Why hear good at all?&lt;/h1&gt;
+
+&lt;p&gt;Of all the physical phenomena you could sprout organs to perceive, what’s so good about sound?&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 06 Nov 2018 00:00:00 -0800</pubDate>
+        <link>https://jon-e.net/blog/2018/11/06/Evolution-of-Audition/</link>
+        <guid isPermaLink="true">https://jon-e.net/blog/2018/11/06/Evolution-of-Audition/</guid>
+        
+        <category>science</category>
+        
+        <category>audition</category>
+        
+        <category>evolution</category>
+        
+        
+      </item>
     
       <item>
         <title>Past Art, Vol. 1: Insomia</title>
@@ -211,13 +297,13 @@ anim.save('/some/video.mp4', writer=writer)
 &lt;/video&gt;
 
 </description>
-        <pubDate>Thu, 01 Nov 2018 00:00:00 +0000</pubDate>
+        <pubDate>Thu, 01 Nov 2018 00:00:00 -0700</pubDate>
         <link>https://jon-e.net/blog/2018/11/01/Past-Art-Vol-1/</link>
         <guid isPermaLink="true">https://jon-e.net/blog/2018/11/01/Past-Art-Vol-1/</guid>
         
         <category>art</category>
         
-        <category>bad art</category>
+        <category>bad_art</category>
         
         <category>collections</category>
         
@@ -624,7 +710,7 @@ CRGB fadeTowardColor( CRGB&amp;amp; cur, const CRGB&amp;amp; target, uint8_t amo
 &lt;/video&gt;
 
 </description>
-        <pubDate>Thu, 18 Oct 2018 00:00:00 +0100</pubDate>
+        <pubDate>Thu, 18 Oct 2018 00:00:00 -0700</pubDate>
         <link>https://jon-e.net/blog/2018/10/18/northern-lights/</link>
         <guid isPermaLink="true">https://jon-e.net/blog/2018/10/18/northern-lights/</guid>
         
