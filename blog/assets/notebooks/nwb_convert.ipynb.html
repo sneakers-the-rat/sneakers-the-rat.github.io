@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>jekyll-jupyter-notebook20190313-7384-9phu2s</title>
+<title>jekyll-jupyter-notebook20190313-11586-t3n97e</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13120,12 +13120,21 @@ div#notebook {
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Imports...">Imports...<a class="anchor-link" href="#Imports...">&#182;</a></h1>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Imports...</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># disable warnings bc we good on this one</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
 
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
@@ -13149,33 +13158,9 @@ div#notebook {
 <span class="kn">import</span> <span class="nn">OpenEphys</span> <span class="kn">as</span> <span class="nn">oe</span>
 
 <span class="n">data_dir</span> <span class="o">=</span> <span class="s1">&#39;../data/nwb/&#39;</span>
-
-
-<span class="c1"># disable warnings bc we good on this one</span>
-<span class="kn">import</span> <span class="nn">warnings</span>
-<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>/usr/local/lib/python2.7/site-packages/h5py/__init__.py:34: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
-  from ._conv import register_converters as _register_converters
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -13299,7 +13284,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Wow that's a lot of gibberish. Thankfully that's the point of converting to NWB.</p>
+<p>Wow that's pretty big list of opaque variable names. Thankfully that's the point of converting to NWB.</p>
 <p>We are only going to work with a small subset of it anyway so don't get your peppers pickled.</p>
 
 </div>
@@ -13343,7 +13328,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Parse the PITA plaintext stim description... it looks like this:</p>
+<p>Parse this PITA... i mean plaintext stim description... it looks like this:</p>
 
 </div>
 </div>

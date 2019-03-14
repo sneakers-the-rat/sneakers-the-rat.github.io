@@ -89,9 +89,7 @@
 			init();
 			animate();
 
-
-			function init() {
-
+			function initGraphics() {
 				container = document.createElement( 'div' );
 				document.body.appendChild( container );
 
@@ -122,11 +120,30 @@
 				scene.add( light );
 				scene.add( camera );
 
+				// renderer
+				renderer = new THREE.WebGLRenderer( { antialias: true } );
+				renderer.setPixelRatio( window.devicePixelRatio );
+				renderer.setSize( window.innerWidth, window.innerHeight );
+				container.appendChild( renderer.domElement );
+				renderer.gammaInput = true;
+				renderer.gammaOutput = true;
+				renderer.shadowMap.enabled = true;
+				// controls
+				var controls = new THREE.OrbitControls( camera, renderer.domElement );
+				controls.maxPolarAngle = Math.PI * 0.5;
+				controls.minDistance = 200;
+				controls.maxDistance = 5000;
+				document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+
+				//
+
+				window.addEventListener( 'resize', onWindowResize, false );
 
 
 
-				// texture
-				// model
+			}
+
+			function loadObjects() {
 
 				function onProgress( xhr ) {
 
@@ -141,7 +158,6 @@
 
 				function onError() {}
 
-				//var loader = new THREE.OBJLoader( manager );
 				var loader = new THREE.OBJLoader();
 
 
@@ -205,35 +221,19 @@
 
 				sphere.visible = ! true;
 
+			}
 
-				// ground
-				// renderer
-				renderer = new THREE.WebGLRenderer( { antialias: true } );
-				renderer.setPixelRatio( window.devicePixelRatio );
-				renderer.setSize( window.innerWidth, window.innerHeight );
-				container.appendChild( renderer.domElement );
-				renderer.gammaInput = true;
-				renderer.gammaOutput = true;
-				renderer.shadowMap.enabled = true;
-				// controls
-				var controls = new THREE.OrbitControls( camera, renderer.domElement );
-				controls.maxPolarAngle = Math.PI * 0.5;
-				controls.minDistance = 200;
-				controls.maxDistance = 5000;
-				document.addEventListener( 'mousemove', onDocumentMouseMove, false );
 
-				//
+			function init() {
 
-				window.addEventListener( 'resize', onWindowResize, false );
-				//sphere.visible = ! true;
+				initGraphics();
+
+				loadObjects();
+
 
 			}
 
 
-
-			function secondstage(mesh){
-
-			}
 
 			function setupAttributes( geometry ) {
 
