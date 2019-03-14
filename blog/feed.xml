@@ -6,8 +6,8 @@
 </description>
     <link>/bloghttps://jon-e.net</link>
     <atom:link href="https://jon-e.net/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 13 Mar 2019 02:20:09 -0700</pubDate>
-    <lastBuildDate>Wed, 13 Mar 2019 02:20:09 -0700</lastBuildDate>
+    <pubDate>Wed, 13 Mar 2019 17:01:12 -0700</pubDate>
+    <lastBuildDate>Wed, 13 Mar 2019 17:01:12 -0700</lastBuildDate>
     <generator>Jekyll v3.8.4</generator>
     
       <item>
@@ -29,6 +29,72 @@
   &lt;/div&gt;
 &lt;/div&gt;
 
+&lt;h1 id=&quot;the-resulting-file-structure&quot;&gt;The resulting file structure:&lt;/h1&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/root
+├── acquisition
+│   ├── CH5
+│   │   ├── data
+│   │   └── starting_time
+│   ├── CH6
+│   │   ├── data
+│   │   └── starting_time
+│   ├── CH7
+│   │   ├── data
+│   │   └── starting_time
+│   └── CH8
+│       ├── data
+│       └── starting_time
+├── analysis
+├── file_create_date
+├── general
+│   ├── experimenter
+│   ├── institution
+│   ├── lab
+│   ├── pharmacology
+│   └── subject
+│       ├── date_of_birth
+│       ├── genotype
+│       ├── sex
+│       ├── species
+│       └── subject_id
+├── identifier
+├── intervals
+│   └── trials
+│       ├── LaserOnOff
+│       ├── amplitude
+│       ├── duration
+│       ├── gapdelay
+│       ├── gapdur
+│       ├── id
+│       ├── laser
+│       ├── loop_flg
+│       ├── next
+│       ├── pulseamp
+│       ├── pulsedur
+│       ├── ramp
+│       ├── seamless
+│       ├── soa
+│       ├── soaflag
+│       ├── start_time
+│       ├── stop_time
+│       └── type
+├── processing
+├── session_description
+├── session_start_time
+├── stimulus
+│   ├── presentation
+│   └── templates
+├── timestamps_reference_time
+└── units
+    ├── channel
+    ├── cluster
+    ├── id
+    ├── spike_times
+    ├── spike_times_index
+    └── tetrode
+
+11 directories, 50 files
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Tue, 12 Mar 2019 00:00:00 -0700</pubDate>
         <link>https://jon-e.net/blog/2019/03/12/Crudely-Converting-OpenEphys-to-Neurodata-Without-Borders/</link>
