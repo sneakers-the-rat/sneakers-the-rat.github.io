@@ -6,15 +6,15 @@
 </description>
     <link>/bloghttps://jon-e.net</link>
     <atom:link href="https://jon-e.net/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 13 Mar 2019 17:01:12 -0700</pubDate>
-    <lastBuildDate>Wed, 13 Mar 2019 17:01:12 -0700</lastBuildDate>
+    <pubDate>Wed, 13 Mar 2019 17:15:08 -0700</pubDate>
+    <lastBuildDate>Wed, 13 Mar 2019 17:15:08 -0700</lastBuildDate>
     <generator>Jekyll v3.8.4</generator>
     
       <item>
         <title>Crudely converting OpenEphys to Neurodata Without Borders</title>
         <description>&lt;p&gt;Our lab is toying with the idea of moving our data to &lt;a href=&quot;https://www.nwb.org/&quot;&gt;Neurodata Without Borders&lt;/a&gt;. Turns out it won’t be such a monumental task after all. I figured someone would have written a guide for converting the old OpenEphys &lt;code class=&quot;highlighter-rouge&quot;&gt;.continuous&lt;/code&gt; style of data, but I couldn’t find any. Behold, converting my lab’s cryptic metadata and OE data to NWB.&lt;/p&gt;
 
-&lt;h2 id=&quot;links&quot;&gt;Links&lt;/h2&gt;
+&lt;h1 id=&quot;links&quot;&gt;Links&lt;/h1&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;../../../../assets/notebooks/nwb_convert.ipynb&quot;&gt;notebook&lt;/a&gt;&lt;/li&gt;
@@ -23,13 +23,10 @@
   &lt;li&gt;&lt;a href=&quot;../../../../assets/notebooks/convert_example.nwb&quot;&gt;generated .nwb file&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class=&quot;jupyter-notebook&quot; style=&quot;position: relative; width: 100%; margin: 0 auto;&quot;&gt;
-  &lt;div class=&quot;jupyter-notebook-iframe-container&quot;&gt;
-    &lt;iframe src=&quot;../../../../assets/notebooks/nwb_convert.ipynb.html&quot; style=&quot;position: absolute; top: 0; left: 0; border-style: none;&quot; width=&quot;100%&quot; height=&quot;100%&quot; onload=&quot;this.parentElement.style.paddingBottom = (this.contentWindow.document.documentElement.scrollHeight + 10) + 'px'&quot;&gt;&lt;/iframe&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+&lt;h1 id=&quot;the-outcome&quot;&gt;The Outcome…&lt;/h1&gt;
 
-&lt;h1 id=&quot;the-resulting-file-structure&quot;&gt;The resulting file structure:&lt;/h1&gt;
+&lt;p&gt;Before we wade into some code, let us fortify ourselves with the satisfaction of our endpoint.&lt;/p&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/root
 ├── acquisition
 │   ├── CH5
@@ -95,6 +92,19 @@
 
 11 directories, 50 files
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;ooo aaaaahhhh…&lt;/p&gt;
+
+&lt;p&gt;so without further ado.&lt;/p&gt;
+
+&lt;h1 id=&quot;the-code&quot;&gt;The Code…&lt;/h1&gt;
+
+&lt;div class=&quot;jupyter-notebook&quot; style=&quot;position: relative; width: 100%; margin: 0 auto;&quot;&gt;
+  &lt;div class=&quot;jupyter-notebook-iframe-container&quot;&gt;
+    &lt;iframe src=&quot;../../../../assets/notebooks/nwb_convert.ipynb.html&quot; style=&quot;position: absolute; top: 0; left: 0; border-style: none;&quot; width=&quot;100%&quot; height=&quot;100%&quot; onload=&quot;this.parentElement.style.paddingBottom = (this.contentWindow.document.documentElement.scrollHeight + 10) + 'px'&quot;&gt;&lt;/iframe&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
 </description>
         <pubDate>Tue, 12 Mar 2019 00:00:00 -0700</pubDate>
         <link>https://jon-e.net/blog/2019/03/12/Crudely-Converting-OpenEphys-to-Neurodata-Without-Borders/</link>
