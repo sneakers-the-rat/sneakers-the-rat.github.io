@@ -3,7 +3,7 @@ layout: post
 title: "Correlation Isn't Connectivity"
 date: 2019-03-12
 description: Not even functional connectivity, whatever that is
-image: /blog/assets/images/mats.png
+image: /blog/assets/images/corr/mats.png
 author: Jonny Saunders
 tags:
   - functional connectivity
@@ -25,11 +25,11 @@ Borrowing data from [this lovely paper](https://doi.org/10.1016/j.cell.2015.09.0
 
 Comparing the correlation and connectivity matrices
 
-![comparing matrices](/blog/assets/images/mats.png)
+![comparing matrices](/blog/assets/images/corr/mats.png)
 
 And ROC curve relating binary connectedness to absolute value of correlation
 
-![auc](/blog/assets/images/roc.png)
+![auc](/blog/assets/images/corr/roc.png)
 
 **Let me be clear** I do indeed believe there is statistical dependency between voxels, and I don't believe the people who do "functional connectivity" with simple correlation are bad or stupid people. I just think we get so busy with the dogma that we don't take the time to learn math or validate our analyses.
 

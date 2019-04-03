@@ -6,8 +6,8 @@
 </description>
     <link>/bloghttps://jon-e.net</link>
     <atom:link href="https://jon-e.net/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 03 Apr 2019 13:19:00 -0700</pubDate>
-    <lastBuildDate>Wed, 03 Apr 2019 13:19:00 -0700</lastBuildDate>
+    <pubDate>Wed, 03 Apr 2019 13:34:31 -0700</pubDate>
+    <lastBuildDate>Wed, 03 Apr 2019 13:34:31 -0700</lastBuildDate>
     <generator>Jekyll v3.8.4</generator>
     
       <item>
@@ -24,11 +24,11 @@
 
 &lt;p&gt;Comparing the correlation and connectivity matrices&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/blog/assets/images/mats.png&quot; alt=&quot;comparing matrices&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/assets/images/corr/mats.png&quot; alt=&quot;comparing matrices&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;And ROC curve relating binary connectedness to absolute value of correlation&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/blog/assets/images/roc.png&quot; alt=&quot;auc&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/assets/images/corr/roc.png&quot; alt=&quot;auc&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Let me be clear&lt;/strong&gt; I do indeed believe there is statistical dependency between voxels, and I don’t believe the people who do “functional connectivity” with simple correlation are bad or stupid people. I just think we get so busy with the dogma that we don’t take the time to learn math or validate our analyses.&lt;/p&gt;
 
