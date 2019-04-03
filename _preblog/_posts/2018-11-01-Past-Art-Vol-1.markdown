@@ -7,7 +7,7 @@ image: /blog/assets/images/artvol1/audioedit.png
 author: Jonny Saunders
 tags:
   - art
-  - bad art
+  - bad_art
   - collections
   - glitch
   - design
