@@ -6,9 +6,55 @@
 </description>
     <link>/bloghttps://jon-e.net</link>
     <atom:link href="https://jon-e.net/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 13 Mar 2019 17:15:08 -0700</pubDate>
-    <lastBuildDate>Wed, 13 Mar 2019 17:15:08 -0700</lastBuildDate>
+    <pubDate>Wed, 03 Apr 2019 13:19:00 -0700</pubDate>
+    <lastBuildDate>Wed, 03 Apr 2019 13:19:00 -0700</lastBuildDate>
     <generator>Jekyll v3.8.4</generator>
+    
+      <item>
+        <title>Correlation Isn't Connectivity</title>
+        <description>&lt;p&gt;In a network analysis class this fall, I was unsurprised but more than a little annoyed to learn that the widespread practice of measuring “functional connectivity” by correlating voxelwise fMRI timeseries was essentially unvalidated.&lt;/p&gt;
+
+&lt;p&gt;Of course, there’s no reason to believe that taking a linear measurement like the pearson correlation would reflect the highly nonlinear dynamics of the brain (even if you ignore the problems with taking simple correlations of timeseries), but at the time I thought it was worth simulating.&lt;/p&gt;
+
+&lt;p&gt;The simulations are for another post, but this morning it occurred to me that we actually do have ground truth data to assess the relationship between connectivity and activity correlation – we have the C. Elegans connectome (well at least we have &lt;em&gt;one&lt;/em&gt;) and recently folks have been doing whole-brain GCaMP imaging.&lt;/p&gt;
+
+&lt;p&gt;Borrowing data from &lt;a href=&quot;https://doi.org/10.1016/j.cell.2015.09.034&quot;&gt;this lovely paper&lt;/a&gt; and the connectome, helpfully stored in &lt;a href=&quot;https://github.com/theideasmith/network&quot;&gt;this squirrely little repo&lt;/a&gt;… Well I won’t hold you in suspense.&lt;/p&gt;
+
+&lt;h1 id=&quot;hashtag-no-resemblance&quot;&gt;hashtag no resemblance.&lt;/h1&gt;
+
+&lt;p&gt;Comparing the correlation and connectivity matrices&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/images/mats.png&quot; alt=&quot;comparing matrices&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;And ROC curve relating binary connectedness to absolute value of correlation&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/images/roc.png&quot; alt=&quot;auc&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Let me be clear&lt;/strong&gt; I do indeed believe there is statistical dependency between voxels, and I don’t believe the people who do “functional connectivity” with simple correlation are bad or stupid people. I just think we get so busy with the dogma that we don’t take the time to learn math or validate our analyses.&lt;/p&gt;
+
+&lt;div class=&quot;jupyter-notebook&quot; style=&quot;position: relative; width: 100%; margin: 0 auto;&quot;&gt;
+  &lt;div class=&quot;jupyter-notebook-iframe-container&quot;&gt;
+    &lt;iframe src=&quot;../../../../assets/notebooks/correlation_aint_connectivity.ipynb.html&quot; style=&quot;position: absolute; top: 0; left: 0; border-style: none;&quot; width=&quot;100%&quot; height=&quot;100%&quot; onload=&quot;this.parentElement.style.paddingBottom = (this.contentWindow.document.documentElement.scrollHeight + 10) + 'px'&quot;&gt;&lt;/iframe&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Tue, 12 Mar 2019 00:00:00 -0700</pubDate>
+        <link>https://jon-e.net/blog/2019/03/12/Correlation-Isnt-Connectivity/</link>
+        <guid isPermaLink="true">https://jon-e.net/blog/2019/03/12/Correlation-Isnt-Connectivity/</guid>
+        
+        <category>functional connectivity</category>
+        
+        <category>c elegans</category>
+        
+        <category>network science</category>
+        
+        <category>network analysis</category>
+        
+        <category>science</category>
+        
+        
+      </item>
     
       <item>
         <title>Crudely converting OpenEphys to Neurodata Without Borders</title>
