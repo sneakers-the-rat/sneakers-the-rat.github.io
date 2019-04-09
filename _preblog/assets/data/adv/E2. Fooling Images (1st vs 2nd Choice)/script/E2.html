@@ -1,0 +1,508 @@
+<!-- This script displays 'adversarial images' and gets human classification of them
+Created by Chaz Firestone, 6/19/18 -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="https://chazfirestone.org/mturk/seedrandom.js"></script>
+<script src="https://chazfirestone.org/mturk/math.js"></script>
+<script src="https://chazfirestone.org/mturk/mturkfunctions.js"></script>
+
+<script>
+
+//Parameters//
+var experimentName = "Human classification of adversarial images -- Texture (with machine's choices as foils)";
+    
+var images = [
+    ["accordion", ["accordion", "book jacket"]],
+    ["assault rifle",["assault rifle","xylophone"]],
+    ["bagel",["bagel", "pretzel"]],
+    ["baseball",["baseball", "centipede"]],
+    ["car wheel",["car wheel", "disk brake"]], 
+    ["chainlink fence",["chainlink fence", "honeycomb"]],
+    ["chameleon",["chameleon","bib"]],
+    ["comic book",["comic book", "safety pin"]],
+    ["computer keyboard",["computer keyboard", "digital clock"]],
+    ["crossword puzzle",["crossword puzzle", "shower curtain"]],
+    ["dial telephone",["dial telephone", "iron"]],
+    ["digital clock",["digital clock", "typewriter keyboard"]], 
+    ["electric guitar",["electric guitar", "holster"]],
+    ["four-poster bed",["four-poster", "throne"]],
+    ["freight car", ["freight car", "theater curtain"]],
+    ["green snake", ["green snake", "brain coral"]],
+    ["grey parrot", ["grey parrot","electric fan"]],
+    ["hair clip",["hair clip", "roundworm"]],
+    ["hand blower",["hand blower","power drill"]],
+    ["king penguin", ["king penguin", "academic gown"]],
+    ["medicine chest", ["medicine chest", "pill bottle"]],
+    ["monarch butterfly", ["monarch butterfly", "drum"]],
+    ["obelisk", ["obelisk", "pedestal"]],
+    ["paddle", ["paddle", "racket"]],
+    ["panpipe", ["panpipe", "theater curtain"]],
+    ["peacock", ["peacock", "pinwheel"]],
+    ["photocopier", ["photocopier","printer"]],
+    ["pinwheel", ["pinwheel", "croquet ball"]],
+    ["pole", ["pole", "stick insect"]],
+    ["projector", ["projector", "stove"]],
+    ["punching bag", ["punching bag", "knee pad"]],
+    ["remote control",["remote control", "hand-held computer"]],
+    ["roundworm", ["roundworm", "oscilloscope"]],
+    ["school bus", ["school bus", "taxicab"]],
+    ["screwdriver", ["screwdriver", "syringe"]],
+    ["sea snake", ["sea snake", "wreck"]],
+    ["ski mask", ["ski mask", "coil"]],
+    ["slot machine", ["slot machine","prayer rug"]],
+    ["soccer ball", ["soccer ball", "teddy bear"]],
+    ["spotlight", ["spotlight","roundworm"]],
+    ["starfish", ["starfish", "screw"]],
+    ["stethoscope", ["stethoscope","analog clock"]],
+    ["strawberry", ["strawberry", "bottlecap"]],
+    ["tile roof", ["tile roof", "flatworm"]],
+    ["traffic light", ["traffic light", "projector"]],
+    ["trifle", ["trifle", "chocolate sauce"]],
+    ["vacuum", ["vacuum", "disk brake"]],
+    ["volcano", ["volcano", "traffic light"]]
+];    
+
+var imagePath = "https://www.czf.perceptionresearch.org/adversarial/images/textures/";
+var iti = 500; //msec
+var containerWidth = 500; //pixels
+var containerHeight = 500; //pixels
+var nTrials;
+
+//Other behind-the-scenes variables (not likely to be changed)
+var currentTrial = -1;
+var startTrialTime;
+var experimentTime;
+var totalTime;
+var trialRunning = false;
+
+//Functions
+
+function GenerateTrials() {
+//generate all the trials
+    trials = [];
+    var trialImages = Shuffle(images);
+    for (var i=0; i<images.length; i++) {
+        trial = [];
+        trial.image = trialImages[i][0];
+        trial.imageName = trial.image.replace(" ","_");
+        trial.imageName = trial.imageName + ".png";
+        
+        trial.foil = trialImages[i][1][1];
+        
+        options = [trial.foil,trial.image];
+        options = Shuffle(options);
+        trial.left = options[0];
+        trial.right = options[1];
+        trials.push(trial);
+    }
+    return trials;
+} //GenerateTrials
+	
+	
+function addHTML() {
+//write html code for any required divs or inputs
+
+	//names and other info
+	$('#experiment').append('<input type="hidden" id="experimentName" name="experimentName">');
+	$('#experiment').append('<input type="hidden" id="browserName" name="browserName">');
+	$('#experiment').append('<input type="hidden" id="browserVersion" name="browserVersion">');
+	$('#experiment').append('<input type="hidden" id="displayWindowHeight" name="display.windowHeight">');
+	$('#experiment').append('<input type="hidden" id="displayWindowWidth" name="display.windowWidth">');
+	$('#experiment').append('<input type="hidden" id="displayScreenHeight" name="display.screenHeight">');
+	$('#experiment').append('<input type="hidden" id="displayScreenWidth" name="display.screenWidth">');
+	$('#experiment').append('<input type="hidden" id="experimentTime" name="experimentTime">');
+	$('#experiment').append('<input type="hidden" id="totalTime" name="totalTime">');
+	
+	for (var i=0; i<nTrials; i++) { 
+		$('#experiment').append('<input type="hidden" id="t' + i + '_image" name=t' + i +'_image value="">');
+        $('#experiment').append('<input type="hidden" id="t' + i + '_foil" name=t' + i +'_foil value="">');
+		$('#experiment').append('<input type="hidden" id="t' + i + '_left" name=t' + i +'_left value="">');
+        $('#experiment').append('<input type="hidden" id="t' + i + '_right" name=t' + i +'_right value="">');
+        $('#experiment').append('<input type="hidden" id="t' + i + '_response" name=t' + i +'_response value="">');
+		$('#experiment').append('<input type="hidden" id="t' + i + '_rt" name=t' + i +'_rt value="">');
+        $('#experiment').append('<input type="hidden" id="t' + i + '_trialNum" name=t' + i +'_trialNum value="">');
+	}
+    
+	for (var i=0; i<nTrials; i++) {
+        var trialImageName = trials[i].imageName;
+        $('#trialImages').append('<img id="trialImage_t' + i + '" class="trialImages" src="' + imagePath + trialImageName + '">');
+        $('#leftOptions').append('<a href=\'javascript:respond("left")\' id="leftButton_t' + i + '" class="optionButton">'+ trials[i].left + '</a>');
+        $('#rightOptions').append('<a href=\'javascript:respond("right")\' id="rightButton_t' + i + '" class="optionButton">'+ trials[i].right + '</a>');
+	}
+}	
+	
+function assignAttributes() {
+//use css to make the various html objects have the properties we said we wanted them to have
+	$('#container').css({'width':containerWidth,'height':containerHeight});
+}
+
+function assignExperimentInfo() {
+//record things like the name of the experiment, the browser information, etc.
+
+	//name
+	$('#experimentName').val(experimentName);
+	
+	//browserInfo
+	var browserInfo = getBrowser();
+	$('#browserName').val(browserInfo[0]);
+	$('#browserVersion').val(browserInfo[1]);
+
+	//displayInfo
+	$('#displayWindowHeight').val($(window).height());
+	$('#displayWindowWidth').val($(window).width());
+	$('#displayScreenHeight').val(screen.height);
+	$('#displayScreenWidth').val(screen.width);
+	
+	//time
+	$('#experimentTime').val(new Date().getTime() - experimentTime);
+}
+
+
+function BlockIfPreviewing() {
+//if the subject is viewing the HIT through the preview window, don't let them click anything
+	if (IsOnTurk() && IsTurkPreview()) {
+		$('body').append("<div id='previewMode'><p>PREVIEWING THE HIT</p><p>PREVIEWING THE HIT</p><p>PREVIEWING THE HIT</p></div>");
+	}
+}
+	
+function respond(response) {
+//subject clicked a rating button
+	var currentTime = new Date().getTime();
+	var rt = currentTime - startTrialTime;
+    switch (response) {
+        case 'left':
+            trialResponse = trials[currentTrial].left;
+            break;
+        case 'right':
+            trialResponse = trials[currentTrial].right;
+            break;
+    }
+	recordData(trials[currentTrial],rt,trialResponse);
+    $('#containerContent').hide();
+    setTimeout(blank(NextTrial),0);
+}
+
+function recordData(trial,rt,response) {
+//record data by assigning various values to hidden inputs
+	$('#' + 't' + currentTrial + '_image').val(trial.image);
+    $('#' + 't' + currentTrial + '_foil').val(trial.foil);
+    $('#' + 't' + currentTrial + '_left').val(trial.left);
+    $('#' + 't' + currentTrial + '_right').val(trial.right);
+	$('#' + 't' + currentTrial + '_response').val(response);
+	$('#' + 't' + currentTrial + '_rt').val(rt);
+    $('#' + 't' + currentTrial + '_trialNum').val(currentTrial);
+}
+
+function blank(next) {
+//blank the screen, then start the next trial
+	setTimeout(next,iti);
+}
+
+function NextTrial() {
+//start a new trial
+    $('#trialImage_t' + currentTrial).hide();
+    $('#leftButton_t' + currentTrial).hide();
+    $('#rightButton_t' + currentTrial).hide();
+    $('#containerContent').show();
+	currentTrial++; 
+	if (currentTrial < nTrials) {	
+		$('#trialImage_t' + currentTrial).show();
+        $('#leftButton_t' + currentTrial).show();
+        $('#rightButton_t' + currentTrial).show();
+		startTrialTime = new Date().getTime();
+		$('#progressBar').css('width',(((currentTrial+1)/nTrials)*100) + 'px');
+	} else {
+		DoneExperiment();
+		setTimeout(function () { $('#submitButton').click(); }, 60000);
+	}
+}
+
+function StartExperiment() {
+//set things up for the real experiment, then start the first trial
+	location.hash = "#startExperiment";
+    $('#instructions').hide();
+	experimentTime = new Date().getTime();
+	currentTrial = -1; //restart the trial count
+	$('#startExperiment').hide();
+	$('.progress').show();
+	setTimeout(blank(NextTrial),0);
+	
+}
+
+
+function DoneExperiment() {
+	assignExperimentInfo();
+	$('#experiment').hide();
+	$('.progress').hide();
+	$('#submitButton').show();
+	$('#doneText').show();
+	$('#commentBox').show();
+	$('#submitButton').hover(function(){
+		commentText = document.getElementById('commentBox').value;
+		$('#comments').val(commentText);
+		$('#totalTime').val(new Date().getTime() - totalTime);
+	});
+}
+
+
+//now let's go!
+$(document).ready(function() {
+  	//$('#submitButton').hide();
+  	if (navigator.userAgent.indexOf('MSIE') != -1) {
+    	$('body').html('Unfortunately this HIT does not work in IE. It works in Chrome, Firefox or Safari. Sorry!');
+  	}
+	BlockIfPreviewing();
+	assignAttributes();
+    trials = GenerateTrials();
+    trials = Shuffle(trials);
+    nTrials=trials.length;
+    addHTML();
+	totalTime = new Date().getTime();	
+});
+
+	
+</script>
+
+<style>
+
+body {
+	font-family: Times,Helvetica,Arial;
+	background-color:dimgray; 
+	color:white
+}
+
+#container{
+	margin: 0 auto;
+	background:white;
+	color:black;
+	border:3px solid black;
+	text-align:center;
+}
+
+
+#instructions {
+	display:block;
+	max-width: 80%; 
+	margin: 0 auto; 
+	margin-top: 0px; 
+}
+
+#title {
+	font-size:18pt;
+	text-align:center;
+	margin:0 auto;
+}
+
+
+#startExperiment {
+	display: table;
+	vertical-align:center;
+	color: black;
+	font-size:14pt;
+	border: 3px outset gray; 
+	background-color: #CCCCCC; 
+	padding: 8px;
+	text-decoration: none; 
+	font-weight: bold;
+	margin:0 auto;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
+#startExperiment:hover {
+	border: 3px inset gray; 
+}
+
+#startExperiment:active {
+	border: 3px inset gray; 
+	background: gray;
+}
+	
+
+.button {
+	display:none;
+	vertical-align:center;
+	text-align:center;
+	color: black;
+	font-size:16pt;
+	border: 3px outset gray;
+	background-color: lightgray; 
+	padding: 5px 0 5px 0;
+	width:100px;
+	text-decoration: none; 
+	font-weight: bold;
+}
+
+.button:hover {
+	border: 3px inset gray; 
+}
+
+.button:active {
+	border: 3px inset gray; 
+	background: gray;
+}
+
+.progress {
+	text-align:center;
+	display:none;
+	height:15px;
+}
+	
+#progressText {
+	font-size:14pt;
+	color:white;
+	font-weight:bold;
+	margin-top:10px;
+	margin-bottom:39px;
+}
+		
+#progressOutline {
+	background:white;
+	border: 3px solid black;
+	width:100px;
+	margin:5 auto;
+	margin-bottom:10px;
+}
+	
+#progressBar {
+	background:gray;
+	width:0px;
+	margin-bottom:10px;
+}
+
+#previewMode p {
+	margin-top:100px;
+}
+
+#previewMode {
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:1000px;
+	text-align: center;
+	font-size: 54pt;
+	background: gray;
+	opacity: 0.60;
+}
+
+#doneText {
+	display:none;
+	max-width: 500px;  
+	text-align:center;
+	margin: 10 auto; 
+	padding-bottom:10px;
+	font-size:14pt
+}
+
+#doneText p {
+	font-size:12pt  
+}
+
+#commentBox {
+	display:none;
+}
+
+#submitButton {
+	display: block;
+	margin: 0 auto;
+    margin-top: 200px;
+}
+
+
+.trialImages {
+    display:none;
+}
+    
+.optionButton {
+    display:none;
+    vertical-align:center;
+	text-align:center;
+	color: black;
+	font-size:16pt;
+	border: 3px outset gray;
+	background-color: lightgray; 
+	padding: 5px;
+	width:100px;
+	text-decoration: none; 
+	font-weight: bold;
+}
+    
+.optionButton:hover {
+	border: 3px inset gray; 
+}
+
+.optionButton:active {
+	border: 3px inset gray; 
+	background: gray;
+}
+    
+#leftOptions {
+    float:left;
+    margin-left:50px;
+}
+
+#rightOptions {
+    float:right;
+    margin-right:50px;
+}
+    
+#containerContent {
+    display:none;    
+}
+
+#question{
+    margin-top:50px;
+}
+    
+</style>
+
+<body>
+
+ <!--<p style='text-align: center' id="loading">Loading...</p>-->
+
+ <div id="experiment">
+ 	<span id="instructions">
+ 		<p id="title"><strong>Think like a machine!</strong></p>
+ 		<p style="font-size:8pt"></p>We have a machine that can look at a picture and tell us what it is. Most of the time, it tells us the right answers. But sometimes it gives surprising answers. We don't know if this is because the machine gets confused, or if it's because the machine noticed some object or pattern hidden in the image. We've collected some of these surprising answers here, and we want to know whether you can guess what answer the machine made.
+
+		<p style="font-size:8pt"></p>On each trial, you'll see an image that will look to you like a nonsense collection of colors and shapes. But the machine looked at these images and thought they were real objects. For each image, we want you to take your best guess at what the machine thought these images were.
+
+		<p style="font-size:8pt"></p>When you are ready to begin, click "Start Experiment". By completing this survey, you are consenting to be in this research study. Your participation is voluntary and you can stop at any time.
+        
+		<p style="font-size:8pt"></p>(NOTE: When the experiment is done, a submit button should appear. If that fails to occur, the HIT should "auto-submit" after one minute.)
+ 	</span>
+ 
+ 	<a href='javascript:StartExperiment()' id='startExperiment'>Start Experiment</a>
+ 	<div class="progress" id="progressText">Progress<div class="progress" id="progressOutline"><div class="progress" id="progressBar"></div></div></div>
+
+ 	<div id="container">
+        <div id="containerContent">
+            <p id="machineSaw" class="trialInstructions">The machine saw this image:</p>
+            <div id="trialImages"></div>
+
+            
+            <p id="question" class="trialInstructions">If you had to guess, what did the machine think this was?</p>
+            <div id="leftOptions"></div>
+            <div id="rightOptions"></div>
+        </div>
+    </div>
+ 	
+
+
+ </div> <!-- experiment -->
+
+
+<div id="doneText">
+	<strong>Done! You can go ahead and submit the HIT. Thank you!</strong>
+	<br><p>You can also feel free to leave any comments below about how the experiment went, but that's up to you. Did everything seem to work OK?</p>
+	<textarea id="commentBox" rows=4 cols=40 placeholder="Enter your comments here..."></textarea>
+	<input type="hidden" id="comments" name="comments"><br><br>
+</div>
+
+
+</body>
+
+<!-- REMOVE ME BEFORE PUTTING ON TURK -->
+<input type="submit" id="submitButton" name="submitButton">
+

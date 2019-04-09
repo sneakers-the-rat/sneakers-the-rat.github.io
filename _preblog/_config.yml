@@ -15,7 +15,7 @@ twitter_username: json_dirs
 default_img: /assets/images/nlight.png
 social:
   - name: twitter
-    url: https://twitter.com/json_durs
+    url: https://twitter.com/json_dirs
   - name: github
     url: https://github.com/sneakers_the_rat
 
@@ -38,6 +38,7 @@ author:
 
 # Build settings
 markdown: kramdown
+highlighter: rouge
 #redcarpet:
 #  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
 plugins:
@@ -57,6 +58,7 @@ exclude:
   - gulpfile.js
   - package.json
   - README.md
+  - '*.Rmd'
 
 colors:
   black:     '#111111'

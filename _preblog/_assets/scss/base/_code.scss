@@ -1,6 +1,15 @@
+// details environment
+
+details {
+  margin: {
+    top: 0;
+    bottom: 0.75em;
+  }
+}
+
 //----------------------------------------------
 // Code
-//---------------------------------------------- 
+//----------------------------------------------
 code,
 kbd,
 pre,
@@ -19,8 +28,8 @@ pre {
   line-height: 1.8;
   white-space: pre-wrap;
   word-wrap: break-word;
-  color: $color-black;
-  background: $color-lightgrey;
+  //color: $color-black;
+  //background: $color-lightgrey;
   border-radius: 5px;
   overflow: hidden;
 
@@ -47,6 +56,6 @@ pre {
 code {
   padding: 0.25em 0.5em;
 
-  color: $color-black;
-  background: $color-lightgrey;
+  //color: $color-black;
+  //background: $color-lightgrey;
 }

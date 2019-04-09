@@ -1,0 +1,64 @@
+/root
+├── acquisition
+│   ├── CH5
+│   │   ├── data
+│   │   └── starting_time
+│   ├── CH6
+│   │   ├── data
+│   │   └── starting_time
+│   ├── CH7
+│   │   ├── data
+│   │   └── starting_time
+│   └── CH8
+│       ├── data
+│       └── starting_time
+├── analysis
+├── file_create_date
+├── general
+│   ├── experimenter
+│   ├── institution
+│   ├── lab
+│   ├── pharmacology
+│   └── subject
+│       ├── date_of_birth
+│       ├── genotype
+│       ├── sex
+│       ├── species
+│       └── subject_id
+├── identifier
+├── intervals
+│   └── trials
+│       ├── LaserOnOff
+│       ├── amplitude
+│       ├── duration
+│       ├── gapdelay
+│       ├── gapdur
+│       ├── id
+│       ├── laser
+│       ├── loop_flg
+│       ├── next
+│       ├── pulseamp
+│       ├── pulsedur
+│       ├── ramp
+│       ├── seamless
+│       ├── soa
+│       ├── soaflag
+│       ├── start_time
+│       ├── stop_time
+│       └── type
+├── processing
+├── session_description
+├── session_start_time
+├── stimulus
+│   ├── presentation
+│   └── templates
+├── timestamps_reference_time
+└── units
+    ├── channel
+    ├── cluster
+    ├── id
+    ├── spike_times
+    ├── spike_times_index
+    └── tetrode
+
+11 directories, 50 files
