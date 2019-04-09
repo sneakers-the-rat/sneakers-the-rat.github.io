@@ -652,6 +652,7 @@ Further, if one looks at the most accurately categorized images...
 > Spotlight
 
 ![monarch butterfly](/blog/assets/images/monarch_butterfly.png)
+> Monarch Butterfly
 
 ... we can easily see why they were. Remember the argument here is that these are supposedly adversarial images that fool a classifier. A finding that humans and image classification algorithms similarly categorize things that really do look like those categories is unremarkable.
 
@@ -866,6 +867,8 @@ e7_image <- e7_sum$image
 e7_subject <- e7_sum$subject
 e7_image$image <- e7_image$imageName
 e7_accs <- adjusted_accuracy(e7_image, e7_subject, 0.5)
+
+e7_total <- round(sum(expt_7$correct)/nrow(expt_7), 3)*100
 {% endhighlight %}
 
 </details>
@@ -886,7 +889,7 @@ g.e7_subject
 
 ![plot of chunk unnamed-chunk-27](/blog/assets/images/2019-04-09-Adversarial-Analysis-of-Zhou-Firestone/unnamed-chunk-27-1.png)
 
-Again, only 44.3% of images and 16.3% of subjects had accuracy significantly above chance, as opposed to the reported 78% of images and 83% of subjects. Overall, across all images and subjects, the total accuracy was
+Again, only 44.3% of images and 16.3% of subjects had accuracy significantly above chance, as opposed to the reported 78% of images and 83% of subjects. Overall, across all images and subjects, the total accuracy was 58.9%.
 
 The image synthesis technique is tuned to minimize perceptual perturbations, but does impart a recognizable texture to the objects in the image. This was especially problematic in examples where the original image and the target class were semantically related, or had a similar texture, for example
 
