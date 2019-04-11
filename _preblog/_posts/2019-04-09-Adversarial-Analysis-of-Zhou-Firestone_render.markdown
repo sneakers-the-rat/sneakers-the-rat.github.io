@@ -5,12 +5,18 @@ date: 2019-04-09
 description: Reanalyzing Zhou & Firestone's adversarial image experiments
 image: /blog/assets/images/zhou_header.png
 author: Jonny Saunders
+toc: true
 tags:
   - reanalysis
   - computer vision
   - science
   - psychophysics
 ---
+# Contents
+{:.no_toc}
+
+* Will be replaced with the ToC, excluding the "Contents" header
+{:toc}
 
 This post is a reanalysis of Zhenglong Zhou and Chaz Firestone's paper "Humans can deciper adversarial images," so let's get some links out of the way
 
