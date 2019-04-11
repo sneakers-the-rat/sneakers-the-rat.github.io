@@ -28,3 +28,4 @@ gem "jekyll-jupyter-notebook", "~> 0.0.4"
 
 gem 'redcarpet'
 gem 'pygments.rb'
+gem 'jekyll-toc'

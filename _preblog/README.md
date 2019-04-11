@@ -24,7 +24,7 @@ Barber is a minimal blog theme built for Jekyll. The blog theme features a mason
 Jekyll requires all dependencies to be saved in the ````Gemfile````. Run ````bundle install```` (Install [Bundler](http://bundler.io/) if it is not already) on your command line after downloading or cloning the theme. You can then run ````bundle exec jekyll serve```` or ````npm start```` to see your development site. Run ````bundle exec jekyll build```` or ````npm run build```` to build a production ready site for deployment.
 
 ### Update Settings
-Almost everything to personalize your site is in the ````_config.yml````. 
+Almost everything to personalize your site is in the ````_config.yml````.
 
 ```
 # Site/SEO settings
@@ -33,7 +33,7 @@ baseurl: ""
 paginate: 12
 paginate_path: "/page/:num"
 permalink: /:year/:month/:day/:title/
-google_analytics: 
+google_analytics:
 
 name: Thomas Vaeth
 title: The Barber Theme
@@ -55,7 +55,7 @@ social:
     url: https://codepen.io/thomasvaeth/
 
 # Contact settings
-contact_img: /assets/images/placeholder-28.jpg
+#contact_img: /assets/images/placeholder-28.jpg
 formcarry: https://formcarry.com/s/HkIo0nMb7
 
 # Disqus settings
@@ -82,10 +82,10 @@ All posts go upder the ````_posts```` directory. You can also have a ````_drafts
 layout: post
 title: "Brunch Swag"
 date: 2017-02-18
-description: 
+description:
 image: /assets/images/placeholder-15.jpg
 author: Thomas Vaeth
-tags: 
+tags:
   - XOXO
   - La Croix
 ---

@@ -15,7 +15,7 @@ build_one = function(io) {
 # Rmd files under the root directory
 rmds = list.files("_rmd", "[.]Rmd$", recursive = T, full.names = T)
 # change directory to _posts
-rmds_out = file.path(dirname(dirname(rmds)), "_posts", basename(rmds))
+rmds_out = file.path(dirname(dirname(rmds)), "_posts", paste(basename(tools::file_path_sans_ext(rmds)), "_render",sep=""))
 files = cbind(rmds, xfun::with_ext(rmds_out, ".markdown"))
 
 for (i in seq_len(nrow(files))) build_one(files[i, ])

@@ -6,13 +6,33 @@
 </description>
     <link>/bloghttp://localhost:4000</link>
     <atom:link href="http://localhost:4000/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 09 Apr 2019 00:57:05 -0700</pubDate>
-    <lastBuildDate>Tue, 09 Apr 2019 00:57:05 -0700</lastBuildDate>
+    <pubDate>Wed, 10 Apr 2019 01:32:53 -0700</pubDate>
+    <lastBuildDate>Wed, 10 Apr 2019 01:32:53 -0700</lastBuildDate>
     <generator>Jekyll v3.8.4</generator>
     
       <item>
         <title>An Adversarial (re)Analysis of Zhou/Firestone 2019</title>
-        <description>&lt;p&gt;This post is a reanalysis of Zhenglong Zhou and Chaz Firestone’s paper “Humans can deciper adversarial images,” so let’s get some links out of the way&lt;/p&gt;
+        <description>&lt;h1 class=&quot;no_toc&quot; id=&quot;contents&quot;&gt;Contents&lt;/h1&gt;
+
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#overview&quot; id=&quot;markdown-toc-overview&quot;&gt;Overview&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#clarifying-hypotheses&quot; id=&quot;markdown-toc-clarifying-hypotheses&quot;&gt;Clarifying Hypotheses&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#reanalysis-details&quot; id=&quot;markdown-toc-reanalysis-details&quot;&gt;Reanalysis Details&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#code-boilerplate&quot; id=&quot;markdown-toc-code-boilerplate&quot;&gt;Code Boilerplate&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#summarizing-functions&quot; id=&quot;markdown-toc-summarizing-functions&quot;&gt;Summarizing Functions&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#experiment-1&quot; id=&quot;markdown-toc-experiment-1&quot;&gt;Experiment 1&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#experiment-2---1st-vs-2nd-best-labels&quot; id=&quot;markdown-toc-experiment-2---1st-vs-2nd-best-labels&quot;&gt;Experiment 2 - 1st vs 2nd best labels&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#experiments-3a-and-3b&quot; id=&quot;markdown-toc-experiments-3a-and-3b&quot;&gt;Experiments 3a and 3b&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#experiment-4---static-images&quot; id=&quot;markdown-toc-experiment-4---static-images&quot;&gt;Experiment 4 - Static images&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#experiment-5---digit-classification&quot; id=&quot;markdown-toc-experiment-5---digit-classification&quot;&gt;Experiment 5 - Digit classification&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#experiment-6&quot; id=&quot;markdown-toc-experiment-6&quot;&gt;Experiment 6&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#experiment-7&quot; id=&quot;markdown-toc-experiment-7&quot;&gt;Experiment 7&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#overall-summary&quot; id=&quot;markdown-toc-overall-summary&quot;&gt;Overall summary&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This post is a reanalysis of Zhenglong Zhou and Chaz Firestone’s paper “Humans can deciper adversarial images,” so let’s get some links out of the way&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;Paper&lt;/strong&gt; - Zhou Z, Firestone C. &lt;a href=&quot;https://www.nature.com/articles/s41467-019-08931-6&quot;&gt;Humans can deciper adversarial images&lt;/a&gt;. &lt;em&gt;Nature Communications&lt;/em&gt; 10(1):1334  p.2041-1723, DOI:10.1038/s41467-019-08931-6&lt;/li&gt;
@@ -656,6 +676,9 @@
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;img src=&quot;/blog/assets/images/monarch_butterfly.png&quot; alt=&quot;monarch butterfly&quot; /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Monarch Butterfly&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;p&gt;… we can easily see why they were. Remember the argument here is that these are supposedly adversarial images that fool a classifier. A finding that humans and image classification algorithms similarly categorize things that really do look like those categories is unremarkable.&lt;/p&gt;
 
@@ -834,7 +857,9 @@
 &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;subject&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;subject&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;imageName&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;accs&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;adjusted_accuracy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;subject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;accs&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;adjusted_accuracy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;subject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;total&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;expt_7&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;correct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nrow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;expt_7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 
 &lt;/details&gt;
@@ -849,7 +874,7 @@
 
 &lt;p&gt;&lt;img src=&quot;/blog/assets/images/2019-04-09-Adversarial-Analysis-of-Zhou-Firestone/unnamed-chunk-27-1.png&quot; alt=&quot;plot of chunk unnamed-chunk-27&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Again, only 44.3% of images and 16.3% of subjects had accuracy significantly above chance, as opposed to the reported 78% of images and 83% of subjects. Overall, across all images and subjects, the total accuracy was&lt;/p&gt;
+&lt;p&gt;Again, only 44.3% of images and 16.3% of subjects had accuracy significantly above chance, as opposed to the reported 78% of images and 83% of subjects. Overall, across all images and subjects, the total accuracy was 58.9%.&lt;/p&gt;
 
 &lt;p&gt;The image synthesis technique is tuned to minimize perceptual perturbations, but does impart a recognizable texture to the objects in the image. This was especially problematic in examples where the original image and the target class were semantically related, or had a similar texture, for example&lt;/p&gt;
 
@@ -923,8 +948,8 @@ Dog 63, whose adversarial target was “indian cobra.”&lt;/p&gt;
 
 </description>
         <pubDate>Tue, 09 Apr 2019 00:00:00 -0700</pubDate>
-        <link>http://localhost:4000/blog/2019/04/09/Adversarial-Analysis-of-Zhou-Firestone/</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2019/04/09/Adversarial-Analysis-of-Zhou-Firestone/</guid>
+        <link>http://localhost:4000/blog/2019/04/09/Adversarial-Analysis-of-Zhou-Firestone_render/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/2019/04/09/Adversarial-Analysis-of-Zhou-Firestone_render/</guid>
         
         <category>reanalysis</category>
         
