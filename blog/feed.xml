@@ -6,9 +6,220 @@
 </description>
     <link>/bloghttps://jon-e.net</link>
     <atom:link href="https://jon-e.net/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 11 Apr 2019 13:34:09 -0700</pubDate>
-    <lastBuildDate>Thu, 11 Apr 2019 13:34:09 -0700</lastBuildDate>
+    <pubDate>Tue, 23 Jul 2019 02:35:31 -0700</pubDate>
+    <lastBuildDate>Tue, 23 Jul 2019 02:35:31 -0700</lastBuildDate>
     <generator>Jekyll v3.8.4</generator>
+    
+      <item>
+        <title>Automating Poll Tweets in the New Layout Hellscape</title>
+        <description>&lt;p&gt;Yes, the new Twitter layout is so o o bad, but it also broke my bot that uses Selenium to post polls (a weird missing part of the Twitter API).&lt;/p&gt;
+
+&lt;p&gt;Here are some new selectors that should be useful.&lt;/p&gt;
+
+&lt;p&gt;While I’m at it, I’ll explain a few pieces of rest of this slightly-trickier-than-usual bot. (I’m sure I borrowed most of this code from somewhere but I can’t remember where :(, sorry knowledge hole.)&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sneakers-the-rat/schillbot&quot;&gt;See the full repo&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Your bot will do this:&lt;/p&gt;
+
+&lt;video controls=&quot;&quot;&gt;
+  &lt;source src=&quot;/blog/assets/images/schillbot_vid.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+&lt;/video&gt;
+
+&lt;h1 id=&quot;imports&quot;&gt;Imports&lt;/h1&gt;
+
+&lt;p&gt;This uses selenium and a few other standards, here’s all them parts&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;
+import logging
+import os
+import random
+import time
+import traceback
+import json
+
+import pandas as pd
+import numpy as np
+
+from selenium import webdriver
+from selenium.common.exceptions import StaleElementReferenceException, TimeoutException
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.wait import WebDriverWait
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&quot;parameter-classes&quot;&gt;Parameter classes&lt;/h1&gt;
+
+&lt;p&gt;A few classes to hold our parameters. The primary class here is &lt;code class=&quot;highlighter-rouge&quot;&gt;TwitterLocator&lt;/code&gt;. To manipulate the web zone you need to know what to click on, what to scroll to, heck even what to type in. We use selenium’s &lt;code class=&quot;highlighter-rouge&quot;&gt;By&lt;/code&gt; module and make tuples for each as class attributes. Some of these were pretty heinous to find after the homepage update, so they’ll probably change next week and ymmv.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;
+
+class URL:
+    TWITTER = 'http://twitter.com'
+
+class Constants:
+    USERNAME = creds['USER']
+    PASSWORD = creds['PASS']
+    GLOBAL_ENTRY_Q = '#globalentry'
+
+
+class TwitterLocator:
+    # login stuff
+    login_btn        = (By.CLASS_NAME, &quot;StaticLoggedOutHomePage-buttonLogin&quot;)
+    username         = (By.CLASS_NAME, &quot;js-username-field&quot;)
+    password         = (By.CLASS_NAME, &quot;js-password-field&quot;)
+
+    # tweet stuff
+    outer_tweet_box  = (By.CLASS_NAME, 'public-DraftStyleDefault-block')
+    tweet_box        = (By.CLASS_NAME, &quot;public-DraftEditor-content&quot;)
+    tweet_btn        = (By.XPATH, &quot;//*[@data-testid='toolBar']//div[2]//div[3]&quot;)
+
+    # poll stuff
+    poll_btn         = (By.XPATH, '//div[@aria-label=&quot;Add poll&quot;]')
+    option_one       = (By.NAME, 'Choice1')
+    option_two       = (By.NAME, 'Choice2')
+
+    # etc.
+    search_input     = (By.ID, &quot;search-query&quot;)
+    like_btn         = (By.CLASS_NAME, &quot;HeartAnimation&quot;)
+    latest_tweets    = (By.PARTIAL_LINK_TEXT, 'Latest')
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&quot;pollbot-itself&quot;&gt;PollBot itself&lt;/h1&gt;
+
+&lt;p&gt;It starts innocently enough, loading a basic &lt;a href=&quot;http://chromedriver.chromium.org/downloads&quot;&gt;Chrome webdriver&lt;/a&gt; and loading the homepage. You’ll have to add your chromedriver to your path, eg. &lt;code class=&quot;highlighter-rouge&quot;&gt;export PATH=$PATH:/path/to/chromedriver/folder&lt;/code&gt;. Uncomment the ‘–headless’ line if you don’t want it popping up on you.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;
+
+class PollBot(object):
+
+    def __init__(self):
+        self.locator_dictionary = TwitterLocator.__dict__
+        self.chrome_options = Options()
+        #self.chrome_options.add_argument(&quot;--headless&quot;)
+        self.browser = webdriver.Chrome(chrome_options=self.chrome_options)
+        self.browser.get(URL.TWITTER)
+        self.timeout = 2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The guts of the class uses the &lt;code class=&quot;highlighter-rouge&quot;&gt;TwitterLocator&lt;/code&gt; class to navigate the site by overloading the &lt;code class=&quot;highlighter-rouge&quot;&gt;__getattr__&lt;/code&gt;. We use a few &lt;code class=&quot;highlighter-rouge&quot;&gt;WebDriverWait&lt;/code&gt;s to make sure the thing we’re looking for is on the page, and then &lt;code class=&quot;highlighter-rouge&quot;&gt;find_element&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;
+
+    def _find_element(self, *loc):
+        return self.browser.find_element(*loc)
+
+    def __getattr__(self, what):
+        try:
+            if what in self.locator_dictionary.keys():
+                try:
+                    element = WebDriverWait(self.browser, self.timeout).until(
+                        EC.presence_of_element_located(self.locator_dictionary[what])
+                    )
+                except(TimeoutException, StaleElementReferenceException):
+                    traceback.print_exc()
+
+                try:
+                    element = WebDriverWait(self.browser, self.timeout).until(
+                        EC.visibility_of_element_located(self.locator_dictionary[what])
+                    )
+                except(TimeoutException, StaleElementReferenceException):
+                    traceback.print_exc()
+                # I could have returned element, however because of lazy loading, I am seeking the element before return
+                return self._find_element(*self.locator_dictionary[what])
+        except AttributeError:
+            super(PollBot, self).__getattribute__(&quot;method_missing&quot;)(what)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We’ll chain together two methods and I guess quit too.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;
+    def run(self, post_text):
+        self.login()
+        self.tweet_poll(post_text)
+        self.browser.quit()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;login&quot;&gt;Login&lt;/h2&gt;
+
+&lt;p&gt;So when we do things like &lt;code class=&quot;highlighter-rouge&quot;&gt;.login()&lt;/code&gt; we just chain together a bunch of attribute calls - calling &lt;code class=&quot;highlighter-rouge&quot;&gt;self.login_btn&lt;/code&gt; calls &lt;code class=&quot;highlighter-rouge&quot;&gt;self.__getattr__(self, 'login_btn')&lt;/code&gt; - and selenium commands. We get pretty sleepy through all these methods because this bot doesn’t care about FAST POSTS and has bad internet.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;
+
+    def login(self, username=Constants.USERNAME, password=Constants.PASSWORD):
+        self.login_btn.click()
+        time.sleep(1)
+        self.username.click()
+        time.sleep(0.1)
+        self.username.send_keys(username)
+        time.sleep(0.1)
+        self.password.click()
+        time.sleep(0.1)
+        self.password.send_keys(password)
+        time.sleep(0.1)
+        self.browser.find_elements_by_css_selector(&quot;.clearfix&amp;gt;.submit&quot;)[0].click()
+        time.sleep(0.5)
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;tweet-poll&quot;&gt;Tweet poll&lt;/h2&gt;
+
+&lt;p&gt;Once we’re logged in, go ahead and tweet the poll already. More of the same song and dance.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;
+
+    def tweet_poll(self, post_text):
+
+        # click the tweet box
+        self.outer_tweet_box.click()
+        time.sleep(1)
+
+        # type the tweet
+        self.tweet_box.send_keys('\&quot;' + post_text.lower() + '\&quot; uohellno.com')
+        time.sleep(1)
+
+        # make the poll
+        self.poll_btn.click()
+        time.sleep(0.1)
+        self.option_one.click()
+        time.sleep(0.1)
+        self.option_one.send_keys('human schill')
+        time.sleep(0.1)
+        self.option_two.click()
+        time.sleep(0.1)
+        self.option_two.send_keys('robot schill')
+        time.sleep(0.2)
+
+        # send the tweet
+        self.tweet_btn.click()
+        time.sleep(2)
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&quot;fin&quot;&gt;fin&lt;/h1&gt;
+
+&lt;p&gt;And there you have it. The rest of the code in the repo is just badly made code to randomly choose a tweet from some &lt;a href=&quot;https://twitter.com/schillbot3000&quot;&gt;neural net that mocks the President of the University of Oregon&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 23 Jul 2019 00:00:00 -0700</pubDate>
+        <link>https://jon-e.net/blog/2019/07/23/Automating-Poll-Tweets-In-The-New-Layout-Hellscape/</link>
+        <guid isPermaLink="true">https://jon-e.net/blog/2019/07/23/Automating-Poll-Tweets-In-The-New-Layout-Hellscape/</guid>
+        
+        <category>twitter</category>
+        
+        <category>webscraping</category>
+        
+        <category>scraping</category>
+        
+        <category>selenium</category>
+        
+        <category>schillbot</category>
+        
+        
+      </item>
     
       <item>
         <title>An Adversarial (re)Analysis of Zhou/Firestone 2019</title>
