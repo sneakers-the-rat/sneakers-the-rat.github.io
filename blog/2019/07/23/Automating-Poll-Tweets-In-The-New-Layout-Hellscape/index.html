@@ -59,6 +59,7 @@ class PollBot(object):
         self.browser = webdriver.Chrome(chrome_options=self.chrome_options)
         self.browser.get(URL.TWITTER)
         self.timeout = 2
+        
 </code></pre><p>The guts of the class uses the <code class="highlighter-rouge">TwitterLocator</code> class to navigate the site by overloading the <code class="highlighter-rouge">__getattr__</code>. We use a few <code class="highlighter-rouge">WebDriverWait</code>s to make sure the thing we’re looking for is on the page, and then <code class="highlighter-rouge">find_element</code></p><pre><code class="python">
 
     def _find_element(self, *loc):
