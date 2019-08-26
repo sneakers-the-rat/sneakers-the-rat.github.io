@@ -22,6 +22,7 @@ layout: default
 <!--     <div data-spy="scroll" data-target="#toc" class="post__content section-padding"> -->
 
       <div class="container">
+        {% if page.toc %}
         <div class="row">
           <div class="col-md-3 hidden-sm">
             <div class="sticky-top">
@@ -32,6 +33,13 @@ layout: default
             {{content}}
           </div>
         </div>
+        {% else %}
+        <div class="row">
+          <div class="col-md-12 col-sm-12 post__content section-padding" id="markdown" itemprop="articleBody">
+            {{content}}
+          </div>
+        </div>
+        {% endif %}
         <div class="row">
          {% include share.html %}
          </div>

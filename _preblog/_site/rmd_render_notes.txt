@@ -1,2 +1,0 @@
-https://bookdown.org/yihui/blogdown/jekyll.html
-http://www.jdatalab.com/data_science_and_data_mining/2017/12/23/R-tutorial-test.html

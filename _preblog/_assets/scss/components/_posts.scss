@@ -1,6 +1,22 @@
 //----------------------------------------------
 // Posts
 //---------------------------------------------- 
+
+.container {
+  @media screen and (max-width: $mq-xlarge){
+    margin: {
+      right: -1em;
+      left: -1em;
+    }
+  }
+  @media screen and (max-width: $mq-med){
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    margin-left: 0em !important;
+    margin-right:0em !important;
+  }
+}
+
 .posts {
   padding: 1em 1em 3em;
 
@@ -26,10 +42,16 @@
   }
 
   &__container {
+  @media screen and (max-width: $mq-xlarge){
     margin: {
       right: -1em;
       left: -1em;
     }
+  }
+  @media screen and (max-width: $mq-med){
+    margin-left: 0em;
+    margin-right:0em;
+  }
 
     &[data-columns]:before {
       @media screen and (max-width: $mq-med) {
