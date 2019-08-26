@@ -6,9 +6,218 @@
 </description>
     <link>/bloghttps://jon-e.net</link>
     <atom:link href="https://jon-e.net/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 24 Jul 2019 18:35:06 -0700</pubDate>
-    <lastBuildDate>Wed, 24 Jul 2019 18:35:06 -0700</lastBuildDate>
+    <pubDate>Sun, 25 Aug 2019 19:11:05 -0700</pubDate>
+    <lastBuildDate>Sun, 25 Aug 2019 19:11:05 -0700</lastBuildDate>
     <generator>Jekyll v3.8.4</generator>
+    
+      <item>
+        <title>NSF GRFP Advice and My Annotated Proposal</title>
+        <description>&lt;p&gt;I saw this tweet from Mae Guthman with the brilliant idea to share her NSF GRFP materials &amp;amp; give a thread of advice:&lt;/p&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;It&amp;#39;s NSF GRFP season!&lt;br /&gt;&lt;br /&gt;I wanted to go ahead and share my (rejected) 2014 application and (funded) 2015 application.&lt;br /&gt;&lt;br /&gt;You can find them both here ⬇️&lt;a href=&quot;https://t.co/LdAUXPbJXG&quot;&gt;https://t.co/LdAUXPbJXG&lt;/a&gt;&lt;/p&gt;&amp;mdash; Mae is a postdoc? 🏳️‍⚧️ 🌸🌺🐜 (@ukleghoul) &lt;a href=&quot;https://twitter.com/ukleghoul/status/1165634795193417728?ref_src=twsrc%5Etfw&quot;&gt;August 25, 2019&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;I’ve had written some scattered advice for Elliot Berkman’s (&lt;a href=&quot;https://twitter.com/Psychologician&quot;&gt;@Psychologician&lt;/a&gt;) GRFP workshop a few years ago, and thought it was a good time to update that and give an annotated version of my proposal. Hopefully this helps someone :)&lt;/p&gt;
+
+&lt;h2 id=&quot;the-documents&quot;&gt;The documents&lt;/h2&gt;
+
+&lt;p&gt;If yr just here for some sweet sweet documents, here was my accepted proposal &amp;amp; personal statement. By opening these documents you hereby are ordered to not make fun of my personal statement ;).&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;/blog/assets/hosted/JSaunders_GRFP_Proposal.pdf&quot;&gt;GRFP Proposal&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/blog/assets/hosted/JSaunders_GRFP_PersonalStatement.pdf&quot;&gt;GRFP Personal Statement&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;annotated-proposal&quot;&gt;Annotated Proposal&lt;/h1&gt;
+
+&lt;p&gt;I’ve embedded the advice I have regarding formatting as annotations using &lt;a href=&quot;https://hypothes.is/&quot;&gt;hypothes.is&lt;/a&gt;, to see them either click on highlighted text or expand the toolbar on the right with the arrow in the top right corner.&lt;/p&gt;
+
+&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.min.js&quot; integrity=&quot;sha256-rYPX3dXq8Nh532EvCS2foeyTgmzbcC8u+nCk/rEtKXA=&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;
+
+&lt;iframe style=&quot;width:100%;min-height:90vh;&quot; src=&quot;/blog/plugins/pdfjs_hypothesis/viewer/web/viewer.html?file=/blog/assets/hosted/JSaunders_GRFP_Proposal.pdf&quot;&gt;&lt;/iframe&gt;
+
+&lt;h1 id=&quot;advice&quot;&gt;Advice&lt;/h1&gt;
+
+&lt;h2 id=&quot;proposal&quot;&gt;Proposal&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;One very common and important piece of general advice - write your research proposal as a reflection of you as a scientist. they are funding &lt;em&gt;you&lt;/em&gt; not a project, so the voice in the research proposal doesn’t need to be so austere, but should capture your humble, albeit muted, reverence for this question and science generally - stop short of the flowers though :p.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;topic-choice&quot;&gt;Topic Choice&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;you’re sorta bound by your lab, but both for inspiration as well as tailoring your language you should check out your local science twitter. follow the people whose names you keep seeing on papers you like, find threads where they’re replying, get a feel both for the hot shit and what people complain about.&lt;/li&gt;
+  &lt;li&gt;'’Do whatever you can to be able to include preliminary data.’’ As I mention in the annotations, I think doing the GRFP in your second year is usually a good tradeoff - you get the possibility of preliminary data at the expense of a more competetive application pool, but my (non-empirical) opinion is that the bonus from the obvious feasibility of your experiment pays off.&lt;/li&gt;
+  &lt;li&gt;w.r.t global structure, there’s an acronym from debate that I use to help structure arguments generally: &lt;strong&gt;SHITS&lt;/strong&gt; - Significance, Harms, Inherency, Topicality, Solvency. Another implicit part of this framework is Impact, but SHITSI is a bad acronym. This framework is useful at the scale of the whole proposal, but also at the scale of each paragraph:
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;Significance&lt;/strong&gt; - How important is the question/knowledge gap that you’re proposing to answer? This should come through first, briefly, in your introduction, but then heavily in your broader impacts.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Harms&lt;/strong&gt; - What are we prevented from doing/knowing by having this question/knowledge gap unanswered? Why is your proposal important to fund &lt;em&gt;right now?&lt;/em&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Inherency&lt;/strong&gt; - What is inherent in the status quo that has prevented this work from being done. Why hasn’t someone already done your experiment? Why are you uniquely able to do this experiment? This should be at the bottom of your introduction/one of the first sentences in your aims.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Topicality&lt;/strong&gt; - Not as relevant, but staying on topic. You want to make damn sure you answer all the parts of the call for submissions.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Solvency&lt;/strong&gt; - How does your experiment answer the question/knowledge gap?  This comes through in your aims.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Impacts&lt;/strong&gt; - What would the results of your experiments mean for science/the world? This is the intellectual merit/broader impacts section.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;space-allocation&quot;&gt;Space Allocation&lt;/h3&gt;
+
+&lt;p&gt;I spell a lot of this out in the annotated document, but my general guidelines:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Intro:&lt;/strong&gt; 1/3 page&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Aims:&lt;/strong&gt; 2 1/3 page aims. Pick two specific experiments that you can describe succinctly. You need to 1) introduce the questiont they they answer, 2) describe the experiment in broad strokes 3) describe how it will answer the question and 4) add a little sugar of future directions or alternative analyses. If you get bogged down in methodological details in your aims there’s no chance you’ll be able to do all of those in the space provided. More on this in ‘scope’&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Future Directions:&lt;/strong&gt; 2-3 sentences. Thes are to make clear that a) you have options, and the two aims are just examples of what you can do, and b) that you can think expansively about science and don’t have ‘tunnelvision’ for what &lt;em&gt;might&lt;/em&gt; have been handed to your by PI :P&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Intellectual Merit:&lt;/strong&gt; 1/3 page&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Broader Impact:&lt;/strong&gt; 1/3 page - do not shortchange these sections! If it looks like you’re just phoning these in that’s the end of your proposal.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Figures:&lt;/strong&gt; I usually think the benefit of a figure is not worth the space they take. If you are including data that’s basically a bar chart with different means, just say “my preliminary data says x is greater than y.” I don’t really know when it would be good to include a figure from someone else’s work. If your experiment relies on a reasonably complex, but still visualizable model that’s one of the exceptions that I would consider worth it (if the model is just two boxes with reciprocal arrows between them then imo you’re still better off describing it in words).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;scopedetail-of-aims&quot;&gt;Scope/Detail of Aims&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Err on the side of generality - your reviewer should know what you’re talking about and be able to infer some specifics of the experiment, but not much more. Some reasons:
+    &lt;ol&gt;
+      &lt;li&gt;&lt;strong&gt;Specific/tricky methods don’t impress in this context&lt;/strong&gt; - you always lose the ‘novelty/competence’ race in this proposal. If what you’re describing is ‘cool enough’ to warrant specific description, it’s also probably hard enough that the reader would doubt you’ll be able to pull it off. Not to say simplify your proposed experiments, just that greater detail doesn’t help (read: complicated methods don’t do a good job of demonstrating that ‘you know what you’re talking about’).&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Specificity generates doubt&lt;/strong&gt; - relatedly, the more specifically an experiment is described, the easier it is for the reader to to dismiss as “I don’t think that would work/they could do that.” Don’t give them a shortcut to go to the next proposal. Every specific method you discuss also needs some affirmation that you/your lab is capable of doing it, so you’re always double-dipping on space by going more specific.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Focusing on methods to demonstrate competency backfires&lt;/strong&gt; - we’ve all seen first science talks that are 10 minutes of too-specific methods and 5 minutes of bar charts because they’re unsure what to do with all those numbers. Don’t give the impression that you’re too focused on the practical elements of &lt;em&gt;what you’re doing&lt;/em&gt; at the expense of &lt;em&gt;what it means.&lt;/em&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Give the reviewer room to imagine&lt;/strong&gt; - you should give plenty of room for the reader to imagine what else might come up along the way (you should also briefly and explicitly outline what that might be). A dense thicket of methods makes brings the level of their imagination down to practicalities, rather than at the level of ideas.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Structure your aims so that you will get useful information no matter what the results are: if you’re looking for evidence of a theory, describe what that would look like &lt;em&gt;but also&lt;/em&gt; explain what failing to find evidence for that would mean.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;collaboration&quot;&gt;Collaboration&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;talk about it. a lot. especially in neuroscience people want to see you bridging fields (and you should want to anyway because it’s fun), but most science is interdisciplinary and thus benefits from expert input from diverse fields.
+    &lt;ol&gt;
+      &lt;li&gt;Use it as a way of assuaging competency/capability fears. “it sounds like they’ll have a lot of help”&lt;/li&gt;
+      &lt;li&gt;use it to offset the generality from the lack of methodological specificity. “one of their collaborators will fill in any blank spots”&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;accordingly, start reaching out to potential collaborators asap. You don’t have to &lt;em&gt;do&lt;/em&gt; everything in your proposal exactly as you describe it, but you &lt;em&gt;definitely don’t&lt;/em&gt; want to lie about people you are working with.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;formatting&quot;&gt;Formatting&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Don’t be shy about numbering in-paragraph, especially in intellectual merit section, but anywhere where your writing could become “blippy.” eg. you want to cover five distinct ways your work would be important that don’t necessarily flow together.&lt;/li&gt;
+  &lt;li&gt;Don’t waste space on whitespace, but keep it readable. Use the formatting slack they give you to your advantage: Head your sections with bold, indented text, but don’t break afterwards - just give four spaces and head into the paragraph&lt;/li&gt;
+  &lt;li&gt;You should have to use 2-4 citations, but bring the size down to 10, do in-text citations with numbers, like (2), use an abbreviated format, something like
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;ol&gt;
+          &lt;li&gt;Rauschecker JP, Scott SK. &lt;strong&gt;Nat. Neurosci.&lt;/strong&gt; (2009) &lt;em&gt;12:718-724&lt;/em&gt;&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;personal-statement&quot;&gt;Personal Statement&lt;/h2&gt;
+
+&lt;p&gt;First, I don’t think my personal statement is especially good, so this advice is probably not the greatest, but I’ll include my thoughts just for completeness sake.&lt;/p&gt;
+
+&lt;h3 id=&quot;style&quot;&gt;Style&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Above all, be sincere. There are two extremes of “robotically listing your CV” and “a dramatic poetic reading of your life,” if you don’t speak like that, don’t write like it.&lt;/li&gt;
+  &lt;li&gt;Human-readable but not flowery, watch your adjective frequency.&lt;/li&gt;
+  &lt;li&gt;Don’t oversell yourself or appear boastful, but make it clear that you are your reviewer’s sober, capable colleague that doesn’t know everything but can work with people to figure it out.&lt;/li&gt;
+  &lt;li&gt;Write about yourself, but for every thought that is a description of yourself, include a few that are your thoughts about other things (you’re already the subject of your sentences, do ya really need to be the object too? :p)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;content&quot;&gt;Content&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Good rule-of-thumb guiding questions are
+    &lt;ol&gt;
+      &lt;li&gt;Describe why you are a scientist and&lt;/li&gt;
+      &lt;li&gt;why that makes you a good one.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Give a sense of your path in science without being a CV or tale of personal drama and woe. Stopping short of artifice/and um.. lies…, use some quality/etc. as a framework for motivating the moves in your personal history. Compare:
+    &lt;ul&gt;
+      &lt;li&gt;“I have a deep and abiding love of hugs, so I started working in a hug factory where I dove deeper into the principles of warmth and proximity, this led me to studying knot theory… etc.” vs.&lt;/li&gt;
+      &lt;li&gt;“I worked in the prestigious hug factory under overseer x, and eventually was able to work my way up the ladder back into the ivory tower to study knot theory.”&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Shy away from cliche - “I knew i wanted to be an entomologist since i was 4 and i let a bunch of ants crawl all over my bare belly”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;interplay-w-proposal&quot;&gt;Interplay w/ Proposal&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Don’t even give the remotest whiff that you’re using it as an extension of your research proposal, but to set up some of the more basic elements like your propensity for collaboration and your motivation for whatever broader impact you call out. ie. does your personal statement support what you describe as your broader impact?&lt;/li&gt;
+  &lt;li&gt;use similar language as a callback (but not repetitively).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;writing-generally&quot;&gt;Writing Generally:&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Your writing is the clothes your ideas wear and the dance moves they know, they could be the best ones in the pack but if they look and move like shit the proposal won’t get picked up.&lt;/li&gt;
+  &lt;li&gt;Your writing should feel sparse, brisk; the research proposal especially. If there are any sentences you have to read twice, simplify them. If there are any sentences that break over approximately two lines, simplify and split them.&lt;/li&gt;
+  &lt;li&gt;To check the rhythm of your writing, read it out loud to yourself, record it, listen to the recording. If there are sections where you feel your words getting twisted around one another, break them up. If the rhythm of your speech, the distribution of empty space - ie. the distribution of sentence lengths and punctuation - is not conversational it will be hard to read.&lt;/li&gt;
+  &lt;li&gt;For the love of all that is holy no cliched phrasing or scientific buzzwords
+    &lt;ul&gt;
+      &lt;li&gt;eg. “elucidate the mechanisms of,” “we know a lot about x, but y is poorly understood,” etc.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;The book “On Writing Well” by William Zinsser is indispensable for next-leveling your writing. I can provide relevant chapters if requested.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;reviews&quot;&gt;Reviews&lt;/h1&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Intellectual Merit Rating&lt;/th&gt;
+      &lt;th&gt;Intellectual Merit Comments&lt;/th&gt;
+      &lt;th&gt;Broader Impacts Rating&lt;/th&gt;
+      &lt;th&gt;Broader Impacts Comments&lt;/th&gt;
+      &lt;th&gt;Summary Statement&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Very Good&lt;/td&gt;
+      &lt;td&gt;The applicant has a below average academic record compared to the applicant pool. His proposal idea is interesting, however I am skeptical that phonetics can be effectively studied in mice and how that would relate across species. The proposal and preliminary data are pretty innovative!&lt;/td&gt;
+      &lt;td&gt;Very Good&lt;/td&gt;
+      &lt;td&gt;The applicant has distributed tools to other researchers. He has also took part in teaching and mentoring activities&lt;/td&gt;
+      &lt;td&gt;Thinking outside the box and trying to study interesting phenomena is the way to go in neuroscience.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Excellent&lt;/td&gt;
+      &lt;td&gt;Dynamic project involving a new behavior paradigm and cutting-edge technique. Supervisors speak exeptionally well of his lab skills.&lt;/td&gt;
+      &lt;td&gt;Excellent&lt;/td&gt;
+      &lt;td&gt;Commitment to open science initiatives and data sharing, key aspects of transformative neuroscience.&lt;/td&gt;
+      &lt;td&gt;An innovative project, combining neuroscience and some strong engineering skills, with broad relevance in basic science. Really the perfect GRF application.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Excellent&lt;/td&gt;
+      &lt;td&gt;The applicant has great passion, exceptional creativity and hands-on ability on research. During his undergraduate research, he did not only collective data with whole-cell patch clamp technique, but also had deep understanding of the question he was tackling and made interpretation of the results he got. His research experience in his PhD lab shows his outstanding depth of thinking and work ethic. The applicant also got great letters attest his talent on research. The applicant proposed to establish the mouse model for speech perception. This is a very intriguing but challenging project. Impressively, the applicant managed to get promising preliminary data.&lt;/td&gt;
+      &lt;td&gt;Excellent&lt;/td&gt;
+      &lt;td&gt;The applicant’s goal is to contribute to,the achievement of open publication and free online courses. He plans to share the programs that he wrote and the data that he acquired with the community. He also plans to adapt existing systems to facilitating the distribution of data for smaller labs without expensive servers. His goal and endeavor may profoundly benefit the research community.&lt;/td&gt;
+      &lt;td&gt;The applicant is strong in both intellectual merit and broader impact. He is fully prepared for his graduate career. His excellent research ability and commitment to the science education and accessibility will make him a successful scientist.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+</description>
+        <pubDate>Sun, 25 Aug 2019 00:00:00 -0700</pubDate>
+        <link>https://jon-e.net/blog/2019/08/25/NSF-GRFP-Advice-And-My-Annotated-Proposal/</link>
+        <guid isPermaLink="true">https://jon-e.net/blog/2019/08/25/NSF-GRFP-Advice-And-My-Annotated-Proposal/</guid>
+        
+        <category>science</category>
+        
+        <category>GRFP</category>
+        
+        <category>writing</category>
+        
+        
+      </item>
     
       <item>
         <title>Music of Music and the Brain</title>

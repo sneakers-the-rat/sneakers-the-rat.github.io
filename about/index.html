@@ -84,6 +84,8 @@
 
 			var cmesh;
 
+			const ctx = document.createElement('canvas').getContext('2d');
+
 			var sphere;
 			var clothGeometry;
 			init();
@@ -192,8 +194,14 @@
 				var loader2 = new THREE.TextureLoader();
 				var clothTexture = loader2.load( 'flag.png' );
 				clothTexture.anisotropy = 16;
+				// ctx.canvas.width = 256;
+				// ctx.canvas.height = 256;
+				// ctx.fillStyle = '#FFF';
+				// ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+				// const cvstexture = new THREE.CanvasTexture(ctx.canvas);
 				var clothMaterial = new THREE.MeshLambertMaterial( {
 					map: clothTexture,
+					// map: cvstexture,
 					side: THREE.DoubleSide,
 					alphaTest: 0.5
 				} );
