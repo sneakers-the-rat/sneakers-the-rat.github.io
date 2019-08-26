@@ -11,7 +11,7 @@ tags:
   - writing
 ---
 
-I saw this tweet from Mae Guthman with the brilliant idea to share her NSF GRFP materials & give a thread of advice:
+I saw this tweet from Mae with the brilliant idea to share her NSF GRFP materials & give a thread of advice:
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">It&#39;s NSF GRFP season!<br><br>I wanted to go ahead and share my (rejected) 2014 application and (funded) 2015 application.<br><br>You can find them both here ⬇️<a href="https://t.co/LdAUXPbJXG">https://t.co/LdAUXPbJXG</a></p>&mdash; Mae is a postdoc? 🏳️‍⚧️ 🌸🌺🐜 (@ukleghoul) <a href="https://twitter.com/ukleghoul/status/1165634795193417728?ref_src=twsrc%5Etfw">August 25, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
 
