@@ -57,7 +57,7 @@ I've embedded the advice I have regarding formatting as annotations using [hypot
 
 I spell a lot of this out in the annotated document, but my general guidelines:
 
-* **Intro:** 1/3 page
+* **Intro:** 1/3 page. You want to give them just enough information to motivate your experiment without getting them bogged down in the details. This is easy to overdo - in general if you need more room than this than you aren't writing generally enough
 * **Aims:** 2 1/3 page aims. Pick two specific experiments that you can describe succinctly. You need to 1) introduce the questiont they they answer, 2) describe the experiment in broad strokes 3) describe how it will answer the question and 4) add a little sugar of future directions or alternative analyses. If you get bogged down in methodological details in your aims there's no chance you'll be able to do all of those in the space provided. More on this in 'scope'
 * **Future Directions:** 2-3 sentences. Thes are to make clear that a) you have options, and the two aims are just examples of what you can do, and b) that you can think expansively about science and don't have 'tunnelvision' for what *might* have been handed to your by PI :P
 * **Intellectual Merit:** 1/3 page
