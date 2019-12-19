@@ -38,6 +38,48 @@
     top: -2.4px;
     left: 3.6px;
     color: limegreen; }
+  @media screen and (max-width: 720px) {
+    .text {
+      font-size: 48px;
+      line-height: 48px; } }
+
+.subtext {
+  font-size: 40px;
+  line-height: 40px;
+  margin: 0;
+  font-family: 'Cutive', serif;
+  top: 16pt;
+  color: yellow;
+  mix-blend-mode: screen;
+  position: relative;
+  white-space: nowrap;
+  -webkit-filter: blur(1px);
+  -moz-filter: blur(1px);
+  filter: blur(1px);
+  -webkit-animation: skew 2s infinite;
+  -moz-animation: skew 2s infinite;
+  -o-animation: skew 2s infinite;
+  animation: skew 2s infinite; }
+  .subtext:after, .subtext:before {
+    content: attr(data-text);
+    position: absolute;
+    mix-blend-mode: screen; }
+  .subtext:after {
+    top: 0;
+    left: 2px;
+    color: red;
+    -webkit-animation: move 1.5s infinite;
+    -moz-animation: move 1.5s infinite;
+    -o-animation: move 1.5s infinite;
+    animation: move 1.5s infinite; }
+  .subtext:before {
+    top: -0.8px;
+    left: 1.2px;
+    color: red; }
+  @media screen and (max-width: 720px) {
+    .subtext {
+      font-size: 36px;
+      line-height: 36px; } }
 
 .line {
   position: absolute;
