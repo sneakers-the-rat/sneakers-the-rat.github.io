@@ -45,7 +45,7 @@
 
 .subtext {
   font-size: 40px;
-  line-height: 40px;
+  line-height: 46px;
   margin: 0;
   font-family: 'Cutive', serif;
   top: 16pt;
@@ -78,7 +78,7 @@
     color: red; }
   @media screen and (max-width: 720px) {
     .subtext {
-      font-size: 36px;
+      font-size: 30px;
       line-height: 36px; } }
 
 .line {
