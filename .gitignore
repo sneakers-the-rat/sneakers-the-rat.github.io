@@ -90,3 +90,4 @@ old/index_old.css
 
 *.continuous
 bower_components
+node_modules
