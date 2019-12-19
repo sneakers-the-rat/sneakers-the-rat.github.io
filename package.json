@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "scss": "node-sass --watch sass -o css"
+    "scss:main": "node-sass --watch sass -o css",
+    "scss:about": "node-sass --watch about/scss -o about/css",
+    "serve": "npm run scss:main & npm run scss:about & http-server"
   },
   "repository": {
     "type": "git",
@@ -20,6 +22,11 @@
   "dependencies": {
     "bundler": "^0.8.0",
     "jekyll": "^3.0.0-beta1",
-    "node-sass": "^4.11.0"
+    "node-sass": "^4.13.0",
+    "three": "^0.111.0"
+  },
+  "devDependencies": {
+    "webpack": "^4.41.3",
+    "webpack-cli": "^3.3.10"
   }
 }
