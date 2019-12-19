@@ -228,8 +228,8 @@ function init() {
 
 	// STATS
 
-	stats = new Stats();
-	container.appendChild( stats.dom );
+	// stats = new Stats();
+	// container.appendChild( stats.dom );
 
 	// EVENTS
 
@@ -290,7 +290,7 @@ function animate() {
 	requestAnimationFrame( animate );
 
 	render();
-	stats.update();
+	// stats.update();
 
 }
 
