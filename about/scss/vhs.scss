@@ -87,7 +87,7 @@ $break-small: 720px;
   -webkit-filter: blur(1px);
   -moz-filter: blur(1px);
    filter: blur(1px);
-  @include animation('skew 2s infinite');
+  @include animation('skew 4s infinite');
   //'flash 1s infinite'
   
   &:after, &:before{
@@ -99,7 +99,7 @@ $break-small: 720px;
     top: 0;
     left: $offset;
     color: yellow;
-    @include animation('move 1.5s infinite');
+    @include animation('move 3s infinite');
   }
   &:before{
     top: -0.4*$offset;
@@ -125,11 +125,10 @@ $break-small: 720px;
   mix-blend-mode: screen;
   position: relative;
   white-space: nowrap;
-  -webkit-filter: blur(1px);
-  -moz-filter: blur(1px);
-   filter: blur(1px);
+  -webkit-filter: blur(.5px);
+  -moz-filter: blur(0.5px);
+   filter: blur(0.5px);
   @include animation('skew 2s infinite');
-  //'flash 1s infinite'
   
   &:after, &:before{
     content: attr(data-text);
@@ -140,7 +139,7 @@ $break-small: 720px;
     top: 0;
     left: $offset-small;
     color: red;
-    @include animation('move 1.5s infinite');
+    @include animation('move 4s infinite');
   }
   &:before{
     top: -0.4*$offset-small;

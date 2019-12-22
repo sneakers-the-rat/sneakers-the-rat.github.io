@@ -18,10 +18,10 @@
   -webkit-filter: blur(1px);
   -moz-filter: blur(1px);
   filter: blur(1px);
-  -webkit-animation: skew 2s infinite;
-  -moz-animation: skew 2s infinite;
-  -o-animation: skew 2s infinite;
-  animation: skew 2s infinite; }
+  -webkit-animation: skew 4s infinite;
+  -moz-animation: skew 4s infinite;
+  -o-animation: skew 4s infinite;
+  animation: skew 4s infinite; }
   .text:after, .text:before {
     content: attr(data-text);
     position: absolute;
@@ -30,10 +30,10 @@
     top: 0;
     left: 6px;
     color: yellow;
-    -webkit-animation: move 1.5s infinite;
-    -moz-animation: move 1.5s infinite;
-    -o-animation: move 1.5s infinite;
-    animation: move 1.5s infinite; }
+    -webkit-animation: move 3s infinite;
+    -moz-animation: move 3s infinite;
+    -o-animation: move 3s infinite;
+    animation: move 3s infinite; }
   .text:before {
     top: -2.4px;
     left: 3.6px;
@@ -53,9 +53,9 @@
   mix-blend-mode: screen;
   position: relative;
   white-space: nowrap;
-  -webkit-filter: blur(1px);
-  -moz-filter: blur(1px);
-  filter: blur(1px);
+  -webkit-filter: blur(0.5px);
+  -moz-filter: blur(0.5px);
+  filter: blur(0.5px);
   -webkit-animation: skew 2s infinite;
   -moz-animation: skew 2s infinite;
   -o-animation: skew 2s infinite;
@@ -68,10 +68,10 @@
     top: 0;
     left: 2px;
     color: red;
-    -webkit-animation: move 1.5s infinite;
-    -moz-animation: move 1.5s infinite;
-    -o-animation: move 1.5s infinite;
-    animation: move 1.5s infinite; }
+    -webkit-animation: move 4s infinite;
+    -moz-animation: move 4s infinite;
+    -o-animation: move 4s infinite;
+    animation: move 4s infinite; }
   .subtext:before {
     top: -0.8px;
     left: 1.2px;

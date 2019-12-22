@@ -9,6 +9,7 @@
 		<link type="text/css" rel="stylesheet" href="css/vhs.css">
 		<link href='https://fonts.googleapis.com/css?family=Bungee' rel='stylesheet' type='text/css'>
 		<link href="https://fonts.googleapis.com/css?family=Cutive&display=swap" rel="stylesheet">
+        <script src="/about/jsm/libs/tween.umd.js"></script>
 		<style>
 			body {
 				color: #000;
@@ -22,6 +23,14 @@
 	<body>
 				
 <div id="scanlines" class="scanlines" style="width:100vw; height:100vh">
+				<video id="video1" muted loop autoplay crossOrigin="anonymous" playsinline style="display:none" width="1024" height="1024">
+			<!-- <source src="textures/sintel_crop.ogv" type='video/ogg; codecs="theora, vorbis"'> -->
+			<source src="textures/neuropix_enc11.mp4" type='video/mp4'>
+				<!-- ; codecs="avc1.42E01E, mp4a.40.2" -->
+		</video>
+						<!-- <video id="video2" muted loop autoplay crossOrigin="anonymous" playsinline width="1024" height="1024" style="display:none">
+			<source src="textures/neuropix_inv10.mp4" type='video/mp4'>
+		</video> -->
     <div id="container">
         <div class='root'>
             <div data-text='JONNY' class='text'>
@@ -44,6 +53,17 @@
 </div>
 
 
+    <script id="fragmentShader" type="x-shader/x-fragment">
+        varying vec2 vUv;
+        uniform sampler2D texture0;         // texture
+
+        uniform float time;
+
+        void main() {
+            vec4 color0 = texture2D(texture0, vUv * 2.0);
+            gl_FragColor = color0;
+        }
+    </script>
 		<script id="fragmentShaderNoise" type="x-shader/x-fragment">
 
 			//
@@ -193,6 +213,7 @@
 
 		</script>
 		<script type="javascript" src="js/scanlines.js"/>
+	
 
 	</body>
 </html>

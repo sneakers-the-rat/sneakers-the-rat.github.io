@@ -21,7 +21,7 @@ var uniformsNoise, uniformsNormal, uniformsTerrain,
 	heightMap, normalMap,
 	quadTarget;
 
-var directionalLight, pointLight, hemiLight;
+var directionalLight, pointLight;
 
 var terrain;
 var terrainMaterial;
@@ -35,33 +35,10 @@ var updateNoise = true;
 
 var mlib = {};
 
-var video1, video2, vidTexture1, vidTexture2;
+var video, vidTexture;
 
 init();
 animate();
-cameraTween();
-
-function cameraTween(){
-	new TWEEN.Tween( camera.position ).to( {
-    x: 0,
-    y: 500,
-    z: 3000}, 8000 )
-  //   .chain(new TWEEN.Tween(camera.position).to({
-  //   x: -2000,
-  // 	y: 1000,
-  // 	z: 4000
-  //   },3000).easing(TWEEN.Easing.Sinusoidal.Out).onUpdate(function() {
-  // 	// camera.position.set(this.x, this.y, this.z);
-  // 	camera.lookAt(new THREE.Vector3(0,0,0));
-  // }))
-  .easing( TWEEN.Easing.Sinusoidal.InOut)
-  .onUpdate(function() {
-  	// camera.position.set(this.x, this.y, this.z);
-  	camera.lookAt(new THREE.Vector3(0,0,0));
-  })
-  .delay(1000).start();
-  
-}
 
 function init() {
 
@@ -78,29 +55,22 @@ function init() {
 
 	// CAMERA
 
-	camera = new THREE.PerspectiveCamera( 40, SCREEN_WIDTH / SCREEN_HEIGHT, 2, 10000 );
-	camera.position.set( 0, 4000, 0);
-
+	camera = new THREE.PerspectiveCamera( 40, SCREEN_WIDTH / SCREEN_HEIGHT, 2, 4000 );
+	camera.position.set( - 1200, 800, 1200 );
 
 	// SCENE (FINAL)
 
 	scene = new THREE.Scene();
 	scene.background = new THREE.Color( 0x000000);
-	scene.fog = new THREE.Fog( 0x000000,4000, 6000 );
-
-	camera.lookAt(scene.position);
+	scene.fog = new THREE.Fog( 0x000000,1000, 4000 );
 
 	// LIGHTS
 
 	// scene.add( new THREE.AmbientLight( 0x111111 ) );
 
-	directionalLight = new THREE.DirectionalLight( 0xffddee, 1.15 );
+	directionalLight = new THREE.DirectionalLight( 0xffffff, 1.15 );
 	directionalLight.position.set( 500, 2000, 0 );
 	scene.add( directionalLight );
-
-	// hemiLight = new THREE.HemisphereLight(0xffffbb, 0x080820, 1);
-	// //hemiLight.position.set(500,2000,0);
-	// scene.add(hemiLight);
 
 	pointLight = new THREE.PointLight( 0x000000, 1.5 );
 	pointLight.position.set( 0, 0, 0 );
@@ -145,33 +115,24 @@ function init() {
 	var textureLoader = new THREE.TextureLoader( loadingManager );
 
 	// Video texture
-	video1 = document.getElementById( 'video1' );
-	video2 = document.getElementById( 'video2' );
+	video = document.getElementById( 'video' );
 	// video.play();
-	vidTexture1 = new THREE.Texture( video1 );
-	vidTexture2 = new THREE.VideoTexture( video2 );
+	vidTexture = new THREE.VideoTexture( video );
 
 	var specularMap = new THREE.WebGLRenderTarget( 2048, 2048, pars );
 	specularMap.texture.generateMipmaps = false;
 
-	// var diffuseTexture1 = textureLoader.load( "textures/terrain/stripes.png" );
-	// var diffuseTexture2 = textureLoader.load( "textures/terrain/stripes_inv.png" );
+	var diffuseTexture1 = textureLoader.load( "textures/terrain/stripes.png" );
+	var diffuseTexture2 = textureLoader.load( "textures/terrain/stripes_inv.png" );
+	// var detailTexture = textureLoader.load( "textures/terrain/grasslight-small-nm.jpg" );
 	var detailTexture = textureLoader.load( "textures/terrain/white_detail.jpg" );
-	// var detailTexture = textureLoader.load( "textures/terrain/white_detail.jpg" );
-	var whiteTexture = textureLoader.load( "textures/terrain/red_detail.jpg" );
 
-
-	vidTexture1.wrapS = THREE.RepeatWrapping;
-	vidTexture1.wrapT = THREE.RepeatWrapping;
-	vidTexture2.wrapS = vidTexture2.wrapT = THREE.RepeatWrapping;
-	// vidTexture1.repeat.x =1;
-	// vidTexture1.repeat.y = 2;
-	// diffuseTexture1.wrapS = diffuseTexture1.wrapT = THREE.RepeatWrapping;
-	// diffuseTexture2.wrapS = diffuseTexture2.wrapT = THREE.RepeatWrapping;
+	vidTexture.wrapS = vidTexture.wrapT = THREE.RepeatWrapping;
+	diffuseTexture1.wrapS = diffuseTexture1.wrapT = THREE.RepeatWrapping;
+	diffuseTexture2.wrapS = diffuseTexture2.wrapT = THREE.RepeatWrapping;
 	detailTexture.wrapS = detailTexture.wrapT = THREE.RepeatWrapping;
 	specularMap.texture.wrapS = specularMap.texture.wrapT = THREE.RepeatWrapping;
 
-	vidTexture1.needsUpdate = true;
 	// TERRAIN SHADER
 
 	var terrainShader = TerrainShader;
@@ -183,26 +144,26 @@ function init() {
 
 	uniformsTerrain[ 'tDisplacement' ].value = heightMap.texture;
 
-	// uniformsTerrain[ 'tDiffuse1' ].value = diffuseTexture1;
-	uniformsTerrain[ 'tDiffuse1' ].value = vidTexture1;
-	// uniformsTerrain[ 'tDiffuse2' ].value = diffuseTexture2;
-	uniformsTerrain[ 'tDiffuse2' ].value = whiteTexture;
+	uniformsTerrain[ 'tDiffuse1' ].value = diffuseTexture1;
+	// uniformsTerrain[ 'tDiffuse1' ].value = vidTexture;
+	uniformsTerrain[ 'tDiffuse2' ].value = diffuseTexture2;
+	uniformsTerrain[ 'tDiffuse2' ].value = vidTexture;
 	uniformsTerrain[ 'tSpecular' ].value = specularMap.texture;
 	uniformsTerrain[ 'tDetail' ].value = detailTexture;
-	 // uniformsTerrain[ 'tDetail' ].value = vidTexture2;
+	 // uniformsTerrain[ 'tDetail' ].value = vidTexture;
 
 	uniformsTerrain[ 'enableDiffuse1' ].value = true;
 	uniformsTerrain[ 'enableDiffuse2' ].value = true;
 	uniformsTerrain[ 'enableSpecular' ].value = true;
 
 	uniformsTerrain[ 'diffuse' ].value.setHex( 0xffffff);
-	uniformsTerrain[ 'specular' ].value.setHex( 0x0000ff );
+	uniformsTerrain[ 'specular' ].value.setHex( 0xffffff );
 
 	uniformsTerrain[ 'shininess' ].value = 50;
 
-	uniformsTerrain[ 'uDisplacementScale' ].value = 500;
+	uniformsTerrain[ 'uDisplacementScale' ].value = 375;
 
-	uniformsTerrain[ 'uRepeatOverlay' ].value.set( 4, 4);
+	uniformsTerrain[ 'uRepeatOverlay' ].value.set( 1, 1);
 
 	var params = [
 		[ 'heightmap', 	document.getElementById( 'fragmentShaderNoise' ).textContent, 	vertexShader, uniformsNoise, false ],
@@ -337,7 +298,7 @@ function onKeyDown( event ) {
 //
 
 function animate() {
-	TWEEN.update();
+
 	requestAnimationFrame( animate );
 
 	render();
@@ -360,17 +321,10 @@ function render() {
 		//scene.background.setHSL( 0.1, 0.5, lightVal );
 		//scene.fog.color.setHSL( 0, 0.5, lightVal );
 
-		// hemiLight.itensity = THREE.Math.mapLinear( valNorm, 0, 1, 0.1, 1.15 );
 		directionalLight.intensity = THREE.Math.mapLinear( valNorm, 0, 1, 0.1, 1.15 );
 		pointLight.intensity = THREE.Math.mapLinear( valNorm, 0, 1, 0.9, 1.5 );
 
 		uniformsTerrain[ 'uNormalScale' ].value = THREE.Math.mapLinear( valNorm, 0, 1, 0.6, 3.5 );
-
-		if ( video1.readyState == video1.HAVE_ENOUGH_DATA) {
-			if ( vidTexture1 ) {
-				vidTexture1.needsUpdate = true;
-			}
-		}
 
 		if ( updateNoise ) {
 
@@ -399,6 +353,3 @@ function render() {
 	}
 
 }
-
-
-
