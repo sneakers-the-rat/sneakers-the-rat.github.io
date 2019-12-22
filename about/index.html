@@ -42,7 +42,12 @@
 	</head>
 
 	<body>
-		<ul id="scanlines" class="scanlines" style="width:100vw; height:100vh"></ul>
+		<ul id="scanlines" class="scanlines" style="width:100vw; height:100vh">
+			<video id="video" loop crossOrigin="anonymous" playsinline style="display:none">
+			<source src="textures/sintel.ogv" type='video/ogg; codecs="theora, vorbis"'>
+			<source src="textures/sintel.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+		</video>
+		</ul>
 
 		<script src="js/scanlines.js"></script>
 		<script src="js/three.js"></script>
