@@ -34,6 +34,8 @@ window.$ = window.jQuery = jquery;
 
     if (!target || target.tagName != 'IMG') return
 
+
+
     if (this._$body.hasClass('zoom-overlay-open')) return
 
     if (e.metaKey || e.ctrlKey) {

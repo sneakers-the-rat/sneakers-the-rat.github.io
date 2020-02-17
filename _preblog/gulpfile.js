@@ -14,70 +14,111 @@ const stylelint = require('gulp-stylelint');
 const uglify = require('gulp-uglify');
 const zip = require('gulp-zip');
 
-gulp.task('stylelint', () => {
-  return gulp.src([
-    './_assets/scss/**/*.scss',
-    '!./_assets/scss/vendor/_normalize.scss',
-    '!./_assets/scss/fonts/*.scss'
-  ])
-  .pipe(stylelint({
-    reporters: [
-      {formatter: 'string', console: true}
-    ]
-  }));
-});
+// gulp.task('stylelint', () => {
+//   return gulp.src([
+//     './_assets/scss/**/*.scss',
+//     '!./_assets/scss/vendor/_normalize.scss',
+//     '!./_assets/scss/fonts/*.scss'
+//   ])
+//   .pipe(stylelint({
+//     reporters: [
+//       {formatter: 'string', console: true}
+//     ]
+//   }));
+// });
 
-gulp.task('sass', () => {
+// gulp.task('sass', () => {
+//   return gulp.src('./_assets/scss/app.scss')
+//   .pipe(sass().on('error', sass.logError))
+//   .pipe(autoprefixer({browsers: ['last 2 versions'], cascade: false}))
+//   .pipe(cleanCSS())
+//   .pipe(rename({suffix: '.min'}))
+//   .pipe(gulp.dest('./assets/css'));
+// });
+
+// gulp.task('lint', () => {
+//   return gulp.src([
+//     './_assets/js/components/_formspree.js',
+//     './_assets/js/components/_infiniteScroll.js',
+//     './_assets/js/components/_mailChimp.js',
+//     './_assets/js/components/_miscellaneous.js',
+//     './_assets/js/components/_pageTransition.js',
+//     './_assets/js/components/_popup.js',
+//     './_assets/js/_inits.js'
+//   ])
+//   .pipe(eslint())
+//   .pipe(eslint.format())
+//   .pipe(eslint.failAfterError());
+// });
+
+// gulp.task('browserify', () => {
+//   return browserify('./_assets/js/app.js')
+//   .transform('babelify', {presets: ['env']})
+//   .bundle()
+//   .pipe(source('app.js'))
+//   .pipe(buffer())
+//   .pipe(uglify())
+//   .pipe(rename({suffix: '.min'}))
+//   .pipe(gulp.dest('./assets/js'));
+// });
+
+// gulp.task('zip', () => {
+//   return gulp.src([
+//     './**',
+//     '!./.DS_Store',
+//     '!./.git',
+//     '!./node_modules/**'
+//   ])
+//   .pipe(zip('barber-jekyll.zip'))
+//   .pipe(gulp.dest('../'))
+// });
+
+// gulp.task('build', ['sass', 'browserify']);
+
+// gulp.task('watch', () => {
+//   gulp.watch('./_assets/scss/**/*.scss', ['sass']);
+//   gulp.watch('./_assets/js/**/*.js', ['browserify']);
+// });
+
+function sass_task(){
   return gulp.src('./_assets/scss/app.scss')
   .pipe(sass().on('error', sass.logError))
   .pipe(autoprefixer({browsers: ['last 2 versions'], cascade: false}))
   .pipe(cleanCSS())
   .pipe(rename({suffix: '.min'}))
   .pipe(gulp.dest('./assets/css'));
-});
+}
 
-gulp.task('lint', () => {
-  return gulp.src([
-    './_assets/js/components/_formspree.js',
-    './_assets/js/components/_infiniteScroll.js',
-    './_assets/js/components/_mailChimp.js',
-    './_assets/js/components/_miscellaneous.js',
-    './_assets/js/components/_pageTransition.js',
-    './_assets/js/components/_popup.js',
-    './_assets/js/_inits.js'
-  ])
-  .pipe(eslint())
-  .pipe(eslint.format())
-  .pipe(eslint.failAfterError());
-});
-
-gulp.task('browserify', () => {
+function browserify_task(){
   return browserify('./_assets/js/app.js')
-  .transform('babelify', {presets: ['env']})
+  .transform('babelify', {presets: ["@babel/preset-env"]})
   .bundle()
   .pipe(source('app.js'))
   .pipe(buffer())
   .pipe(uglify())
   .pipe(rename({suffix: '.min'}))
   .pipe(gulp.dest('./assets/js'));
-});
+}
 
-gulp.task('zip', () => {
-  return gulp.src([
-    './**',
-    '!./.DS_Store',
-    '!./.git',
-    '!./node_modules/**'
-  ])
-  .pipe(zip('barber-jekyll.zip'))
-  .pipe(gulp.dest('../'))
-});
 
-gulp.task('build', ['sass', 'browserify']);
 
-gulp.task('watch', () => {
-  gulp.watch('./_assets/scss/**/*.scss', ['sass']);
-  gulp.watch('./_assets/js/**/*.js', ['browserify']);
-});
+function watch() {
+  gulp.watch('./_assets/scss/**/*.scss', sass_task);
+  gulp.watch('./_assets/js/**/*.js', browserify_task);
 
-gulp.task('default', ['build', 'watch']);
+}
+
+var build = gulp.series(sass_task, browserify_task);
+
+
+exports.sass  = sass_task;
+exports.browserify = browserify_task;
+exports.watch = watch;
+exports.build = build;
+exports.default = gulp.series(build, watch);
+
+
+
+// gulp.task('default', ['build', 'watch']);
+
+

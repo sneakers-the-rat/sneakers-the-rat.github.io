@@ -21,7 +21,7 @@ const miscZoom = () => {
   const imgArr = $('.post__content img');
 
   imgArr.each((idx, img) => {
-    if (img.src.indexOf('full') === -1) {
+    if (img.src.indexOf('full') === -1 && !$(img).hasClass('video-thumb-img')) {
       $(img).attr('data-action', 'zoom');
     }
   });

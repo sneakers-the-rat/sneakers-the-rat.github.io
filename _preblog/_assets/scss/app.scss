@@ -34,6 +34,7 @@
 //----------------------------------------------
 @import 'tools/_extends-type';
 @import 'tools/_extends';
+@import 'tools/_twitter';
 
 //----------------------------------------------
 // Vendor: Normalize
@@ -75,6 +76,9 @@
 @import 'components/_related';
 @import 'components/_subscribe';
 @import 'components/_zoom';
+@import 'components/_toc';
+@import 'components/_vimeo';
+@import 'components/_iframe_preview';
 
 //----------------------------------------------
 // Utils
