@@ -21,21 +21,26 @@ layout: default
 
 <!--     <div data-spy="scroll" data-target="#toc" class="post__content section-padding"> -->
 
-      <div class="container">
+      <!-- <div class="container post-container"> -->
+        <div class="post-container">
         {% if page.toc %}
-        <div class="row">
-          <div class="col-md-3 hidden-sm">
-            <div class="sticky-top">
+        <!-- <div class="row"> -->
+          
+          <!-- <div class="col-md-9 col-sm-12 post__content section-padding" id="markdown" itemprop="articleBody"> -->
+            <div class="post__content section-padding" id="markdown" itemprop="articleBody">
+            {{content}}
+          </div>
+
+          <!-- <div class="col-md-3 hidden-sm"> -->
+            <div class="toc-container section-padding hidden-sm">
+            <div class="sticky-top post-toc markdown-class">
+              <!-- <h4>Contents</h4> -->
             {% toc %}
           </div>
           </div>
-          <div class="col-md-9 col-sm-12 post__content section-padding" id="markdown" itemprop="articleBody">
-            {{content}}
-          </div>
         </div>
         {% else %}
-        <div class="row">
-          <div class="col-md-12 col-sm-12 post__content section-padding" id="markdown" itemprop="articleBody">
+          <div class="post__content section-padding" id="markdown" itemprop="articleBody">
             {{content}}
           </div>
         </div>
@@ -84,13 +89,13 @@ layout: default
 </div>
 
 <!-- Links to Previous/Next posts -->
-{% assign relatedTag = page.tags | first %}
+{% assign relatedTag = page.data['tags'] | first %}
 {% if relatedTag %}
   <section class="related section-padding">
     <div class="grid-xlarge">
       <h2 class="related__title">Related</h2>
       <div class="related__container">
-        {% for post in site.tags[relatedTag] limit: 3 %}
+        {% for post in site.data['tags'][relatedTag] limit: 3 %}
           <article class="related__post">
             <a class="related__link" href="{{ post.url | absolute_url }}">
               {% if post.image %}

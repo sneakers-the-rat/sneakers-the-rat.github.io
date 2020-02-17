@@ -52,6 +52,14 @@
 
   &__content {
     border-top: $border;
+    width: 60%;
+    margin: auto;
+    // margin-left: 10%;
+
+    @media (max-width: $mq-large) {
+      width: 95%;
+      // margin-left: 0%;
+    }
   }
 
   &__social {
@@ -113,6 +121,14 @@
   }
 }
 
+.post-container{
+  width: 100%;
+  display: flex;
+  flex-direction: row; 
+  flex-wrap: wrap-reverse; // bc we want toc to go above
+}
+
+
 //----------------------------------------------
 // Jekyll
 //----------------------------------------------
@@ -144,14 +160,19 @@
   h4,
   h5,
   h6 {
+    margin-top: 0.5em;
     margin-bottom: 0.5rem;
 
-    font-family: $font;
+    font-family: $font-header;
   }
 
   h1 {
-    font-size: 2.25em;
-    line-height: 1.2;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    font-size: 3em;
+    line-height: 1.5;
+    font-family: $font-header;
+    border-bottom: solid 1px $color-grey;
   }
 
   h2 {
@@ -188,10 +209,10 @@
   p {
     margin-bottom: 1.5rem;
 
-    font-size: 0.8em;
+    font-size: 1.2em;
 
     @media (min-width: $mq-small) {
-      font-size: 1.00em;
+      font-size: 1.2em;
     }
 
     img {

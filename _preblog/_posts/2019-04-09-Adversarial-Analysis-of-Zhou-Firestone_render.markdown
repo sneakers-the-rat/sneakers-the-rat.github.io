@@ -12,11 +12,9 @@ tags:
   - science
   - psychophysics
 ---
-# Contents
-{:.no_toc}
 
-* Will be replaced with the ToC, excluding the "Contents" header
-{:toc}
+
+
 
 This post is a reanalysis of Zhenglong Zhou and Chaz Firestone's paper "Humans can deciper adversarial images," so let's get some links out of the way
 
