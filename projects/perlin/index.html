@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>home</title>
+        <meta property="og:title" content="home" />
+        <meta name="author" content="Jonny Saunders" />
+        <meta property="og:locale" content="en_US" />
+        <link rel="stylesheet" href="perlin.css">
+        <script
+			  src="https://code.jquery.com/jquery-3.4.1.min.js"
+			  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			  crossorigin="anonymous"></script>
+    </head>
+</head>
+
+<body>
+    
+        <div class="generative-homepage"> <canvas class="generative initialization-full generation-sequential" id="gen_uniform_dynamic" movementPeriod="0.001" pPeriod="0.01"></canvas></div>
+
+        <div class="slidecontainer">
+
+<div class="ctrlslider">
+	<label for="volume">N Points</label>
+  <input type="range" min="1" max="10000" value="1000" class="slider" id="s_n_points">
+</div>
+<div class="ctrlslider">
+	<label for="volume">Tau</label>
+  <input type="range" min="0" max="100" value="5" class="slider" id="s_tau">
+  </div>
+  <div class="ctrlslider">
+	<label for="volume">Tau Movement</label>
+  <input type="range" min="0" max="100" value="0" class="slider" id="s_tau_movement">
+  </div>
+  <div class="ctrlslider">
+	<label for="volume">Period</label>
+  <input type="range" min="0" max="0.1" value="0.002" class="slider" id="s_period" step="0.001">
+  </div>
+  <div class="ctrlslider">
+	<label for="volume">Period Movement</label>
+  <input type="range" min="0" max="0.001" value="0" class="slider" id="s_period_movement" step="0.00001">
+  </div>
+  
+  <div class="ctrlslider">
+	<label for="volume">Speed</label>
+  <input type="range" min="0" max="2" value="0.2" class="slider" id="s_speed" step="0.1">
+  </div class="ctrlslider">
+  <div class="ctrlslider">
+	<label for="volume">Momentum</label>
+  <input type="range" min="0" max="1" value="0" class="slider" id="s_momentum" step="0.01">
+  </div>
+  <div class="ctrlslider">
+	<label for="volume">Momentum Decay</label>
+  <input type="range" min="0" max="1" value="0.95" class="slider" id="s_momentum_decay"step="0.01">
+  </div>
+
+<div class="ctrlslider">
+	<label for="volume">Saturation</label>
+  <input type="range" min="0" max="100" value="80" class="slider" id="s_saturation">
+  </div>
+  <div class="ctrlslider">
+	<label for="volume">Luminance</label>
+  <input type="range" min="0" max="100" value="50" class="slider" id="s_luminance">
+  </div>
+  <div class="ctrlslider">
+	<label for="volume">Alpha</label>
+  <input type="range" min="0" max="1" value="0.4" class="slider" id="s_alpha" step="0.01">
+  </div>
+  <div class="ctrlslider">
+	<label for="volume">p New Seed</label>
+  <input type="range" min="0" max="1" value="0" class="slider" id="s_p_new_seed" step="0.01">
+  </div>
+  <div class="ctrlslider">
+	<label for="volume">p Period Change</label>
+  <input type="range" min="0" max="1" value="0" class="slider" id="s_p_period" step="0.01">
+  </div>
+</div>
+    
+    <script src="perlin.js" type="module"></script>
+    <script src="perlin_animation.js" type="module"></script>
+</body>
+
+</html>
