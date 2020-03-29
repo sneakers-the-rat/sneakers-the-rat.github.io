@@ -6,8 +6,8 @@
 </description>
     <link>/bloghttps://jon-e.net</link>
     <atom:link href="https://jon-e.net/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 29 Mar 2020 01:22:53 -0700</pubDate>
-    <lastBuildDate>Sun, 29 Mar 2020 01:22:53 -0700</lastBuildDate>
+    <pubDate>Sun, 29 Mar 2020 01:28:20 -0700</pubDate>
+    <lastBuildDate>Sun, 29 Mar 2020 01:28:20 -0700</lastBuildDate>
     <generator>Jekyll v3.8.4</generator>
     
       <item>
@@ -91,13 +91,13 @@
 
 &lt;p&gt;Particles on 2D perlin noise. I think this one does better without documentation, just play with the slideys and see.&lt;/p&gt;
 
-&lt;p&gt;&lt;a data-fancybox=&quot;&quot; data-type=&quot;iframe&quot; href=&quot;http://127.0.0.1:8080/projects/perlin/index.html&quot; class=&quot;iframe-preview&quot;&gt;Open demo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a data-fancybox=&quot;&quot; data-type=&quot;iframe&quot; href=&quot;/projects/perlin/index.html&quot; class=&quot;iframe-preview&quot;&gt;Open demo&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;how-to-never-get-hired-for-any-job-pt-2-20191219&quot;&gt;how to never get hired for any job pt 2. (2019.12.19)&lt;/h2&gt;
 
 &lt;p&gt;My &lt;a href=&quot;https://jon-e.net/about/&quot;&gt;about me&lt;/a&gt; page is sorta an anti-about me page… while I was still getting used to having to be professional all the time it seemed super weird to me to have an entire page just describing yourself. So right now the page just indeciperably refers to my feelings about having people look at an “about me” page about me. I was trying to fix that and got lost along the way. The idea was to have my information passing by on these mountains and to make the user move their mouse to make certain regions lie flat long enough to read. I decided that sucks and that I should just make a real one, but inner me is holding up the timeline.&lt;/p&gt;
 
-&lt;p&gt;&lt;a data-fancybox=&quot;&quot; data-type=&quot;iframe&quot; href=&quot;http://127.0.0.1:8080/about/terrain.html&quot; class=&quot;iframe-preview&quot;&gt;Open demo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a data-fancybox=&quot;&quot; data-type=&quot;iframe&quot; href=&quot;/about/terrain.html&quot; class=&quot;iframe-preview&quot;&gt;Open demo&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;speeding-atlas-20191115&quot;&gt;Speeding Atlas (2019.11.15)&lt;/h2&gt;
 
@@ -105,7 +105,7 @@
 
 &lt;p&gt;Map made with &lt;a href=&quot;https://rstudio.github.io/leaflet/&quot;&gt;leaflet&lt;/a&gt; in R.&lt;/p&gt;
 
-&lt;p&gt;&lt;a data-fancybox=&quot;&quot; data-type=&quot;iframe&quot; href=&quot;http://127.0.0.1:8080/projects/traffic/index.html&quot; class=&quot;iframe-preview&quot;&gt;Open demo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a data-fancybox=&quot;&quot; data-type=&quot;iframe&quot; href=&quot;/projects/traffic/index.html&quot; class=&quot;iframe-preview&quot;&gt;Open demo&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;alternative-media&quot;&gt;~alternative media~&lt;/h1&gt;
 
