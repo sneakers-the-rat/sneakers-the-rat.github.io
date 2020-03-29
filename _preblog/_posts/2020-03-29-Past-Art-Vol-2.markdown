@@ -737,6 +737,8 @@ if __name__ == "__main__":
 
 And the smut itself:
 
+([download a pdf if the embed doesnt work](/blog/assets/hosted/autopotterotica_excerpts.pdf))
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.min.js" integrity="sha256-rYPX3dXq8Nh532EvCS2foeyTgmzbcC8u+nCk/rEtKXA=" crossorigin="anonymous"></script>
 
 
