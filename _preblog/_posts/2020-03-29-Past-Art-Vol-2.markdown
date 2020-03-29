@@ -740,7 +740,15 @@ And the smut itself:
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.min.js" integrity="sha256-rYPX3dXq8Nh532EvCS2foeyTgmzbcC8u+nCk/rEtKXA=" crossorigin="anonymous"></script>
 
 
-<iframe style="width:100%;min-height:50vh;" src="/blog/assets/hosted/autopotterotica_excerpts.pdf"></iframe>
+<div id="autopotterotica" style="width:100%;min-height:50vh;"></div>
+
+<script>
+    PDFObject.embed(
+    "/blog/assets/hosted/autopotterotica_excerpts.pdf",
+    "#autopotterotica");
+</script>
+
+<!-- <iframe style="width:100%;min-height:50vh;" src=""></iframe> -->
 
 
 ## schillbot (2019.10.03)

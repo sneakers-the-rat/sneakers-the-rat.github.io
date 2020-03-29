@@ -6,8 +6,8 @@
 </description>
     <link>/bloghttps://jon-e.net</link>
     <atom:link href="https://jon-e.net/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 29 Mar 2020 01:28:20 -0700</pubDate>
-    <lastBuildDate>Sun, 29 Mar 2020 01:28:20 -0700</lastBuildDate>
+    <pubDate>Sun, 29 Mar 2020 01:35:03 -0700</pubDate>
+    <lastBuildDate>Sun, 29 Mar 2020 01:35:03 -0700</lastBuildDate>
     <generator>Jekyll v3.8.4</generator>
     
       <item>
@@ -718,7 +718,15 @@
 
 &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.min.js&quot; integrity=&quot;sha256-rYPX3dXq8Nh532EvCS2foeyTgmzbcC8u+nCk/rEtKXA=&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;
 
-&lt;iframe style=&quot;width:100%;min-height:50vh;&quot; src=&quot;/blog/assets/hosted/autopotterotica_excerpts.pdf&quot;&gt;&lt;/iframe&gt;
+&lt;div id=&quot;autopotterotica&quot; style=&quot;width:100%;min-height:50vh;&quot;&gt;&lt;/div&gt;
+
+&lt;script&gt;
+    PDFObject.embed(
+    &quot;/blog/assets/hosted/autopotterotica_excerpts.pdf&quot;,
+    &quot;#autopotterotica&quot;);
+&lt;/script&gt;
+
+&lt;!-- &lt;iframe style=&quot;width:100%;min-height:50vh;&quot; src=&quot;&quot;&gt;&lt;/iframe&gt; --&gt;
 
 &lt;h2 id=&quot;schillbot-20191003&quot;&gt;schillbot (2019.10.03)&lt;/h2&gt;
 
