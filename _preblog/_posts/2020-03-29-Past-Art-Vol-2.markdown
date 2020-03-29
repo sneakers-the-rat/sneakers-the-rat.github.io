@@ -106,14 +106,14 @@ A friend and mentor who is a recently-minted PI asked me to make her a lab websi
 
 Particles on 2D perlin noise. I think this one does better without documentation, just play with the slideys and see.
 
-<a data-fancybox data-type="iframe" href="http://127.0.0.1:8080/projects/perlin/index.html" class="iframe-preview">Open demo</a>
+<a data-fancybox data-type="iframe" href="/projects/perlin/index.html" class="iframe-preview">Open demo</a>
 
 
 ## how to never get hired for any job pt 2. (2019.12.19)
 
 My [about me](https://jon-e.net/about/) page is sorta an anti-about me page... while I was still getting used to having to be professional all the time it seemed super weird to me to have an entire page just describing yourself. So right now the page just indeciperably refers to my feelings about having people look at an "about me" page about me. I was trying to fix that and got lost along the way. The idea was to have my information passing by on these mountains and to make the user move their mouse to make certain regions lie flat long enough to read. I decided that sucks and that I should just make a real one, but inner me is holding up the timeline.
 
-<a data-fancybox data-type="iframe" href="http://127.0.0.1:8080/about/terrain.html" class="iframe-preview">Open demo</a>
+<a data-fancybox data-type="iframe" href="/about/terrain.html" class="iframe-preview">Open demo</a>
 
 ## Speeding Atlas (2019.11.15)
 
@@ -121,7 +121,7 @@ If you combine the [Stanford Open Policing Project](https://openpolicing.stanfor
 
 Map made with [leaflet](https://rstudio.github.io/leaflet/) in R.
 
-<a data-fancybox data-type="iframe" href="http://127.0.0.1:8080/projects/traffic/index.html" class="iframe-preview">Open demo</a>
+<a data-fancybox data-type="iframe" href="/projects/traffic/index.html" class="iframe-preview">Open demo</a>
 
 # ~alternative media~
 
