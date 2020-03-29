@@ -3,13 +3,13 @@ function iframePreview(href, parent){
     // var id_img = "#iframe-preview-" + id;
 
 
-    let iframe_preview = $('<iframe class="iframe-preview-child"></img>');
+    let iframe_preview = $('<iframe class="iframe-preview-child" loading="lazy"></img>');
     $(iframe_preview).attr('src', href);
     // $(vimeo_thumb).attr('src', img_src);
     debugger;
     
     $(parent).append($(iframe_preview));
-    $(parent).append("<div class='fullscreen-overlay'></div>");
+    // $(parent).append("<div class='fullscreen-overlay'></div>");
     // $(id_img).before(script);
 }
 
@@ -23,13 +23,17 @@ function iframePreview(href, parent){
 
 // $(function() {
 // 	debugger;
-	$('.iframe-preview').each(function(){
-		// console.log($(this));
-		let vidid = $(this).attr('href');
-		// $(this).attr('id', "vimeo-" + vidid); 
-		// let vimeo_thumb = $('this').append('<img />');
-		// $(vimeo_thumb).attr('id', "#vimeo-" + vidid); 
-		
-		iframePreview(vidid, this);
+$('.iframe-preview').each(function(){
+	try {
+	// console.log($(this));
+	let vidid = $(this).attr('href');
+	// $(this).attr('id', "vimeo-" + vidid); 
+	// let vimeo_thumb = $('this').append('<img />');
+	// $(vimeo_thumb).attr('id', "#vimeo-" + vidid); 
+	
+	iframePreview(vidid, this);
+} catch {}
 
-	})
+});
+
+	
