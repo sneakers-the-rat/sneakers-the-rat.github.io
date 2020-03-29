@@ -83,7 +83,7 @@ video: [Arthur Ganson, The First Noble Truth](https://www.youtube.com/watch?v=Cg
 
 We had a party at my house and I had taken some MDMA that had some little extra kick in it that made my eyeballs spin out of my sockets. When I could focus my vision again I started synthesizing video to project over the dancefloor i mean our living room. A housemate of mine that loves horror movies had suggested we watch Nosferatu the night before so I was using that as some of the source material. Burned a bunch of music into a good place in my heart.
 
-The next day I had a sentimental hangover, my heart was vacant and I was still stumbling over the last hurdles before acceptance. Mostly I was full of missing. Another simple p-frame duplication with a little random hex noise thrown into the encoded video stream before it gets decoded.
+The next day I had a sentimental hangover, my heart was vacant, mostly I was full of missing. Another simple p-frame duplication with a little random hex noise thrown into the encoded video stream before it gets decoded.
 
 <a data-fancybox href="https://vimeo.com/390679861" vidid="390679861" class="vimeo-vid">
 </a>
