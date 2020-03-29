@@ -1,5 +1,5 @@
 function vimeoLoadingThumb(id) {
-    var url = "http://vimeo.com/api/v2/video/" + id + ".json";
+    var url = "https://vimeo.com/api/v2/video/" + id + ".json";
 
     // var img_src; 
     $.getJSON(url, function(data) {
