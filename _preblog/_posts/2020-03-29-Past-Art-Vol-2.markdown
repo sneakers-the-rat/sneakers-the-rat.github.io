@@ -20,7 +20,7 @@ tags:
 
 There's a folder on my computer that is named `stupid_bullshit_projects` that continually fills up with the things that i make and never end up telling anyone about. It is never in a hurry to get filled up, and so I add to it in limps and startles. 
 
-This last year was an especially good year for `stupid_bullshit_projects` because I was doing anything I could to distract myself from some heartbreak that was unbearable almost all of the time. 
+This last year was an especially good year for `stupid_bullshit_projects` because I was doing anything I could to distract myself from some heartbreak that was unbearable almost all of the time. Don't close the tab just yet, I'm mostly past it now, most of what's left is just reflecting.
 
 I wanted to try to remember some of the things that I make, because maybe that would make them feel more real. Visual art came into my life very late, and I haven't quite shaken the feeling that I'm not invited. I've been led to believe that visual artists have a medium, and I don't really have the discipline to maintain one of those. Music has instruments and genres, but since synthesis and hip-hop have made a mess of those they never felt quite so intimidating.
 
@@ -45,7 +45,7 @@ Music: Laura Jean Anderson - thinkin bout you
 
 ## Thao & The Get Down Stay Down - A Man Alive (2020.01.27)
 
-A) I love this album, and B) it was saying exactly what I was feeling at the time. These were three songs that I thought summed my bittersweet ass up relatively neatly at the time *(you know I'm so easy to find, you won't come get your girl)*.
+A) I love this album, and B) it was saying exactly what I was feeling at the time. These were three songs that I thought summed my bittersweet ass up relatively neatly *(you know I'm so easy to find, you won't come get your girl)*.
 
 Technically very simple, rgb shift and a bunch of manual time warping & splicing.
 
@@ -93,12 +93,12 @@ The next day I had a sentimental hangover, my heart was vacant and I was still s
 
 I was in an unexpected new depth in a hopeless argument with my heart, bargaining with my memories and promising to change, and working on a bunch of computer vision code. I started shooting video as a demo of the code for my collaborators, but got lost in its sort of numbing sparseness.
 
-I can't really describe the process fo this one -- the source video is some computer-vision glitch that I just kept pushing my thumb into until it looked right. Then I lost a few days layering and cutting the clips until it was done.
+I can't really describe the process for this one -- the source video is some computer-vision glitch that I just kept pushing my thumb into until it looked right. Then I lost a few days layering and cutting the clips until it was done.
 
 <a data-fancybox href="https://vimeo.com/401774066" vidid="401774066" class="vimeo-vid">
 </a>
 
-# webzones
+# Webzones
 
 ## Perlin Particles (2020.01.19)
 

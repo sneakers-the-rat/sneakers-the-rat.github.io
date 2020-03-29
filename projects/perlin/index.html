@@ -7,7 +7,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>home</title>
+        <title>Perlin Particles</title>
         <meta property="og:title" content="home" />
         <meta name="author" content="Jonny Saunders" />
         <meta property="og:locale" content="en_US" />
@@ -24,7 +24,8 @@
         <div class="generative-homepage"> <canvas class="generative initialization-full generation-sequential" id="gen_uniform_dynamic" movementPeriod="0.001" pPeriod="0.01"></canvas></div>
 
         <div class="slidecontainer">
-
+ <button type="button" class="collapsible">Toggle Parameters</button>
+<div class="content">
 <div class="ctrlslider">
 	<label for="volume">N Points</label>
   <input type="range" min="1" max="10000" value="1000" class="slider" id="s_n_points">
@@ -79,6 +80,7 @@
 	<label for="volume">p Period Change</label>
   <input type="range" min="0" max="1" value="0" class="slider" id="s_p_period" step="0.01">
   </div>
+</div>
 </div>
     
     <script src="perlin.js" type="module"></script>

@@ -9,7 +9,7 @@
 }
 
 label {
-	color: #ff0000;
+	color: #ffffff;
 }
 
 .ctrlslider {
@@ -19,7 +19,8 @@ label {
 }
 
 .slidecontainer {
-  width: 20%; /* Width of the outside container */
+  width: 30%; /* Width of the outside container */
+  min-width: 400px;
   right: 0;
   position: fixed;
 }
@@ -60,4 +61,25 @@ label {
   border-radius: 5px;
   background: #4CAF50; /* Green background */
   cursor: pointer; /* Cursor on hover */
+}
+
+.collapsible {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 6px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #ccc;
+}
+
+.content {
+  display: none;
+  overflow: hidden;
 }
