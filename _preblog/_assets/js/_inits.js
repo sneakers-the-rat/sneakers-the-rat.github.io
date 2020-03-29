@@ -14,6 +14,7 @@ import Popup from './components/_popup.js';
 import './components/_vimeo.js';
 import './components/_iframe_preview.js';
 import './components/_toc_highlight.js';
+import { highlight_container } from './components/_highlight_container.js';
 
 // ----------------------------------------------
 // Inits
@@ -42,6 +43,12 @@ $(() => {
   if ($('#form').length) {
     Formcarry.init();
     Popup.init();
+  }
+
+  if ($('figure.highlight').length) {
+    $("figure.highlight").each(function(){
+      highlight_container($(this))
+    })
   }
 
 });

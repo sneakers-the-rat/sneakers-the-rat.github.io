@@ -88,6 +88,8 @@ old/index copy.html
 old/index copy.js
 old/index_old.css
 
+_preblog/_site/
+
 *.continuous
 bower_components
 node_modules

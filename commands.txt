@@ -6,3 +6,7 @@ npm run gulp
 # building R stuff
 setwd('/Users/jonny/git/sneakers-the-rat.github.io/_preblog')
 blogdown::serve_site()
+
+
+#include just a top of page toc
+{:toc}

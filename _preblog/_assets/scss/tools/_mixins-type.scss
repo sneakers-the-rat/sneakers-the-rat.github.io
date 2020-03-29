@@ -6,7 +6,7 @@
 //  @param:       $borderWidth: [2px] - Border width
 //  @param:       $pad: [0] - Padding
 //----------------------------------------------
-@mixin btn-split($color, $borderColor: $color, $borderWidth: 1px, $pad: 0) {
+@mixin btn-split($color, $borderColor: $color, $borderWidth: 1px, $pad: 0, $move: 1px) {
   position: relative;
 
   padding: $pad;
@@ -24,21 +24,21 @@
     width: 100%;
 
     border: $borderWidth solid $borderColor;
-    transition: transform 200ms ease-in;
+    transition: transform 100ms ease-in;
   }
 
   &:hover {
     &:before,
     &:after {
-      transition: transform 200ms ease-out;
+      transition: transform 100ms ease-out;
     }
 
     &:before {
-      transform: translate3d(-$borderWidth - 1px, $borderWidth + 1px, 0);
+      transform: translate3d(-$move, $move, 0);
     }
 
     &:after {
-      transform: translate3d($borderWidth + 1px, -$borderWidth - 1px, 0);
+      transform: translate3d($move, -$move, 0);
     }
   }
 }
