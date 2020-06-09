@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-
+		 <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap" rel="stylesheet"> 
 		<link rel="stylesheet" href="css/scanlines.css">
+		<link rel="stylesheet" href="css/overlay.css">
 		<script
 			  src="https://code.jquery.com/jquery-3.4.1.min.js"
 			  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -43,11 +44,13 @@
 
 	<body>
 		<ul id="scanlines" class="scanlines" style="width:100vw; height:100vh">
-			<video id="video" loop crossOrigin="anonymous" playsinline style="display:none">
+<!-- 			<video id="video" loop crossOrigin="anonymous" playsinline style="display:none">
 			<source src="textures/sintel.ogv" type='video/ogg; codecs="theora, vorbis"'>
 			<source src="textures/sintel.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
-		</video>
+		</video> -->
 		</ul>
+
+		<div id='overlay'><p>hey what up</p><p>download your message onto</p><a href="mailto:j@nny.fyi">j@nny.fyi</p></div>
 
 		<script src="js/scanlines.js"></script>
 		<script src="js/three.js"></script>
