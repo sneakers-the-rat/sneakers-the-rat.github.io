@@ -1,0 +1,18 @@
+#overlay {
+	position: fixed;
+	top: 50%;
+	width: 100%;
+	color: #FCCC0A;
+	text-align: center;
+	margin: auto;
+	font-family: 'Cutive Mono', monospace;
+
+  background: rgba(0, 0, 0, 0.8);
+}
+
+#overlay a {
+	color: #EEEEEE;
+	border: 0px;
+	text-decoration: underline red wavy;
+	  background: transparent;
+}
