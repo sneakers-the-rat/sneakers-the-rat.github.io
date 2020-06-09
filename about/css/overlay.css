@@ -1,11 +1,12 @@
 #overlay {
 	position: fixed;
-	top: 50%;
+	top: 40%;
 	width: 100%;
 	color: #FCCC0A;
 	text-align: center;
 	margin: auto;
 	font-family: 'Cutive Mono', monospace;
+	font-size: 1.5rem;
 
   background: rgba(0, 0, 0, 0.8);
 }
