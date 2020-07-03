@@ -1,0 +1,273 @@
+[From nobody Thu May 25 19:06:29 2017
+Received: from AD-OH-EX02.ad.uoregon.edu (184.171.120.145) by
+	AD-CC-EX03.ad.uoregon.edu (184.171.120.142) with Microsoft SMTP Server
+	(TLS)
+	id 15.0.1178.4 via Mailbox Transport; Thu, 11 May 2017 16:26:33 -0700
+Received: from AD-OH-EX01.ad.uoregon.edu (184.171.120.144) by
+	AD-OH-EX02.ad.uoregon.edu (184.171.120.145) with Microsoft SMTP Server
+	(TLS) id 15.0.1178.4; Thu, 11 May 2017 16:26:33 -0700
+Received: from smtp.uoregon.edu (184.171.108.234) by AD-OH-EX01.ad.uoregon.edu
+	(184.171.120.144) with Microsoft SMTP Server (TLS) id 15.0.1178.4 via
+	Frontend Transport; Thu, 11 May 2017 16:26:33 -0700
+Received: from lists-prod.uoregon.edu (lists-prod.uoregon.edu
+	[128.223.143.137])
+	by smtp.uoregon.edu (8.14.4/8.14.4) with ESMTP id v4BNQTTN001516
+	(version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256
+	verify=NOT); Thu, 11 May 2017 16:26:30 -0700
+Received: from lists-prod.uoregon.edu (localhost [127.0.0.1])
+	by lists-prod.uoregon.edu (8.14.4/8.14.4) with ESMTP id v4BNQTtg000665; 
+	Thu, 11 May 2017 16:26:29 -0700
+Received: from smtp.uoregon.edu (cc-smtp1 [184.171.108.229])
+	by lists-prod.uoregon.edu (8.14.4/8.14.4) with ESMTP id v4BNQRIB000661; 
+	Thu, 11 May 2017 16:26:27 -0700
+Received: from ad-oh-ex03.ad.uoregon.edu (ad-oh-ex03.uoregon.edu
+	[184.171.120.146])
+	by smtp.uoregon.edu (8.14.4/8.14.4) with ESMTP id v4BNQRcM005436
+	(version=TLSv1/SSLv3 cipher=AES128-SHA bits=128 verify=NOT);
+	Thu, 11 May 2017 16:26:27 -0700
+Received: from AD-CC-EX03.ad.uoregon.edu (184.171.120.142) by
+	ad-oh-ex03.ad.uoregon.edu (184.171.120.146) with Microsoft SMTP Server
+	(TLS) id 15.0.1178.4; Thu, 11 May 2017 16:26:26 -0700
+Received: from AD-CC-EX03.ad.uoregon.edu ([184.171.120.142]) by
+	ad-cc-ex03.ad.uoregon.edu ([184.171.120.142]) with mapi id
+	15.00.1178.000; Thu, 11 May 2017 16:26:26 -0700
+From: Sherri Nelson &lt;sherrin@uoregon.edu&gt;
+To: &quot;'cas-heads@lists.uoregon.edu'&quot; &lt;cas-heads@lists.uoregon.edu&gt;,
+	&quot;'casbudmgr@lists.uoregon.edu'&quot; &lt;casbudmgr@lists.uoregon.edu&gt;
+Thread-Topic: GE summer fees
+Thread-Index: AdLKrT7/nRgmUE/CSrmYRUSyqGTZtg==
+Date: Thu, 11 May 2017 23:26:26 +0000
+Message-ID: &lt;532ee53ddfc0445381dd9ba79a3b2949@ad-cc-ex03.ad.uoregon.edu&gt;
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [128.223.94.108]
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10432:, ,
+	definitions=2017-05-11_19:, , signatures=0
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10432:, ,
+	definitions=2017-05-11_19:, , signatures=0
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0
+	suspectscore=0
+	malwarescore=0 phishscore=0 adultscore=0 bulkscore=0 classifier=spam
+	adjust=-40 reason=mlx scancount=1 engine=8.0.1-1703280000
+	definitions=main-1705110162
+Subject: casbudmgr: GE summer fees
+X-BeenThere: casbudmgr@lists.uoregon.edu
+X-Mailman-Version: 2.1.14
+Precedence: list
+List-Id: CAS Manager List &lt;casbudmgr.lists.uoregon.edu&gt;
+List-Unsubscribe: &lt;https://lists-prod.uoregon.edu/mailman/options/casbudmgr&gt;, 
+	&lt;mailto:casbudmgr-request@lists.uoregon.edu?subject=unsubscribe&gt;
+List-Archive: &lt;http://lists-prod.uoregon.edu/pipermail/casbudmgr&gt;
+List-Post: &lt;mailto:casbudmgr@lists.uoregon.edu&gt;
+List-Help: &lt;mailto:casbudmgr-request@lists.uoregon.edu?subject=help&gt;
+List-Subscribe: &lt;https://lists-prod.uoregon.edu/mailman/listinfo/casbudmgr&gt;,
+	&lt;mailto:casbudmgr-request@lists.uoregon.edu?subject=subscribe&gt;
+	boundary=&quot;===============3258090964944580910==&quot;
+Errors-To: casbudmgr-bounces@lists.uoregon.edu
+Sender: &lt;casbudmgr-bounces@lists.uoregon.edu&gt;
+X-Proofpoint-Spam-Reason: safe
+Return-Path: casbudmgr-bounces@lists.uoregon.edu
+X-MS-Exchange-Organization-Network-Message-Id: a8cc4f61-cd8a-4690-86e7-08d498c5292c
+X-MS-Exchange-Organization-AVStamp-Enterprise: 1.0
+X-MS-Exchange-Organization-AuthSource: ad-oh-ex01.ad.uoregon.edu
+X-MS-Exchange-Organization-AuthAs: Anonymous
+Content-Type: multipart/mixed; boundary=&quot;B_3578583747_319053177&quot;
+MIME-Version: 1.0
+
+--B_3578583747_319053177
+Content-Type: multipart/alternative; boundary=&quot;B_3578583747_1243930505&quot;
+
+--B_3578583747_1243930505
+Content-Type: text/plain; charset=&quot;UTF-8&quot;
+Content-Transfer-Encoding: quoted-printable
+
+Dear Heads and Managers,
+
+=20
+
+CAS has paid fees for all PhD students enrolled in relevant classes in past=
+ summers. However, Article 19, Section 6, of the current GTFF Collective Bar=
+gaining Agreement (below) requires that, starting summer 2017, departments/C=
+AS cover  35% of fees for all eligible grad students enrolled in classed use=
+d to meet degree requirement, including master=E2=80=99s students.
+
+=20
+
+Section 6. Summer Fees: GEs shall be responsible for paying sixty-five perc=
+ent (65%) of summer
+
+fees associated with enrollment in classes used to meet requirements for th=
+e degree, as provided
+
+for in Section 5. GEs shall be responsible for all summer fees associated w=
+hen enrolled solely in
+
+classes not meeting requirements for their degree.
+
+=20
+
+With the above change to the CBA, CAS will cover the remaining 35% of summe=
+r fees for all eligible GEs and will no longer cover 100% of summer fees for=
+ PhD students.   The change to covering 35% for all eligible GEs results in =
+an estimated  increased cost to CAS of about 25%.  We will also being sendin=
+g out a note informing faculty of this change.
+
+=20
+
+Please let me know if you have questions.
+
+=20
+
+Sherri
+
+=20
+
+=20
+
+Sherri Nelson
+
+Assistant Dean for Budget and Finance
+
+College of Arts and Sciences
+
+sherrin@uoregon.edu
+
+541-346-8196
+
+=20
+
+
+--B_3578583747_1243930505
+Content-Type: text/html; charset=&quot;UTF-8&quot;
+Content-Transfer-Encoding: quoted-printable
+
+&lt;html xmlns:v=3D&quot;urn:schemas-microsoft-com:vml&quot; xmlns:o=3D&quot;urn:schemas-micr=
+osoft-com:office:office&quot; xmlns:w=3D&quot;urn:schemas-microsoft-com:office:word&quot; =
+xmlns:x=3D&quot;urn:schemas-microsoft-com:office:excel&quot; xmlns:m=3D&quot;http://schema=
+s.microsoft.com/office/2004/12/omml&quot; xmlns=3D&quot;http://www.w3.org/TR/REC-html=
+40&quot;&gt;&lt;head&gt;
+&lt;meta http-equiv=3D&quot;Content-Type&quot; content=3D&quot;text/html; charset=3Dutf-8&quot;&gt;
+&lt;meta name=3D&quot;Generator&quot; content=3D&quot;Microsoft Word 15 (filtered medium)&quot;&gt;
+&lt;style&gt;&lt;!--
+/* Font Definitions */
+@font-face
+	{font-family:Helvetica;
+	panose-1:2 11 6 4 2 2 2 2 2 4;}
+@font-face
+	{font-family:&quot;Cambria Math&quot;;
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:&quot;Book Antiqua&quot;;
+	panose-1:2 4 6 2 5 3 5 3 3 4;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:&quot;Calibri&quot;,sans-serif;}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:#0563C1;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-priority:99;
+	color:#954F72;
+	text-decoration:underline;}
+span.EmailStyle17
+	{mso-style-type:personal-compose;
+	font-family:&quot;Calibri&quot;,sans-serif;
+	color:windowtext;}
+span.apple-converted-space
+	{mso-style-name:apple-converted-space;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	font-family:&quot;Calibri&quot;,sans-serif;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+--&gt;&lt;/style&gt;&lt;!--[if gte mso 9]&gt;&lt;xml&gt;
+&lt;o:shapedefaults v:ext=3D&quot;edit&quot; spidmax=3D&quot;1026&quot; /&gt;
+&lt;/xml&gt;&lt;![endif]--&gt;&lt;!--[if gte mso 9]&gt;&lt;xml&gt;
+&lt;o:shapelayout v:ext=3D&quot;edit&quot;&gt;
+&lt;o:idmap v:ext=3D&quot;edit&quot; data=3D&quot;1&quot; /&gt;
+&lt;/o:shapelayout&gt;&lt;/xml&gt;&lt;![endif]--&gt;
+&lt;/head&gt;
+&lt;body lang=3D&quot;EN-US&quot; link=3D&quot;#0563C1&quot; vlink=3D&quot;#954F72&quot;&gt;
+&lt;div class=3D&quot;WordSection1&quot;&gt;
+&lt;p class=3D&quot;MsoNormal&quot;&gt;Dear Heads and Managers,&lt;o:p&gt;&lt;/o:p&gt;&lt;/p&gt;
+&lt;p class=3D&quot;MsoNormal&quot;&gt;&nbsp;&lt;o:p&gt;&lt;/o:p&gt;&lt;/p&gt;
+&lt;p class=3D&quot;MsoNormal&quot;&gt;CAS has paid fees for all PhD students enrolled in r=
+elevant classes in past summers. However, Article 19, Section 6, of the cur=
+rent GTFF Collective Bargaining Agreement (below) requires that, starting s=
+ummer 2017, departments/CAS cover
+ 35% of fees for&lt;span class=3D&quot;apple-converted-space&quot;&gt;&nbsp;&lt;/span&gt;&lt;i&gt;all&lt;/=
+i&gt;&lt;span class=3D&quot;apple-converted-space&quot;&gt;&nbsp;&lt;/span&gt;eligible grad students=
+ enrolled in classed used to meet degree requirement, including master=E2=
+=80=99s students.&lt;o:p&gt;&lt;/o:p&gt;&lt;/p&gt;
+&lt;p class=3D&quot;MsoNormal&quot;&gt;&lt;span style=3D&quot;font-family:&quot;Arial&quot;,sans-se=
+rif&quot;&gt;&nbsp;&lt;/span&gt;&lt;o:p&gt;&lt;/o:p&gt;&lt;/p&gt;
+&lt;p class=3D&quot;MsoNormal&quot;&gt;&lt;b&gt;Section 6.&lt;span class=3D&quot;apple-converted-space&quot;&gt;&amp;=
+nbsp;&lt;/span&gt;&lt;/b&gt;Summer Fees: GEs shall be responsible for paying sixty-five=
+ percent (65%) of summer&lt;o:p&gt;&lt;/o:p&gt;&lt;/p&gt;
+&lt;p class=3D&quot;MsoNormal&quot;&gt;fees associated with enrollment in classes used to m=
+eet requirements for the degree, as provided&lt;o:p&gt;&lt;/o:p&gt;&lt;/p&gt;
+&lt;p class=3D&quot;MsoNormal&quot;&gt;for in Section 5. GEs shall be responsible for all s=
+ummer fees associated when enrolled solely in&lt;o:p&gt;&lt;/o:p&gt;&lt;/p&gt;
+&lt;p class=3D&quot;MsoNormal&quot;&gt;classes not meeting requirements for their degree.&lt;o=
+:p&gt;&lt;/o:p&gt;&lt;/p&gt;
+&lt;p class=3D&quot;MsoNormal&quot;&gt;&nbsp;&lt;o:p&gt;&lt;/o:p&gt;&lt;/p&gt;
+&lt;p class=3D&quot;MsoNormal&quot;&gt;With the above change to the CBA, CAS will cover the=
+ remaining 35% of summer fees for all eligible GEs and will no longer cover=
+ 100% of summer fees for PhD students. &nbsp;&nbsp;The change to covering 3=
+5% for all eligible GEs results in an estimated
+ increased cost to CAS of about 25%. &nbsp;We will also being sending out a=
+ note informing faculty of this change.&lt;o:p&gt;&lt;/o:p&gt;&lt;/p&gt;
+&lt;p class=3D&quot;MsoNormal&quot;&gt;&nbsp;&lt;o:p&gt;&lt;/o:p&gt;&lt;/p&gt;
+&lt;p class=3D&quot;MsoNormal&quot;&gt;Please let me know if you have questions.&lt;o:p&gt;&lt;/o:p&gt;=
+&lt;/p&gt;
+&lt;p class=3D&quot;MsoNormal&quot;&gt;&nbsp;&lt;o:p&gt;&lt;/o:p&gt;&lt;/p&gt;
+&lt;p class=3D&quot;MsoNormal&quot;&gt;Sherri&lt;o:p&gt;&lt;/o:p&gt;&lt;/p&gt;
+&lt;p class=3D&quot;MsoNormal&quot;&gt;&lt;o:p&gt;&nbsp;&lt;/o:p&gt;&lt;/p&gt;
+&lt;p class=3D&quot;MsoNormal&quot;&gt;&lt;o:p&gt;&nbsp;&lt;/o:p&gt;&lt;/p&gt;
+&lt;p class=3D&quot;MsoNormal&quot;&gt;&lt;span style=3D&quot;font-family:&quot;Book Antiqua&quot;,=
+serif&quot;&gt;Sherri Nelson&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p class=3D&quot;MsoNormal&quot;&gt;&lt;span style=3D&quot;font-size:10.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif&quot;&gt;Assistant Dean for Budget and Finance&lt;o:p&gt;&lt;/o:p&gt;&lt;/s=
+pan&gt;&lt;/p&gt;
+&lt;p class=3D&quot;MsoNormal&quot;&gt;&lt;span style=3D&quot;font-size:10.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif&quot;&gt;College of Arts and Sciences&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p class=3D&quot;MsoNormal&quot;&gt;&lt;span style=3D&quot;font-size:10.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif&quot;&gt;&lt;a href=3D&quot;mailto:sherrin@uoregon.edu&quot;&gt;sherrin@uore=
+gon.edu&lt;/a&gt;&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p class=3D&quot;MsoNormal&quot;&gt;&lt;span style=3D&quot;font-size:10.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif&quot;&gt;541-346-8196&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p class=3D&quot;MsoNormal&quot;&gt;&lt;o:p&gt;&nbsp;&lt;/o:p&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+
+--B_3578583747_1243930505--
+
+--B_3578583747_319053177
+Content-Type: text/plain; name=&quot;ATT00001.txt&quot;
+Content-ID: &lt;881F57A780EA87468A44215E58589948@uoregon.edu&gt;
+Content-Disposition: attachment; filename=&quot;ATT00001.txt&quot;
+Content-Transfer-Encoding: base64
+
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18NCmNhc2J1ZG1n
+ciBtYWlsaW5nIGxpc3QNCmNhc2J1ZG1nckBsaXN0cy51b3JlZ29uLmVkdQ0KaHR0cHM6Ly9saXN0
+cy1wcm9kLnVvcmVnb24uZWR1L21haWxtYW4vbGlzdGluZm8vY2FzYnVkbWdyDQoNCkZvciBhbiBh
+cmNoaXZlIG9mIHRoaXMgbGlzdCwgcGxlYXNlIHNlZSBodHRwOi8vbGlzdHMtcHJvZC51b3JlZ29u
+LmVkdS9waXBlcm1haWwvY2FzYnVkbWdyLw==
+
+--B_3578583747_319053177--
+]
