@@ -1,0 +1,433 @@
+[From nobody Mon Apr 17 11:52:48 2017
+Received: from AD-CC-EX1.ad.uoregon.edu (184.171.120.140) by
+	ad-oh-ex04.ad.uoregon.edu (184.171.120.147) with Microsoft SMTP Server
+	(TLS)
+	id 15.0.1178.4 via Mailbox Transport; Fri, 7 Apr 2017 08:21:35 -0700
+Received: from AD-CC-EX1.ad.uoregon.edu (184.171.120.140) by
+	ad-cc-ex1.ad.uoregon.edu (184.171.120.140) with Microsoft SMTP Server
+	(TLS) id 15.0.1178.4; Fri, 7 Apr 2017 08:21:35 -0700
+Received: from smtp.uoregon.edu (184.171.108.233) by AD-CC-EX1.ad.uoregon.edu
+	(184.171.120.140) with Microsoft SMTP Server (TLS) id 15.0.1178.4 via
+	Frontend Transport; Fri, 7 Apr 2017 08:21:35 -0700
+Received: from lists-prod.uoregon.edu (lists-prod.uoregon.edu
+	[128.223.143.137])
+	by smtp.uoregon.edu (8.14.4/8.14.4) with ESMTP id v37FLUDM031810
+	(version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256
+	verify=NOT); Fri, 7 Apr 2017 08:21:30 -0700
+Received: from lists-prod.uoregon.edu (localhost [127.0.0.1])
+	by lists-prod.uoregon.edu (8.14.4/8.14.4) with ESMTP id v37FLTc6012792; 
+	Fri, 7 Apr 2017 08:21:29 -0700
+Received: from smtp.uoregon.edu (cc-smtp1 [184.171.108.229])
+	by lists-prod.uoregon.edu (8.14.4/8.14.4) with ESMTP id v37FLSf4012787; 
+	Fri, 7 Apr 2017 08:21:28 -0700
+Received: from ad-cc-ex1.ad.uoregon.edu (ad-cc-ex1.uoregon.edu
+	[184.171.120.140])
+	by smtp.uoregon.edu (8.14.4/8.14.4) with ESMTP id v37FLRLT000711
+	(version=TLSv1/SSLv3 cipher=AES128-SHA256 bits=128 verify=NOT);
+	Fri, 7 Apr 2017 08:21:27 -0700
+Received: from ad-oh-ex04.ad.uoregon.edu (184.171.120.147) by
+	ad-cc-ex1.ad.uoregon.edu (184.171.120.140) with Microsoft SMTP Server
+	(TLS) id 15.0.1178.4; Fri, 7 Apr 2017 08:21:26 -0700
+Received: from ad-oh-ex04.ad.uoregon.edu ([184.171.120.147]) by
+	ad-oh-ex04.ad.uoregon.edu ([184.171.120.147]) with mapi id
+	15.00.1178.000; Fri, 7 Apr 2017 08:21:26 -0700
+From: Miriam Bolton &lt;mbolton@uoregon.edu&gt;
+To: &quot;cas-heads@lists.uoregon.edu&quot; &lt;cas-heads@lists.uoregon.edu&gt;,
+	&quot;casbudmgr@lists.uoregon.edu&quot; &lt;casbudmgr@lists.uoregon.edu&gt;
+Subject: casbudmgr: Request for Names of Promotion and Tenure Candidates for
+	2017-2018
+Thread-Topic: Request for Names of Promotion and Tenure Candidates for
+	2017-2018
+Thread-Index: AdKu6snj4TGeT+0lQtWl3sB5biRTnwAE7l2dAAGSucAADjmL8A==
+Sender: &quot;casbudmgr-bounces@lists.uoregon.edu&quot;
+	&lt;casbudmgr-bounces@lists.uoregon.edu&gt;
+Date: Fri, 7 Apr 2017 15:21:26 +0000
+Message-ID: &lt;bed7f3a0100b49638bbac02adc484ec9@ad-oh-ex04.ad.uoregon.edu&gt;
+References: &lt;73d4b4d44f264650ad1269b28fbd6e2c@ad-cc-ex03.ad.uoregon.edu&gt;
+	&lt;1491501492209.57513@uoregon.edu&gt;
+	&lt;bf72a105a0f5484d8330f1a1a792c08d@ad-cc-ex03.ad.uoregon.edu&gt;
+List-Help: &lt;mailto:casbudmgr-request@lists.uoregon.edu?subject=help&gt;
+List-Subscribe: &lt;https://lists-prod.uoregon.edu/mailman/listinfo/casbudmgr&gt;,
+	&lt;mailto:casbudmgr-request@lists.uoregon.edu?subject=subscribe&gt;
+List-Unsubscribe: &lt;https://lists-prod.uoregon.edu/mailman/options/casbudmgr&gt;, 
+	&lt;mailto:casbudmgr-request@lists.uoregon.edu?subject=unsubscribe&gt;
+In-Reply-To: &lt;bf72a105a0f5484d8330f1a1a792c08d@ad-cc-ex03.ad.uoregon.edu&gt;
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Exchange-Organization-AuthSource: ad-cc-ex1.ad.uoregon.edu
+X-MS-Has-Attach: yes
+X-Auto-Response-Suppress: All
+X-MS-TNEF-Correlator: 
+x-proofpoint-virus-version: vendor=fsecure engine=2.50.10432:, ,
+	definitions=2017-04-07_12:, , signatures=0
+x-proofpoint-spam-reason: safe
+x-originating-ip: [128.223.94.104]
+x-proofpoint-spam-details: rule=notspam policy=default score=0 spamscore=0
+	suspectscore=0	malwarescore=0 phishscore=0 adultscore=0 bulkscore=0
+	classifier=spam	adjust=-40 reason=mlx scancount=1
+	engine=8.0.1-1702020001 definitions=main-1704070127
+Content-Type: multipart/mixed;
+	boundary=&quot;_005_bed7f3a0100b49638bbac02adc484ec9adohex04aduoregonedu_&quot;
+MIME-Version: 1.0
+
+--_005_bed7f3a0100b49638bbac02adc484ec9adohex04aduoregonedu_
+Content-Type: multipart/alternative;
+	boundary=&quot;_000_bed7f3a0100b49638bbac02adc484ec9adohex04aduoregonedu_&quot;
+
+--_000_bed7f3a0100b49638bbac02adc484ec9adohex04aduoregonedu_
+Content-Type: text/plain; charset=&quot;us-ascii&quot;
+Content-Transfer-Encoding: quoted-printable
+
+
+
+Dear Heads and Managers:
+
+
+
+Attached you will find the current list of individual we expect to be comin=
+g up for tenure and/or promotion next year.
+
+
+
+Per the CBA (Article 20; section 12 page 47), &quot;to initiate the tenure revie=
+w process, the department or unit head will contact the bargaining unit fac=
+ulty member no later than winter term of the year preceding the year in whi=
+ch as tenure decision is required...&quot;. If you have faculty coming up for a =
+P&amp;T decision in AY 17/18 and have not yet notified them, please do so immed=
+iately and let your divisional AD know that notification was done late.
+
+
+
+In addition, there are usually individuals missing from this automated list=
+.  In order to prepare for the upcoming P&amp;T process, we would like to ident=
+ify them and add them to our tracking.  In addition, if any of the individu=
+als on our list will be delaying submitting their case, we would like to kn=
+ow this information as well.
+
+
+
+Please take a moment and see if there are any additional candidates or dela=
+yed decisions for tenure and/or promotion in AY 17/18 and send this informa=
+tion to Pauline Miller at pcmiller@uoregon.edu&lt;mailto:pcmiller@uoregon.edu&gt;=
+ by May 5th.
+
+
+
+Thank you,
+
+
+
+Miriam
+
+
+
+Miriam S. Bolton
+
+Assistant Dean for Administration and Operations
+
+College of Arts and Sciences
+
+541-346-2045
+
+
+--_000_bed7f3a0100b49638bbac02adc484ec9adohex04aduoregonedu_
+Content-Type: text/html; charset=&quot;us-ascii&quot;
+Content-ID: &lt;3312ADBF145ECD41944EBBD0F5CC922A@uoregon.edu&gt;
+Content-Transfer-Encoding: quoted-printable
+
+&lt;html xmlns:v=3D&quot;urn:schemas-microsoft-com:vml&quot; xmlns:o=3D&quot;urn:schemas-micr=
+osoft-com:office:office&quot; xmlns:w=3D&quot;urn:schemas-microsoft-com:office:word&quot; =
+xmlns:m=3D&quot;http://schemas.microsoft.com/office/2004/12/omml&quot; xmlns=3D&quot;http:=
+//www.w3.org/TR/REC-html40&quot;&gt;
+&lt;head&gt;
+&lt;meta http-equiv=3D&quot;Content-Type&quot; content=3D&quot;text/html; charset=3Dus-ascii&quot;=
+&gt;
+&lt;meta name=3D&quot;Generator&quot; content=3D&quot;Microsoft Word 15 (filtered medium)&quot;&gt;
+&lt;style&gt;&lt;!--
+/* Font Definitions */
+@font-face
+	{font-family:&quot;Cambria Math&quot;;
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:&quot;Calibri&quot;,sans-serif;}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:#0563C1;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-priority:99;
+	color:#954F72;
+	text-decoration:underline;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{mso-style-priority:99;
+	mso-style-link:&quot;Plain Text Char&quot;;
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:&quot;Calibri&quot;,sans-serif;}
+span.PlainTextChar
+	{mso-style-name:&quot;Plain Text Char&quot;;
+	mso-style-priority:99;
+	mso-style-link:&quot;Plain Text&quot;;
+	font-family:&quot;Calibri&quot;,sans-serif;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	font-family:&quot;Calibri&quot;,sans-serif;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+--&gt;&lt;/style&gt;&lt;!--[if gte mso 9]&gt;&lt;xml&gt;
+&lt;o:shapedefaults v:ext=3D&quot;edit&quot; spidmax=3D&quot;1026&quot; /&gt;
+&lt;/xml&gt;&lt;![endif]--&gt;&lt;!--[if gte mso 9]&gt;&lt;xml&gt;
+&lt;o:shapelayout v:ext=3D&quot;edit&quot;&gt;
+&lt;o:idmap v:ext=3D&quot;edit&quot; data=3D&quot;1&quot; /&gt;
+&lt;/o:shapelayout&gt;&lt;/xml&gt;&lt;![endif]--&gt;
+&lt;/head&gt;
+&lt;body lang=3D&quot;EN-US&quot; link=3D&quot;#0563C1&quot; vlink=3D&quot;#954F72&quot;&gt;
+&lt;div class=3D&quot;WordSection1&quot;&gt;
+&lt;p class=3D&quot;MsoPlainText&quot;&gt;&lt;o:p&gt;&nbsp;&lt;/o:p&gt;&lt;/p&gt;
+&lt;p class=3D&quot;MsoPlainText&quot;&gt;Dear Heads and Managers:&lt;o:p&gt;&lt;/o:p&gt;&lt;/p&gt;
+&lt;p class=3D&quot;MsoPlainText&quot;&gt;&lt;o:p&gt;&nbsp;&lt;/o:p&gt;&lt;/p&gt;
+&lt;p class=3D&quot;MsoPlainText&quot;&gt;Attached you will find the current list of indivi=
+dual we expect to be coming up for tenure and/or promotion next year.&lt;o:p&gt;&lt;=
+/o:p&gt;&lt;/p&gt;
+&lt;p class=3D&quot;MsoPlainText&quot;&gt;&lt;o:p&gt;&nbsp;&lt;/o:p&gt;&lt;/p&gt;
+&lt;p class=3D&quot;MsoPlainText&quot;&gt;Per the CBA (Article 20; section 12 page 47), &amp;qu=
+ot;to initiate the tenure review process, the department or unit head will =
+contact the bargaining unit faculty member no later than winter term of the=
+ year preceding the year in which as tenure
+ decision is required&#8230;&quot;. If you have faculty coming up for a P&amp;a=
+mp;T decision in AY 17/18 and have not yet notified them, please do so imme=
+diately and let your divisional AD know that notification was done late.&lt;o:=
+p&gt;&lt;/o:p&gt;&lt;/p&gt;
+&lt;p class=3D&quot;MsoPlainText&quot;&gt;&lt;o:p&gt;&nbsp;&lt;/o:p&gt;&lt;/p&gt;
+&lt;p class=3D&quot;MsoPlainText&quot;&gt;In addition, there are usually individuals missin=
+g from this automated list.&nbsp; In order to prepare for the upcoming P&amp;am=
+p;T process, we would like to identify them and add them to our tracking.&amp;n=
+bsp; In addition, if any of the individuals on our
+ list will be delaying submitting their case, we would like to know this in=
+formation as well.&lt;o:p&gt;&lt;/o:p&gt;&lt;/p&gt;
+&lt;p class=3D&quot;MsoPlainText&quot;&gt;&lt;o:p&gt;&nbsp;&lt;/o:p&gt;&lt;/p&gt;
+&lt;p class=3D&quot;MsoPlainText&quot;&gt;Please take a moment and see if there are any add=
+itional candidates or delayed decisions for tenure and/or promotion in AY 1=
+7/18 and send this information to Pauline Miller at
+&lt;a href=3D&quot;mailto:pcmiller@uoregon.edu&quot;&gt;pcmiller@uoregon.edu&lt;/a&gt; by May 5th=
+.&lt;o:p&gt;&lt;/o:p&gt;&lt;/p&gt;
+&lt;p class=3D&quot;MsoPlainText&quot;&gt;&lt;o:p&gt;&nbsp;&lt;/o:p&gt;&lt;/p&gt;
+&lt;p class=3D&quot;MsoPlainText&quot;&gt;Thank you,&lt;o:p&gt;&lt;/o:p&gt;&lt;/p&gt;
+&lt;p class=3D&quot;MsoPlainText&quot;&gt;&lt;o:p&gt;&nbsp;&lt;/o:p&gt;&lt;/p&gt;
+&lt;p class=3D&quot;MsoPlainText&quot;&gt;Miriam&lt;o:p&gt;&lt;/o:p&gt;&lt;/p&gt;
+&lt;p class=3D&quot;MsoPlainText&quot;&gt;&lt;o:p&gt;&nbsp;&lt;/o:p&gt;&lt;/p&gt;
+&lt;p class=3D&quot;MsoPlainText&quot;&gt;Miriam S. Bolton&lt;o:p&gt;&lt;/o:p&gt;&lt;/p&gt;
+&lt;p class=3D&quot;MsoPlainText&quot;&gt;Assistant Dean for Administration and Operations =
+&lt;o:p&gt;&lt;/o:p&gt;&lt;/p&gt;
+&lt;p class=3D&quot;MsoPlainText&quot;&gt;College of Arts and Sciences&lt;o:p&gt;&lt;/o:p&gt;&lt;/p&gt;
+&lt;p class=3D&quot;MsoPlainText&quot;&gt;541-346-2045&lt;o:p&gt;&lt;/o:p&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+--_000_bed7f3a0100b49638bbac02adc484ec9adohex04aduoregonedu_--
+
+--_005_bed7f3a0100b49638bbac02adc484ec9adohex04aduoregonedu_
+Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;
+	name=&quot;P&amp;T Cases 2017-2018.xlsx&quot;
+Content-Description: P&amp;T Cases 2017-2018.xlsx
+Content-Disposition: attachment; filename=&quot;P&amp;T Cases 2017-2018.xlsx&quot;;
+	size=9387; creation-date=&quot;Thu, 06 Apr 2017 18:40:51 GMT&quot;;
+	modification-date=&quot;Thu, 06 Apr 2017 18:40:51 GMT&quot;
+Content-ID: &lt;1513269E8C5B224DB072C5CA83F13A0A@uoregon.edu&gt;
+Content-Transfer-Encoding: base64
+
+UEsDBBQABgAIAAAAIQBi7p1oXgEAAJAEAAATAAgCW0NvbnRlbnRfVHlwZXNdLnhtbCCiBAIooAAC
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACs
+lMtOwzAQRfdI/EPkLUrcskAINe2CxxIqUT7AxJPGqmNbnmlp/56J+xBCoRVqN7ESz9x7MvHNaLJu
+bbaCiMa7UgyLgcjAVV4bNy/Fx+wlvxcZknJaWe+gFBtAMRlfX41mmwCYcbfDUjRE4UFKrBpoFRY+
+gOOd2sdWEd/GuQyqWqg5yNvB4E5W3hE4yqnTEOPRE9RqaSl7XvPjLUkEiyJ73BZ2XqVQIVhTKWJS
+uXL6l0u+cyi4M9VgYwLeMIaQvQ7dzt8Gu743Hk00GrKpivSqWsaQayu/fFx8er8ojov0UPq6NhVo
+Xy1bnkCBIYLS2ABQa4u0Fq0ybs99xD8Vo0zL8MIg3fsl4RMcxN8bZLqej5BkThgibSzgpceeRE85
+NyqCfqfIybg4wE/tYxx8bqbRB+QERfj/FPYR6brzwEIQycAhJH2H7eDI6Tt77NDlW4Pu8ZbpfzL+
+BgAA//8DAFBLAwQUAAYACAAAACEAtVUwI/QAAABMAgAACwAIAl9yZWxzLy5yZWxzIKIEAiigAAIA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKyS
+TU/DMAyG70j8h8j31d2QEEJLd0FIuyFUfoBJ3A+1jaMkG92/JxwQVBqDA0d/vX78ytvdPI3qyCH2
+4jSsixIUOyO2d62Gl/pxdQcqJnKWRnGs4cQRdtX11faZR0p5KHa9jyqruKihS8nfI0bT8USxEM8u
+VxoJE6UchhY9mYFaxk1Z3mL4rgHVQlPtrYawtzeg6pPPm3/XlqbpDT+IOUzs0pkVyHNiZ9mufMhs
+IfX5GlVTaDlpsGKecjoieV9kbMDzRJu/E/18LU6cyFIiNBL4Ms9HxyWg9X9atDTxy515xDcJw6vI
+8MmCix+o3gEAAP//AwBQSwMEFAAGAAgAAAAhAIE+lJfzAAAAugIAABoACAF4bC9fcmVscy93b3Jr
+Ym9vay54bWwucmVscyCiBAEooAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+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
+
+--_005_bed7f3a0100b49638bbac02adc484ec9adohex04aduoregonedu_
+Content-Type: text/plain; name=&quot;ATT00001.txt&quot;
+Content-Description: ATT00001.txt
+Content-Disposition: attachment; filename=&quot;ATT00001.txt&quot;; size=253;
+	creation-date=&quot;Fri, 07 Apr 2017 15:21:36 GMT&quot;;
+	modification-date=&quot;Fri, 07 Apr 2017 15:21:36 GMT&quot;
+Content-ID: &lt;B24821EE3F423E4C9279866F4DF24A6F@uoregon.edu&gt;
+Content-Transfer-Encoding: base64
+
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18NCmNhc2J1ZG1n
+ciBtYWlsaW5nIGxpc3QNCmNhc2J1ZG1nckBsaXN0cy51b3JlZ29uLmVkdQ0KaHR0cHM6Ly9saXN0
+cy1wcm9kLnVvcmVnb24uZWR1L21haWxtYW4vbGlzdGluZm8vY2FzYnVkbWdyDQoNCkZvciBhbiBh
+cmNoaXZlIG9mIHRoaXMgbGlzdCwgcGxlYXNlIHNlZSBodHRwOi8vbGlzdHMtcHJvZC51b3JlZ29u
+LmVkdS9waXBlcm1haWwvY2FzYnVkbWdyLw==
+
+--_005_bed7f3a0100b49638bbac02adc484ec9adohex04aduoregonedu_--
+]
