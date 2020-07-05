@@ -78,6 +78,28 @@ const useStyles = theme => ({
   // },
 });
 
+const inputStyles = theme => ({
+  root: {
+    '& label.Mui-focused': {
+      color: 'green',
+    },
+    '& .MuiInput-underline:after': {
+      borderBottomColor: 'green',
+    },
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        borderColor: 'red',
+      },
+      '&:hover fieldset': {
+        borderColor: 'yellow',
+      },
+      '&.Mui-focused fieldset': {
+        borderColor: 'green',
+      },
+    },
+  },
+});
+
 
 class Files extends React.Component {
     state = {
@@ -225,7 +247,7 @@ class Downloader extends React.Component {
 
     render(){
         return(
-            <Grid container spacing={1} justify="flex-end" alignItems="center">
+            <Grid container spacing={1} justify="flex-end" alignItems="center" height="100%">
             <Grid item xs={2}>
                 <CircularProgress variant="static" value={this.state.progress} style={{margin:'auto', display:'block'}}/>
                 
@@ -235,6 +257,7 @@ class Downloader extends React.Component {
                 onClick={this.downloadFiles}
                 variant="contained" 
                 color="secondary" 
+                size="large"
                 {...this.props.getChecked().length ? {disabled:false} : {disabled:true}}
                 style={{width: "100%", height:"100%"}}>Download {this.props.getChecked().length ? this.props.getChecked().length + " Files" : ""}</Button>
             </Grid>
