@@ -2,11 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import * as serviceWorker from './serviceWorker';
 
+
+
 ReactDOM.render(
-	<App />,
+
+<Router basename={'/projects/records'}>
+	<App />
+</Router>,
   document.getElementById('root')
 );
 
