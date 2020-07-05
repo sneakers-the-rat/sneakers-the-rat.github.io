@@ -181,8 +181,8 @@ class Downloader extends React.Component {
 
         checked.forEach(function(item){
             console.log(item);
-
-            zip.file(item, urlToPromise(item), {binary:true});
+            url = "https://jon-e.net/projects/records" + item;
+            zip.file(item, urlToPromise(url), {binary:true});
         });
         
 
