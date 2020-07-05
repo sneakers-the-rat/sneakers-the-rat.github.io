@@ -15,12 +15,12 @@ module.exports = function override(config, env) {
         })
     );
 
-    config.plugins.push(
-    	new CopyPlugin({
-      patterns: [
-        { from: 'files', to: 'files' },
-      ],
-    }))
+    // config.plugins.push(
+    // 	new CopyPlugin({
+    //   patterns: [
+    //     { from: 'files', to: 'files' },
+    //   ],
+    // }))
 
     return config;
 }
