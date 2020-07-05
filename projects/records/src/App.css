@@ -4,7 +4,7 @@ body {
   height: 100vh;
   width: 100vw;
   position: absolute;
-  background: #FCFCFC;
+  background: #DDDDDD;
 }
 
 #root {
@@ -94,4 +94,30 @@ body {
 
 .Header-card {
   height: 100%;
+}
+
+.MuiInputBase-input {
+  /*color: #ff0000 !important;*/
+  font-size: 26px !important;
+}
+
+.MuiInputLabel-root {
+  font-size: 36px !important;
+  color: #f50057 !important;
+  font-family: "Fira Sans" !important;
+  font-weight: 800 !important;
+  font-style: italic !important;
+}
+
+.MuiInputLabel-outlined.MuiInputLabel-shrink {
+    transform: translate(14px, -6px) scale(0.5) !important;
+}
+
+.PrivateNotchedOutline-legendLabelled-6 {
+    font-size: 18px !important;
+
+}
+
+.MuiInputLabel-marginDense {
+    transform: translate(14px, 8px) scale(1) !important;
 }
