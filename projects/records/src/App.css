@@ -1,19 +1,41 @@
 @import "../node_modules/react-checkbox-tree/lib/react-checkbox-tree.css";
 
+body {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  background: #FCFCFC;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+/*.App-root-1 {
+  height: 100%;
+  width: 100%;
+}*/
+
+
+
+
+
 .Files {
   text-align: center;
   /*float: left;*/
   border: 1px solid rgba(0,0,0,0.3);
-  margin: 1rem;
+  /*margin: 1rem;*/
 }
 
-.Files-container {
+/*.Files-container {
   float: left;
 }
 
 .pdf-viewer {
   float: left;
-}
+}*/
 
 .Files-logo {
   height: 40vmin;
@@ -48,4 +70,28 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.react-checkbox-tree>ol{
+  overflow:scroll;
+  white-space: nowrap;
+}
+
+/*.rct-node-icon {
+  color: #f50057;
+}
+*/
+
+.Header-container {
+  max-height: 100px;
+}
+
+.Header {
+  /*height: 100%;*/
+  padding: 10px !important;
+  /*background: #000033;*/
+}
+
+.Header-card {
+  height: 100%;
 }
