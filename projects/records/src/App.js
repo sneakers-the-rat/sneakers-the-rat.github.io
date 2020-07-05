@@ -95,8 +95,8 @@ class Files extends React.Component {
     }
 
     onCheck(checked) {
-        console.log('on check child');
-        console.log(checked);
+        // console.log('on check child');
+        // console.log(checked);
         this.setState({ checked });
         this.props.checkedReporter(checked);
     }
@@ -113,8 +113,8 @@ class Files extends React.Component {
 
     render() {
         const { checked, expanded, click } = this.state;
-        console.log('child render checked');
-        console.log(this.props.parentChecked);
+        // console.log('child render checked');
+        // console.log(this.props.parentChecked);
 
         return (
             <div className="Files-container">
@@ -176,11 +176,11 @@ class Downloader extends React.Component {
 
         var zip = new JSZip();
         // debugger;
-        console.log(checked);
+        // console.log(checked);
         this.setState({downloading: true});
 
         checked.forEach(function(item){
-            console.log(item);
+            // console.log(item);
             url = "https://jon-e.net/projects/records" + item;
             zip.file(item, urlToPromise(url), {binary:true});
         });
@@ -196,7 +196,7 @@ class Downloader extends React.Component {
             // updatePercent(metadata.percent|0);
             this.setState({progress:metadata.percent.toFixed(2)});
             // this.updateProgress(metadata.percent.toFixed(2));
-            console.log(metadata.percent.toFixed(2));
+            // console.log(metadata.percent.toFixed(2));
         }.bind(this))
         .then(function callback(blob) {
 
