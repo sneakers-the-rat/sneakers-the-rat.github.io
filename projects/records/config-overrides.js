@@ -14,12 +14,11 @@ module.exports = function override(config, env) {
         	options: {loaders:'json-loader'}
         })
     );
-    console.log(config)
 
-    if (!config.output){
-        config.output = [];
-    }
-    config.output.publicPath = '/projects/records/'
+
+    // config.output.publicPath = ''
+    // delete config.output.publicPath;
+    config.output.publicPath='/projects/records/';
 
     // config.plugins.push(
     // 	new CopyPlugin({
@@ -28,5 +27,6 @@ module.exports = function override(config, env) {
     //   ],
     // }))
 
+    console.log(config);
     return config;
 }
