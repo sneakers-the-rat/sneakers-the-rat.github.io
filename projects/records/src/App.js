@@ -168,7 +168,7 @@ class PDFViewer extends React.Component {
             return (
                 <div className="pdf-viewer">
                     <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.4.456/build/pdf.worker.min.js">
-                        <Viewer fileUrl={this.props.file} />
+                        <Viewer fileUrl={"/projects/records/"+this.props.file} />
                     </Worker>
                 </div>
             );
