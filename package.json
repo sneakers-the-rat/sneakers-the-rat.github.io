@@ -22,7 +22,7 @@
   "dependencies": {
     "bundler": "^0.8.0",
     "jekyll": "^3.0.0-beta1",
-    "node-sass": "^4.13.0",
+    "node-sass": "^4.13.1",
     "three": "^0.111.0"
   },
   "devDependencies": {
