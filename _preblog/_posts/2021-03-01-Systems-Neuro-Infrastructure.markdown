@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "A Vision for ONICE: Building the Basic Infrastructure That a Layperson Would Expect Systems Neuroscientists to Have Would Revolutionize the Discipline"
-date: 2020-03-29
+date: 2021-03-01
 description: This could be us but u playin
 image: /blog/assets/images/onice_logo.png
 toc: 
