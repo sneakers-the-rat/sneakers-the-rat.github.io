@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>jekyll-jupyter-notebook20200423-29663-1x4t7c8</title>
+<title>jekyll-jupyter-notebook20210301-75599-1o9p2uz</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13099,8 +13099,8 @@ div#notebook {
 
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">pickle</span>
 <span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm_notebook</span> <span class="k">as</span> <span class="n">tqdm</span>
 <span class="kn">from</span> <span class="nn">scipy.io</span> <span class="kn">import</span> <span class="n">loadmat</span>
@@ -13116,7 +13116,7 @@ div#notebook {
 <span class="c1">#from nwbwidgets import nwb2widget</span>
 
 <span class="c1"># local version of oe&#39;s analysis-tools</span>
-<span class="kn">import</span> <span class="nn">OpenEphys</span> <span class="kn">as</span> <span class="nn">oe</span>
+<span class="kn">import</span> <span class="nn">OpenEphys</span> <span class="k">as</span> <span class="nn">oe</span>
 
 <span class="n">data_dir</span> <span class="o">=</span> <span class="s1">&#39;../data/nwb/&#39;</span>
 </pre></div>
@@ -13278,7 +13278,7 @@ div#notebook {
 <span class="c1"># clean up timestamps</span>
 <span class="n">stim_log</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;timestamp&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">stim_log</span><span class="p">[</span><span class="s1">&#39;timestamp&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;000&quot;</span>
 <span class="n">stim_log</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;timestamp&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">stim_log</span><span class="p">[</span><span class="s1">&#39;timestamp&#39;</span><span class="p">],</span> 
-                                             <span class="n">format</span><span class="o">=</span><span class="s2">&quot;%B-</span><span class="si">%d</span><span class="s2">-%Y %H:%M:%S.</span><span class="si">%f</span><span class="s2">&quot;</span><span class="p">)</span>
+                                             <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;%B-</span><span class="si">%d</span><span class="s2">-%Y %H:%M:%S.</span><span class="si">%f</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13299,7 +13299,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">stim_log</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;stimulus_description&#39;</span><span class="p">])</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">stim_log</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;stimulus_description&#39;</span><span class="p">])</span>
 </pre></div>
 
     </div>
@@ -13346,7 +13346,7 @@ Name: stimulus_description, dtype: object
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Expand it to columns</span>
 
-<span class="n">stim_desc</span> <span class="o">=</span> <span class="n">stim_log</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;stimulus_description&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="n">expand</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">stim_desc</span> <span class="o">=</span> <span class="n">stim_log</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;stimulus_description&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="c1"># two types of stim have two sets of params, do white noise first</span>
 <span class="n">stim_noise</span> <span class="o">=</span> <span class="n">stim_desc</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">stim_desc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;whitenoise&#39;</span><span class="p">]</span>
@@ -13356,10 +13356,10 @@ Name: stimulus_description, dtype: object
 <span class="c1"># assigning the left to the name and the right as the value</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">stim_noise</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
     <span class="k">try</span><span class="p">:</span>
-        <span class="n">split_col</span> <span class="o">=</span> <span class="n">stim_noise</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="n">split_col</span> <span class="o">=</span> <span class="n">stim_noise</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         <span class="c1"># get name of column</span>
         <span class="n">col_name</span> <span class="o">=</span> <span class="n">split_col</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
-        <span class="k">if</span> <span class="n">col_name</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">col_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">continue</span>
         <span class="n">col_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">col_name</span><span class="p">)</span>
         <span class="c1"># replace column w value</span>
@@ -13391,10 +13391,10 @@ Name: stimulus_description, dtype: object
 <span class="n">col_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">stim_gpias</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
     <span class="k">try</span><span class="p">:</span>
-        <span class="n">split_col</span> <span class="o">=</span> <span class="n">stim_gpias</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="n">split_col</span> <span class="o">=</span> <span class="n">stim_gpias</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         <span class="c1"># get name of column</span>
         <span class="n">col_name</span> <span class="o">=</span> <span class="n">split_col</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
-        <span class="k">if</span> <span class="n">col_name</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">col_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">continue</span>
         <span class="n">col_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">col_name</span><span class="p">)</span>
         <span class="c1"># replace column w value</span>
@@ -13704,11 +13704,11 @@ Name: stimulus_description, dtype: object
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># and recombine with main stim log</span>
 <span class="n">stim_log</span><span class="p">[</span><span class="s1">&#39;idx&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">stim_log</span><span class="o">.</span><span class="n">index</span>
 <span class="n">stim_df</span> <span class="o">=</span> <span class="n">stim_log</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">stim_combined</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;outer&quot;</span><span class="p">)</span>
-<span class="n">stim_df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;idx&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<span class="n">stim_df</span><span class="o">.</span><span class="n">sort_index</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">stim_df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;idx&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">stim_df</span><span class="o">.</span><span class="n">sort_index</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="c1"># drop old column</span>
-<span class="n">stim_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;stimulus_description&#39;</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">stim_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;stimulus_description&#39;</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14626,7 +14626,7 @@ Name: stimulus_description, dtype: object
 <span class="n">time_delts</span> <span class="o">=</span> <span class="n">time_delts</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span>
 
 <span class="c1"># replace all NaNs</span>
-<span class="n">stim_df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">stim_df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="c1"># make timedel</span>
 

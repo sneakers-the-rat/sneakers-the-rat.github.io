@@ -3,6 +3,10 @@
   top: $header-height * 3;
   // padding:;
 
+  @media(max-width:$mq-large) {
+    margin-top: 0;
+  }
+
   a {
     color: $color-black;
     border-bottom: 2px solid rgba($color-grey, 0);
