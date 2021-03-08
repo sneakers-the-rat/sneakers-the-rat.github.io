@@ -91,7 +91,7 @@ Because I think this is such a potentially cool line of research I thought I wou
 
 We'll use the following libraries
 
-<details><summary style="background-color: #272822; color: #f8f8f2;">Expand/Collapse Code</summary>
+<!-- <details><summary style="background-color: #272822; color: #f8f8f2;">Expand/Collapse Code</summary> -->
 
 {% highlight r %}
 library(tidyverse)
@@ -102,11 +102,11 @@ library(here)
 library(caret)
 {% endhighlight %}
 
-</details>
+<!-- </details> -->
 
 I've put the data in a directory in my website structure, "/assets/data/adv". We'll load them all into variable names `expt_1`, `expt_2`, etc. and do some cleanup.
 
-<details><summary style="background-color: #272822; color: #f8f8f2;">Expand/Collapse Code</summary>
+<!-- <details><summary style="background-color: #272822; color: #f8f8f2;">Expand/Collapse Code</summary> -->
 
 {% highlight r %}
 # list experiment data files
@@ -178,7 +178,7 @@ for (expt_name in experiment_names){
 }
 {% endhighlight %}
 
-</details>
+<!-- </details> -->
 
 ## Summarizing Functions
 
@@ -190,7 +190,7 @@ Since so much of the data has the same structure, we'll write functions to summa
 * `cilo`, `cihi` - the 95% confidence interval around the mean correct.
 
 
-<details><summary style="background-color: #272822; color: #f8f8f2;">Expand/Collapse Code</summary>
+<!-- <details><summary style="background-color: #272822; color: #f8f8f2;">Expand/Collapse Code</summary> -->
 
 {% highlight r %}
 summarize_data <- function(data){
@@ -450,7 +450,7 @@ ex_subject_accuracy <- round(ex_subject_accuracy,3)*100
 }
 {% endhighlight %}
 
-</details>
+<!-- </details> -->
 
 
 # Experiment 1
@@ -475,7 +475,7 @@ The subjects in this task saw one of 48 "fooling images," and were presented wit
 Reanalyzing by image and subject, however...
 
 
-<details><summary style="background-color: #272822; color: #f8f8f2;">Expand/Collapse Code</summary>
+<!-- <details><summary style="background-color: #272822; color: #f8f8f2;">Expand/Collapse Code</summary> -->
 
 {% highlight r %}
 # summarize the data and expand list to new
@@ -484,7 +484,7 @@ e1_image <- sum_1$image
 e1_subject <- sum_1$subject
 {% endhighlight %}
 
-</details>
+<!-- </details> -->
 
 
 {% highlight r %}
@@ -504,13 +504,13 @@ g.e1_subject
 
 So far so good, although if we use the binomial confidence intervals rather than just the mean response rate -- what I'll call corrected accuracies -- we get a more valid description of above-chance accuracy
 
-<details><summary style="background-color: #272822; color: #f8f8f2;">Expand/Collapse Code</summary>
+<!-- <details><summary style="background-color: #272822; color: #f8f8f2;">Expand/Collapse Code</summary> -->
 
 {% highlight r %}
 e1_accs <- adjusted_accuracy(e1_image, e1_subject)
 {% endhighlight %}
 
-</details>
+<!-- </details> -->
 
 Only 85.4% of images were categorized above chance, and 81.2% of subjects did, as opposed to the reported 94% and 98%, respectively.
 
@@ -518,7 +518,7 @@ Only 85.4% of images were categorized above chance, and 81.2% of subjects did, a
 
 Of course, not all foil labels are created equal, so a more conservative test for human/machine overlap is to compare the highest and second highest labels predicted by the machine.
 
-<details><summary style="background-color: #272822; color: #f8f8f2;">Expand/Collapse Code</summary>
+<!-- <details><summary style="background-color: #272822; color: #f8f8f2;">Expand/Collapse Code</summary> -->
 
 {% highlight r %}
 e2_summary <- summarize_data(expt_2)
@@ -526,7 +526,7 @@ e2_image <- e2_summary$image
 e2_subject <- e2_summary$subject
 {% endhighlight %}
 
-</details>
+<!-- </details> -->
 
 
 {% highlight r %}
@@ -546,7 +546,7 @@ g.e2_subject
 
 This looks much worse, and the corrected accuracies reflect that
 
-<details><summary style="background-color: #272822; color: #f8f8f2;">Expand/Collapse Code</summary>
+<!-- <details><summary style="background-color: #272822; color: #f8f8f2;">Expand/Collapse Code</summary> -->
 
 {% highlight r %}
 e2_accs <- adjusted_accuracy(e2_image, e2_subject)
@@ -555,7 +555,7 @@ total_acc <- nrow(expt_2[expt_2$correct== TRUE,])/nrow(expt_2)
 total_acc <- round(total_acc, 3) * 100
 {% endhighlight %}
 
-</details>
+<!-- </details> -->
 
 Only 54.2% of images and 31.3% of subjects classified above chance, as opposed to the reported 71% and 91%, respectively.
 
@@ -563,7 +563,7 @@ Collapsing across all images and subjects, only 60.6% of responses agreed with t
 
 We can see the accuracy-inflating strength of having bad foils by comparing experiment 1 vs 2. Images whose classifications remained high in experiment 2 are robust to their next-best label, while those that are significantly worse in experiment 2 are vulnerable.
 
-<details><summary style="background-color: #272822; color: #f8f8f2;">Expand/Collapse Code</summary>
+<!-- <details><summary style="background-color: #272822; color: #f8f8f2;">Expand/Collapse Code</summary> -->
 
 {% highlight r %}
 e12_images <- left_join(e1_image, e2_image, by="image")
@@ -582,7 +582,7 @@ e12_images <- left_join(e1_image, e2_image, by="image")
 e12_images$image <- ordered(e12_images$image, levels=e12_images$image[order(e12_images$meancx.x)])
 {% endhighlight %}
 
-</details>
+<!-- </details> -->
 
 
 
@@ -602,7 +602,7 @@ ggplot(e12_images, aes(x=image, ymin=cilo.x, ymax=cihi.x, y=meancx.x))+
 
 Experiments 3a and 3b presented all possible labels instead of two. 3a was the "machine theory of mind" task, and 3b asked subjects to rate what *they* thought the images were. First, the overall summaries of 3a
 
-<details><summary style="background-color: #272822; color: #f8f8f2;">Expand/Collapse Code</summary>
+<!-- <details><summary style="background-color: #272822; color: #f8f8f2;">Expand/Collapse Code</summary> -->
 
 {% highlight r %}
 e3a_summary <- summarize_data(expt_3a)
@@ -615,7 +615,7 @@ e3b_image <- e3b_summary$image
 e3b_subject <- e3b_summary$subject
 {% endhighlight %}
 
-</details>
+<!-- </details> -->
 
 
 {% highlight r %}
@@ -633,13 +633,13 @@ g.e3a_sub
 
 ![plot of chunk unnamed-chunk-9](/blog/assets/images/2019-04-09-Adversarial-Analysis-of-Zhou-Firestone/unnamed-chunk-9-1.png)
 
-<details><summary style="background-color: #272822; color: #f8f8f2;">Expand/Collapse Code</summary>
+<!-- <details><summary style="background-color: #272822; color: #f8f8f2;">Expand/Collapse Code</summary> -->
 
 {% highlight r %}
 e3a_acc <- adjusted_accuracy(e3a_image, e3a_subject, level=1/48)
 {% endhighlight %}
 
-</details>
+<!-- </details> -->
 
 Again, only 60.4% of images and 47.4% of subjects were above chance accuracy of 1/48, as opposed to the reported 79% and 88%, respectively. Experiment 3b has qualitatively the same results, but their interpretation doesn't necessarily follow from the data:
 
@@ -672,7 +672,7 @@ This experiment only has 8 images in the set of static images, and each is prese
 
 and they are actually quite pronounced. Even if the central "objects" don't look recognizably like the categorized object, they are distinguishable that subjects should be able to recognize them between trials. Since the subjects are asked to choose one category for each of the images, it seems possible for them to use that information to exclude images from later trials. In other words, the trials are not independent. This is reflected in the positive slope of accuracy over trial number
 
-<details><summary style="background-color: #272822; color: #f8f8f2;">Expand/Collapse Code</summary>
+<!-- <details><summary style="background-color: #272822; color: #f8f8f2;">Expand/Collapse Code</summary> -->
 
 {% highlight r %}
 e4_sum <- summarize_e4(expt_4)
@@ -683,7 +683,7 @@ e4_trial <- e4_sum$trial
 e4_accs <- adjusted_accuracy(e4_image, e4_subject, level=1/8)
 {% endhighlight %}
 
-</details>
+<!-- </details> -->
 
 
 {% highlight r %}
@@ -749,7 +749,7 @@ In this experiment, perturbed MNIST digits are given, and the subjects are told 
 
 As a first pass, things look ok...
 
-<details><summary style="background-color: #272822; color: #f8f8f2;">Expand/Collapse Code</summary>
+<!-- <details><summary style="background-color: #272822; color: #f8f8f2;">Expand/Collapse Code</summary> -->
 
 {% highlight r %}
 e5_sum <- summarize_e5(expt_5)
@@ -760,7 +760,7 @@ e5_image$image <- e5_image$target
 e5_accs <- adjusted_accuracy(e5_image, e5_subject, level=1/9)
 {% endhighlight %}
 
-</details>
+<!-- </details> -->
 
 
 {% highlight r %}
@@ -772,7 +772,7 @@ g.e5_image
 
 But something is off with the confusion matrix
 
-<details><summary style="background-color: #272822; color: #f8f8f2;">Expand/Collapse Code</summary>
+<!-- <details><summary style="background-color: #272822; color: #f8f8f2;">Expand/Collapse Code</summary> -->
 
 {% highlight r %}
 expt_5$response <- as.factor(expt_5$response)
@@ -781,7 +781,7 @@ cm5 <- caret::confusionMatrix(expt_5$response, expt_5$target)
 cm5 <- reshape2::melt(cm5$table)
 {% endhighlight %}
 
-</details>
+<!-- </details> -->
 
 {% highlight r %}
 ggplot(cm5, aes(x=as.factor(Reference), y=as.factor(Prediction), fill=value))+
@@ -818,7 +818,7 @@ g.e5_subject
 
 # Experiment 6
 
-<details><summary style="background-color: #272822; color: #f8f8f2;">Expand/Collapse Code</summary>
+<!-- <details><summary style="background-color: #272822; color: #f8f8f2;">Expand/Collapse Code</summary> -->
 
 {% highlight r %}
 e6_sum <- summarize_6(expt_6)
@@ -829,7 +829,7 @@ e6_image$image <- e6_image$target
 e6_accs <- adjusted_accuracy(e6_image, e6_subject, level=0.5)
 {% endhighlight %}
 
-</details>
+<!-- </details> -->
 
 
 {% highlight r %}
@@ -863,7 +863,7 @@ This is especially problematic since the task was to choose one of two labels --
 
 
 
-<details><summary style="background-color: #272822; color: #f8f8f2;">Expand/Collapse Code</summary>
+<!-- <details><summary style="background-color: #272822; color: #f8f8f2;">Expand/Collapse Code</summary> -->
 
 {% highlight r %}
 e7_sum <- summarize_7(expt_7)
@@ -875,7 +875,7 @@ e7_accs <- adjusted_accuracy(e7_image, e7_subject, 0.5)
 e7_total <- round(sum(expt_7$correct)/nrow(expt_7), 3)*100
 {% endhighlight %}
 
-</details>
+<!-- </details> -->
 
 
 {% highlight r %}
@@ -906,17 +906,17 @@ In others, the texture was so obvious that it is no longer visually undetectable
 ![dog 61_1](/blog/assets/images/dog_63_1.png)
 Dog 63, whose adversarial target was "indian cobra."
 
-<details><summary style="background-color: #272822; color: #f8f8f2;">Expand/Collapse Code</summary>
+<!-- <details><summary style="background-color: #272822; color: #f8f8f2;">Expand/Collapse Code</summary> -->
 
 {% highlight r %}
 e7_acc_total <- sum(expt_7$correct)/nrow(expt_7)
 {% endhighlight %}
 
-</details>
+<!-- </details> -->
 
 
 # Overall summary
-<details><summary style="background-color: #272822; color: #f8f8f2;">Expand/Collapse Code</summary>
+<!-- <details><summary style="background-color: #272822; color: #f8f8f2;">Expand/Collapse Code</summary> -->
 
 {% highlight r %}
 e4_image$meanrt <- NA
@@ -956,7 +956,7 @@ all_im_melt$which_type <- paste(all_im_melt$type, all_im_melt$which)
 all_im_melt$which_type <- ordered(all_im_melt$which_type, levels=c("image reported", "subject reported", "image adjusted", "subject adjusted"))
 {% endhighlight %}
 
-</details>
+<!-- </details> -->
 
 {% highlight r %}
 ggplot(all_im_melt, aes(x=expt, y=value, 

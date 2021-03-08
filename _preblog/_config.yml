@@ -36,6 +36,11 @@ author:
     bio: bad at programming and neuroscience in beautiful Oregon.
     url: http://jon-e.net
 
+# configure jekyll scholar
+scholar:
+  source: ./assets/references
+  bibliography: blog.bib
+
 # Build settings
 markdown: kramdown
 highlighter: rouge
@@ -46,6 +51,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-jupyter-notebook
   - jekyll-toc
+  - jekyll/scholar
 
 toc:
   - max_level: 1
@@ -53,7 +59,8 @@ toc:
 compress_html:
   clippings: all
   comments: all
-  startings: [html, head, body]
+  startings: [html, body]
+  # startings: [html, head, body]
 exclude:
   - node_modules
   - .DS_Store

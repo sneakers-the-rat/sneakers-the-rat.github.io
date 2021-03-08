@@ -31,7 +31,8 @@ pre {
   //color: $color-black;
   //background: $color-lightgrey;
   border-radius: 5px;
-  overflow: scroll;
+  overflow-y: hidden;
+  overflow-x: auto;
 
   @media (min-width: $mq-med) {
     padding: {
@@ -43,9 +44,9 @@ pre {
   #markdown & {
     // margin-bottom: 1.5rem;
 
-    @media (min-width: $mq-med) {
-      min-width: 110%;
-    }
+    // @media (min-width: $mq-med) {
+    //   min-width: 110%;
+    // }
   }
 
   code {

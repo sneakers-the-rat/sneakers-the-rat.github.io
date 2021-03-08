@@ -31,7 +31,7 @@ Your bot will do this:
 
 This uses selenium and a few other standards, here's all them parts
 
-<pre><code class="python">
+{% highlight python %}
 import logging
 import os
 import random
@@ -49,14 +49,13 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
-</code></pre>
+{% endhighlight %}
 
 # Parameter classes
 
 A few classes to hold our parameters. The primary class here is `TwitterLocator`. To manipulate the web zone you need to know what to click on, what to scroll to, heck even what to type in. We use selenium's `By` module and make tuples for each as class attributes. Some of these were pretty heinous to find after the homepage update, so they'll probably change next week and ymmv.
 
-<pre><code class="python">
-
+{% highlight python %}
 class URL:
     TWITTER = 'http://twitter.com'
 
@@ -87,13 +86,13 @@ class TwitterLocator:
     like_btn         = (By.CLASS_NAME, "HeartAnimation")
     latest_tweets    = (By.PARTIAL_LINK_TEXT, 'Latest')
 
-</code></pre>
+{% endhighlight %}
 
 # PollBot itself
 
 It starts innocently enough, loading a basic [Chrome webdriver](http://chromedriver.chromium.org/downloads) and loading the homepage. You'll have to add your chromedriver to your path, eg. `export PATH=$PATH:/path/to/chromedriver/folder`. Uncomment the '--headless' line if you don't want it popping up on you.
 
-<pre><code class="python">
+{% highlight python %}
 
 class PollBot(object):
 
@@ -105,11 +104,11 @@ class PollBot(object):
         self.browser.get(URL.TWITTER)
         self.timeout = 2
         
-</code></pre>
+{% endhighlight %}
 
 The guts of the class uses the `TwitterLocator` class to navigate the site by overloading the `__getattr__`. We use a few `WebDriverWait`s to make sure the thing we're looking for is on the page, and then `find_element`
 
-<pre><code class="python">
+{% highlight python %}
 
     def _find_element(self, *loc):
         return self.browser.find_element(*loc)
@@ -134,22 +133,22 @@ The guts of the class uses the `TwitterLocator` class to navigate the site by ov
                 return self._find_element(*self.locator_dictionary[what])
         except AttributeError:
             super(PollBot, self).__getattribute__("method_missing")(what)
-</code></pre>
+{% endhighlight %}
 
 We'll chain together two methods and I guess quit too.
 
-<pre><code class="python">
+{% highlight python %}
     def run(self, post_text):
         self.login()
         self.tweet_poll(post_text)
         self.browser.quit()
-</code></pre>
+{% endhighlight %}
 
 ## Login
 
 So when we do things like `.login()` we just chain together a bunch of attribute calls - calling `self.login_btn` calls `self.__getattr__(self, 'login_btn')` - and selenium commands. We get pretty sleepy through all these methods because this bot doesn't care about FAST POSTS and has bad internet.
 
-<pre><code class="python">
+{% highlight python %}
 
     def login(self, username=Constants.USERNAME, password=Constants.PASSWORD):
         self.login_btn.click()
@@ -165,13 +164,13 @@ So when we do things like `.login()` we just chain together a bunch of attribute
         self.browser.find_elements_by_css_selector(".clearfix>.submit")[0].click()
         time.sleep(0.5)
 
-</code></pre>
+{% endhighlight %}
 
 ## Tweet poll
 
 Once we're logged in, go ahead and tweet the poll already. More of the same song and dance.
 
-<pre><code class="python">
+{% highlight python %}
 
     def tweet_poll(self, post_text):
 
@@ -199,7 +198,7 @@ Once we're logged in, go ahead and tweet the poll already. More of the same song
         self.tweet_btn.click()
         time.sleep(2)
 
-</code></pre>
+{% endhighlight %}
 
 # fin
 
