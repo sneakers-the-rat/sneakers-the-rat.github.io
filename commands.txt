@@ -1,5 +1,5 @@
 bundle exec jekyll build -d ../blog
-bundle exec jekyll serve
+bundle exec jekyll serve --livereload
 npm run gulp
 
 

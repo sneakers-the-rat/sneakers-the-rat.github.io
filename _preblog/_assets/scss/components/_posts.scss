@@ -99,13 +99,20 @@
   }
 
   &__img {
+
+
     margin-bottom: 1em;
 
     background-color: $color-lightgrey;
     transition: transform 400ms ease-in-out;
 
     img {
+      object-fit: cover;
       display: block;
+      @media (max-width: $mq-med){
+        max-height:150px;
+        width: 100%;
+      }
     }
   }
 
