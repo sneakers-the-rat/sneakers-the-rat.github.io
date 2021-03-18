@@ -10,6 +10,9 @@
   left: 0;
   z-index: $z-999;
 
+  transition: top 0.15s;
+  transition-timing-function: ease-out;
+
   display: flex;
   align-items: center;
   justify-content: space-between;

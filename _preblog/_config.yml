@@ -20,7 +20,7 @@ social:
     url: https://github.com/sneakers-the-rat
 
 # Contact settings
-contact_img: /assets/images/profpic.jpg
+contact_img: /assets/images/emailin_me.gif
 formcarry: https://formcarry.com/s/x7yoFO6sk0n
 
 # Disqus settings
@@ -40,6 +40,7 @@ author:
 scholar:
   source: ./assets/references
   bibliography: blog.bib
+  style: national-science-foundation-grant-proposals
 
 # Build settings
 markdown: kramdown
