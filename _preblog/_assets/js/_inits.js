@@ -15,6 +15,7 @@ import './components/_vimeo.js';
 import './components/_iframe_preview.js';
 import './components/_toc_highlight.js';
 import { highlight_container } from './components/_highlight_container.js';
+import './components/_hide_header.js';
 
 // ----------------------------------------------
 // Inits

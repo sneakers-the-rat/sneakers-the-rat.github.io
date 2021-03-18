@@ -12,17 +12,15 @@ tags:
   - infrastructure
 ---
 
-# We Would Run A Ranch Into The Ground
+# We Would Run A Factory Into The Ground
 
 ## "Neuroscientists Probably Have Servers, Right?"
 
 Say, to a crude approximation, scientists are workers who produce "knowledge." Backing hastily away from the scare quotes, seeing the seething oceans of quote tweets which it may spawn, we might say instead, at least for systems neuroscientists, that we are workers who produce and interpret data. Taking one step into the countryside for the purpose of metaphor, we might further say we shepherd data from its wily naked unobservedness in the Real onto scihub.
 
-[change this to sheep lol]
 As a layperson with a probably cartoonish image of the infrastructure I would expect a worker in a factory would have for managing their product, I imagine they would have some system of indexing it so that none of it is lost, it's stored in a standardized warehousing system with standardized packaging, and they provide some access point for workers at other factories to query and request what they have so that they can... you know sell their product... at the risk of thinning the metaphor beyond recognition. If they need to figure out how to do something new, they likely have some manual they can turn to.
 
-
-Where is your flock? (pic of jesus lmao) Literally where is your data? What format is it in? How did you collect it? What would you have to do to share it with someone?
+Literally where is your data? What format is it in? How did you collect it? What would you have to do to share it with someone?
 
 I imagine a nonscientist (if prompted to consider such an arcane question) would expect scientists to have something similar: their data is collected by some standardized set of tools, is stored in some standardized format, on some server accessible to them and their other labmates and perhaps able to be made available to other collaborators who may want to use their data. They might suspect that there is some standard design for T-mazes or otherwise some way to look up how to build something, program something, etc.
 
