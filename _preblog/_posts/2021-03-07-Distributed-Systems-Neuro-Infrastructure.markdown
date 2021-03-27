@@ -20,6 +20,8 @@ noindex: true
 
 ----
 
+**I want to be exceedingly clear that I am not shaming anyone for how they do science. I am trying to take effectively the opposite position of those people in the open science community that cast shame and suspicion on people for not passing some purity test. Doing open science is hard because we're lacking a lot of tools that would make it easy, and the social and community structures that make it rewarding --- and shaming people works in the opposite direction. Open science shouldn't be about passing some checklist of tests to become holier than thou. The fundamental motivations of open science should be caring about other people: caring about people being able to understand the world, caring about other people not wasting their time, cooperating with each other to do something massive and impossible. Relatedly i am not talking shit about anyone's work!!! Anytime I am describing some criticising some element of something it is because i have been inspired by and learned from it!!! This is about articulating a positive vision!!!**
+
 **start with discussion of what infrastructure is -- making things that seem impossible routine. We haven't addressed these problems after like a decade of writing becasue we haven't identified the real problems nor been bold enough to act. We can move in tiptoe steps but gradual change without a vision is pointless. We need to describe what holds us back and what needs to exist, and the act of converting that into gradual steps is all the work in between.**
 
 >  A good analogy for the development of the Internet is that of
@@ -50,6 +52,7 @@ The fragmentation of systems neuroscience is a much greater than a sort of embar
 * A perhaps doomed intellectual endeavor[^solaris] as we attempt to understand the staggering complexity of the brain by peering at the brain through the pinprickiest peephole of just the most recent data you or your lab have collected rather than being able to index across all relevant data from not only your lab, but all other labs that have measured the same phenomena. The unnecessary reduplication of experiments becomes not just a methodological limitation, but an ethical catastrophe as researchers have little choice but to abandon the elemental principle of sacrificing as few animals as possible to understand a phenomenon. 
 * The dearth of data transparency where it is still in the year of our lord 2021 rare for systems neuro papers to publish the full, raw data along with all the analysis code, often because (in addition to the extraordinarily meagre incentives to do so) the data *and* analysis code are both completely homebrew and often omitted just due to the labor of cleaning it or the embarassment of sharing it[^4].
 * The inevitability of a replication crisis because it is often literally impossible to replicate an experiment that is done on a rig that was built one time, used entirely in-lab code, and was never documented
+* A hierarchy of prestige that devalues the labor of multiple groups of technicians, animal care workers, and so on. Authorship is the coin of the realm, but many researchers that do work fundamental to the operation of science only receive the credit of an acknowledgement. We need a system to value and assign credit for the immense amount of technical and practical knowledge and labor they produce.
 * An insular system where the inaccessibility of all the "contextual" knowledge {% cite woolKnowledgeNetworksHow2020 barleyBackroomsScienceWork1994 %} that is beneath the level of publication but necessary to perform experiments, like "how to build this apparatus," "what kind of motor would work here," etc. is a force that favors established and well-funded labs who can rely on local knowledege and hiring engineers/etc. and excludes new, lesser-funded labs at non-ivy institutions. 
 * An absconscion with the public resources we are privileged enough to receive, where rather than returning the fruits of the many technical challenges we are tasked with solving to the public in the form of data, tools, collected practical knowledge, etc. we largely return papers, multiplying the above impacts of labor duplication and knowledge inaccessibility by the scale of society. 
 
@@ -73,9 +76,15 @@ You did it! Experiment Over! The experimental framework produces data that is cl
 
 Such a dream need not be only a dream, because each of these are tangibly realizable platforms and tools --- the question is less *whether it's possible* to build basic infrastructure, but more *how do we do it.* An easy misstep is to categorize this as solely a *technical* challenge, that these are just elaborations on our current tools and systems that will just come with time and continued development. Instead the challenge of infrastructure is also one of *design,* where the tools need to accomodate the needs of our discipline and ultimately make it *easier than not to do good science.* It also represents a *cultural* shift away from the individualistic heroism endemic in ours and many scientific discipline towards one where we view using and contributing to communal tools and knowledge repositories not as a nice extra thing some people do but incumbent upon us as scientists. 
 
+This document will attempt to be both a conceptual vision of the design of scientific infrastructure as well as a practical outline of the tools and path to realizing it. Both are essential, but make some conflicting demands on the construction of the piece: Making real progress in the constellation of problems above requires considering their interrelatedness and mutual reinforcement, rather than treating them as isolated problems that can be addressed piecemeal. Such a broad scope trades off with a detailed description of the relevant technology and systems, but a myopic techno-zealotry that does not examine the social and ethical nature of scientific practice risks reproducing or creating new sources of harm (see {mirowskiFutureOpenScience2018} for a particularly baroque expression of a related argument with respect to the open science movement).
+
+Allow me to make explicit some of my beliefs and biases that motivate and structure the arguments in this paper. *(then actually do it lol)*
+
 I argue that infrastructure development also requires us to rethink the way we *organize* ourselves, where rather than turning to yet another *centralized* system, we learn from decades of experience from academic, activist, and digital communities that *decentralized* systems can deliver us the needed flexibility and resiliency. Neuroscience is not physics or astronomy, and its specific affordances and constraints need to be interrogated to imagine how a model of large-scale collaboration should overlap and diverge from that of national labs and observatories.
 
 I believe the problem of basic infrastructure in systems neuroscience is less insurmountable than it may appear, but before a roadmap of where to go from here it is valuable to dwell a bit longer on where we are now to concretize what should be done differently.
+
+
 
 ## Why is it like this?
 
@@ -200,17 +209,21 @@ Neuroscientific data should be stored in a single, common format. Given the abse
 
 [^butalways]: but I am also almost always wrong when I think this.
 
-Standardization does *not* mean that it is the *only* format that is used --- there are legitimate applications for keeping data, even temporarily, in intermediate formats. Standardization, in this case, means that the data has some trivial conversion to and from NWB, so for example some experimental tool could implement its own data model as long as it could be exported to NWB. Whenever possible, 
+Standardization does *not* mean that it is the *only* format that is used --- there are legitimate applications for keeping data, even temporarily, in intermediate formats. Standardization, in this case, means that the data has some trivial conversion to and from NWB, so for example some experimental tool could implement its own data model as long as it could be exported to NWB. 
 
 Relatedly, the NWB API should be extended to include conversions between prior and subsequent versions of the standard: when the standard is changed, there should also be a function that converts the previous to the new version and vice versa. Once data is in NWB, it would then be trivial to maintain compatibility while allowing the standard to evolve as needed. 
 
 If such a conversion function was implemented such that it was easy to extend, then it would also allow researchers to make local modifications to the standard to suit their needs, while retaining standardization with the root format. NWB files would then effectively be version controlled, and innovation on the standard could be integrated into the root standard and made available to all existing data. If compatibility-preserving extension of the protocol was possible, then the temptation to create accessory file and directory storage to contain "undefinable" data is minimized and it becomes possible to additional stipulate that doing so should be avoided.
+
+Wide adoption of NWB is not, in my opinion, the end goal in itself. Instead I see it as a point of standardization on the way to a more generalized, interlinked system of linked schema, articulated further in the following sections and in the discussion of [shared knowledge](#shared-knowledge).
 
 ### Peer-to-peer data sharing platform
 
 We should develop a platform for sharing all neuroscientific data. There are, of course [many](https://www.dandiarchive.org/) [existing](https://openneuro.org/) [databases](https://www.brainminds.riken.jp/) [for](https://biccn.org/) scientific data, ranging from domain-general like [figshare](https://figshare.com/) and [zenodo](https://zenodo.org/) to the most laser-focused subdiscipline-specific. For all these databases, their centralization is a fundamental constraint to adoption and growth. We can learn from two knowledge communities with decades of domain-specific knowledge in resiliently storing and sharing massive quantities of extremely heterogeneous and metadata-rich information: internet pirates and information scientists. We should develop a peer-to-peer, semantically annotated data sharing platform. 
 
 Centralized servers are fundamentally constrained by their storage capacity and bandwidth, both of which cost money. In order to be free, database maintainers need to constantly raise money from donations or grants[^grantdb] in order to pay for both. Funding can never be infinite, and so inevitably there must be some limit on the amount of data that someone can upload and the speed at which it can serve files[^osfspeed]. Even if the database is carefully backed up, it serves as a single point of infrastructural failure, where if the project lapses then at worst data will be irreversibly lost, and at best a lot of labor needs to be expended to exfiltrate, reformat, and rehost the data. The same is true of local, institutional-level servers and related database platforms, with the additional problem of skewed funding allocation making them unaffordable for many researchers. 
+
+[^grantdb]: granting agencies seem to love funding new databases, idk.
 
 [^osfspeed]: As I am writing this, I am getting a (very unscientific) maximum speed of 5MB/s on the [Open Science Framework](https://osf.io)
 
@@ -278,7 +291,7 @@ What.cd was a "private" bittorrent tracker, where unlike public trackers that an
 
 [^spectral]: The average what.cd user was, as a result, on par with many of the auditory neuroscientists I know in their ability to read a spectrogram.
 
-At the core of the what.cd incentive system was its required ratio of data uploaded vs. data downloaded. Peer to peer systems need to overcome a free-rider problem where users might download a torrent ("leeching") and turn their computer off, rather than leaving their connection open to share it to others (or, "seeding"). In order to download additional music, then, one would have to upload more. Since downloading is highly restricted, and everyone is trying to upload as much as they can, torrents had a large number of "seeders," and even rare recordings would be sustained for years, a pattern common to private trackers {% cite liuUnderstandingImprovingRatio2010 %}. 
+The what.cd incentive system was based on a required ratio of data uploaded vs. data downloaded. Peer to peer systems need to overcome a free-rider problem where users might download a torrent ("leeching") and turn their computer off, rather than leaving their connection open to share it to others (or, "seeding"). In order to download additional music, then, one would have to upload more. Since downloading is highly restricted, and everyone is trying to upload as much as they can, torrents had a large number of "seeders," and even rare recordings would be sustained for years, a pattern common to private trackers {% cite liuUnderstandingImprovingRatio2010 %}. 
 
 The high seeder/leecher ratio made it so it was extremely difficult to acquire upload credit, so users were additionally incentivized to find and upload new recordings to the system. What.cd implemented a "bounty" system, where users with a large amount of excess upload credit would be able to offer some of it to whoever was able to upload the album they wanted. To "prime the pump" and keep the economy moving, highlight artists in an album of the week, or direct users to preserve rare recordings, moderators would also use a "freeleech" system, where users would be able to download a specified set of torrents without it counting against their download quantity.
 
@@ -287,6 +300,10 @@ The other half of what.cd was its community infrastructure, its forums, comment 
 [^subtlety]: Though music metadata might seem like a trivial problem (just look at the fields in an MP3 header), the number of edge cases are profound. How would you categorize an early Madlib casette mixtape remastered and uploaded to his website where he is mumbling to himself while recording some live show performed by multiple artists, but on the b-side is one of his Beat Konducta collections that mix together studio recordings from a collection of other artists? Who is the artist? How would you even identify the unnamed artists in the live show? Is that a compilation or a bootleg? Is it a cassette rip, a remaster, or a web release?
 
 A critical problem in maintaining coherent databases is correcting metadata errors and departures from schemas. Finding errors was rewarded. Users were able to discuss and ask questions of the uploader in a comment section below each upload, which would allow "polite" resolution of low-level errors like typos. More serious problems could be reported to the moderation team, which caused the upload to be visibly marked as under review, and the report could then be discussed either in the comment sections or the forum. If the moderation team affirmed your report, they would usually kick back a few gigabytes of upload credit depending on the severity. Rather than being a messy hodgepodge of fake, low-quality uploads, what.cd was always teetering just shy of perfection.
+
+These structural considerations do not capture the most elusive but indisputably important features of what.cd's community infrastructure: *the sense of commmunity*. The What.cd forums were the center of many user's relationships to music. Threads about all the finest scales of music nichery could last for years: it was a rare place people who probably cared a little bit too much about music could talk to people with the same condition. What made it more satisfying than other music forums was that no matter what music you were talking about, everyone else in the conversation would always have access to it if they wanted to hear it. Independent musicians released albums in the supportive[^mostly] Vanity House section, and people from around the world came to hold the one true album that only they knew about high aloft like a divine tablet. Beyond any structural incentives, people spent so much time building and maintaining what.cd because it became a source of community and a sink of personal investment. I'll tease a brief recurring dream I've been having recently of something similar existing for scientists: a place where we can discuss our experiments in the same place that they live, being able to link to, embed, and compare data in the kind of longform, thoughtful way that currently has no place outside of papers in scientific culture.
+
+[^mostly]: Mostly. You know how the internet goes...
 
 This system created not only a huge, well-annotated library, but its distributed nature made it resilient. When it was shut down, a series of successors popped up using the open source tools [Gazelle](https://github.com/WhatCD/Gazelle) and [Ocelot](https://github.com/WhatCD/Ocelot) that what.cd developers built. Within two weeks, one successor site had recovered and reindexed 200,000 of its torrents resubmitted by former users {% cite vandersarWhatCdDead2016 %}
 
@@ -301,37 +318,53 @@ Rather than being prescriptive about one community structure, however, what allo
 
 #### Federated Systems
 
-There is no shortage of repositories for scientific data, what limits their use is their fragmentation. Each subdiscipline having a separate database makes combining information from across even extremely similar subdisciplines combinatorically complex and laborious. It also makes finding the correct database for a given dataset often a matter of having prior knowledge or wild luck. 
+There is no shortage of databases for scientific data, what limits their use is their fragmentation. Each subdiscipline having a separate database makes combining information from across even extremely similar subdisciplines combinatorically complex and laborious. It also makes finding the correct database for a given dataset often a matter of having prior knowledge or wild luck. 
 
 Even if one were to have the rare omniscience of a full and masterful understanding of the database landscape, researchers using them are in a bind between domain-generality and specificity. General-purpose databases like figshare[^yrcool] are essentially public, versioned, folders with a DOI, but the metadata for organizing multiple datasets together are relatively sparse attributes like keywords, links to the DOI of the paper, authors, etc. Domain-specific databases are more likely to have a metadata structure that fully describes and is compatible with a researcher's particular data, as well as visualization, summarization, and aggregation features purpose-built for that data. The researcher can either spend the extra time uploading to multiple databases, avoid contributing to data fragmentation by using a general-purpose database, or risk obscurity by using a domain-specific one. 
+
+[^yrcool]: No shade to Figshare, which, among others, paved the way for open data and are a massively useful thing to have in society. 
 
 Any single database system can only be perfectly-fit to a small slice of the scientific population, so the solution is neither the creation of "the one true perfect database" nor is it creating additional, increasingly specific databases. Matthew J Bietz and Charlotte P Lee articulate this tension better than I can in their ethnography of metagenomics databases:
 
 > "Participants describe the individual sequence database systems as if they were shadows, poor representations of a widely-agreed-upon ideal. We find, however, that by looking across the landscape of databases, a different picture emerges. Instead, each decision about the implementation of a particular database system plants a stake for a community boundary. The databases are not so much imperfect copies of an ideal as they are arguments about what the ideal Database should be. [...]
 >
-> When the microbial ecology project adopted the database system from the traditional genomic “gene finders,” they expected the database to be a boundary object. They knew they would have to customize it to some extent, but thought it would be able to “travel across borders and maintain some sort of constant identity”. In the end, however, the system was so tailored to a specific set of research questions that the collection of data, the set of tools, and even the social organization of the project had to be significantly changed. New analysis tools were developed and old tools were discarded. Not only was the database ported to a different technology, the data itself was significantly restructured to fit the new tools and approaches. While the database development projects had begun by working together, in the end they were unable to collaborate. The system that was supposed to tie these groups together could not be shielded from the controversies that formed the boundaries between the communities of practice. {% cite bietzCollaborationMetagenomicsSequence2009 %}
+> When the microbial ecology project adopted the database system from the traditional genomic “gene finders,” they expected the database to be a boundary object. They knew they would have to customize it to some extent, but thought it would be able to “travel across borders and maintain some sort of constant identity”. In the end, however, the system was so tailored to a specific set of research questions that the collection of data, the set of tools, and even the social organization of the project had to be significantly changed. New analysis tools were developed and old tools were discarded. Not only was the database ported to a different technology, the data itself was significantly restructured to fit the new tools and approaches. While the database development projects had begun by working together, in the end they were unable to collaborate. The system that was supposed to tie these groups together could not be shielded from the controversies that formed the boundaries between the communities of practice." {% cite bietzCollaborationMetagenomicsSequence2009 %}
 
-Here too, we could learn from existing work in decentralized systems, by considering the federated messaging protocol [Matrix](https://matrix.org/). The common pattern with messaging systems is the same as that of multiple databases, each can only talk to itself: if you use AOL Instant Messenger, you can only talk to other people on AIM. ...
+Here again neuroscientists could learn from other knowledge communities trying to solve problems with parallel structure, in this case by considering **federated** information systems. Federated systems consist of *distributed*, *heterogeneous*, and *autonomous* agents that implement some minimal agreed-upon standards for mutual communication and (co-)operation. A practical example of a federated system is email: you can choose from a variety of email services, each of which could have a wholly different set of features and design, but you can still send anyone[^email] an email. More recent examples are the [Matrix messaging protocol](https://matrix.org/) and the ["Fediverse"](https://en.wikipedia.org/wiki/Fediverse) built on W3C's [ActivityPub](https://www.w3.org/TR/2018/REC-activitypub-20180123/) protocol {% cite Webber:18:A %} for social networks. Users in ActivityPub networks, rather than joining a single service as one would with traditional commercial social media networks, join individual servers (or can create their own). Each server chooses its own software that implements the ActivityPub standard, and is free to set its own rules, privileges, and whether or not it wants to be able to send and receive messages from other servers.
 
+[^email]: dont @ me about html vs plain text messages, providers with varying degrees of message authentication that get bounced by others, ya know what i mean.
+
+Amit Sheth and James Larson, in their reference description of federated database systems, describe the *design autonomy* as one critical dimension that characterizes them:
+
+> Design autonomy refers to the ability of a component DBS to choose its own design with respect to any matter, including 
+> 
+> (a) The **data** being managed (i.e., the Universe of Discourse), 
+> (b) The **representation** (data model, query language) and the **naming** of the data elements, 
+> (c) The conceptualization or **semantic interpretation** of the data (which greatly contributes to the problem of semantic heterogeneity), 
+> (d) **Constraints** (e.g., semantic integrity constraints and the serializability criteria) used to manage the data,
+> (e) The **functionality** of the system (i.e., the operations supported by system),
+> (f) The **association and sharing with other systems**, and
+> (g) The **implementation** (e.g., record and file structures, concurrency control algorithms). 
+
+Susanne Busse and colleagues add an additional dimension of **evolvability**: "Following "natural" tendencies, autonomous components will inevitably develop heterogeneous structures. It is the task of the federation layer to cope with the different types of heterogeneity." {% cite busseFederatedInformationSystems1999 %}. Whether it be email, messaging, or social media, the common feature of federated systems is the ability to, well, federate distinct, autonomous programs and services with some minimal, evolvable description of a protocol without need for a central authority or server.
+
+For the sake of this paper, I'll focus on federated databases. Federated databases[^federatedterm] were proposed in the early 1980's {% cite heimbignerFederatedArchitectureInformation1985 %} and have been developed and refined in the decades since as an alternative to centralization or non-integration {% cite litwinInteroperabilityMultipleAutonomous1990 kashyapSemanticSchematicSimilarities1996 hullManagingSemanticHeterogeneity1997 %} -- and their application to the dispersion of scientific data in local filesystems is not new {% cite busseFederatedInformationSystems1999 %}. 
+
+[^federatedterm]: though there are subtleties to the terminology, with related terms like "multidatabase," "data integration," and "data lake" composing subtle shades of a shared idea. I will use federated databases as a single term that encompasses these multiple ideas here, for the sake of constraining the scope of the paper.  
+
+* Hint at notion that we're going to be purposefully vague about the complexity of schema coherenece for now just so we don't make information scientists tear their hair out.
+* Sketch of federated database system
+* virtues of such a system
+* Discussion of fundamental tradeoff of schema flexibiltiy vs coherence, and return to some of the discussion in the previous papers about that 
+
+---
+
+
+They are distinct from interoperable systems, where some connective overlay is built to link two existing databases with fundamentally different technology. {% cite brightTaxonomyCurrentIssues1992 %} 
 Other projects are doing this, but rather than some overlay on top of the databases, the 'databases' should be build on top of a generalized linked data system. {% cite aryaniResearchGraphDataset2018 %}
 
 
-underrated feature of torrents is their separation of the indexing frontend from the protocol itself -- you don't 'search' torrents, something indexes them, so you are never tied to a single frontend and people are free to make their own databases while still maintaining integrity between them. You can have all the fancy metadata you want extracted from the filesystem from your uploads. In this system, consistent with internet design principles, data should be self-annotating (as opposed to something that lives on the platform), so it should be possible to have multiple different platforms that index the data differently, display and allow different user interaction while maintaining the same underlying coherent infrastructure.
-
-
-
-
-
-In neither case can we do the kind of multi-modal, multi-discipline analysis of massive data that we want to do without a ton of work wrangling it and converting it.
-
-[^yrcool]: No shade to Figshare, which, among others, paved the way for open data and are a massively useful thing to have in society. 
-
-Existing databases also lack community structure to define the schemas or metadata representations.. 
-
-[^grantdb]: granting agencies seem to love funding new databases, idk.
-
-Address semantic web in [shared knowledge](#shared-knowledge) - data fractionation across a ton of 
-
+The fundanmental tradeoff is schematic consistency vs flexibility. I will consider a strategy for schematic consistency later in [shared knowledge](#shared-knowledge).
 
 B/C there is a lot more metadata than just the data for a dataset, like the task parameters, hardware parameters, etc. need to not use an SQL-Like database system. Instead we need to use a system with flexible schema. The risk of data inconsistency is in part mitigated by design - as a 
 
@@ -347,13 +380,13 @@ depth of linking is combinatoric -- if you have a paper ecosystem where the numb
 
 Part of what is missing and a place where we could learn from librarians is the notion of governance over a knowledge schema. People have a lot of trouble with NWB because they doubt if it could account for all the idiosyncracies in the types of data that we have to represent. But instead if we have a way of capturing all that thought and insight and practical experience in a governance and decisionmaking structure then we could flexibily work our way to a set of schemas that work for everyone. Part of what needs to be done is to move from SQL queries to a more expressive abstract system of schema creation that more people can participate in -- that's what infrastructure building is, making things that seem impossible or difficult routine. Practically, this can mean an explicit versioning system that not only specifies different versions of a data representation, but for every transition between state there is some notion of making that transition in the data structure. (give example of the subject upgrade system). If that was possible, then the notion of data structure would entirely evaporate, best of both worlds. we get everything and the game is over forever. This is also the distinction between centralized and decentralized systems. we can just make the changes and since they're done against a background of unified intent and expression they can exist simulataneously, commune with one another, while being forwardly productive as their contradictions are resolved.
 
-!! We should not try to make yet another set of discipline or whatever focused databases, which is sort of guaranteed by the centralized database model. We should also learn from the metagenomics paper that this can kill the movement and pit people against each other
 
 Other examples of databases:
 * Human Brain Project - EBRAINS - https://ebrains.eu
 
-This is also why we should build a p2p system *first* and build frontends on top of it, rather than strapping a p2p system on top of a frontend. We need a system that resembles Matrix --- something that has some unified protocol as the backend that can build domain-specific frontends on top of. 
+!! Though the publication system is outside the scope of this paper, most of the scientific literature is already on IPFS - link to scihub.
 
+End section like 'ok this is the architecture, a bunch of linked databases with some as yet unspecified way of negotiating schemas but it still needs a way to link all these different databases together... we'll come back to this in the semantic web section. but in the meantime we need to talk a lil bit about tools, then synthesize both technical knowledge and data in a semantic system
 
 ## Shared Tools
 
@@ -370,11 +403,31 @@ Developing shared tools is also the lynchpin in getting the shared knowledge sys
 
 ## Shared Knowledge
 
+### Semantic Wikis - Technical Knowledge Preservation
+
+### Semantic Wikis - Schema Resolution & Communication platform
+
+
+Consider the examples posed in {% cite shethFederatedDatabaseSystems1990 %}
+
+> Consider an attribute MEAL-COST of relation RESTAURANT in database DBl that describes the average cost of a meal per person in a restaurant without service charge and tax. Consider an attribute by the same name (MEAL-COST) of relation BOARDING in database DB2 that describes the average cost of a meal per person including service charge and tax. Let both attributes have the same syntactic properties. Attempting to compare attributes DBl.RESTAURANTS.MEALCOST and DBS.BOARDING.MEALCOST is misleading because they are semantically heterogeneous. Here the heterogeneity is due to differences in the definition (i.e., in the meaning) of related attributes [Litwin and Abdellatif 19861.
+> 
+> As a second example, consider an attribute GRADE of relation COURSE in database DBl. Let COURSE.GRADE describe the grade of a student from the set of values {A, B, C, D, FJ. Consider another attribute SCORE of relation CLASS in database DB2. Let SCORE denote a normalized score on the scale of 0 to 10 derived by first dividing the weighted score of all exams on the scale of 0 to 100 in the course and then rounding the result to the nearest half-point. DBl.COURSE.GRADE and DBB.CLASS.SCORE are semantically heterogeneous. Here the heterogeneity is due to different precision of the data values taken by the related attributes. For example, if grade C in DBl.COURSE.GRADE corresponds to a weighted score of all exFederated Database Systems l 187 ams between 61 and 75, it may not be possible to correlate it to a score in DB2.CLASS.SCORE because both 73 and 77 would have been represented by a score of 7.5.
+
+
+### Linked communication platform 
+
 We all hate science twitter, why does it exist?
 
 > Two essential features coordinate this information to better serve our organizational decision-making, learning, and memory. The first is our constellation of Working Groups that maintain and distribute local, specialized knowledge to other groups across the network. [...] A second, more emergent property is the subgroup of IBL researchers who have become experts, liaisons, and interpreters of knowledge across the network. These members each manage a domain of explicit records (e.g., written protocols) and tacit information (e.g., colloquialisms, decision histories) that are quickly and informally disseminated to address real-time needs and problems. A remarkable nimbleness is afforded by this system of rapid responders deployed across our web of Working Groups. However, this kind of internalized knowledge can be vulnerable to drop-out when people leave the collaboration, and can be complex to archive. An ongoing challenge for our collaboration is how to archive both our explicit and tacit processes held in both people and places. This is not only to document our own history but as part of a roadmap for future science teams, whose dynamics are still not fully understood. {% cite woolKnowledgeNetworksHow2020 %}
 
 importantly, semantic wiki can be accessed progrtammatically, so you don't need to use the service and can build your own interface to it.
+
+>  Relational database systems, manage RDF data, but in a specialized way. In a table, there are many records with the same set of properties. An individual cell (which corresponds to an RDF property) is not often thought of on its own. SQL queries can join tables and extract data from tables, and the result is generally a table. So, the practical use for which RDB software is used typically optimized for soing operations with a small number of tables some of which may have a large number of elements.
+> 
+> RDB systems have datatypes at the atomic (unstructured) level, as RDF and XML will/do. Combination rules tend in RDBs to be loosely enforced, in that a query can join tables by any comlumns which match by datatype -- without any check on the semantics. You could for example create a list of houses that have the same number as rooms as an employee's shoe size, for every employee, even though the sense of that would be questionable.
+> 
+> The Semantic Web is not designed just as a new data model - it is specifically appropriate to the linking of data of many different models. One of the great things it will allow is to add information relating different databases on the Web, to allow sophisticated operations to be performed across them. https://www.w3.org/DesignIssues/RDFnot.html
 
 in addition to a wiki, we need some conversational engine -- talk pages are ok, but they're too fragmented and all hard to keep up to date with. Realtime, chatlike interfaces don't preserve information well, so we should use some intermediate medium like a forum or stack exchange that allows conversations to be tagged and searched and sorted and organized. 
 
@@ -387,6 +440,8 @@ Compared to RDBMS https://www.w3.org/DesignIssues/RDB-RDF.html -- rather than in
 Inheritance yall
 
 We're talking about a collaboration medium here... we need a way of organizing open questions in the field and discussing them in a straightfoward way. Why is it that every scientist needs to figure out their own completely gray-area way of discovering papers? 
+
+Bad APIs have killed projects with shitloads of funding like NWB and IPFS https://macwright.com/2019/06/08/ipfs-again.html - usability needs to be *the first priority* - you can develop all the fancy shit that you want, if no one can install and unse it in 10 minutes then it's totally useless. This is why the community also has to be collaborative, not just the technology, hends the shared governance idea... ppl note that IPFS has no economic model -- that's like true, because there has to be some other incentive system for using it -- it makes your work more powerful, it plugs you into a community, etc. https://blog.bluzelle.com/ipfs-is-not-what-you-think-it-is-e0aa8dc69b
 
 ### Credit Assignment
 
@@ -422,7 +477,7 @@ High school biology classrooms are able to directly interface with the fundament
 >
 > The list of destroyed single and album masters takes in titles by dozens of legendary artists, a genre-spanning who’s who of 20th- and 21st-century popular music. It includes recordings by Benny Goodman, Cab Calloway, the Andrews Sisters, the Ink Spots, the Mills Brothers, Lionel Hampton, Ray Charles, Sister Rosetta Tharpe, Clara Ward, Sammy Davis Jr., Les Paul, Fats Domino, Big Mama Thornton, Burl Ives, the Weavers, Kitty Wells, Ernest Tubb, Lefty Frizzell, Loretta Lynn, George Jones, Merle Haggard, Bobby (Blue) Bland, B.B. King, Ike Turner, the Four Tops, Quincy Jones, Burt Bacharach, Joan Baez, Neil Diamond, Sonny and Cher, the Mamas and the Papas, Joni Mitchell, Captain Beefheart, Cat Stevens, the Carpenters, Gladys Knight and the Pips, Al Green, the Flying Burrito Brothers, Elton John, Lynyrd Skynyrd, Eric Clapton, Jimmy Buffett, the Eagles, Don Henley, Aerosmith, Steely Dan, Iggy Pop, Rufus and Chaka Khan, Barry White, Patti LaBelle, Yoko Ono, Tom Petty and the Heartbreakers, the Police, Sting, George Strait, Steve Earle, R.E.M., Janet Jackson, Eric B. and Rakim, New Edition, Bobby Brown, Guns N’ Roses, Queen Latifah, Mary J. Blige, Sonic Youth, No Doubt, Nine Inch Nails, Snoop Dogg, Nirvana, Soundgarden, Hole, Beck, Sheryl Crow, Tupac Shakur, Eminem, 50 Cent and the Roots.
 >
-> Then there are masters for largely forgotten artists that were stored in the vault: tens of thousands of gospel, blues, jazz, country, soul, disco, pop, easy listening, classical, comedy and spoken-word records that may now exist only as written entries in discographies. {% cite rosenDayMusicBurned2019 %}
+> Then there are masters for largely forgotten artists that were stored in the vault: tens of thousands of gospel, blues, jazz, country, soul, disco, pop, easy listening, classical, comedy and spoken-word records that may now exist only as written entries in discographies." {% cite rosenDayMusicBurned2019 %}
 
 [^solaris]: > ...  the recording instruments registered a profusion of signals - fragmentary indications of some outlandish activity, which in fact defeated all attempts at analysis. Did these data point to a momentary condition of stimulation, or to regular impulses correlated with the gigantic structures which the ocean was in the process of creating elsewhere, at the antipodes of the region under investigation? Had the electronic apparatus recorded the cryptic manifestation of the ocean's ancient secrets? Had it revealed its innermost workings to us? Who could tell? No two reactions to the stimuli were the same. Sometimes the instruments almost exploded under the violence of the impulses, sometimes there was total silence; it was impossible to obtain a repetition of any previously observed phenomenon. Constantly, it seemed, the experts were on the brink of deciphering the ever-growing mass of information. Was it not, after all, with this object in mind that computers had been built of virtually limitless capacity, such as no previous problem had ever demanded?
 
