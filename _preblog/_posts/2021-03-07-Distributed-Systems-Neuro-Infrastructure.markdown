@@ -78,6 +78,8 @@ Such a dream need not be only a dream, because each of these are tangibly realiz
 
 This document will attempt to be both a conceptual vision of the design of scientific infrastructure as well as a practical outline of the tools and path to realizing it. Both are essential, but make some conflicting demands on the construction of the piece: Making real progress in the constellation of problems above requires considering their interrelatedness and mutual reinforcement, rather than treating them as isolated problems that can be addressed piecemeal. Such a broad scope trades off with a detailed description of the relevant technology and systems, but a myopic techno-zealotry that does not examine the social and ethical nature of scientific practice risks reproducing or creating new sources of harm (see {mirowskiFutureOpenScience2018} for a particularly baroque expression of a related argument with respect to the open science movement).
 
+**Let's be super clear though, this is not some far-off fantastical vision, all of the technologies i describe are real and exist in some form. What I am describing here is the potential of combining them in a principled way.**
+
 Allow me to make explicit some of my beliefs and biases that motivate and structure the arguments in this paper. *(then actually do it lol)*
 
 I argue that infrastructure development also requires us to rethink the way we *organize* ourselves, where rather than turning to yet another *centralized* system, we learn from decades of experience from academic, activist, and digital communities that *decentralized* systems can deliver us the needed flexibility and resiliency. Neuroscience is not physics or astronomy, and its specific affordances and constraints need to be interrogated to imagine how a model of large-scale collaboration should overlap and diverge from that of national labs and observatories.
@@ -334,6 +336,10 @@ Here again neuroscientists could learn from other knowledge communities trying t
 
 [^email]: dont @ me about html vs plain text messages, providers with varying degrees of message authentication that get bounced by others, ya know what i mean.
 
+For the sake of this paper, I'll focus on federated databases. Federated databases[^federatedterm] were proposed in the early 1980's {% cite heimbignerFederatedArchitectureInformation1985 %} and have been developed and refined in the decades since as an alternative to centralization or non-integration {% cite litwinInteroperabilityMultipleAutonomous1990 kashyapSemanticSchematicSimilarities1996 hullManagingSemanticHeterogeneity1997 %} -- and their application to the dispersion of scientific data in local filesystems is not new {% cite busseFederatedInformationSystems1999 %}. 
+
+[^federatedterm]: though there are subtleties to the terminology, with related terms like "multidatabase," "data integration," and "data lake" composing subtle shades of a shared idea. I will use federated databases as a single term that encompasses these multiple ideas here, for the sake of constraining the scope of the paper.  
+
 Amit Sheth and James Larson, in their reference description of federated database systems, describe the *design autonomy* as one critical dimension that characterizes them:
 
 > Design autonomy refers to the ability of a component DBS to choose its own design with respect to any matter, including 
@@ -346,51 +352,62 @@ Amit Sheth and James Larson, in their reference description of federated databas
 > (f) The **association and sharing with other systems**, and
 > (g) The **implementation** (e.g., record and file structures, concurrency control algorithms). 
 
-Susanne Busse and colleagues add an additional dimension of **evolvability**: "Following "natural" tendencies, autonomous components will inevitably develop heterogeneous structures. It is the task of the federation layer to cope with the different types of heterogeneity." {% cite busseFederatedInformationSystems1999 %}. Whether it be email, messaging, or social media, the common feature of federated systems is the ability to, well, federate distinct, autonomous programs and services with some minimal, evolvable description of a protocol without need for a central authority or server.
+Susanne Busse and colleagues add an additional dimension of **evolvability**: "Following "natural" tendencies, autonomous components will inevitably develop heterogeneous structures. It is the task of the federation layer to cope with the different types of heterogeneity." {% cite busseFederatedInformationSystems1999 %}. In the case of federated database systems, the federation layer provides a uniform  way to mediate differences in schemas and formats between individual databases in the system. To share data between subdisciplines and fields we need to be able to perform some *mapping* between the different data formats and standards that they use: we need some way of translating the neuroscientist's `GENOTYPE` to the geneticists `GENETIC_SEQUENCE`. I will be purposefully vague about the means of implementing these mappings until we reach the [shared knowledge](#shared-knowledge) section, but first we need a brief practical example of how a system like this might work.
 
-For the sake of this paper, I'll focus on federated databases. Federated databases[^federatedterm] were proposed in the early 1980's {% cite heimbignerFederatedArchitectureInformation1985 %} and have been developed and refined in the decades since as an alternative to centralization or non-integration {% cite litwinInteroperabilityMultipleAutonomous1990 kashyapSemanticSchematicSimilarities1996 hullManagingSemanticHeterogeneity1997 %} -- and their application to the dispersion of scientific data in local filesystems is not new {% cite busseFederatedInformationSystems1999 %}. 
+Say I'm a neuroscientist who just collected a dataset that consists of a few electrophysiological recordings from a cluster of Consciousness Cells in some obscure midbrain nucleus, and then sectioned the brain and imaged their positions. I deposit my dataset on my local in-lab server, which I have set up to federate with the fancy new Neurophysiologist's Extravagant, Undying, Repository of Open data (NEUROd). All servers in this federation are required to have their data in the standardized NWB format, and since mine already is (go me!) my server announces to the others that we have some new data available! Some enterprising group of neuroscientific programmers has built a website that allows its users to search, browse, and do all the fancy visualization of data they would expect from a modern database, so I go and see how my new dataset has changed some standard aggregated analysis of all the Concscious Cells from all the other labs participating in the federation. Hang on, I say, a question mark appearing over my head like a cartoon caricature of a curious scientist -- I wonder if these Consciousness Cells are in the same place in the evolutionary neighbors of my model organism!? I then run a query for all datasets that have positional data for Consciousness Cells. NEUROd has chosen to federate with the Evolutionary Volitional data sharing Operation (EVO), a federation of evolutionary biologists, some of whom study the origins of Consciousness Cells. They have their data in their own evolutionary biologist-specific format, but since there is some mapping between fields in the NWB standard and theirs, that's no problem. My search then returns data from not only all the other neuroscientists in NEUROd, then, but also matching data from EVO --- and my cross-disciplinary question then becomes trivial to answer. 
 
-[^federatedterm]: though there are subtleties to the terminology, with related terms like "multidatabase," "data integration," and "data lake" composing subtle shades of a shared idea. I will use federated databases as a single term that encompasses these multiple ideas here, for the sake of constraining the scope of the paper.  
+(figure of federated databases here).
 
-* Hint at notion that we're going to be purposefully vague about the complexity of schema coherenece for now just so we don't make information scientists tear their hair out.
-* Sketch of federated database system
-* virtues of such a system
-* Discussion of fundamental tradeoff of schema flexibiltiy vs coherence, and return to some of the discussion in the previous papers about that 
+The federated database system extends the peer to peer systems discussed earlier and provides a direct means of solving the problems of database fragmentation by subdiscipline. Since the requirements for being a 'node' in the federation are minimal, individual, local servers work seamlessly with institutional servers and large, national servers to take advantage of all available storage and bandwidth of the participating servers ---  a promising way to solve the problems posed by the "big data" of contemporary science (eg. as articulated by {% charlesCommunityDrivenBigOpen2020 %}). While mappings between schemas are not magical and require work, they provide a single point of mediation between the data formats of different disciplines. Federation gets us the best of both worlds: the flexibility and domain-specific tools of subdisciplinary databases with the availability of domain-general databases. The radical autonomy of federated systems dramatically lowers the barriers to standardization: rather than requiring everyone to do *the same thing in the same way* and fundamentally change how they do things, researchers need to just build the bridges to connect their existing systems to the federated standard. These bridges can be created gradually. Since nodes in a federated system are free to choose whether they connect to others, there do not need to be mappings between *all* types of data in a federation, and there is no need for creating the oft-fabled *"one true standard"* for all data. Researchers that are interested in interfacing their data with others are strongly incentivized to write the mappings that permit it, and so they can emerge as they are demanded. Researchers are also given far more control over their own data than is afforded by traditional databases: it is entirely possible to have fine-grained permissions controls that allow researchers to share only the data they want to with the rest of the system while still taking advantage of, for example, locally federated servers that make their data available to other collaborating labs.
 
----
+It's difficult to overstate how fundamentally a widely-adopted federated database system would be for all domains of science: when designing a behavioral experiment to study the circadian cycle, rather than relying on rules of thumbs or a handful of papers, one could directly query data about the sleep-wake cycles of animals recorded by field biologists in their natural habitats, cross reference that with geophysical measurements of daylight times and temperatures in those locations, and normalize the intensity of light you plan to give your animals by estimating tree-canopy coverage from LIDAR data from the geographers. One could make extraordinarily biophysically realistic models of neural networks by incorporating biophysical data about the properties of ion channels and cell membranes, tractography data from human DTI fMRI images, and then compare some dynamical measurement of your network against other dynamic systems models like power grids, telecommunications networks, swarming ants, and so on. Seemingly-intractable problems like the "file drawer" problem simply dissolve: null results are self-evident and don't *need* publication when researchers asking a question are able to see it themselves by analyzing all previous data gathered. Without exaggeration, they present the possibility of making *all* experiments multidisciplinary, making use of our collected human knowledge without disciplinary barriers. Indeed nearly all scientific literature [is already available on a federated database system](https://freeread.org/ipfs/) to anyone with an internet connection --- arguably the largest expansion of scientific knowledge accessibility ever.
 
-
-They are distinct from interoperable systems, where some connective overlay is built to link two existing databases with fundamentally different technology. {% cite brightTaxonomyCurrentIssues1992 %} 
-Other projects are doing this, but rather than some overlay on top of the databases, the 'databases' should be build on top of a generalized linked data system. {% cite aryaniResearchGraphDataset2018 %}
-
-
-The fundanmental tradeoff is schematic consistency vs flexibility. I will consider a strategy for schematic consistency later in [shared knowledge](#shared-knowledge).
-
-B/C there is a lot more metadata than just the data for a dataset, like the task parameters, hardware parameters, etc. need to not use an SQL-Like database system. Instead we need to use a system with flexible schema. The risk of data inconsistency is in part mitigated by design - as a 
-
-
-{% cite charlesCommunityDrivenBigOpen2020 %} - big data is the problem. 
-{% cite vogelsteinCommunitydevelopedOpensourceComputational2018 %} - community developed open source computational ecosystem
-
-The thing is we have to really stop releasing curated dataset sites, or domain specific data sites. There's no reason we can't develop a system of schemas (re: mongodb) that allow them all to be mututally indexed. the rest of the sugar of all these web APIs are just some UX shit, a little wireframe 3d model browsing here, a little cellular visualization there, but there's no reason that the same thing can't ride on top of a centralized protocol. The natural analogy is the Matrix project!!!!
-
-"i'm like what if instead of publishing negative results we just make all data immediately available on acquisition in a common data format with modular analysis pipelining system so that anyone who wanted to know could just formulate the question in their pipeline constructor gui thing and do a query for publicly hosted data that matches the requirements to test the hypothesis and then default share the results of every analysis to a multiple comparisons tracker"
-
-depth of linking is combinatoric -- if you have a paper ecosystem where the numbers are linked to the data, and then the data is annotated, then it's possible to index information across papers not just by textual similarity metrics but on similarity of the structure of experiment and data. 
-
-Part of what is missing and a place where we could learn from librarians is the notion of governance over a knowledge schema. People have a lot of trouble with NWB because they doubt if it could account for all the idiosyncracies in the types of data that we have to represent. But instead if we have a way of capturing all that thought and insight and practical experience in a governance and decisionmaking structure then we could flexibily work our way to a set of schemas that work for everyone. Part of what needs to be done is to move from SQL queries to a more expressive abstract system of schema creation that more people can participate in -- that's what infrastructure building is, making things that seem impossible or difficult routine. Practically, this can mean an explicit versioning system that not only specifies different versions of a data representation, but for every transition between state there is some notion of making that transition in the data structure. (give example of the subject upgrade system). If that was possible, then the notion of data structure would entirely evaporate, best of both worlds. we get everything and the game is over forever. This is also the distinction between centralized and decentralized systems. we can just make the changes and since they're done against a background of unified intent and expression they can exist simulataneously, commune with one another, while being forwardly productive as their contradictions are resolved.
-
-
-Other examples of databases:
-* Human Brain Project - EBRAINS - https://ebrains.eu
-
-!! Though the publication system is outside the scope of this paper, most of the scientific literature is already on IPFS - link to scihub.
-
-End section like 'ok this is the architecture, a bunch of linked databases with some as yet unspecified way of negotiating schemas but it still needs a way to link all these different databases together... we'll come back to this in the semantic web section. but in the meantime we need to talk a lil bit about tools, then synthesize both technical knowledge and data in a semantic system
+The fundamental tradeoff between centralized and decentralized database systems is that of flexibility vs. coherence: centralized systems can simply enforce a single standard for data and assume that everything it works with will have it. Federated systems require some means of maintaining the mappings between schemas that allow their fluid translation. They also require some means of representing and negotiating data that is unanticipated by existing schemas. The fine details of implementing a federated database system are outside the scope of this paper, but we will return to a means of distributed maintenance of mappings between schemas by taking advantage of semantic web technologies in [shared knowledge](#shared-knowledge). Before we do though, we need to discuss the shared tools to analyze and generate the data for the system in this section.
 
 ## Shared Tools
 
+If we're building infrastructure to allow us to build on each other's labor by sharing data, why not do the same for the tools that analyze and collect the data while we're at it? The benefits of distributed infrastructure that allow us to preserve our collected labor and knowledge compound when applied in multiple domains. The benefits of shared data, analytical, and experimental infrastructure are far more than the sum of their parts. Each is useful on its own, but as additional components of the system are developed they make the incentive to develop the rest even stronger <- this para is dogshit. rewrite with a clear head. 
+
+This section will be relatively short as I feel like a shared analytical framework is relatively uncontroversial, just a matter of putting labor in the right place. I also don't want to give the impression of self-promotion, as I have spent the last several years designing an [experimental framework](https://docs.auto-pi-lot.com), autopilot. I will discuss it because, unsurprisingly, I designed it based on the same thoughts that have since developed into this paper, but I want to be clear that as with the rest of the paper, my focus is on the *kind* of tools we need rather than promoting one specific tool. 
+
+### Analytical Framework
+
+The first natural companion of shared data infrastructure is a shared analytical framework. A major driver for the need for everyone to write their own analysis code largely from scratch is that it needs to account for the idiosyncratic structure of everyone's data. Most scientists are (blessedly) not trained programmers, so code for loading and negotiating loading data is often intertwined with the code used to analyze it, so it is often difficult to adapt another lab's analysis code for use in other contexts. If instead neuroscientists had all their data in a standardized format, then it would be possible to write an analysis method once and allow the rest of the community to benefit from it. 
+
+A shared analytical framework should be 
+
+* *modular* - Rather than implementing an entire analysis pipeline as a monolith, the system should be broken into minimal, composable modules. The threshold of what constitutes "minimal" is of course to some degree a matter of taste, but the overriding design principle should be to minimize the amount of duplicated labor. Rather than implementing a "peri-stimulus time-histogram" module, we should implement a "binning" module for counting spikes, connect it to an "alignment" module that splits the recording into chunks aligned at the stimulus onset, and so on. Higher-order analysis methods are relatively trivially composed from component parts, but extracting component parts from a frankenstein do-everything script is not. I expect this point to be relatively uncontroversial as it is a general principle of program design.
+* *deployable* - For wide use, the framework needs to be easy to install and deploy locally and on computing clusters. The primary obstacle is dependency management, or making sure that the computer has everything needed to run the program. Anecdotally, more than the complexity of using the package itself, the primary barrier for nonprogrammer scientists using a particular software package is managing to get it installed. Luckily containerization and package management is a widespread and increasingly streamlined practice, so I expect this too to be uncontroversial.
+* *pluggable* - The framework needs to provide a clear way of incorporating external analysis packages, handling their dependencies, and exposing their parameters to the user. 
+* *reproducible* - The framework should separate the *parameterization* of a pipeline, the specific options set by the user, and its *implementation*, the code that constitutes it. Implicit in a modularly constructed analysis framework is the notion of a "pipeline," or a specification of a tree (or, specifically, a [DAG](https://en.wikipedia.org/wiki/Directed_acyclic_graph)) of successive stages that process, merge, or split the data from the previous stage. The parameterization of a pipeline should be portable such that it, for example, can be published in the supplementary materials of a paper and reproduced exactly by anyone using the system. 
+
+Thankfully, [DataJoint](https://datajoint.io/) already does most of this, and is expanding its modularity with its recent [Elements](https://github.com/datajoint/datajoint-elements) project. Though it currently uses a [MySQL](https://docs.datajoint.io/python/admin/1-hosting.html), relational database as its backend, extending it to incorporate with the peer to peer database system described above would be an early, concrete development goal for this program. The rest is in the minutiae of normal software development, as well as building a user interface and collaboration platform for curation and management of shared pipelines 
+
+split code from specification. It should be possible to build an entire analytical pipeline from a single metadata file. 
+
+
+We should build a system of composable elements that standardize the common analytical strategies of neuroscience. 
+
+Benefits here:
+> inspectability and transparency in papers
+> accessible best practices
+> a global folding@home lol
+> errors in libraries
+> expandable to provide clear way of integrating new tools and containerize them so we can stop fuckinghaving to figure out how to install packages. 
+
+The natural tool to use here is datajoint, already in wide use, doing much of the stuff we talk about here, and their new elements project is legit and could serve as the basis. 
+
+P decay 
+
+https://github.com/datajoint/datajoint-elements
+
+### Experimental Framework
+
 * not just autopilot, like i love and have learned a lot from bonsai and bpod and pycontrol. the thing about it is they need to also allow people to develop with them easily in addition to using them... need to allow both -- easy user experience but also easy development experience so by using the tool scientists contribute their labor to it in a preservable way. Another impt quality is the ability to gradually adopt - start using just the hardware components, but then if you want to then you can start using the task structuring... 
+
+> makes the data part way easier, by having a tool that dumps directly into the database system, it's completely trivial and you never need to touch it. it's also the best way of making it actually happen because complexity is the obstacle (cite reproducibility begins with the tools employed)
+
+> Reproducibility is reciprocal -- if it was possible to see data and then replicate that same experiment in your lab easily because you are using the same experimental framework as they did, and the entirety of the experiment is preserved in the data...
 
 **projects we love**
 * open behavior
@@ -403,9 +420,24 @@ Developing shared tools is also the lynchpin in getting the shared knowledge sys
 
 ## Shared Knowledge
 
+Something that's so in the water of science that it's hard to imagine it being otherwise is the structure of scientific communication. Except for certain domain-specific exceptions, the only means of communicating scientific results is in a journal as a static document or at a conference as an ephemeral talk (though that is [changing](https://neuromatch.io/conference)). The remainder of the gigantic overflowing franzia bag of scientific discourse is funelled ingloriously onto Twitter[^twitterheg] --- and it *sucks*. There simply isn't a place to have longform, thoughtful, durable discussions about science. The direct connection between the lack of a communcaition venue to the lack of a way of storing technical, contextual knowledge is often overlooked. Because we don't have a place to talk about what we do, we don't have a place to write down how to do it. Science needs a communcation platform, but the needs and constraints of a scientific communication platform are different than those satisfied by the major paradigms of chatrooms, forums etc. By considering this platform as another infrastructure project alongside and integrated with those described in the previous sections, its form becomes much clearer, and it could serve as the centerpiece of scientific infrastructure.
+
+I will argue that a semantic wiki should be the major piece of durable information storage, and that it should be supported by a forum system for discussion. 
+
+> description of its role as a schema resolution system -- currently we implement all these protocols and standards in these siloed, centralized groups that are inherently slow to respond to changes and needs in the field. instead we want to give people the tools so that their the knowledge can be directly preserved and acted on. 
+> descrption of its role as a tool of scientific discussion -- integrated with the data server and standardized analysis pipelines, it could be possible to have a discussion board where we were able to pose novel scientific questions, answerable with transparent, interrogatable analysis systems. Semantic linking makes the major questions in the field possible to answer, as discussions are linked to one another in a structured way and it is possible to literally trace the flow of thought. 
+
+> let's tour through wikipedia for a second and see how it's organized. Look at these community incentive structures and the huge macro-to-micro level organization of the wiki projects. The infinitely mutable nature of a wiki is what makes it powerful, but the SaaS wikis we're familiar with don't capture the same kind of 'build the ground you walk on ' energy of the real wiki movement. 
+
+[^twitterheg]: no citation needed, right? if there is some other bastion of scientific discourse i would love to know about it.
+
 ### Semantic Wikis - Technical Knowledge Preservation
 
 ### Semantic Wikis - Schema Resolution & Communication platform
+
+
+
+Part of what is missing and a place where we could learn from librarians is the notion of governance over a knowledge schema. People have a lot of trouble with NWB because they doubt if it could account for all the idiosyncracies in the types of data that we have to represent. But instead if we have a way of capturing all that thought and insight and practical experience in a governance and decisionmaking structure then we could flexibily work our way to a set of schemas that work for everyone. Part of what needs to be done is to move from SQL queries to a more expressive abstract system of schema creation that more people can participate in -- that's what infrastructure building is, making things that seem impossible or difficult routine. Practically, this can mean an explicit versioning system that not only specifies different versions of a data representation, but for every transition between state there is some notion of making that transition in the data structure. (give example of the subject upgrade system). If that was possible, then the notion of data structure would entirely evaporate, best of both worlds. we get everything and the game is over forever. This is also the distinction between centralized and decentralized systems. we can just make the changes and since they're done against a background of unified intent and expression they can exist simulataneously, commune with one another, while being forwardly productive as their contradictions are resolved.
 
 
 Consider the examples posed in {% cite shethFederatedDatabaseSystems1990 %}
@@ -444,6 +476,9 @@ We're talking about a collaboration medium here... we need a way of organizing o
 Bad APIs have killed projects with shitloads of funding like NWB and IPFS https://macwright.com/2019/06/08/ipfs-again.html - usability needs to be *the first priority* - you can develop all the fancy shit that you want, if no one can install and unse it in 10 minutes then it's totally useless. This is why the community also has to be collaborative, not just the technology, hends the shared governance idea... ppl note that IPFS has no economic model -- that's like true, because there has to be some other incentive system for using it -- it makes your work more powerful, it plugs you into a community, etc. https://blog.bluzelle.com/ipfs-is-not-what-you-think-it-is-e0aa8dc69b
 
 ### Credit Assignment
+
+
+depth of linking is combinatoric -- if you have a paper ecosystem where the numbers are linked to the data, and then the data is annotated, then it's possible to index information across papers not just by textual similarity metrics but on similarity of the structure of experiment and data. 
 
 ## Shared Governance
 
