@@ -10,14 +10,95 @@
         height: 100%;
         overflow: hidden;
     }
+
+    /*https://www.w3schools.com/howto/howto_css_modals.asp*/
+    /* Modal Header */
+    .modal-header {
+        padding: 2px 16px;
+        background-color: #ff0000;
+        color: white;
+    }
+
+    /* Modal Body */
+    .modal-body {
+        padding: 2px 16px;
+    }
+
+    /* Modal Footer */
+    .modal-footer {
+        padding: 2px 16px;
+        background-color: #ff0000;
+        color: white;
+    }
+
+    /* Modal Content */
+    .modal-content {
+        position: relative;
+        background-color: #fefefe;
+        margin: auto;
+        padding: 0;
+        border: 1px solid #888;
+        width: 100%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        animation-name: animatetop;
+        animation-duration: 0.4s
+    }
+
+    /* Add Animation */
+    @keyframes animatetop {
+        from {
+            top: -300px;
+            opacity: 0
+        }
+
+        to {
+            top: 0;
+            opacity: 1
+        }
+    }
     </style>
 </head>
 
 <body>
-
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2>100 Tracks???</h2>
+        </div>
+        <div class="modal-body">
+            <p>That's dogshit!!!</p>
+        </div>
+        <div class="modal-footer">
+            <h3>Redirecting to the app in a sec...</h3>
+        </div>
+    </div>
     <iframe src="https://open.spotify.com/embed/playlist/38rebBanm6XTWRetHI60Vi" width="100%" height="100%" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-
-    
 </body>
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close i
+
+window.onload = function() {
+    modal.style.display = "block";
+
+}
+
+window.setTimeout(function() {
+        window.location.replace("https://open.spotify.com/playlist/38rebBanm6XTWRetHI60Vi?si=d25dce5269d64e62");
+    },
+    4000
+)
+</script>
+</script>
 
 </html>
