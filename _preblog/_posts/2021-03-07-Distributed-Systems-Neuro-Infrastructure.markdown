@@ -11,6 +11,8 @@ tags:
   - science
   - infrastructure
   - distributed systems
+  - tools
+  - p2p
 noindex: true
 ---
 
@@ -24,6 +26,8 @@ noindex: true
 
 **start with discussion of what infrastructure is -- making things that seem impossible routine. We haven't addressed these problems after like a decade of writing becasue we haven't identified the real problems nor been bold enough to act. We can move in tiptoe steps but gradual change without a vision is pointless. We need to describe what holds us back and what needs to exist, and the act of converting that into gradual steps is all the work in between.**
 
+A lot of this is happening and being worked on!!! this document is an architecture for the whole system. providing a reason to develop one thing vs. another, trying to point devs in one direction but also make users & funders aware of what is possible & the conversations that happen in nerd circles
+
 >  A good analogy for the development of the Internet is that of
    constantly renewing the individual streets and buildings of a city,
    rather than razing the city and rebuilding it. The architectural
@@ -33,6 +37,21 @@ noindex: true
    - ftp://ftp.isi.edu/in-notes/rfc1958.txt
 
 > If we can make something decentralised, out of control, and of great simplicity, we must be prepared to be astonished at whatever might grow out of that new medium. https://www.w3.org/1998/02/Potential.html
+
+what's different about this? 
+
+- we're not describing a "new database system" but a way to make every "new database system" add functionality to the system rather than be independent of it.
+
+Acknowledgements (make sure to double check spelling!!!):
+* Lauren E. Wool
+* Gaby Hayden
+* Eartha Mae
+* jakob voigts for participating in the glue wiki
+* nwb & dandi team for dealing w/ my inane rambling
+* open behavior team
+* metascience class for some of these ideas <3
+* mike for letting me always go rogue
+
 
 # The State of Things
 
@@ -186,11 +205,13 @@ They should also be credited with their adoption of a form of consensus decision
 > 
 > Consent is required for all policy decisions for many reasons. The two most important are that it ensures (1) the decision will allow all members of the group to participate or produce without feeling oppressed, and (2) it will be supported by everyone. Everyone is expected to participate in the reasoning behind the decision. And no one can be excluded. https://www.sociocracy.info/what-is-sociocracy/
 
-The central lesson of the IBL, in my opinion, is that governance matters. Even if a consortium of labs were to form on an ad-hoc basis, without a formal system to ensure contributors felt heard and empowered to shape the project it would soon become unsustainable.
+The central lesson of the IBL, in my opinion, is that governance matters. Even if a consortium of labs were to form on an ad-hoc basis, without a formal system to ensure contributors felt heard and empowered to shape the project it would soon become unsustainable. Even if this system is not perfect, with some labor still falling unequally on some researchers, it is a promising model for future collaborative consortia.
 
 The infrastructure developed by the IBL is impressive, but its focus on a single experiment makes it difficult to expand and translate to widescale use. The hardware for the IBL experimental apparatus is exceptionally well-documented, with a [complete and detailed build guide](https://figshare.com/articles/preprint/A_standardized_and_reproducible_method_to_measure_decision-making_in_mice_Appendix_3_IBL_protocol_for_setting_up_the_behavioral_training_rig/11634732) and [library of CAD parts](https://figshare.com/articles/online_resource/A_standardized_and_reproducible_method_to_measure_decision-making_in_mice_CAD_files_for_behavior_rig/11639973), but the documentation is not modularized such that it might facilitate use in other projects, remixed, or repurposed. The [experimental software](https://github.com/int-brain-lab/iblrig) is similarly single-purpose, a chimeric combination of Bonsai {% cite lopesBonsaiEventbasedFramework2015 %} and [PyBpod](https://github.com/pybpod/pybpod) [scripts](https://github.com/int-brain-lab/iblrig/tree/master/tasks/_iblrig_tasks_ephysChoiceWorld). It unfortunately [lacks](https://iblrig.readthedocs.io/en/latest/index.html) the API-level documentation that would facilitate use and modification by other developers, so it is unclear to me, for example, how I would use the experimental apparatus in a different task with perhaps slightly different hardware, or how I would then contribute that back to the library. The experimental software, according to the [PDF documentation](https://figshare.com/articles/preprint/A_standardized_and_reproducible_method_to_measure_decision-making_in_mice_Appendix_3_IBL_protocol_for_setting_up_the_behavioral_training_rig/11634732), will also not work without a connection to an [alyx](https://github.com/cortex-lab/alyx) database. While alyx was intended for use outside the IBL, it still has [IBL-specific](https://github.com/cortex-lab/alyx/blob/07f481f6bbde668b81ad2634f4c42df4d6a74e44/alyx/data/management/commands/files.py#L188) and [task-specific](https://github.com/cortex-lab/alyx/blob/07f481f6bbde668b81ad2634f4c42df4d6a74e44/alyx/data/fixtures/data.datasettype.json#L29) values in its source-code, and makes community development difficult with a similar [lack](https://alyx.readthedocs.io/en/latest/) of API-level documentation and requirement that users edit the library itself, rather than temporary user files, in order to use it outside the IBL.
 
 My intention is not to denigrate the excellent tools built by the IBL, nor their inspiring realization of meso-scale collaboration, but to illustrate a problem that I see as an extension of that discussed in the context of core facilities --- designing infrastructure for one task, or one group in particular makes it much less likely to be portable to other tasks and groups.
+
+It is also unclear how replicable these consortia are, and whether they challenge, rather than reinforce technical inequity in science. Participating in consortia systems like the IBL requires that labs have additional funding for labor hours spent on work for the consortium, and in the case of graduate students and postdocs, that time can conflict with work on their degrees or personal research which are still far more potent instruments of "remaining employed in science" than collaboration. In the case that only the most well-funded labs and institutions realize the benefits of big team science without explicit consideration given to scientific equity, mesoscale collaborations could have the unintended consequence of magnifying the skewed distribution of access to technical expertise and instrumentation.
 
 Outside of ivies with rich core facilities, institutes like the Allen, or nascent multi-lab consortia, the situation errs closer to the dire picture of fragmentation I painted above. In addition to the homebrew stuff, there is an ocean of open-source software and hardware that keeps us afloat. There are far too many projects to name here[^ily], each covering some subset of experimenters needs, only rarely integrated with one another, and so to some degree the task of many scientific programmers is to search out the latest packages and quilt them into our patchwork local infrastructure. Anything else comes down to whatever we can afford with remaining grant money, scrape together from local knowledge, methods sections, begging, borrowing, and (hopefully not too much) stealing from neighboring labs.  
 
@@ -201,7 +222,7 @@ A third option from the standardization offered by centralization and the bloomi
 
 # A Vision of Distributed Scientific Infrastructure
 
-The distributed infrastructure I will describe here is related to previous notions of "grass-roots" science {% cite mainenBetterWayCrack2016 %}, and my intention is to provide a more prescriptive scaffolding for its design and potential implementation. 
+The distributed infrastructure I will describe here is related to previous notions of "grass-roots" science {% cite mainenBetterWayCrack2016 %}, and my intention is to provide a more prescriptive scaffolding for its design and potential implementation as a way of painting a picture of what science could be like.
 
 Throughout this section, when I am referring to any particular piece of software I want to be clear that I don't intend to be dogmatically advocating that software *in particular*, but software *like it* that *shares its qualities* --- no snake oil is sold in this document. Since this is a design document, I will also be saying we *should* do a lot of things --- think of that as "to fulfill this system, we should do this," rather than "everyone should do this even if they disagree with the fundament of my argument." Similarly, when I describe limitations of existing tools, without exception I am describing a tool or platform I love, have learned from, and think is valuable --- learning from something can mean drawing respectful contrast!
 
@@ -236,6 +257,8 @@ If such a conversion function was implemented such that it was easy to extend, t
 >>>
 
 Wide adoption of NWB is not, in my opinion, the end goal in itself. Instead I see it as a point of standardization on the way to a more generalized, interlinked system of linked schema, articulated further in the following sections and in the discussion of [shared knowledge](#shared-knowledge).
+
+>>> can write about ^^^ in terms of provenance https://www.w3.org/TR/prov-overview/
 
 ### Peer-to-peer data sharing platform
 
@@ -290,6 +313,8 @@ There are many improvements and variations on peer to peer technology that would
 
 These scattered suggestions are meant to illustrate the flexibility and variability from the simplest peer-to-peer architecture, and fine-grained details of their implementation and an enumeration of the possible systems are far outside the scope of this paper. I will return to consider the design requirements of a scientific peer-to-peer network after discussing community overlays, the second half of the peer-to-peer story.
 
+!! {% cite langilleBioTorrentsFileSharing2010 %} DANDI is in on the p2p system, as is kachery-p2p
+
 #### Archives Need Communities
 
 An underappreciated element of the torrent system is the effect of the separation between the data transfer protocol and the 'discovery' part of the system --- or "overlay" --- on the community structure of torrent trackers. Many peer to peer networks like KaZaA or the gnutella-based Limewire had searching for files integrated into the transfer interface. The need for torrent trackers to share .torrent files spawned a massive community of private torrent trackers that for decades have been iterating on cultures of archival, experimenting with different community structures and incentives that encourage people to share and annotate some of the world's largest, most organized libraries. One of these private trackers was the site of one of the largest informational tragedies of the past decade: what.cd[^whatdiss]
@@ -336,7 +361,11 @@ In contrast to what.cd, a scientific peer-to-peer system's incentives need to (a
 
 Rather than being prescriptive about one community structure, however, what allowed the community structure of private bittorent trackers to develop and experiment with many different types of systems in a shared framework. Our goal should *not* be to make yet another single, subdisciplinary-specific database. We should learn from the meta-structure of the torrent system and take advantage of separating a protocol from its overlay and make a *federated* peer-to-peer system.
 
+!! some forums already exist: https://neurostars.org/
+
 #### Federated Systems
+
+!! compare to datalad
 
 There is no shortage of databases for scientific data, what limits their use is their fragmentation. Each subdiscipline having a separate database makes combining information from across even extremely similar subdisciplines combinatorically complex and laborious. It also makes finding the correct database for a given dataset often a matter of having prior knowledge or wild luck. 
 
@@ -382,6 +411,8 @@ It's difficult to overstate how fundamentally a widely-adopted federated databas
 
 The fundamental tradeoff between centralized and decentralized database systems is that of flexibility vs. coherence: centralized systems can simply enforce a single standard for data and assume that everything it works with will have it. Federated systems require some means of maintaining the mappings between schemas that allow their fluid translation. They also require some means of representing and negotiating data that is unanticipated by existing schemas. The fine details of implementing a federated database system are outside the scope of this paper, but we will return to a means of distributed maintenance of mappings between schemas by taking advantage of semantic web technologies in [shared knowledge](#shared-knowledge). Before we do though, we need to discuss the shared tools to analyze and generate the data for the system in this section.
 
+!! make sure to talk about datalad and DANDI!! https://www.datalad.org/
+
 ## Shared Tools
 
 If we're building infrastructure to allow us to build on each other's labor by sharing data, why not do the same for the tools that analyze and collect the data while we're at it? The benefits of distributed infrastructure that allow us to preserve our collected labor and knowledge compound when applied in multiple domains. The benefits of shared data, analytical, and experimental infrastructure are far more than the sum of their parts. Each is useful on its own, but as additional components of the system are developed they make the incentive to develop the rest even stronger <- this para is dogshit. rewrite with a clear head. 
@@ -401,25 +432,33 @@ A shared analytical framework should be
 
 Thankfully, [DataJoint](https://datajoint.io/) already does most of this, and is expanding its modularity with its recent [Elements](https://github.com/datajoint/datajoint-elements) project. Though it currently uses a [MySQL](https://docs.datajoint.io/python/admin/1-hosting.html), relational database as its backend, extending it to incorporate with the peer to peer database system described above would be an early, concrete development goal for this program. I have heard rumors they are considering adopting a decentralized traditional relational database like [CockroachDB](https://www.cockroachlabs.com/product/), which is not the same thing as a p2p federated semantic database system as I describe here, but is certainly a step in that direction. The rest is in the minutiae of normal software development, as well as building a user interface and collaboration platform for curation and management of shared pipelines. Thank you DataJoint team for making this section so simple.
 
-Benefits here:
-> inspectability and transparency in papers (p decay?)
-> accessible best practices
-> a global folding@home lol
-> errors in libraries
-> expandable to provide clear way of integrating new tools and containerize them so we can stop fuckinghaving to figure out how to install packages. 
+The combined benefits of a unified data sharing and analytical system have a far greater reach than just saving redundant development time:
 
-I'll drop another tantalizing hint -- at the point that we have a deployable analysis framework on a distributed peer to peer framework, we can build a folding@home distributed computational engine with a bit of cushion around work sharding & etc.
+Papers published with a concise, inspectable description of their analytical pipeline sidestep the vagueries of methods section prose and allow widescale independent replication of published analyses. A system of documenting and discussing the countless hyperparameters and preprocessing tricks, often as much art as science, could operate as a means of implementing the countless papers describing best practices in analysis. If made easily expandable, so that the developers had a clear way to integrate their tools, access to the state of the art in analysis would be radically democratized, rather than limited to those with finely-tuned twitter feeds and patience to wade through seas of errors and stackexchange posts to get them to work.
 
+A common admonishment in cryptographically-adjacent communities is to "never roll your own crypto," because your homebrew crypto library will never be more secure than reference implementations that have an entire profession of people trying to expose and patch their weaknesses. Bugs in analysis code that produce inaccurate results are inevitable and rampant {% cite millerScientistNightmareSoftware2006 soergelRampantSoftwareErrors2015 eklundClusterFailureWhy2016a bhandarineupaneCharacterizationLeptazolinesPolar2019 %}, but impossible to diagnose when every paper writes its own pipeline. A common analysis framework would be a single point of inspection for bugs, and facilitate re-analysis and re-evaluation of affected results after a patch. 
+
+Perhaps more idealistic is the possibility of a new kind of scientific consensus. Scientific consensus is subtle and elusive, but to a very crude approximation two of the most common means of its expression are review papers and meta-analyses. Review papers make a prose argument for a consensus interpretation of a body of literature. Meta analyses do the same with secondary analyses, most often on the statistics reported in papers rather than the raw data itself. Both are vulnerable to sampling problems, where the author of a review may selectively cite papers to make an argument, and meta-analyses might be unable to recover all the relevant work from incomplete search and data availability. Instead if one could index across all data relevant to a particular question, and aggregate the different pipelines used to analyze it, it would be possible to make statements of scientific consensus rooted in a full provenance chain back to the raw data.
+
+More fundamentally, a shared data and analysis framework would change the nature of secondary analysis. Increasing rates of data publication and the creation of large public datasets like those of the Allen Observatory make it possible for metascientists and theoreticians to re-analyze existing data with new methods and tools. There is now such a need for secondary analysis that the NIH, among other organizations, is providing [specific funding opportunities](https://grants.nih.gov/grants/guide/rfa-files/rfa-mh-20-120.html) to encourage it. Secondary analyses are still (unfortunately) treated as second-class research, and are limited to analyzing one or a small number of datasets due to the labor involved and the diversity of analytical strategies that makes a common point of comparison different. If, say some theoretician were to develop some new analytical technique that replaced some traditional step in a shared processing pipeline, in our beautiful world of infrastructure it would be possible to not only aggregate across existng analyses, as above, but apply their new method across an entire category of research. 
+
+In effect, analytical infrastructure can at least partially "decouple" the data in a paper from its analyis, and thus the interpretations offered by the primary researchers. For a given paper, if it was possible to see its results as analyzed by all the different processing pipelines that have been applied to it, then a set of observations remains a living object rather than a fixed, historical object frozen in carbonite at the time of publication. In addition to statements of consensus that can programmatically aggregate *existing* results as described by the primary researchers, it also becomes possible to make *fluid* statements of consensus, such that a body of data when analyzed with some new analysis pipeline can yield an entirely *new* set of outcomes unanticipated by the original authors. I think many scientists would agree that this is how an ideal scientific process would work, and this is one way of dramatically lowering the structural barriers that make it deviate from that ideal.
+
+I'll give one more tantalizing possibility here: at the point when we have a peer-to-peer federated system of data-sharing servers integrated with some easily deployable analysis pipelining framework, then we also get a distributed computing grid akin to [Folding@Home](https://foldingathome.org/) where users donate some of the computing power of their servers to analyze pieces of some large analysis job with very little additional development.
 
 ### Experimental Framework
 
-On the other side of data from its analysis are the tools used for its collection. A unifying experimental framework is seemingly a different kind and scale of complexity compared to a unifying data framework. *Everyone needs completely different things!* Luckily we started by thinking about design considerations for distributed systems, so we don't have to consider each problem in isolation.
+On the other side of data from its analysis are the tools used for its collection. A unifying experimental framework is seemingly a different kind and scale of complexity compared to a unifying data framework. *Everyone needs completely different things!* I have previously written about the design of a generalizable, distributed behavior framework in section 2, and about one modular implementation in section 3 of {% cite saundersAutopilotAutomatingBehavioral2019 %}, and so I will first abbreviate and extend the discussion found there and then consider the role of an experimental framework in broader scientific infrastructure. I designed [Autopilot](https://docs.auto-pi-lot.com) with many of the same fundamental motivations as I articulate here, so being dredged from the same well it should be far from surprising that I see it as a natural example. My intention is not as a self-serving advertisement for *everyone to use my software,* but to use it as an *example* of the *kind* of tool that I think would fit a particular role in a broader set of scientific infrastructure (!! redundant, pick a framing).
 
-I have previously written about the design of a generalizable, distributed behavior framework in section 2, and about one modular implementation in section 3 of {% cite saundersAutopilotAutomatingBehavioral2019 %} and attempt to repeat as little of it as I can in service of extending it to consider the role of an experimental framework in broader experimental infrastructure. 
+I first want to clarify what i'm talking about as an 'experimental framework' -- not talking about projects **that we love** like open ephys/etc that develop specific hardware. Those are strictly complementary (and should be given more resources!) I'm talking about something to unify them, to combine the excellent pieces that implement differnt parts of experiments into a unified system. 
 
-There are two broad ways that autopilot implements the minimal nature of a protocol as an experimental framework. 1) Everything can talk to everything, and has a standard way of adding functionality to handle different kinds of messages. making it possible to reconfigure the system in effectively whatever way you want.
+The most basic requirement of a piece of shared experimental infrastructure is that it must be capable of expressing and being adapted to **perform any experiment.** The "any" there is a hard-ish "any," the reason for which should become clearer soon. At an extremely abstract level, this means that the framework needs to be able to **control potentially high numbers of independent hardware components,** record measurements from them, and coordinate them together in some logical system that constitutes a "task" (or more broadly an "experiment"). In order to be widely adoptable, it needs to be able to **integrate with the instrumentation that researchers already use** rather than requiring researchers to reoutfit their entire rigs. That means, in turn, that it needs to provide a clear means for users to **extend its functionality** and contribute their extensions to the framework. At the same time as providing a clear entrypoint for researcher-developers to interact with the code, it needs to provide a **simple user inferface** so that regular use doesn't require extensive programming knowledge. In other words, if it ain't usable by everyone, it ain't infrastructure, and the same can be said for expense: it must be **inexpensive to implement.** Finally, it needs to be purpose-built for **reproducibility and replication** by preserving a full chain of **provenance** across the wandering path of parameter tuning and experimental design in a clear, **standardized data format** and providing a means of **replicating experiments** even in rigs that are only an approximate match to the original. 
 
-* not just autopilot, like i love and have learned a lot from bonsai and bpod and pycontrol. the thing about it is they need to also allow people to develop with them easily in addition to using them... need to allow both -- easy user experience but also easy development experience so by using the tool scientists contribute their labor to it in a preservable way. Another impt quality is the ability to gradually adopt - start using just the hardware components, but then if you want to then you can start using the task structuring... 
+Autopilot attempts to achieve these lofty goals by embracing a distributed, modular architecture. Autopilot is built as a system of modules that each represent fundamental parts of experiments in general: hardware control, stimulus generation, data management, and so on. Everything is networked, so everything can talk to anything, even and especially across computers: in practice this means that it is capable of coordinating arbitrary numbers of experimental hardware components by just *using more computers.* It is built around the Raspberry Pi, a low-cost single-board computer with an enormous support community and library of off-the-shelf components, but can be used on any computer. Autopilot imposes few limitations on the structure of tasks and experiments, but also gives users a clear means of defining the parameters they require, the data that will be produced, how to plot it, and so on, such that any task has a portable, publishable representation that is not dependent on the local hardware used to implement it. Its modular hierarchy already provides structure that makes it easy for researchers to modify existing components to suit their needs, and some of its co-developers and I are currently implementing a generalized plugin system that will allow users to replace any component of the system in such a way that their work can be made available and referenceable by any other user of the system. Information about the state of the system, the plugins used, the history of tasks and parameters that an experimental subject experiences, are all obsessively documented, and the data it produces is clean at the time of acquisition. Portable task descriptions, referenceable plugins, and exact documentation of provenance make Autopilot capable of facilitating replication while still supporting extreme heterogeneity in its use. In sum, we designed Autopilot to be flexible, efficient, and reproducible enough for use as general experimental infrastructure.
+
+When compared, the preceding reads as a rephrasing of the design principles articulated in (!! link to section). Autopilot is of course far from a finished project, and many of its design goals remain aspirational due to the small number of contributors[^autopilotbad]. I would be remiss in failing to mention [Bonsai](https://bonsai-rx.org/), which I love and have learned a lot from. I view Bonsai as a somewhat complementary project and would one day love to merge efforts. The primary differences between Bonsai and Autopilot, besides the massive and obvious difference in number of users and maturity of the library, are a) Autopilot is written in Python, a high-level programming language, and "glues" together fast, low-level library, where Bonsai is written in C#, which is also quite fast but is comparatively less accessible to a broad number of users. Relatedly, Autopilot's documentation describes how the library works down to the lowest levels while Bonsai's is more focused on the user level. b) Autopilot emphasizes communication between objects and their use in a distributed architecture, while Bonsai provides an excellent means of chaining objects together on a single system. c) Autopilot makes comparatively more nudges, and provides a few more features for making reproducible tasks and standardizing data. Again my intention is not a self-serving advocacy for my software, but to say that Bonsai is another extremely capable and widely-used system, and we need systems *like* them capable of serving the role in broader infrastructure that I will turn to now.
+
+[^autopilotbad]: I am the first to admit Autopilot's shortcomings, which I document extensively in its [development roadmap](https://docs.auto-pi-lot.com/en/latest/todo.html) and github issues. 
 
 > makes the data part way easier, by having a tool that dumps directly into the database system, it's completely trivial and you never need to touch it. it's also the best way of making it actually happen because complexity is the obstacle (cite reproducibility begins with the tools employed)
 
@@ -447,13 +486,31 @@ I will argue that a semantic wiki should be the major piece of durable informati
 
 [^twitterheg]: no citation needed, right? if there is some other bastion of scientific discourse i would love to know about it.
 
+!! what's critically different here between other projects is that we are explicitly considering the incentives to join each of these efforts, and by integrating them explicitly, each of them is more appealing. so while there are lots of databases, lots of analysis systems, lots of wikis, and so on, there aren't many that are linked with one another such that participating in one part of the system makes the rest of the system more powerful as well as makes it more useful to the user.
+
 ### Semantic Wikis - Technical Knowledge Preservation
 
+{% cite kamelboulosSemanticWikisComprehensible2009 %}
+
+the word for communally curated schemas is https://en.wikipedia.org/wiki/Folksonomy
+
+{% cite goodSocialTaggingLife2009 %}
+
+wikibase can do federated SPARQL queries https://wikiba.se/
+- and has been used to make folksonomies https://biss.pensoft.net/article/37212/
+
 > I can see my bank statements on the web, and my photographs, and I can see my appointments in a calendar. But can I see my photos in a calendar to see what I was doing when I took them? Can I see bank statement lines in a calendar? https://www.w3.org/2001/sw/
+
+lots of scientific wikis 
+- https://en.wikipedia.org/wiki/Wikipedia:WikiProject_Molecular_Biology/Genetics/Gene_Wiki/Other_Wikis
+- https://en.wikipedia.org/wiki/Wikipedia:WikiProject_Molecular_Biology/Genetics/Gene_Wiki
+
 
 
 
 ### Semantic Wikis - Schema Resolution & Communication platform
+
+!! bids is doing something like this https://nidm-terms.github.io/
 
 > The Semantic Web is about two things. It is about common formats for integration and combination of data drawn from diverse sources, where on the original Web mainly concentrated on the interchange of documents. It is also about language for recording how the data relates to real world objects. That allows a person, or a machine, to start off in one database, and then move through an unending set of databases which are connected not by wires but by being about the same thing. https://www.w3.org/2001/sw/
 
@@ -474,6 +531,9 @@ Consider the examples posed in {% cite shethFederatedDatabaseSystems1990 %}
 ### Linked communication platform 
 
 We all hate science twitter, why does it exist?
+
+good science community infra
+- https://www.zooniverse.org
 
 > Two essential features coordinate this information to better serve our organizational decision-making, learning, and memory. The first is our constellation of Working Groups that maintain and distribute local, specialized knowledge to other groups across the network. [...] A second, more emergent property is the subgroup of IBL researchers who have become experts, liaisons, and interpreters of knowledge across the network. These members each manage a domain of explicit records (e.g., written protocols) and tacit information (e.g., colloquialisms, decision histories) that are quickly and informally disseminated to address real-time needs and problems. A remarkable nimbleness is afforded by this system of rapid responders deployed across our web of Working Groups. However, this kind of internalized knowledge can be vulnerable to drop-out when people leave the collaboration, and can be complex to archive. An ongoing challenge for our collaboration is how to archive both our explicit and tacit processes held in both people and places. This is not only to document our own history but as part of a roadmap for future science teams, whose dynamics are still not fully understood. {% cite woolKnowledgeNetworksHow2020 %}
 
@@ -509,6 +569,11 @@ depth of linking is combinatoric -- if you have a paper ecosystem where the numb
 In addition to like a wiki... need some way of having conversations and arguments about what means what. like some proposal system for linking certain tags together or pointing one to the other...so shared knowledge and shared governance can be a fluid entity.
 
 to avoid the coersion described in {% cite bietzCollaborationMetagenomicsSequence2009 %} we must make any metadata schema collaborative and mutually beneficial -- there is no such thing as 'required' data as long as we design a system that preserves as much information as possible on collection, designing infrastructure is an act of community trust. 
+
+Dont want to be prescriptive here, but that we can learn from previous efforts like 
+- https://en.wikipedia.org/wiki/Evergreen_(software) , 
+- IBL, 
+- etc.
 
 # A second, more beautiful dream of what science could be
 
