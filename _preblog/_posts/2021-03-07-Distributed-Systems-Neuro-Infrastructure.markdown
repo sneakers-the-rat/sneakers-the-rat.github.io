@@ -42,6 +42,17 @@ what's different about this?
 
 - we're not describing a "new database system" but a way to make every "new database system" add functionality to the system rather than be independent of it.
 
+what are the goals of standardization?
+- external inspection
+- labor deduplication
+- increased access (and so it can't be complicated)
+- interoperability
+
+
+what are the traditional costs of standardization?
+- flexibility
+- learning curve
+
 Acknowledgements (make sure to double check spelling!!!):
 * Lauren E. Wool
 * Gaby Hayden
@@ -460,17 +471,20 @@ When compared, the preceding reads as a rephrasing of the design principles arti
 
 [^autopilotbad]: I am the first to admit Autopilot's shortcomings, which I document extensively in its [development roadmap](https://docs.auto-pi-lot.com/en/latest/todo.html) and github issues. 
 
-> makes the data part way easier, by having a tool that dumps directly into the database system, it's completely trivial and you never need to touch it. it's also the best way of making it actually happen because complexity is the obstacle (cite reproducibility begins with the tools employed)
+In addition to the benefits of reduced duplication of labor and greater access to the state of the art that runs through this whole argument, a standardized experimental framework multiplies the benefits of the data and analytical systems described previously.
 
-> Reproducibility is reciprocal -- if it was possible to see data and then replicate that same experiment in your lab easily because you are using the same experimental framework as they did, and the entirety of the experiment is preserved in the data...
+When we talk about standardizing data, we talk in the parlance of "conversion," but conversion is only necessary because reserachers collect data in local, idiosyncratic formats. The reason researchers rely on idiosyncratic formats is that it is far from straightforward to directly collect data from their heterogeneous tools in a standardized format. The need for data conversion leaves an airgap between the ideal of universal data access and its labor-intensive practical reality: only those that are most ideologically committed and have enough resources to convert & share their data will do so. We could (and should) lessen the chore of data conversion with continued development of intuitive conversion tools, but an experimental framework that collected data that was *clean at the time of acquisision* then we could shortcircuit the need for conversion altogether. It would also completely dissolve the need for researchers to interact with the peer-to-peer sharing system described previously by automatically dumping standardized data directly into it. In short, an experimental framework could make all the steps between collecting and sharing data completely seamless, and by doing so make the dream of universal data availability possible.
 
-**projects we love**
-* open behavior
-* open ephys & miniscope & all the open source hardware projects. **i love these and was and am so inspired by these projects, im talking about making the rest of the ecosystem around them to unify them and multiply their power** like what if you could just drop a miniscope into a neuropixels recording no sweat. that would be dope. doesn't even require the devs to change their own shit much or do anything special really except make an API available and then let users write an interface. That's what i'm talking about framework dog
+Neuroscience has made substantial progress standardizing an ontology of common terms for cells, chemicals, etc. (see the [Neuroscience Information Framework's Ontology](https://github.com/SciCrunch/NIF-Ontology)) but an ontology for the many minute parameters that define a behavioral experiment's operation has proven elusive. Creating a standardized language for expressing and communicating behavioral experiments is the object of one of the Neurodata Without Borders [working groups](https://archive.org/details/nwb-behavioral-task-wg), in collaboration with the [BEADL](https://archive.org/details/beadl-xml-documentation-v-0.1) project, and they've done admirable work there. They have an in-progress terminology for certain parameters like `Reward`, `Guess`, etc., as part of a state-machine (!!define in margin) based representation of a task. The model of standardization would then be to define some extensible terminology, and then either build some software that implements the state machine descriptions of tasks or else ask existing software developers to incorporate them in their systems. 
 
-!! Problem with a lot of these tools is that they **work** but they don't really have the documentation or community development that makes them public tools. The ultimate test of whether something is indeed a public tool is whether or not it can be used without the developer having to  tell you how to do something or set it up... 
+This path to standardization has many attractive qualities, like the formal verification possible with state machines, but may have trouble reaching universal adoption: at even modest complexities, experiments that are simple to explain in prose can be awkward and complicated to express as state machines (eg. section 3.1 in {% cite saundersAutopilotAutomatingBehavioral2019 %}, though the proposed [statecharts](https://statecharts.github.io/) model is a bit friendlier than traditional state machines). If it is difficult to express a particular feature of some experiment in some formalism, and easier to implement it as some external software, unintegrated with the behavioral framework, then much of the appeal of standardization is lost. Alternatively, a behavioral framework designed for reproducibility, that preserves a complete history of task parameters as well as the code that uses them, solves both the problems of external inspection and replication without needing to prescribe a specific formalization or uniform ontology. It doesn't matter *what* terms you use if it's trivial to see *how* they're used. Importantly, this strategy punts on the goal of interoperability, but does not forsake it: we will revisit standardized ontologies in the next section. Asking large numbers of people to change the way that they think about their experiments and the words they use to describe them is, ultimately, a pretty big ask. Providing people a tool that allows themselves to express themselves in whatever form is natural to them and make their terminology meaningful by preserving its context might be easier. (put people in the same system and give them a space to express the terms they use and let them standardize among themselves rather than imposing.)
 
-Developing shared tools is also the lynchpin in getting the shared knowledge system to work - rather than trying to enforce a data format that's manually curated, shared tools can start to natively implement NWB as an output format and automatically register it isn 
+
+> A place to put reference implementations of processing algorithms, sensor fusion algorithms. and by splitting them up they become even more useful -- give example of autopilot IMU. Also makes them inspectable {% cite wallReliabilityStartsExperimental2018 %}
+
+> allows us to 'close the loop' with shared data -- what if 
+
+> opens up the opportunity for an entirely new kind of shared data, one that's mroe about shared practical knowledge, by being able to automatically collect usage statistics, 
 
 
 ## Shared Knowledge
@@ -511,6 +525,8 @@ lots of scientific wikis
 ### Semantic Wikis - Schema Resolution & Communication platform
 
 !! bids is doing something like this https://nidm-terms.github.io/
+
+!! interlex
 
 > The Semantic Web is about two things. It is about common formats for integration and combination of data drawn from diverse sources, where on the original Web mainly concentrated on the interchange of documents. It is also about language for recording how the data relates to real world objects. That allows a person, or a machine, to start off in one database, and then move through an unending set of databases which are connected not by wires but by being about the same thing. https://www.w3.org/2001/sw/
 
@@ -564,7 +580,11 @@ Bad APIs have killed projects with shitloads of funding like NWB and IPFS https:
 
 depth of linking is combinatoric -- if you have a paper ecosystem where the numbers are linked to the data, and then the data is annotated, then it's possible to index information across papers not just by textual similarity metrics but on similarity of the structure of experiment and data. 
 
+# Conclusion
+
 ## Shared Governance
+
+!! just make this a final note in the conclusion
 
 In addition to like a wiki... need some way of having conversations and arguments about what means what. like some proposal system for linking certain tags together or pointing one to the other...so shared knowledge and shared governance can be a fluid entity.
 
@@ -575,7 +595,7 @@ Dont want to be prescriptive here, but that we can learn from previous efforts l
 - IBL, 
 - etc.
 
-# A second, more beautiful dream of what science could be
+## A second, more beautiful dream of what science could be
 
 OK Here's the moment at the end of 2001.
 
