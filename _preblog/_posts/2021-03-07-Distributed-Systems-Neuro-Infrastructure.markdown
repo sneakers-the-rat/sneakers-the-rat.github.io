@@ -63,6 +63,13 @@ Acknowledgements (make sure to double check spelling!!!):
 * metascience class for some of these ideas <3
 * mike for letting me always go rogue
 
+Add specific ethics section to introduction
+- we should not as scientists aspire to put all scientific knowledge in the hands of one of the largest, most abusive corporations on the planet.
+- we should not aspire to duplicate the platformization model where hundreds of startups compete to solve the same problem with little incentive for interoperability and every incentive for partial solutions that keep them in business. We whould not believe the best we can hope for is relying on subscriptions to 20 disjointed SaaS products as the fundament of human scientific knowledge.
+
+!! need 2 be clear that we're no longer talking about "datasets" anymore --- we're talking about referring to the data by what it is.
+
+!! when people have disabilities we make ramps, not bully them into climbing up the stairs. 
 
 # The State of Things
 
@@ -82,7 +89,7 @@ Rather than a screedy airing of unrelated dirty laundry, I argue that these prob
 
 [^inus]: In this paragraph I am of course only referring to many parts of the urbanized United States (with many exceptions) to illustrate the luxury of infrastructure. Water availability is a global humanitarian crisis increasingly exacerbated by climate change, confoundingly also caused by other forms of infrastructure, which is why it's essential to think about the unintended consequences and ethical implications of the kind of infrastructure we build.
 
-I am going to take the position that these problems can be *solved* and are not our inevitable and eternal fate. I will insist the system I describe is not *utopian* but is eminently practical --- with a bit of development to integrate them, **everything I propose here already exists and is widely used.** Viewing these problems as stemming from a shared infrastructural etiology allows us to problematize other symptoms that are widely normalized, and find new approaches for recognized problems that are thought to be intractable. 
+I am going to take the position that these problems can be *solved* and are not our inevitable and eternal fate. I will insist the system I describe is not *utopian* but is eminently practical --- with a bit of development to integrate them, **everything I propose here already exists and is widely used.** Viewing these problems as stemming from a shared infrastructural etiology allows us to problematize other symptoms that are widely normalized, and find new approaches for recognized problems that are thought to be intractable. (!! split these up, expand on problems of treating them separately, eg. treating peer review along you just keep the whole publication syustem instead of reimagining the whole of scientific communication mediums. and that identifying a problem without identifying the ethical substance that makes it a problem also leads you in the wrong direction -- eg. the focus on "efficiency" that can be straight up ableist. throughout the piece you will notice me avoid linking this to the "open science" movement because of this fraught non-evaluation of its ethical fundament. I want to instead emphasize "shared" over "open," where "open" connotes the abiltiy for others to see and inspect something that remains fundamentally ours, "shared" emphasizes the mututal ownership of our collected knowledge and our responsibility to make it available to others becuase it is just as much theirs as ours.)
 
 In no particular order, and with no pretense of completeness, the impacts of a lack of scientific infrastructure include:
 
@@ -107,6 +114,8 @@ Considered separately, these are problems, but together they are a damning indic
 !!! replace vvv with ^^^
 
 We arrive at this situation not because systems neuroscientists are lazy and stupid, but because the appropriate tools that fit the requirements of their discipline don’t exist, and traditional patterns of centralized organization can't scale to encompass their diverse needs. If the above description doesn't resonate with you and I have already made an enemy of you as a reader, maybe reading along thinking about all the exceptions to the above problems, the difficulty of solving them, or maybe my unfortunate tendency towards utopianism grates: *yes* there are many people and groups working on or who have solved some of these problems, *yes* these problems are all difficult, and *yes* I am *obnoxious* about *infrastructure* and it is a *personality flaw.* Bear with me at least a few more paragraphs.
+
+!! break this up into the different ways this has been addressed, like what 'open science' aims to a address & how that has devolved into bullying. the OSS community.
 
 ## A Brief, Beautiful Dream of Infrastructure 
 
@@ -176,6 +185,8 @@ Each of these three disciplinary tendencies
 
 
 !! The problems are also structural, and vary depending on the size, resources, etc. of the institution as well... transition to next section
+
+!! make it clearer that the hacker spirit is not a *bad* thing but another *design constraint* and that we should actually avoid the paternalistic approach that says there's a "right way" to do science, and instead honor, learn from, and support the diversity of our approaches.
 
 
 ## The Ivies, Consortia, and "Most of Us"
@@ -496,19 +507,82 @@ Another, complementary way of approaching this problem is to focus on giving peo
 
  --------------
 
- Replication is seriously hard. designing a software system that's smart enough about the division between the logical structure of the task and the implementation is seriously hard. the raspi is general purpose enough that was can incorporate pretty general purpose hardware control systems with nontrad components as well, so it balances being an approachable "start from somewhere" (actually in a really good place) with general still byo-hardware. replication needs to basically be incorporated from the ground up, as most behavioral packages that exist tend to rely on local script files that are still labor-intensive to create and are rarely shared, because they're not really intended to be made sharable.
+Replication is seriously hard. designing a software system that's smart enough about the division between the logical structure of the task and the implementation is seriously hard. the raspi is general purpose enough that was can incorporate pretty general purpose hardware control systems with nontrad components as well, so it balances being an approachable "start from somewhere" (actually in a really good place) with general still byo-hardware. replication needs to basically be incorporated from the ground up, as most behavioral packages that exist tend to rely on local script files that are still labor-intensive to create and are rarely shared, because they're not really intended to be made sharable. << point im' trying to make here is that it can't be an afterthought, the ways that it's easy to go wrong.
 
+But for systems that do link code to a portable task description, where the documentation for each parameter is also good (like wat if that documentation was linked to the semantic wiki... return to in next section), then it is entirely possible to download a system that you point to whatever parts you have around and let er rip. (this doesn't address the technical complexity, but that's also a tease for the next section).
 
-> A place to put reference implementations of processing algorithms, sensor fusion algorithms. and by splitting them up they become even more useful -- give example of autopilot IMU. Also makes them inspectable {% cite wallReliabilityStartsExperimental2018 %}
+It is already occasionally possible to follow the trail of provenance back to some experimental code, but when all code is developed independently, is any of it reliable {% cite wallReliabilityStartsExperimental2018 %}? Like bugs in analytical software, bugs in experimental control software are likely rife, but unless they are present in the few pieces of commonly used open-source software they are almost entirely undiagnosable. Conversely, maybe more positively, a shared experimental framework gives a place to gather reference implementations of the many common algorithms, routines, and hardware controllers used in neuroscientific experiments. (!! the tiny details matter, but they almost never make it into methods sections. eg. we use bias correction methods, but the way we do it might be different than the way you do it. people do lots of great work optimizing over different training regimens, but that usually gets left as text. Algorithms for hardware control and sensor fusion are split across a zillion adafruit libraries, and they aren't modularized or split up or even documented that well)
 
-> allows us to 'close the loop' with shared data -- what if 
+As an example, intertial motion sensors (IMUs) are an increasingly common tool for neuroscientists interested in studying unrestrained, freely moving behavior. In our case, we were working with [an IMU](https://web.archive.org/web/20210127212527/https://www.sparkfun.com/products/13944) with three, 3-dimensional sensors: an accelerometer, gyroscope and magnetometer. The raw signals from these IMUs (linear acceleration, angular velocity) are rarely useful on its own, and researchers are usually after some derived value like orientation, position, etc. Since the readings are also noisy, these transformed signals typically rely on some [sensor fusion](https://en.wikipedia.org/wiki/Sensor_fusion) algorithms to condition and combine them. We were interested in measuring "absolute" geocentric vertical velocity to control a motorized platform in a closed-loop experiment (as I described in my [NMC3](https://neuromatch.io/abstract/?submission_id=recI5D0QaJ857Y4JI) [talk](https://youtu.be/l2K0l4ec0Xw)). Adafruit provides a [basic Python](https://github.com/adafruit/Adafruit_CircuitPython_LSM9DS1/blob/master/adafruit_lsm9ds1.py) library to control the IMU, but it was relatively undocumented, slow, and didn't expose all the functionality of the chip, so we [adapted it to Autopilot](https://web.archive.org/web/20210421223148/https://docs.auto-pi-lot.com/en/parallax/autopilot.hardware.i2c.html#autopilot.hardware.i2c.I2C_9DOF). We were able to find a number of whitepapers that described a sensor fusion algorithms, but no implementations. The algorithm we eventually landed on uses a [Kalman filter](https://en.wikipedia.org/wiki/Kalman_filter) to combine accelerometer and gyroscope readings to estimate orientation {% cite abyarjooImplementingSensorFusion2015a %}. In this case were lucky to find Roger Labbe's excellent [filterpy](https://github.com/rlabbe/filterpy) library {% cite labbeKalmanBayesianFilters2020 labbeRlabbeFilterpy2021 %}, and with a few performance and syntax tweaks were also able to [adapt it to autopilot](https://web.archive.org/web/20210421223300/https://docs.auto-pi-lot.com/en/parallax/autopilot.transform.timeseries.html#autopilot.transform.timeseries.Kalman), extended it to implement the [orientation transformation](https://web.archive.org/web/20210421212747/https://docs.auto-pi-lot.com/en/parallax/autopilot.transform.geometry.html), and built it into the [IMU Object](https://github.com/wehr-lab/autopilot/blob/6843c0e7b6e2bfb4c35e2f7c41972336765feabd/autopilot/hardware/i2c.py#L469-L501). (!! - go back through and give names to each of the objects and methods for reference below)
 
-> opens up the opportunity for an entirely new kind of shared data, one that's mroe about shared practical knowledge, by being able to automatically collect usage statistics, 
+OK cool so you programmed an accelerometer, what's the big deal? First, from the developer's perspective: we needed to implement some ``hardware`` object and teach it about some geometric ``transform``ation. The autopilot ``hardware`` and ``transform`` modules give a clear place to implement both. The minimal expected structure of these modules make it straightforward to adapt existing code to the library, but we can also copy and modify (or, "inherit from") some existing hardware object to avoid having to write basic operations from scratch (eg. the I/O operations) and extend their functionality (eg. they are now networked, can take advantage of autopilot's unified logging system, etc.). To the degree that the framework is widely adopted, it gives credit to and provides a direct means of making the algorithms and tools they develop available to users. (!! they don't even need to integrate with the system wholesale, just expose some API and write a quick wrapper for this, we're wrking on it!!) This is, in some sense, the essence of what i mean by a behavior "framework" --- a minimal "spanning set" of rules for how the system works that gives clear points of extension.
+
+From the user's perspective: We could have implemented the sensor fusion algorithm and geometric transform directly "in" the ``IMU`` hardware object, but instead we separated them out as several independent ``transform`` objects. Rather than extending the functionality of a single hardware object, we instead gained several basic algorithms. Their generality is *noncoercive* --- The problem of getting absolute orientation from an IMU is solved for *everyone*, even those that don't want to adopt any other part of the system. The rotation algorithm is generic and modular: it can be used as just a trigonmetric transformation of accelerometer readings without a Kalman filter, incorporate gyroscopic readings, or use an entirely different timeseries filter altogether. By integrating them in an existing library of ``transform`` objects, they are made combinatorically more useful --- so far all I have discussed has been a means of estimating orientation, we still need to *use* that orientation estimate to extract "absolute" vertical acceleration. 
+
+In autopilot, we can express the rest of what we need as a series of ``transform`` objects that can be added together with ``+`` and ``+=``:
+
+{% highlight python %}
+from autopilot import transform as t
+
+# we start with some measurement of
+# - subjective acceleration (x, y, z)
+# - rotation (roll, pitch)
+# then we...
+
+# rotate the acceleration around the x and y axes
+z_velocity = t.geometry.Rotate('xy') 
+# select the "z," or vertical component, 
+# aka accelerometer[2]
+z_velocity += t.selection.Slice(slice(2,3))
+# subtract the constant acceleration due to gravity
+z_velocity += t.math.Add(-9.8)
+# and then integrate the acceleration measurements
+# over time to get velocity
+z_velocity += t.timeseries.Integrate(dt_scale = True)
+{% endhighlight %}
+
+So then when used with the IMU object...
+
+{% highlight python %}
+from autopilot.hardware.i2c import IMU_9DOF
+
+# create the sensor object to read from it
+sensor = IMU_9DOF()
+
+# get accelerometer readings by accessing its properties
+>>> sensor.acceleration
+array([0,0,9.8])
+
+# apply our transformation by giving the accelerometer 
+# and orientation readings to our transform object
+>>> z_velocity.process((sensor.acceleration, sensor.rotation))
+1.6095 # or whatever m/s
+{% endhighlight %}
+
+This transformation could itself be built into the sensor object as an additional ``IMU_9DOF.velocity`` property, as was done for ``.rotation``, reconfigured to add additional processing stages, and so on.
+
+(!! add example of adding DLC to position estimate? yes. to show how things don't need to be built into autopilot, just given some API, as was done with deeplabcut, at the end of the developer section)
+
+From the often-overlooked perspective of some downstream "reader": when everything is integrated into an extensible experimental framework, complete retrospective provenance becomes possible. Autopilot exhaustively logs all local parameters like hardware configuration, as well as references to all versions of all code used to generate a dataset *in the dataset itself* automatically. A reader can then trace all the data presented in a paper back through a standardized analysis pipeline to the raw data, and then continue to inspect every part of how it was generated. Since the code is all available by default, it becomes possible to audit experimental code on a broad scale: if a reader were to find a bug, they could raise an issue, patch it --- and flag all datasets that were effected.
+
+At this point we have largely closed the loop of science: starting with standardized data, shared in a scalable p2p system, with some federated interface structure, through modularized analysis parts, published alongside the means to directly reproduce the experiment and re-generate the data... and when we start considering these technologies as an ensemble some things that truly sound like science fiction compared to scientific reality start to become possible. In addition to allowing all of the above features of standardized output data being cross-indexable, what about making the literal fine-grained parameters a way of indexing The All Knowledge Base (go back to previous section and make clearer that only the output data is indexable)? Doing a simultaneous optimization over all of our parameters is basically impossible, and we have all these heuristics for hopping and skipping over it, but what if the behavioral system could query all other times the experiment has been performed, cross reference with published outcome data from the parameterization, and recommend the optimal parameterization for whatever you are studying? The compounding nature of making systems that preserve and respect the diversity of labor to make it coproductive is tectonic: at every stage, from implementation to tweaking, to understanding a science with appropriate infrastructure would move at light speed compared to the way we do it now.
+
+... the major part that's missing is some means of negotiating our schemas and data ... transition to next section
 
 
 ## Shared Knowledge
 
-Something that's so in the water of science that it's hard to imagine it being otherwise is the structure of scientific communication. Except for certain domain-specific exceptions, the only means of communicating scientific results is in a journal as a static document or at a conference as an ephemeral talk (though that is [changing](https://neuromatch.io/conference)). The remainder of the gigantic overflowing franzia bag of scientific discourse is funelled ingloriously onto Twitter[^twitterheg] --- and it *sucks*. There simply isn't a place to have longform, thoughtful, durable discussions about science. The direct connection between the lack of a communcaition venue to the lack of a way of storing technical, contextual knowledge is often overlooked. Because we don't have a place to talk about what we do, we don't have a place to write down how to do it. Science needs a communcation platform, but the needs and constraints of a scientific communication platform are different than those satisfied by the major paradigms of chatrooms, forums etc. By considering this platform as another infrastructure project alongside and integrated with those described in the previous sections, its form becomes much clearer, and it could serve as the centerpiece of scientific infrastructure.
+!! why is public trust in scientists so low? could it be that there is an alternative to scientists seeing themselves as cloistered experts? re: cold war peer review paper
+
+The (part of the system that's most needed and potentially transformative) is a system of scientific communication. 
+
+Except for certain domain-specific exceptions, the scientific communication system consists of the two ancient monoliths groaning with the dust of their obsolescence: the dead and static papers of the traditional journal system, and the ephemeral halo of insider knowledge shared at conferences. The remainder of the gigantic overflowing franzia bag of scientific discourse is funelled ingloriously onto Twitter[^twitterheg] --- and it *sucks*.
+
+Since the advent of the contemporary journal system, communication technology has been stripped to its very atoms and rebuilt --- and it has managed to dig in and *persist* while all the letterman jackets and beatniks of its era have become vape teens on tiktok. A reconsideration of the entire scientific publishing system is strictly out of scope for this paper, but the communication system I will describe exists in the gaps of need it leaves unfilled. Criticisms of the scientific communication system typically start by imaginging much of the contemporary journal system as etched as fact on the face of reality, and tweaking at a few of its more ticklish knobs (eg. {% cite heesenPeerReviewGood2020 %}). Instead let's try it the other way: to trace the outlines of how a scientific communication system *should* work, given the basis of holistic infrastructure described so far. I will argue that a communication system, and more specifically the community it supports, is the blood that must pump through any of these digital systems that aspire to call themselves infrastructure. To arrive at a proposed form for a system, I'll start by laying the basic axes of communication technology, and then load the scales with the empirical girth of the largest knowledge systems that have ever existed: Wikipedia and internet piracy. 
+
+, when considered with the infrastructural systems described so far, 
+
+ There simply isn't a place to have longform, thoughtful, durable discussions about science. The direct connection between the lack of a communcaition venue to the lack of a way of storing technical, contextual knowledge is often overlooked. Because we don't have a place to talk about what we do, we don't have a place to write down how to do it. Science needs a communcation platform, but the needs and constraints of a scientific communication platform are different than those satisfied by the major paradigms of chatrooms, forums etc. By considering this platform as another infrastructure project alongside and integrated with those described in the previous sections, its form becomes much clearer, and it could serve as the centerpiece of scientific infrastructure.
 
 I will argue that a semantic wiki should be the major piece of durable information storage, and that it should be supported by a forum system for discussion. 
 
@@ -631,6 +705,8 @@ High school biology classrooms are able to directly interface with the fundament
 {% bibliography --cited %}
 
 # Footnotes
+
+placeholder
 
 [^lostartists]: > "Among the incinerated Decca masters were recordings by titanic figures in American music: Louis Armstrong, Duke Ellington, Al Jolson, Bing Crosby, Ella Fitzgerald, Judy Garland. The tape masters for Billie Holiday’s Decca catalog were most likely lost in total. The Decca masters also included recordings by such greats as Louis Jordan and His Tympany Five and Patsy Cline.
 >
