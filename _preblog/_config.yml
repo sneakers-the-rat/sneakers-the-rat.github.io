@@ -38,7 +38,7 @@ author:
 
 # configure jekyll scholar
 scholar:
-  source: ./assets/references
+  source: ./assets
   bibliography: blog.bib
   style: national-science-foundation-grant-proposals
 
