@@ -71,6 +71,8 @@ Add specific ethics section to introduction
 
 !! when people have disabilities we make ramps, not bully them into climbing up the stairs. 
 
+!! have struggled with how to write/structure this, and so this order reflects the plausible order of adoption, and i'll try to call otu the nonlinear effects of the different components as we go. that is also to say do not be surprised if the first few steps feel basic, it'll take a few combos to really start the ride.
+
 # The State of Things
 
 ## The Fragmentation of Systems Neuroscience
@@ -594,6 +596,10 @@ I will argue that a semantic wiki should be the major piece of durable informati
 [^twitterheg]: no citation needed, right? if there is some other bastion of scientific discourse i would love to know about it.
 
 !! what's critically different here between other projects is that we are explicitly considering the incentives to join each of these efforts, and by integrating them explicitly, each of them is more appealing. so while there are lots of databases, lots of analysis systems, lots of wikis, and so on, there aren't many that are linked with one another such that participating in one part of the system makes the rest of the system more powerful as well as makes it more useful to the user.
+
+### Axes of Communication Systems
+
+!! push v. pull indexing -- can i find something by pulling from the ether based on some notion of what i'm looking for, or can i browse from related concepts and find what i'm looking for
 
 ### Semantic Wikis - Technical Knowledge Preservation
 
