@@ -48,10 +48,12 @@ what are the goals of standardization?
 - increased access (and so it can't be complicated)
 - interoperability
 
-
 what are the traditional costs of standardization?
 - flexibility
 - learning curve
+
+central themes
+- gradual expansion/structured expansion. make the gradient between small-scale and wide-scale adoption shallow and long. don't try to make the 'one that fixes everything' but instead provide the schematic by which we might all work on fixing it together.
 
 Acknowledgements (make sure to double check spelling!!!):
 * Lauren E. Wool
@@ -182,6 +184,14 @@ Yes again, Mainen and colleagues:
 >  Neuroscientists frequently live on the 'bleeding' edge technologically, building bespoke and customized tools. This do-it-yourself approach has allowed innovators to get ahead of the competition, but hampered the standardization of methods essential to making experiments efficient and replicable.
 >
 >  Remarkably, it is standard practice for each lab to custom engineer all manner of apparatus, from microscopes and electrodes to the computer programmes for analysing data. Thousands of labs worldwide use the calcium sensor GCaMP, for example, for imaging neural activity in vivo. Yet neither the microscopes used for GCaMP imaging nor the algorithms used to analyse the resulting data sets have been standardized. Include {% cite mainenBetterWayCrack2016 %}:
+
+### Focus on the Science
+
+Completely understandably... scientists want to focus on their discipline rather than spending time building infrastructure. But because infrastructure touches all of our work and very few people can only build it in their spare time (mostly for the love of the craft) we all have to build some of it. this is a classic collective action problem, and scientists are not evil or selfish for wanting to do their work.
+
+### Combinatorics of Recent Technology
+
+A lot of what I will describe here is relatively new! Some ideas are very old, like the semantic web and wikis, but others like federated communication and file transfer protocols are only reaching widespread use recently. The entire universe of open source scientific hardware and software has only sprung into its full and beautiful glory in the last decade or so, from pandas and and jupyter to open ephys and miniscopes and so on. Bittorrent is cool and good but IPFS allows us to think about qualitatively different things. It's ultimately the *combination* of these recently technologies that's important, rather than any single one of them. So in some sense it wasn't *possible* to think about the type of basic infrastructure outside the traditional lens of centralized databases and individual experimental software packages.
 
 Each of these three disciplinary tendencies 
 
@@ -436,6 +446,8 @@ It's difficult to overstate how fundamentally a widely-adopted federated databas
 The fundamental tradeoff between centralized and decentralized database systems is that of flexibility vs. coherence: centralized systems can simply enforce a single standard for data and assume that everything it works with will have it. Federated systems require some means of maintaining the mappings between schemas that allow their fluid translation. They also require some means of representing and negotiating data that is unanticipated by existing schemas. The fine details of implementing a federated database system are outside the scope of this paper, but we will return to a means of distributed maintenance of mappings between schemas by taking advantage of semantic web technologies in [shared knowledge](#shared-knowledge). Before we do though, we need to discuss the shared tools to analyze and generate the data for the system in this section.
 
 !! make sure to talk about datalad and DANDI!! https://www.datalad.org/
+
+!! federated systems let us bridge the gap between localized server technology like datajoint and mass server technology like databases. If you let people federate at a local scale to share data between an institute, a consortium, etc. and then let those things scale to federate together you have a plausible means by which slowly a generalized database system could be accumulated over time.
 
 ## Shared Tools
 
