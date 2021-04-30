@@ -64,10 +64,12 @@ Acknowledgements (make sure to double check spelling!!!):
 * open behavior team
 * metascience class for some of these ideas <3
 * mike for letting me always go rogue
+* os & avery for STS recs
 
 Add specific ethics section to introduction
 - we should not as scientists aspire to put all scientific knowledge in the hands of one of the largest, most abusive corporations on the planet.
 - we should not aspire to duplicate the platformization model where hundreds of startups compete to solve the same problem with little incentive for interoperability and every incentive for partial solutions that keep them in business. We whould not believe the best we can hope for is relying on subscriptions to 20 disjointed SaaS products as the fundament of human scientific knowledge.
+- dubious ethics are literally everywhere: https://datum.org/
 
 !! need 2 be clear that we're no longer talking about "datasets" anymore --- we're talking about referring to the data by what it is.
 
@@ -92,6 +94,10 @@ Rather than a screedy airing of unrelated dirty laundry, I argue that these prob
 **No! Not Boring! Magic!** We go and get water where it lives and bring it snaking through a magnificent labyrinth of pipes filters and pumps *directly into your house.* Sometimes multiple places in your house, wherever you want it! And it's practically *free*[^inus]. People pay $9 a month for Netflix, how much do you think you would pay a for-profit company for a *water subscription?* **Infrastructure makes formerly impossible things so trivial you forget about them.**
 
 [^inus]: In this paragraph I am of course only referring to many parts of the urbanized United States (with many exceptions) to illustrate the luxury of infrastructure. Water availability is a global humanitarian crisis increasingly exacerbated by climate change, confoundingly also caused by other forms of infrastructure, which is why it's essential to think about the unintended consequences and ethical implications of the kind of infrastructure we build.
+
+Or, maybe a more formal definition:
+
+> Here we take infrastructure as a broad category referring to pervasive enabling resources in network form, and we argue that a theoretical understanding of infrastructure is crucial to its design, use, and maintenance. This understanding plays a critical role in associated fields such as informatics, library science, and new media – all fields that underpin communication in large-scale and long-term collaborative science. In our analysis we extend conventional understandings of infrastructure as “tubes and wires” to the technologies and organizations which enable knowledge work: supercolliders, orbiting telescopes, supercomputer centers, polar research stations, national laboratories, and other research instruments of “big” science. In addition our image would be incomplete without the variety of scientific organizations, such as funding agencies, professional societies, libraries and databases, scientific publishing houses, review systems, and so on, that are inherent to the functioning of science. As Leigh Star has noted, infrastructure is relational: the daily work of one person is the infrastructure of another (Star & Ruhleder, 1996). Finally, we further open the conceptual umbrella of infrastructure to include the individuals – designers and developers, users and mediators, managers and administrators – in existing and emergent roles associated with information infrastructure. {% cite bowkerInformationInfrastructureStudies2010 %}
 
 I am going to take the position that these problems can be *solved* and are not our inevitable and eternal fate. I will insist the system I describe is not *utopian* but is eminently practical --- with a bit of development to integrate them, **everything I propose here already exists and is widely used.** Viewing these problems as stemming from a shared infrastructural etiology allows us to problematize other symptoms that are widely normalized, and find new approaches for recognized problems that are thought to be intractable. (!! split these up, expand on problems of treating them separately, eg. treating peer review along you just keep the whole publication syustem instead of reimagining the whole of scientific communication mediums. and that identifying a problem without identifying the ethical substance that makes it a problem also leads you in the wrong direction -- eg. the focus on "efficiency" that can be straight up ableist. throughout the piece you will notice me avoid linking this to the "open science" movement because of this fraught non-evaluation of its ethical fundament. I want to instead emphasize "shared" over "open," where "open" connotes the abiltiy for others to see and inspect something that remains fundamentally ours, "shared" emphasizes the mututal ownership of our collected knowledge and our responsibility to make it available to others becuase it is just as much theirs as ours.)
 
@@ -399,7 +405,7 @@ Rather than being prescriptive about one community structure, however, what allo
 
 #### Federated Systems
 
-!! compare to datalad
+!! compare to datalad - http://handbook.datalad.org/en/latest/usecases/datastorage_for_institutions.html
 
 There is no shortage of databases for scientific data, what limits their use is their fragmentation. Each subdiscipline having a separate database makes combining information from across even extremely similar subdisciplines combinatorically complex and laborious. It also makes finding the correct database for a given dataset often a matter of having prior knowledge or wild luck. 
 
@@ -466,7 +472,11 @@ A shared analytical framework should be
 * *pluggable* - The framework needs to provide a clear way of incorporating external analysis packages, handling their dependencies, and exposing their parameters to the user. 
 * *reproducible* - The framework should separate the *parameterization* of a pipeline, the specific options set by the user, and its *implementation*, the code that constitutes it. Implicit in a modularly constructed analysis framework is the notion of a "pipeline," or a specification of a tree (or, specifically, a [DAG](https://en.wikipedia.org/wiki/Directed_acyclic_graph)) of successive stages that process, merge, or split the data from the previous stage. The parameterization of a pipeline should be portable such that it, for example, can be published in the supplementary materials of a paper and reproduced exactly by anyone using the system. 
 
-Thankfully, [DataJoint](https://datajoint.io/) already does most of this, and is expanding its modularity with its recent [Elements](https://github.com/datajoint/datajoint-elements) project. Though it currently uses a [MySQL](https://docs.datajoint.io/python/admin/1-hosting.html), relational database as its backend, extending it to incorporate with the peer to peer database system described above would be an early, concrete development goal for this program. I have heard rumors they are considering adopting a decentralized traditional relational database like [CockroachDB](https://www.cockroachlabs.com/product/), which is not the same thing as a p2p federated semantic database system as I describe here, but is certainly a step in that direction. The rest is in the minutiae of normal software development, as well as building a user interface and collaboration platform for curation and management of shared pipelines. Thank you DataJoint team for making this section so simple.
+Thankfully, [DataJoint](https://datajoint.io/) already does most of this, and is expanding its modularity with its recent [Elements](https://github.com/datajoint/datajoint-elements) project. 
+
+!! need to revisit this in light of the paper: {% cite yatsenkoDataJointElementsData2021 %} 
+
+Though it currently uses a [MySQL](https://docs.datajoint.io/python/admin/1-hosting.html), relational database as its backend, extending it to incorporate with the peer to peer database system described above would be an early, concrete development goal for this program. I have heard rumors they are considering adopting a decentralized traditional relational database like [CockroachDB](https://www.cockroachlabs.com/product/), which is not the same thing as a p2p federated semantic database system as I describe here, but is certainly a step in that direction. The rest is in the minutiae of normal software development, as well as building a user interface and collaboration platform for curation and management of shared pipelines. Thank you DataJoint team for making this section so simple.
 
 The combined benefits of a unified data sharing and analytical system have a far greater reach than just saving redundant development time:
 
@@ -586,6 +596,8 @@ At this point we have largely closed the loop of science: starting with standard
 
 ## Shared Knowledge
 
+!! https://www.dbpedia.org/
+
 !! why is public trust in scientists so low? could it be that there is an alternative to scientists seeing themselves as cloistered experts? re: cold war peer review paper
 
 The (part of the system that's most needed and potentially transformative) is a system of scientific communication. 
@@ -616,6 +628,8 @@ I will argue that a semantic wiki should be the major piece of durable informati
 ### Semantic Wikis - Technical Knowledge Preservation
 
 {% cite kamelboulosSemanticWikisComprehensible2009 %}
+
+Read and cite! {% cite classeDistributedInfrastructureSupport2017 %}
 
 the word for communally curated schemas is https://en.wikipedia.org/wiki/Folksonomy
 
@@ -690,6 +704,8 @@ Bad APIs have killed projects with shitloads of funding like NWB and IPFS https:
 
 
 depth of linking is combinatoric -- if you have a paper ecosystem where the numbers are linked to the data, and then the data is annotated, then it's possible to index information across papers not just by textual similarity metrics but on similarity of the structure of experiment and data. 
+
+the work of maintaining the system can't be invisible, read & cite {% cite classeDistributedInfrastructureSupport2017 bowkerInformationInfrastructureStudies2010 %}
 
 # Conclusion
 
