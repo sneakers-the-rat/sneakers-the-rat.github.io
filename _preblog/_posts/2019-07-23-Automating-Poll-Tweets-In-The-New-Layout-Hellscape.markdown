@@ -31,6 +31,7 @@ Your bot will do this:
 
 This uses selenium and a few other standards, here's all them parts
 
+
 {% highlight python %}
 import logging
 import os
