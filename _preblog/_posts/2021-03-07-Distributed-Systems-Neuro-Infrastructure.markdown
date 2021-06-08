@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Distributed Infrastructure for Systems Neuroscience Would Revolutionize The Discipline"
+title: "Distributed Infrastructure for (Neuro)Science"
 date: 2021-03-07
 description: By moving from establishing particular consortia building limited sets of experiments to building a generalized, distributed infrastructure for systems neuroscience, we can transform our discipline.
 image: /blog/assets/images/onice_logo.png
@@ -16,44 +16,28 @@ tags:
 noindex: true
 ---
 
-*This is a less-clickbaity, less listy expansion to a [previous post](/blog/2021-03-01-Systems-Neuro-Infrastructure) that is and should read as a manifesto rather than an empirical work. Some parts of the previous piece are repeated here. The audience for both is an emerging group of researchers at the University of Oregon formed to standardize efforts and tools across labs, so this document attempts to set our eyes a bit closer to the horizon, where "our" shifts somewhat interchangeably between referring to that group and systems neuroscience at large.*
-
-*This is a draft document, so if you do work that you think is relevant here but I am not citing it, it's 99% likely that's because I haven't read it, not that I'm deliberately ignoring you! Odds are I'd love to read & cite your work, and if you're working in the same space try and join efforts!*
+*This is a draft document, so if you do work that you think is relevant here but I am not citing it, it's 99% likely that's because I haven't read it , not that I'm deliberately ignoring you! Odds are I'd love to read & cite your work, and if you're working in the same space try and join efforts!*
 
 ----
 
-**I want to be exceedingly clear that I am not shaming anyone for how they do science. I am trying to take effectively the opposite position of those people in the open science community that cast shame and suspicion on people for not passing some purity test. Doing open science is hard because we're lacking a lot of tools that would make it easy, and the social and community structures that make it rewarding --- and shaming people works in the opposite direction. Open science shouldn't be about passing some checklist of tests to become holier than thou. The fundamental motivations of open science should be caring about other people: caring about people being able to understand the world, caring about other people not wasting their time, cooperating with each other to do something massive and impossible. Relatedly i am not talking shit about anyone's work!!! Anytime I am describing some criticising some element of something it is because i have been inspired by and learned from it!!! This is about articulating a positive vision!!!**
-
-**start with discussion of what infrastructure is -- making things that seem impossible routine. We haven't addressed these problems after like a decade of writing becasue we haven't identified the real problems nor been bold enough to act. We can move in tiptoe steps but gradual change without a vision is pointless. We need to describe what holds us back and what needs to exist, and the act of converting that into gradual steps is all the work in between.**
-
-A lot of this is happening and being worked on!!! this document is an architecture for the whole system. providing a reason to develop one thing vs. another, trying to point devs in one direction but also make users & funders aware of what is possible & the conversations that happen in nerd circles
+> If we can make something decentralised, out of control, and of great simplicity, we must be prepared to be astonished at whatever might grow out of that new medium. 
+> 
+> [Tim Berners-Lee (1998): Realising the Full Potential of the Web](https://www.w3.org/1998/02/Potential.html)
 
 >  A good analogy for the development of the Internet is that of
-   constantly renewing the individual streets and buildings of a city,
-   rather than razing the city and rebuilding it. The architectural
-   principles therefore aim to provide a framework for creating
-   cooperation and standards, as a small "spanning set" of rules that
-   generates a large, varied and evolving space of technology.
-   - ftp://ftp.isi.edu/in-notes/rfc1958.txt
+> constantly renewing the individual streets and buildings of a city,
+> rather than razing the city and rebuilding it. The architectural
+> principles therefore aim to provide a framework for creating
+> cooperation and standards, as a small "spanning set" of rules that
+> generates a large, varied and evolving space of technology.
+>
+>   [RFC 1958: Architectural Principles of the Internet](https://datatracker.ietf.org/doc/html/rfc1958)
 
-> If we can make something decentralised, out of control, and of great simplicity, we must be prepared to be astonished at whatever might grow out of that new medium. https://www.w3.org/1998/02/Potential.html
+> In building cyberinfrastructure, the key question is not whether a problem is a “social” problem or a “technical” one. That is putting it the wrong way around. The question is whether we choose, for any given problem, a primarily social or a technical solution
+>
+> [Bowker, Baker, Millerand, and Ribes (2010): Toward Information Infrastructure Studies](https://doi.org/10.1007/978-1-4020-9789-8_5) {% cite bowkerInformationInfrastructureStudies2010 %}
 
-what's different about this? 
-
-- we're not describing a "new database system" but a way to make every "new database system" add functionality to the system rather than be independent of it.
-
-what are the goals of standardization?
-- external inspection
-- labor deduplication
-- increased access (and so it can't be complicated)
-- interoperability
-
-what are the traditional costs of standardization?
-- flexibility
-- learning curve
-
-central themes
-- gradual expansion/structured expansion. make the gradient between small-scale and wide-scale adoption shallow and long. don't try to make the 'one that fixes everything' but instead provide the schematic by which we might all work on fixing it together.
+> The critical issue is, how do actors establish generative platforms by instituting a set of control points acceptable to others in a nascent ecosystem? {% cite tilsonDigitalInfrastructuresMissing2010 %}
 
 Acknowledgements (make sure to double check spelling!!!):
 * Lauren E. Wool
@@ -65,35 +49,24 @@ Acknowledgements (make sure to double check spelling!!!):
 * metascience class for some of these ideas <3
 * mike for letting me always go rogue
 * os & avery for STS recs
+* add rest from presentation
 
-Add specific ethics section to introduction
-- we should not as scientists aspire to put all scientific knowledge in the hands of one of the largest, most abusive corporations on the planet.
-- we should not aspire to duplicate the platformization model where hundreds of startups compete to solve the same problem with little incentive for interoperability and every incentive for partial solutions that keep them in business. We whould not believe the best we can hope for is relying on subscriptions to 20 disjointed SaaS products as the fundament of human scientific knowledge.
-- dubious ethics are literally everywhere: https://datum.org/
-
-!! need 2 be clear that we're no longer talking about "datasets" anymore --- we're talking about referring to the data by what it is.
-
-!! when people have disabilities we make ramps, not bully them into climbing up the stairs. 
-
-!! have struggled with how to write/structure this, and so this order reflects the plausible order of adoption, and i'll try to call otu the nonlinear effects of the different components as we go. that is also to say do not be surprised if the first few steps feel basic, it'll take a few combos to really start the ride.
 
 # The State of Things
 
-## The Fragmentation of Systems Neuroscience
+## Infrastructuring what is Deinfrastructured
 
-[comment]: # Suppose, for drama's sake, scientists, untethered by an ethics board and illuminated only by the lightning in their dark and stormy castle laboratory[^1], gave Idealized Science[^2] a body. Not quite the Fisher-Price-nice single body pushed by Big Mono-Corporealism, but a churning sentient gas erupting at all surfaces with pseudopod nebulae of empirical deviations, fissile and pendulous, abandoned like the legs of a retreating starfish in the face of overwhelming counterevidence. The scientists note it doesn't move forwards, or grow, per se, but nibbles at the radioactive holograms billowing from vents on the floor of reality to resolve the latent paradoxes of its body. Like a ballerina it arcs out of balance on one toe into impossible shapes so that in its momentum the bundle of its limbs can return to the placid rest of first position.
+(initial sentence re: we use computers all day and it's really hard and takes up all of our time. make sure to specify for systems neuro.)
 
-[^1]: Come on, say it out loud, give the syllables the sinister weight they deserve for castle labs, "lah-BORE-ah-tore-ee"
+We work in technical islands that range from individual researchers, to labs, consortia, and at their largest a few well-funded organizations. Our knowledge dissemination systems are as nimble as the static pdfs and ephemeral conference talks that they have been for decades (save for the godforsaken Science Twitter that we all correctly love to hate). Experimental instrumentation except for that at the polar extremes of technological complexity or simplicity is designed and built custom, locally, and on-demand. Software for performing experiments is a patchwork of libraries that satisfy some of the requirements of the experiment, sewn together by some uncommented script written years ago by a grad student who left the lab long-since. The technical knowledge to build both instrumentation and software is fragmented and unavailable as it sifts through the funnels of word-limited methods sections and never-finished documentation. And O Lord Let Us Pray For The Data, born into this world without coherent form to speak of, indexable only by passively-encrypted notes in a paper lab notebook, dressed up for the analytical ball once before being mothballed in ignominy on some unlabeled external drive. 
 
-[^2]: Given their experience as zookeepers of Idealized Science, experiments with Actual Science have been indefinitely postponed.
+In sum, all the ways our use and relations with computers are idiosyncratic and improvised are not isolated, but a symptom of a broader deficit in **digital infrastructure** for science. The yawning mismatch between our ambitions of what digital technology *should* allow us to do and the state of digital infrastructure hints at the magnitude of the problem: the degree to which the symptoms of digital deinfrastructuring define the daily reality of science is left as an exercise to the reader. 
 
-At all scales, systems neuroscience is fragmented, and its movement as a unified body is mostly a trick of the light, where only the localized patches cohere. We work in technical islands that range from individual researchers, to labs, consortia, and at their largest a few well-funded organizations. Our knowledge dissemination systems are as nimble as the static pdfs and ephemeral conference talks that they have been for decades (save for the godforsaken Science Twitter that we all correctly love to hate). Experimental instrumentation except for that at the polar extremes of technological complexity or simplicity is designed and built custom, locally, and on-demand. Software for performing experiments is a patchwork of libraries that satisfy some of the requirements of the experiment, sewn together by some uncommented script written years ago by a grad student who left the lab long-since. The technical knowledge to build both instrumentation and software is fragmented and unavailable as it sifts through the funnels of word-limited methods sections and never-finished documentation. And O Lord Let Us Pray For The Data, born into this world without coherent form to speak of, indexable only by passively-encrypted notes in a paper lab notebook, dressed up for the analytical ball once before being mothballed in ignominy on some unlabeled external drive. 
+If the term infrastructure conjures images of highways and plumbing, then surely digital infrastructure would be flattered at the association. By analogy they illustrate many of its promises and challenges: when designed to, it can make practically impossible things trivial, allowing the development by cities by catching water where it lives and snaking it through tubes and tunnels sometimes directly into your kitchen. Its absence or failure is visible and impactful, as in the case of power outages. There is no guarantee that it "optimally" satisfies some set of needs for the benefit of the greatest number of people, as in the case of the commercial broadband duopolies. It exists not only as its technical existence, but also as an embodied and shared set of social practices, and so even when it does exist its final form is not inevitable or final; as in the case of bottled water producers competing with municipal tap water on a behavioral basis despite being dramatically less efficient and most costly. Finally it is not socially or ethically neutral, where the impact of failure to build or maintain it is not equally shared, as in the case of the racially disproportionate impact of the Flint, Michigan water crisis {% cite michicancivilrightscommissionFlintWaterCrisis2017 %}. 
 
-Rather than a screedy airing of unrelated dirty laundry, I argue that these problems have a shared cause: the state of our **infrastructure**. Far from the siren song it sounds in my ears, many probably hear infrastructure and think "oh like roads and water and stuff, \*yawn\* *boring!"* (and I ask the rest to permit me the rhetorical strawperson for a moment).
 
-**No! Not Boring! Magic!** We go and get water where it lives and bring it snaking through a magnificent labyrinth of pipes filters and pumps *directly into your house.* Sometimes multiple places in your house, wherever you want it! And it's practically *free*[^inus]. People pay $9 a month for Netflix, how much do you think you would pay a for-profit company for a *water subscription?* **Infrastructure makes formerly impossible things so trivial you forget about them.**
 
-[^inus]: In this paragraph I am of course only referring to many parts of the urbanized United States (with many exceptions) to illustrate the luxury of infrastructure. Water availability is a global humanitarian crisis increasingly exacerbated by climate change, confoundingly also caused by other forms of infrastructure, which is why it's essential to think about the unintended consequences and ethical implications of the kind of infrastructure we build.
+
 
 Or, maybe a more formal definition:
 
@@ -272,7 +245,7 @@ I won't attempt a derivation of a definition of decentralized systems from base 
 
 * **Integrate with what exists** - At its advent, several different institutions and universities had already developed existing network infrastructures, and so the "top level goal" of the Internet Protocol was to "develop an effective technique for multiplex utilization of existing interconnected networks," and "come to grips with the problem of integrating a number of separately administered entities into a common utility" {% cite clarkDesignPhilosophyDARPA1988 %}. As a result, IP was developed as a 'common language' that could be implemented on any hardware, and upon which other, more complex tools could be built. This is also a cultural practice: when the system doesn't meet some need, one should try to extend it rather than building a new, separate system --- and if a new system is needed, it should be interoperable with those that exist.
 * **Empower the end-user** - Becauase IP was initially developed as a military technology by DARPA, a primary design constraint was survivability in the face of failure. The model adopted by internet architects was to move as much functionality from the network itself to the end-users of the network --- rather than the network itself guaranteeing a packet is transmitted, the sending computer will do so by requiring a response from the recipient.  For infrastructure, we should make tools that don't require a central team of developers to maintain, a central server-farm to host data, or a small group of people to govern. Whenever possible, data, software, and hardware should be self-describing, so one needs minimal additional tools or resources to understand and use it. 
-* **Modularity is Flexibility** - Building each component once, and once only requires that it "knows" about as few other parts of the system as possible. Once a component is built well, it can be reused and repurposed in contexts not imagined in its original design. Modularity is also critical for large-scale use: partial adoption partially captures development labor. Allowing users to gradually incorporate the pieces of a system into their existing infrastructure also lowers the barriers of high transitional costs to eventual complete adoption. A reciprocal principle to modularity is "the test of independent invention", or "If someone else had already invented your system, would theirs work with yours?" {% cite berners-leePrinciplesDesign1998 %}. In other words, in addition to the system itself being modular, it should also be designed so there is some sensible means for it to be integrated into some yet-unspecified larger project. The machine needs to have knobs.
+* **Modularity is Flexibility** - Building each component once, and once only requires that it "knows" about as few other parts of the system as possible. Once a component is built well, it can be reused and repurposed in contexts not imagined in its original design. Modularity is also critical for large-scale use: partial adoption partially captures development labor. Allowing users to gradually incorporate the pieces of a system into their existing infrastructure also lowers the barriers of high transitional costs to eventual complete adoption. Modularity applies at all scales -- the individual components of eg. an analytical framework should be independent from one another, but so too should the form of the analytical framework from the means of sharing the data it analyzes. A reciprocal principle to modularity is "the test of independent invention", or "If someone else had already invented your system, would theirs work with yours?" {% cite berners-leePrinciplesDesign1998 %}. In other words, in addition to the system itself being modular, it should also be designed so there is some sensible means for it to be integrated into some yet-unspecified larger project. The machine needs to have knobs.
 * **Embrace Heterogeneity** - Distributed systems need to anticipate unanticipated uses. Rather than a prescribed set of supported hardware, affordance needs to be made such that there is a clear way to extend the system to incorporate new function {% cite carpenterRFC1958Architectural1996 %}.
 * **Scalability is The Metric** - The system needs to have minimal barriers to use such that it can be deployed by as many users as possible --- scale is not just a design principle, but an independent objective and means of valuation for distributed systems. Logic or functionality that can only be used by a specific set of users breaks the system. Hand in hand with embracing heterogeneity, infrastructure needs to be able to be adopted by users with a minimal set of assumptions about their resources, organization, or expertise.
 
@@ -455,7 +428,11 @@ The fundamental tradeoff between centralized and decentralized database systems 
 
 !! federated systems let us bridge the gap between localized server technology like datajoint and mass server technology like databases. If you let people federate at a local scale to share data between an institute, a consortium, etc. and then let those things scale to federate together you have a plausible means by which slowly a generalized database system could be accumulated over time.
 
+!! lots of times this has been proposed before {% cite simaEnablingSemanticQueries2019 djokic-petrovicPIBASFedSPARQLWebbased2017 hasnainBioFedFederatedQuery2017 %}
+
 ## Shared Tools
+
+!! talk about Plugin Oriented Programming (pypi POP page) as a design philosophy
 
 If we're building infrastructure to allow us to build on each other's labor by sharing data, why not do the same for the tools that analyze and collect the data while we're at it? The benefits of distributed infrastructure that allow us to preserve our collected labor and knowledge compound when applied in multiple domains. The benefits of shared data, analytical, and experimental infrastructure are far more than the sum of their parts. Each is useful on its own, but as additional components of the system are developed they make the incentive to develop the rest even stronger <- this para is dogshit. rewrite with a clear head. 
 
@@ -672,6 +649,8 @@ Consider the examples posed in {% cite shethFederatedDatabaseSystems1990 %}
 ### Linked communication platform 
 
 We all hate science twitter, why does it exist?
+
+> Though frequently viewed as a product to finish, it is dynamic ontologies with associated process-building activities designed, developed, and deployed locally that will allow ontologies to grow and to change. And finally, the technical activity of ontology building is always coupled with the background work of identifying and informing a broader community of future ontology users. {% cite bowkerInformationInfrastructureStudies2010 %}
 
 good science community infra
 - https://www.zooniverse.org

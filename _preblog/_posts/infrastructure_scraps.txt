@@ -1,0 +1,53 @@
+
+**I want to be exceedingly clear that I am not shaming anyone for how they do science. I am trying to take effectively the opposite position of those people in the open science community that cast shame and suspicion on people for not passing some purity test. Doing open science is hard because we're lacking a lot of tools that would make it easy, and the social and community structures that make it rewarding --- and shaming people works in the opposite direction. Open science shouldn't be about passing some checklist of tests to become holier than thou. The fundamental motivations of open science should be caring about other people: caring about people being able to understand the world, caring about other people not wasting their time, cooperating with each other to do something massive and impossible. Relatedly i am not talking shit about anyone's work!!! Anytime I am describing some criticising some element of something it is because i have been inspired by and learned from it!!! This is about articulating a positive vision!!!**
+
+**start with discussion of what infrastructure is -- making things that seem impossible routine. We haven't addressed these problems after like a decade of writing becasue we haven't identified the real problems nor been bold enough to act. We can move in tiptoe steps but gradual change without a vision is pointless. We need to describe what holds us back and what needs to exist, and the act of converting that into gradual steps is all the work in between.**
+
+A lot of this is happening and being worked on!!! this document is an architecture for the whole system. providing a reason to develop one thing vs. another, trying to point devs in one direction but also make users & funders aware of what is possible & the conversations that happen in nerd circles
+
+what's different about this? 
+
+- we're not describing a "new database system" but a way to make every "new database system" add functionality to the system rather than be independent of it.
+- sustainability and community ownership - we're not talking about giving 10 people jobs and then when the funding dries up the system breaks. we're talking about precisely the opposite: develping infrastructure that is resistant to capture by a small number of people, and resistant to destruction by lack of support from powerful institutions.
+
+what are the goals of standardization?
+- external inspection
+- labor deduplication
+- increased access (and so it can't be complicated)
+- interoperability
+
+what are the traditional costs of standardization?
+- flexibility
+- learning curve
+
+central themes
+- gradual expansion/structured expansion. make the gradient between small-scale and wide-scale adoption shallow and long. don't try to make the 'one that fixes everything' but instead provide the schematic by which we might all work on fixing it together.
+
+
+Add specific ethics section to introduction
+- we should not as scientists aspire to put all scientific knowledge in the hands of one of the largest, most abusive corporations on the planet.
+- we should not aspire to duplicate the platformization model where hundreds of startups compete to solve the same problem with little incentive for interoperability and every incentive for partial solutions that keep them in business. We whould not believe the best we can hope for is relying on subscriptions to 20 disjointed SaaS products as the fundament of human scientific knowledge.
+- dubious ethics are literally everywhere: https://datum.org/
+- empowerment not control -- technologies can easily be used to control, see social media and attention hijacking. we should not develop technologies that coerce people to behave in a particular way, but tools that empower them to do what they would otherwise want to do. {% cite tilsonDigitalInfrastructuresMissing2010 %}
+
+> The critical issue is, how do actors establish generative platforms by instituting a set of control points acceptable to others in a nascent ecosystem? The notion of a control point involves defining and controlling a set of connections in a sociotechnical system that largely determine the behaviors and constraints for other elements in the system. The control point concept captures both aspects of control centralization/decentralization of certain rights and access to “stipulate” specific behaviors—and thus provides a finer granularity for discussing new paradoxical regimes of control. {% cite tilsonDigitalInfrastructuresMissing2010 %}
+
+> the new information infrastructure is fundamentally about distribution. Consider the long history of European development over the past 1500 years. When trade was difficult and scarce, community centers were built up close to resource reserves: coal, water, arable land. With the first industrial revolution of the eleventh century, the use of water power (windmills) and the plough created conditions where cities could grow away from this cluster of resources. With the second industrial revolution (the eighteenth and nineteenth centuries), global resource distribution became possible through new communication and transportation infrastructures. Now, over the past 200 years, our emergent information society has (gradually) moved to a further form of distribution where complex social, organizational, and knowledge work can be practiced on a global scale 
+
+
+
+!! need 2 be clear that we're no longer talking about "datasets" anymore --- we're talking about referring to the data by what it is.
+
+!! when people have disabilities we make ramps, not bully them into climbing up the stairs. 
+
+!! have struggled with how to write/structure this, and so this order reflects the plausible order of adoption, and i'll try to call otu the nonlinear effects of the different components as we go. that is also to say do not be surprised if the first few steps feel basic, it'll take a few combos to really start the ride.
+
+[comment]: # Suppose, for drama's sake, scientists, untethered by an ethics board and illuminated only by the lightning in their dark and stormy castle laboratory[^1], gave Idealized Science[^2] a body. Not quite the Fisher-Price-nice single body pushed by Big Mono-Corporealism, but a churning sentient gas erupting at all surfaces with pseudopod nebulae of empirical deviations, fissile and pendulous, abandoned like the legs of a retreating starfish in the face of overwhelming counterevidence. The scientists note it doesn't move forwards, or grow, per se, but nibbles at the radioactive holograms billowing from vents on the floor of reality to resolve the latent paradoxes of its body. Like a ballerina it arcs out of balance on one toe into impossible shapes so that in its momentum the bundle of its limbs can return to the placid rest of first position.
+
+[^1]: Come on, say it out loud, give the syllables the sinister weight they deserve for castle labs, "lah-BORE-ah-tore-ee"
+
+[^2]: Given their experience as zookeepers of Idealized Science, experiments with Actual Science have been indefinitely postponed.
+
+As a glib first pass, *When designed and implemented to do so, infrastructure can make makes impossible things so trivial  We go and get water where it lives and bring it snaking through a magnificent labyrinth of pipes filters and pumps *directly into your house.* Sometimes multiple places in your house, wherever you want it! And it's practically *free*[^inus]. People pay $9 a month for Netflix, how much do you think you would pay a for-profit company for a *water subscription?* **Infrastructure makes formerly impossible things so trivial you forget about them.**
+
+[^inus]: In this paragraph I am of course only referring to many parts of the urbanized United States (with many exceptions) to illustrate the luxury of infrastructure. Water availability is a global humanitarian crisis increasingly exacerbated by climate change, confoundingly also caused by other forms of infrastructure, which is why it's essential to think about the unintended consequences and ethical implications of the kind of infrastructure we build.
