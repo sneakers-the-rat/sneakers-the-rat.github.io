@@ -51,3 +51,45 @@ Add specific ethics section to introduction
 As a glib first pass, *When designed and implemented to do so, infrastructure can make makes impossible things so trivial  We go and get water where it lives and bring it snaking through a magnificent labyrinth of pipes filters and pumps *directly into your house.* Sometimes multiple places in your house, wherever you want it! And it's practically *free*[^inus]. People pay $9 a month for Netflix, how much do you think you would pay a for-profit company for a *water subscription?* **Infrastructure makes formerly impossible things so trivial you forget about them.**
 
 [^inus]: In this paragraph I am of course only referring to many parts of the urbanized United States (with many exceptions) to illustrate the luxury of infrastructure. Water availability is a global humanitarian crisis increasingly exacerbated by climate change, confoundingly also caused by other forms of infrastructure, which is why it's essential to think about the unintended consequences and ethical implications of the kind of infrastructure we build.
+
+
+#### Bittorrent Interlude
+
+<details markdown="1"><summary>
+  Click to expand/collapse the ~bittorrent interlude~
+</summary>
+
+In a traditional server/client model, uploading and downloading files is straightforward: one computer transfers the whole thing to another sequentially. Bittorrent, as a peer-to-peer network, is designed so that everyone that wants and has a file sends pieces of it to each other. 
+
+We can walk through an example. In each of the following images, each of the circles represents a computer. The clusters of circles on the left side are uploading and downloading from a traditional server, while those on the right are downloading as part of a bittorrent "swarm." Grids of colored squares represent a whole file, and each of the colored squares is just an arbitrary piece of that file.
+
+Say you're an enterprising circle and you just collected the Single Best Square Data file you've ever collected. You want to share that with your community! In a server/client world, you spend the afternoon uploading the entire thing to the server. Bittorrent instead works with .torrent files that are small \~KB summaries[^hash] of a file or files that are used to tell people you have it. .torrent files are uploaded to sites called [trackers](https://en.wikipedia.org/wiki/BitTorrent_tracker), along with some metadata and a description that lets other people find them.
+
+[^hash]: Hashes
+
+![Uploading A file](/blog/assets/images/torrent/0_upload-01.png)
+
+Now someone else wants to download the file. A typical server has a lot more bandwidth than a home internet connection, so let's say it's capable of sending two pieces (small colored boxes) per some arbitrary time between these images. To download via bittorrent, one first downloads the .torrent file, and then asks the tracker to connect them to anyone else who also has it. You (yes you!) can only send one piece at a time with your measly internet connection :(. The person receiving the file compares the piece you sent to the summary in the .torrent file, and if it matches, keeps it.
+
+![One person downloading a file](/blog/assets/images/torrent/1_download-01.png)
+
+Soon another person wants your sweet sweet Square Data. The server can only transmit two pieces at a time, and so it has to split them between the two downloaders. In the torrent swarm, you have the whole file, but now the first downloader has two pieces of the file, and so both of you are able to send data to the new downloader. The  Torrents don't have to be transferred in sequential order, and so you send a non-redundant pieces.....
+
+![Two people downloading a file](/blog/assets/images/torrent/2_download-01.png)
+![Six people downloading a file](/blog/assets/images/torrent/3_download-01.png)
+![Six people downloading a file](/blog/assets/images/torrent/4_download-01.png)
+
+finish this later...
+</details>
+
+
+
+----------------
+
+
+Consider the examples posed in {% cite shethFederatedDatabaseSystems1990 %}
+
+> Consider an attribute MEAL-COST of relation RESTAURANT in database DBl that describes the average cost of a meal per person in a restaurant without service charge and tax. Consider an attribute by the same name (MEAL-COST) of relation BOARDING in database DB2 that describes the average cost of a meal per person including service charge and tax. Let both attributes have the same syntactic properties. Attempting to compare attributes DBl.RESTAURANTS.MEALCOST and DBS.BOARDING.MEALCOST is misleading because they are semantically heterogeneous. Here the heterogeneity is due to differences in the definition (i.e., in the meaning) of related attributes [Litwin and Abdellatif 19861.
+> 
+> As a second example, consider an attribute GRADE of relation COURSE in database DBl. Let COURSE.GRADE describe the grade of a student from the set of values {A, B, C, D, FJ. Consider another attribute SCORE of relation CLASS in database DB2. Let SCORE denote a normalized score on the scale of 0 to 10 derived by first dividing the weighted score of all exams on the scale of 0 to 100 in the course and then rounding the result to the nearest half-point. DBl.COURSE.GRADE and DBB.CLASS.SCORE are semantically heterogeneous. Here the heterogeneity is due to different precision of the data values taken by the related attributes. For example, if grade C in DBl.COURSE.GRADE corresponds to a weighted score of all exFederated Database Systems l 187 ams between 61 and 75, it may not be possible to correlate it to a score in DB2.CLASS.SCORE because both 73 and 77 would have been represented by a score of 7.5.
+
