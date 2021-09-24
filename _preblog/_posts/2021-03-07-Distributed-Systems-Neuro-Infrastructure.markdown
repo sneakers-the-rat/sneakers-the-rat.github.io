@@ -91,7 +91,7 @@ Impacts on the **daily experience** of researchers include:
 
 * A prodigious duplication and dead-weight loss of labor as each lab, and sometimes each person within each lab, will reinvent basic code, tools, and practices from scratch. Literally it is the inefficiency of the [Harberger's triangle](https://en.wikipedia.org/wiki/Deadweight_loss#Harberger's_triangle) in the supply and demand system for scientific infrastructure caused by inadequate supply. Labs with enough resources are forced to pay from other parts of their grants to hire professional programmers and engineers to build the infrastructure for their lab (and usually their lab or institute only), but most just operate on a purely amateur basis. Many PhD students will spend the first several years of their degree re-solving already-solved problems, chasing the tails of the wrong half-readable engineering whitepapers, in their 6th year finally discovering the technique that they actually needed all along. That's not an educational or training model, it's the effect of displacing the undone labor of unbuilt infrastructure on vulnerable graduate workers almost always paid poverty wages.
 * At least the partial cause of the phenomenon where "every scientist needs to be a programmer now" as people who aren't particularly interested in being programmers --- which is *fine* and *normal* --- need to either suffer through code written by some other unlucky amateur or learn an entire additional discipline in order to do the work of the one they chose. Because there isn't more basic scientific programming infrastructure, everyone needs to be a programmer.
-* A great deal of pain and alienation for early-career researchers (ECRs) not previously trained in programming before being thrown in the deep end. Learning data hygeine practices like backup, annotation, etc. "the hard way" through some catastrophic loss is accepted myth in much of science. At some scale all the very real and widespread pain, and guilt, and shame felt by people who had little choice but to reinvent their own data management system must be recognized as an infrastructural, rather than a personal problem.
+* A great deal of pain and alienation for early- career researchers (ECRs) not previously trained in programming before being thrown in the deep end. Learning data hygeine practices like backup, annotation, etc. "the hard way" through some catastrophic loss is accepted myth in much of science. At some scale all the very real and widespread pain, and guilt, and shame felt by people who had little choice but to reinvent their own data management system must be recognized as an infrastructural, rather than a personal problem.
 * The high cost of "openness" and the dearth of data transparency. It is still rare for systems neuroscience papers to publish the full, raw data along with all the analysis code, often because (in addition to the extraordinarily meagre incentives to do so) the data *and* analysis code are both completely homebrew and often omitted just due to the labor of cleaning it or the embarassment of sharing it[^4]. The "Open science" movement, roughly construed, has made a holy mess of the social climate around openness, publicly shaming "closed scientists" on leaderboards and only occasionally recalling the relative luxury of labor or expertise to become "open." "Openness" is not a uniform or universal goal for all science, but for those for whom it makes sense, we need to provide the appropriate tooling before insisting on a change in scientific norms. We can't expect data transparency from researchers while it is still so *hard.*
 
 
@@ -175,13 +175,13 @@ A lot of what I will describe here is relatively new! Some ideas are very old, l
 
 The constraints posed by the structure of systems neuroscience as a discipline are of course echos and elaborations of larger constraints in the system of scientific infrastructure production. 
 
-### Incentives for Isolation
+### Incentivized Fragmentation
 
 The incentive systems in science are complex, but tend to reward the production of many isolated, single-purpose software packages rather than cumulative work on shared infrastructure. The primary means of evaluation for a scientist is academic reputation, primarily operationalized by publications, but a software project will yield a single paper (if any at all). Traditional publications are static units of work that are "finished" and frozen in time, but software is never finished: the thousands of commits needed to maintain and extend the software are formally not a part of the system of academic reputation. 
 
-Shoehorning reputational rewards through traditional scientific publications has three immediate consequences: 1) Scientists are incentivized to make new, independent software that can be independently published, rather than integrating their work to extend the functionality of existing software. Howison & Herbsleb described this dynamic in the context of BLAST {% cite howisonIncentivesIntegrationScientific2013 %}, and one can browse the papers that cite the DeepLabCut {% cite mathisDeepLabCutMarkerlessPose2018a %} to find hundreds of downstream projects that make various extensions and improvements that are not integrated into the main library. 2) After publication, scientists have little incentive to maintain software outside of the domains in which the primary contributors use it (to satisfy reputational incentives by publishing in their own discipline), so outside of the most-used libraries most scientific software is brittle and difficult to use {% cite mangulImprovingUsabilityArchival2019 kumarBioinformaticsSoftwareBiologists2007 %}. 3) Since the reputational value of a publication depends on its placement within a journal and number of citations (among other metrics), and citation practices for scientific software are far from uniform and universal, the incentive to write scientific software at all is relatively low compared to its near-universal use {% cite howisonSoftwareScientificLiterature2016 %}. 
+Shoehorning reputational rewards through traditional scientific publications has three immediate consequences: 1) Scientists are incentivized to make new, independent software that can be independently published, rather than integrating their work to extend the functionality of existing software. Howison & Herbsleb described this dynamic in the context of BLAST {% cite howisonIncentivesIntegrationScientific2013 %}, and one can browse the papers that cite the DeepLabCut {% cite mathisDeepLabCutMarkerlessPose2018a %} to find hundreds of downstream projects that make various extensions and improvements that are not integrated into the main library. 2) After publication, scientists have little incentive to maintain software outside of the domains in which the primary contributors use it (to satisfy reputational incentives by publishing in their own discipline), so outside of the most-used libraries most scientific software is brittle and difficult to use {% cite mangulImprovingUsabilityArchival2019 kumarBioinformaticsSoftwareBiologists2007 %}. 3) Since the reputational value of a publication depends on its placement within a journal and number of citations (among other metrics), and citation practices for scientific software are far from uniform and universal, the incentive to write scientific software at all is relatively low compared to its near-universal use {% cite howisonSoftwareScientificLiterature2016 %}.
 
-### Domain-specificity
+### Domain-Specific Silos
 
 When funding exists for scientific infrastructure development, it typically comes in the form of side effects from, or administrative supplements to research grants. The NIH describes as much in their Strategic Plan for Data Science {% cite NIH StrategicPlan2018 %}:
 
@@ -190,54 +190,79 @@ resources, most of them linked to research-grant mechanisms that prioritized inn
 
 The National Library of Medicine within the NIH currently lists 122 separate databases in its [search tool](https://eresources.nlm.nih.gov/nlm_eresources/), each serving a specific type of data for a specific research community. Though their current funding priorities signal a shift away from domain-specific tools, the rest of the scientific software system consists primarily of tools and data formats purpose-built for a relatively circumscribed group of scientists without any framework for their integration. Every field has its own challenges and needs for software tools, but there is little incentive to build tools that serve as generalized frameworks to integrate them. 
 
-!! also we don't learn good lessons from neighboring disciplines, and especially don't learn anything from people who are outside academia or formal software engineering.
-
 
 ### "The Long Now" of Immediacy vs. Idealism
-
-!! tension between immediacy of needs with longevity of project
-!! timescales of development, what if the infrastructure goes obsolete??
 
 Digital infrastructure development takes place at multiple timescales simultaneously --- from the momentary work of implementing it, through longer timescales of planning, organization, and documenting to the imagined indefinite future of its use --- what Ribes and Finholt call "The Long Now. {% cite ribesLongNowTechnology2009 %}" Infrastructural projects constitutively need to contend with the need for immediately useful results vs. general and robust systems; the need to involve the effort of skilled workers vs. the uncertainty of future support; the  balance between stability with mutability; and so on. The tension between hacking something together vs. building something sustainable for future use is well-trod territory in the hot-glue and exposed wiring of systems neuroscience rigs.
 
 Deinfrastructuring divides the incentives and interests of senior and junior researchers. Established researchers face little pressure to improve the state of infrastructure, as (very crudely) their primary incentives are to push enough publications through the door to be able to secure the next round of funding to keep their lab afloat. Their time preference is very short: hack it together, get the paper out, we'll fix it later.
 
-!! ECRs are tasked with develping the tools, often interested in developing tools they'll be able to use throughout their careers, but between the pressure to establish their reputation with publications rarely have the time to develop something fully. As a consequence, a lot of software tools are developed by ECRs with no formal software training, contributing to the brittleness of scientific software and the low rates of adoption of best practices {% cite altschulAnatomySuccessfulComputational2013 %}.
+ECRs are tasked with develping the tools, often interested in developing tools they'll be able to use throughout their careers, but between the pressure to establish their reputation with publications rarely have the time to develop something fully. As a consequence, a lot of software tools are developed by ECRs with no formal software training, contributing to the brittleness of scientific software and the low rates of adoption of best practices {% cite altschulAnatomySuccessfulComputational2013 %}. Anecdotally, the constant need to produce software that *does something* in the context of scientific programming which largely lacks the institutional systems and expert mentorship needed for well-architected software means that some programmers *never* have a chance to learn best practices commonly accepted in software engineering.
 
-!! this is not just a problem of inexperienced software developers, however, and it is not always the case that a longer time preference is better -> lessons from semantic web incrementalism vs idealism.
+The problem of time horizon in development is not purely a product of inexperience, and a longer time horizon is not uniformly better. For an example, look no further than the history and cultural dynamics of the semantic web and linked data communities, revisted more fully in a moment as Scruffiness vs. Neatness. In the semantic web era, thousands of some of the most gifted programmers worked with an eye to the indefinite future, but the raw idealism and neglect of the pragmatic reality of the need for software to *do something* drove many to abandon the effort:
 
-!! The point here is that the constraints of scientific software development are always in the present, and to expand to longer timescales requires real work  --- and if software development isnt' rewarded, planning for a future of infrastructure certainly isn't.
+> But there was no *use* of it. I wasn't using any of the technologies for anything, except for things related to the technology itself. The Semantic Web is utterly inbred in that respect. The problem is in the model, that we create this metaformat, RDF, and *then* the use cases will come. But they haven't, and they won't. Even the genealogy use case turned out to be based on a fallacy. The very few use cases that there are, such as Dan Connolly's hAudio export process, don't justify hundreds of eminent computer scientists cranking out specification after specification and API after API.
+>
+> When we discussed this on the Semantic Web Interest Group, the conversation kept turning to how the formats could be fixed to make the use cases that I outlined happen. “Yeah, Sean's right, let's fix our languages!” But it's not the languages which are broken, except in as much as they are entirely broken: because it's the *mentality* of their design which is broken. You can't, it has turned out, make a metalanguage like RDF and then go looking for use cases. We thought you could, but you can't. It's taken eight years to realise.
+> {% cite palmerDitchingSemanticWeb2008 %}
 
-> Plans are a form of work. Carefully crafted, they involve substantial investments of time. Successful funding proposals require detailed, well-considered plans, while project evaluations often judge performance relative to stated plans. Yet at the same time, infrastructure projects find themselves having to maintain flexibility in the face of unstable funding situations, emerging technologies, or the requirements of their constituencies. {% cite ribesLongNowTechnology2009 %}
+Developing digital infrastructure must be both bound to fulfilling immediate needs and a sense of incrementalism as well as guided by a long-range vision. The technical and social lessons run in parallel: We need software that solves problems people actually have right now, but can flexibly support is eventual form. We need a long-range vision to know what kind of tools we should build and which we shouldn't, and we need to keep it in a tight loop with the always-changing needs of the people it supports. In short, to develop digital infrastructure we need to be *strategic.* To be strategic we need a *plan.* To have a plan we need to value planning as *work.* On this, Ribes and Finholt are instructive:
+
+> "On the one hand, I know we have to keep it all running, but on the other, LTER is about long-term data archiving. If we want to do that, we have to have the time to test and enact new approaches. But if we’re working on the to-do lists, we aren’t working on the tomorrow-list" (LTER workgroup discussion 10/05).
+>
+> The tension described here involves not only time management, but also the differing valuations placed on these kinds of work. The implicit hierarchy places scientific research first, followed by deployment of new analytic tools and resources, and trailed by maintenance work. [...] While in an ideal situation development could be tied to everyday maintenance, in practice, maintenance work is often invisible and undervalued. As Star notes, infrastructure becomes visible upon breakdown, and only then is attention directed at its everyday workings (1999). Scientists are said to be rewarded for producing new knowledge, developers for successfully implementing a novel technology, but the work of maintenance (while crucial) is often thankless, of low status, and difficult to track. *How can projects support the distribution of work across research, development, and maintenance?* {% cite ribesLongNowTechnology2009 %}
 
 
 {% cite gawerBridgingDifferingPerspectives2014 %}
 
 
 
-### Platforms and the Profit Motive
-
-Two related problems in platform thinking: thinking about a specific *one thing* that serves a particular community vs thinking about a federated type of thing that's capable of solving a lot of different things.
-
-When this is done in the private domain it can serve to slice off an individual thing and make it easy but don't solve it so people can continue to seek rent from it.
-
 ### "Neatness" vs "Scruffiness"
 
+Closely related to the tension between "Now" and "Later" is the tension between "Neatness" and "Scruffiness." Lindsay Poirier traces its reflection in the semantic web community as the way that differences in "thought styles" result in different "design logics"  {% cite poirierTurnScruffyEthnographic2017 %}. On the question of how to develop technology for representing the ontology of the web -- the system of terminology and structures with which everything should be named -- there were (very roughly) two camps. The "neats" prioritized consistency, predictability, uniformity, and coherence -- a logically complete and formally valid System of Everything. The "scruffies" prioritized local systems of knowledge, expressivity, "believing that ontologies will evolve organically as everyday webmasters figure out what schemas they need to describe and link their data. {% cite poirierTurnScruffyEthnographic2017 %}" 
 
+Aaron Swartz put it the way he did:
+
+> Instead of the “let’s just build something that works” attitude that made the Web (and the Internet) such a roaring success, they brought the formalizing mindset of mathematicians and the institutional structures of academics and defense contractors. They formed committees to form working groups to write drafts of ontologies that carefully listed (in 100-page Word documents) all possible things in the universe and the various properties they could have, and they spent hours in Talmudic debates over whether a washing machine was a kitchen appliance or a household cleaning device. 
+> 
+> With them has come academic research and government grants and corporate R&D and the whole apparatus of people and institutions that scream “pipedream.” And instead of spending time building things, they’ve convinced people interested in these ideas that the first thing we need to do is write standards. (To engineers, this is absurd from the start—standards are things you write after you’ve got something working, not before!) {% cite swartzAaronSwartzProgrammable2013 %}
+
+The outcomes of this cultural rift are subtle, but the broad strokes are clear: the "scruffies" diverged into what became called the "linked data" community whose technology has found broad use across information sciences, library sciences, and other applied domains, while the vision of a totalizing and logically consistent semantic web has largely faded into obscurity. One developer involved with semantic web technologies (who requested not be named), captured the present situation in their description of a still-active developer mailing list: 
+
+> I think that some people are completely detached from practical applications of what they propose. [...] I could not follow half of the messages. these guys seem completely removed from our plane of existence and I have no clue what they are trying to solve.
+
+This division in thought styles generalizes across domains of infrastructure, though outside of the linked data and similar worlds the dichotomy is more frequently between "neatness" and "people doing whatever" -- with integration and interoperability becoming nearly synonymous with standardization. 
+
+
+The problem with making generalized infrastructure around an exacting vision of reality is that people have to dramatically restructure their vision of reality...
 
 BEADL et al.
 
 Also differences between quantitative and qualitative research {% cite kornEInfrastructuresResearchCollaboration2017 %}
 
+### Taped-on Interfaces: Open-Loop User Testing
+
+The point of most active competition in many domains of commercial software is the user interface and experience (UI/UX), and to compete software companies will exhaustively user-test and refine them with pixel precision to avoid any potential customer feeling even a thimbleful of frustration. Scientific software development is largely disconnected from usability testing, as what little support exists is rarely tied to it. This, combined with the above incentives for developing new packages -- and thus reduplicating the work of interface development -- and the preponderance of semi-amateurs make it perhaps unsurprising that most scientific software is hard to use!
+
+!! expand the notion of interface to also include APIs, the ability to use as well as integrate software. principle of least power.
+
 
 ### Sustainability and Neglect of Community Systems
+
+### Platforms, Industry Capture, and the Profit Motive
+
+Two related problems in platform thinking: thinking about a specific *one thing* that serves a particular community vs thinking about a federated type of thing that's capable of solving a lot of different things.
+
+When this is done in the private domain it can serve to slice off an individual thing and make it easy but don't solve it so people can continue to seek rent from it.
+
+
 
 ### Protection of Institutional and Economic Power
 
 entrenched institutions like the journal system, but also PIs and etc. that were socialized in the current system and benefit from it -- dissolving the means of scientific communication and democratizing access to state of the art in scientific tooling is in some ways a direct attack on the class of researchers that can place a Nature paper and make their perspective the dominant one overnight because they're some of the very few people capable of performing the experiments. 
 
 
-## Whose Job is This? - The Ivies, Consortia, and "Most of Us"
+## Whose Job is Infrastructure? - The Ivies, Institutes, Consortia, and "The Rest of Us"
 
 The initial picture I painted of the state of Systems Neuroscience describes what I, in my limited exposure to the broader field, think might be typical for "most of us." There are admirable efforts to standardize on tools and realize "meso-scale collaboration" {% cite mainenBetterWayCrack2016 %}, and even for those that are not the experience of infrastructure can vary dramatically by institution. To investigate the constraints and circumstances of infrastructure development, we can examine the different domains of contact researchers have with organized digital technology.
 
