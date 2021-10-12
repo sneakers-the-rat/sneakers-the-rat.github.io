@@ -17,7 +17,10 @@
     <link rel="stylesheet" href="stylesheets/index.css">
     <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100i" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script
+              src="https://code.jquery.com/jquery-3.6.0.min.js"
+              integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+              crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -58,7 +61,14 @@
             <a href="http://www.cutercounter.com/" target="_blank"><img src="http://www.cutercounter.com/hits.php?id=gooxqq&nd=6&style=55" border="0" alt="website counter"></a>
             <!-- End of CuterCounter Code -->
         </div>
+        <label class="switch" style="position:fixed;bottom:10px;">
+          <input type="checkbox" onclick="toggleRipple()" id="rippleswitch">
+          <span class="slider round"></span>
+          <span style="left:70px;position:absolute;">RIPPLE MODE?</span>
+        </label>
     </div>
+        <script type="text/javascript" src="js/jquery.ripples.js"></script>
+    <script type="text/javascript" src="js/start_ripple.js"></script>
 </body>
 
 </html>
