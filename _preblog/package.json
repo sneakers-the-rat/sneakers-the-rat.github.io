@@ -23,6 +23,7 @@
   "dependencies": {
     "aos": "^2.2.0",
     "jquery": ">=3.3.0",
+    "node-sass": "^6.0.1",
     "salvattore": "^1.0.9"
   },
   "devDependencies": {
@@ -38,7 +39,7 @@
     "gulp-clean-css": "^3.9.0",
     "gulp-eslint": "^6.0.0",
     "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.1.0",
+    "gulp-sass": ">=3.1.0",
     "gulp-stylelint": "^13.0.0",
     "gulp-uglify": "^3.0.2",
     "gulp-zip": "^4.0.0",

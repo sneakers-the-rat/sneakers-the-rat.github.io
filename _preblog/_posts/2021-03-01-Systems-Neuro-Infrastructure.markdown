@@ -12,6 +12,8 @@ tags:
   - infrastructure
 ---
 
+<div style="background-color:#ffcccc;padding:20px;border:1px red solid;"><h1>Note:</h1> This was something I wrote hastily a long time ago, and my thinking has *dramatically changed* since this was written. I am keeping it around for historical reasons, to remind myself of growth. A fuller manuscript is forthcoming :) -jonny 21-10-14</div>
+
 # We Would Run A Factory Into The Ground
 
 ## "Neuroscientists Probably Have Servers, Right?"
