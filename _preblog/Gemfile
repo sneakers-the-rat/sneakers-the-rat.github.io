@@ -31,3 +31,7 @@ gem 'pygments.rb'
 gem 'jekyll-toc'
 
 gem "jekyll-scholar", "~> 5.16"
+
+gem "kramdown-parser-gfm", "~> 1.1"
+
+gem "webrick", "~> 1.7"
