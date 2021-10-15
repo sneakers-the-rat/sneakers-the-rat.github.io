@@ -199,6 +199,7 @@ Once you submit your request...
 * [National Security Archive](https://nsarchive.gwu.edu/)
 * [FOIA.wiki](https://foia.wiki/wiki/Main_Page)
 * Not really public records or FOIA, but a lot of government data is on [data.gov](https://www.data.gov/)
+* [Nonprofit 990 Forms](https://projects.propublica.org/nonprofits/) - eg. the [UO Foundation](https://projects.propublica.org/nonprofits/organizations/936015767)
 
 ## Oregon & UO Records Sources
 
