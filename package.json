@@ -1,5 +1,38 @@
 {
+  "name": "sneakers-the-rat.github.io",
+  "version": "1.0.0",
+  "description": "Jonny Saunders - Internet Website",
+  "main": "_src/index/index.js",
+  "repository": "https://github.com/sneakers-the-rat/sneakers-the-rat.github.io.git",
+  "author": "sneakers-the-rat <JLSaunders987@gmail.com>",
+  "license": "MPL-2.0",
+  "private": false,
+  "scripts": {
+    "start": "concurrently -k -n \"WEBPACK,JEKYLL,BLOG\" -c \"bgBlue.bold,bgRed.bold,bgGreen.bold\" \"npm run start_wp\" \"npm run start_jk\" \"npm run start_blog\"",
+    "build": "npm run build_wp && npm run build_jk",
+    "start_wp": "webpack -c ./_config/webpack.dev.js --mode development",
+    "start_jk": "bundle exec jekyll serve --livereload --incremental --profile",
+    "start_blog": "cd blog && bundle exec jekyll build -w -d ../_site/blog --incremental ; cd .. ",
+    "build_wp": "webpack -c ./_config/webpack.prod.js  --mode production",
+    "build_jk": "bundle exec jekyll build"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.5",
+    "@babel/preset-env": "^7.16.5",
+    "@babel/preset-react": "^7.16.5",
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "babel-loader": "^8.2.3",
+    "babel-plugin-import": "^1.13.3",
+    "concurrently": "^6.5.1",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.7.1"
+  },
   "dependencies": {
-    "react-router-dom": "^5.2.0"
+    "html-webpack-plugin": "^5.5.0",
+    "path": "^0.12.7",
+    "shell.js": "^3.3.1",
+    "terminal-kit": "^2.3.0",
+    "xterm": "^4.16.0"
   }
 }
