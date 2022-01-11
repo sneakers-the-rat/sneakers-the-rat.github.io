@@ -4,7 +4,7 @@ title: "What's the Best First Guess in Wordle?"
 date: 2022-01-10
 description: Maximizing letter probability and minimizing entropy bby
 author: Jonny Saunders
-image: /blog/assets/images/letter_heatmap_horiz.png
+image: assets/images/letter_heatmap_horiz.png
 tags:
   - data
   - python
