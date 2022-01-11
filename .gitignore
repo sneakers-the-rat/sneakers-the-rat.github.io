@@ -95,3 +95,9 @@ blog/_site/
 *.continuous
 bower_components
 node_modules
+*hot-update*
+*unnamed-chunk*
+.jekyll-cache
+.jekyll-metadata
+__pycache__
+*.pyc
