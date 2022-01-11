@@ -6,25 +6,26 @@
 </description>
     <link>/bloghttps://jon-e.net</link>
     <atom:link href="https://jon-e.net/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 10 Jan 2022 20:22:51 -0800</pubDate>
-    <lastBuildDate>Mon, 10 Jan 2022 20:22:51 -0800</lastBuildDate>
+    <pubDate>Mon, 10 Jan 2022 21:53:19 -0800</pubDate>
+    <lastBuildDate>Mon, 10 Jan 2022 21:53:19 -0800</lastBuildDate>
     <generator>Jekyll v3.9.1</generator>
     
       <item>
         <title>What&apos;s the Best First Guess in Wordle?</title>
-        <description>&lt;p&gt;I was stuck at home and bored today, and saw that someone had posted showing that the list of words for each day in &lt;a href=&quot;https://www.powerlanguage.co.uk/wordle/&quot;&gt;wordle&lt;/a&gt; is actually hardcoded in the source of the site, so I tried a few ways of estimating a best first word to play so that I would never have to bear the shame of failing to solve an online word puzzle again.&lt;/p&gt;
+        <description>&lt;p&gt;I was stuck at home and bored today, and saw &lt;a href=&quot;https://twitter.com/qntm/status/1480152847522361345&quot;&gt;@qntm’s&lt;/a&gt; post showing that the list of words for each day in &lt;a href=&quot;https://www.powerlanguage.co.uk/wordle/&quot;&gt;wordle&lt;/a&gt; is actually hardcoded in the source of the site, so I tried a few ways of estimating a best first word to play so that I would never have to bear the shame of failing to solve an online noncompetetive word puzzle again.&lt;/p&gt;
 
 &lt;p&gt;Sorry this is such hell on mobile, I’m in the process of rebuilding my website and so this is a combination of ancient overengineering as well as being sorta a half-stitched together partially-transitioning website.&lt;/p&gt;
 
 &lt;h2 id=&quot;tldr-slate-or-canoe&quot;&gt;tl;dr slate or canoe&lt;/h2&gt;
 
-&lt;p&gt;depending on how you measure it.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;(depending on how you measure it.)&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;A few companion files:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;/blog/assets/hosted/global_entropy.pck.xz&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;global_entropy.pck.xz&lt;/code&gt;&lt;/a&gt; - to save you some time on a lengthy calculation&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/blog/assets/hosted/global_entropy.pck.xz&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;wordle_helpers.py&lt;/code&gt;&lt;/a&gt; - all the code is in this page, but thought i’d include a few of the helper functions that had to be offloaded to a separate file to deal with jupyter notebook’s incompatibiltiy with multiprocessing.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/blog/assets/hosted/wordle_words.json&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;wordle_words.json&lt;/code&gt;&lt;/a&gt; - the words used in wordle, both lists used for target words as well as all allowable guess words.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;div class=&quot;jupyter-notebook&quot; style=&quot;position: relative; width: calc(100% + 50px); left: -25px; margin: 0px auto; padding-bottom: 5000px;&quot;&gt;&lt;div class=&quot;jupyter-notebook-iframe-container&quot; style=&quot;padding-bottom: 4990px;&quot;&gt; &lt;/div&gt;

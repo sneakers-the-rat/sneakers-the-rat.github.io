@@ -14,18 +14,19 @@ tags:
   - nlp
 ---
 
-I was stuck at home and bored today, and saw that someone had posted showing that the list of words for each day in [wordle](https://www.powerlanguage.co.uk/wordle/) is actually hardcoded in the source of the site, so I tried a few ways of estimating a best first word to play so that I would never have to bear the shame of failing to solve an online word puzzle again.
+I was stuck at home and bored today, and saw [@qntm's](https://twitter.com/qntm/status/1480152847522361345) post showing that the list of words for each day in [wordle](https://www.powerlanguage.co.uk/wordle/) is actually hardcoded in the source of the site, so I tried a few ways of estimating a best first word to play so that I would never have to bear the shame of failing to solve an online noncompetetive word puzzle again.
 
 Sorry this is such hell on mobile, I'm in the process of rebuilding my website and so this is a combination of ancient overengineering as well as being sorta a half-stitched together partially-transitioning website.
 
 ## tl;dr slate or canoe
 
-depending on how you measure it.
+*(depending on how you measure it.)*
 
 A few companion files:
 
 * [`global_entropy.pck.xz`](/blog/assets/hosted/global_entropy.pck.xz) - to save you some time on a lengthy calculation
 * [`wordle_helpers.py`](/blog/assets/hosted/global_entropy.pck.xz) - all the code is in this page, but thought i'd include a few of the helper functions that had to be offloaded to a separate file to deal with jupyter notebook's incompatibiltiy with multiprocessing.
+* [`wordle_words.json`](/blog/assets/hosted/wordle_words.json) - the words used in wordle, both lists used for target words as well as all allowable guess words.
 
 
 
