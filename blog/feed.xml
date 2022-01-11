@@ -6,8 +6,8 @@
 </description>
     <link>/bloghttps://jon-e.net</link>
     <atom:link href="https://jon-e.net/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 10 Jan 2022 20:05:26 -0800</pubDate>
-    <lastBuildDate>Mon, 10 Jan 2022 20:05:26 -0800</lastBuildDate>
+    <pubDate>Mon, 10 Jan 2022 20:22:51 -0800</pubDate>
+    <lastBuildDate>Mon, 10 Jan 2022 20:22:51 -0800</lastBuildDate>
     <generator>Jekyll v3.9.1</generator>
     
       <item>
@@ -23,8 +23,8 @@
 &lt;p&gt;A few companion files:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;&apos;/blog/assets/hosted/global_entropy.pck.xz&apos;&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;global_entropy.pck.xz&lt;/code&gt;&lt;/a&gt; - to save you some time on a lengthy calculation&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;&apos;/blog/assets/hosted/global_entropy.pck.xz&apos;&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;wordle_helpers.py&lt;/code&gt;&lt;/a&gt; - all the code is in this page, but thought i’d include a few of the helper functions that had to be offloaded to a separate file to deal with jupyter notebook’s incompatibiltiy with multiprocessing.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/blog/assets/hosted/global_entropy.pck.xz&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;global_entropy.pck.xz&lt;/code&gt;&lt;/a&gt; - to save you some time on a lengthy calculation&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/blog/assets/hosted/global_entropy.pck.xz&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;wordle_helpers.py&lt;/code&gt;&lt;/a&gt; - all the code is in this page, but thought i’d include a few of the helper functions that had to be offloaded to a separate file to deal with jupyter notebook’s incompatibiltiy with multiprocessing.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;div class=&quot;jupyter-notebook&quot; style=&quot;position: relative; width: calc(100% + 50px); left: -25px; margin: 0px auto; padding-bottom: 5000px;&quot;&gt;&lt;div class=&quot;jupyter-notebook-iframe-container&quot; style=&quot;padding-bottom: 4990px;&quot;&gt; &lt;/div&gt;

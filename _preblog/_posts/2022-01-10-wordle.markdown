@@ -24,8 +24,8 @@ depending on how you measure it.
 
 A few companion files:
 
-* [`global_entropy.pck.xz`]('/blog/assets/hosted/global_entropy.pck.xz') - to save you some time on a lengthy calculation
-* [`wordle_helpers.py`]('/blog/assets/hosted/global_entropy.pck.xz') - all the code is in this page, but thought i'd include a few of the helper functions that had to be offloaded to a separate file to deal with jupyter notebook's incompatibiltiy with multiprocessing.
+* [`global_entropy.pck.xz`](/blog/assets/hosted/global_entropy.pck.xz) - to save you some time on a lengthy calculation
+* [`wordle_helpers.py`](/blog/assets/hosted/global_entropy.pck.xz) - all the code is in this page, but thought i'd include a few of the helper functions that had to be offloaded to a separate file to deal with jupyter notebook's incompatibiltiy with multiprocessing.
 
 
 
