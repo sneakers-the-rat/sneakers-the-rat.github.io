@@ -93,3 +93,4 @@ _preblog/_site/
 *.continuous
 bower_components
 node_modules
+blog/plugins/pdfjs_hypothesis/*

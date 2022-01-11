@@ -1,0 +1,33 @@
+---
+layout: post
+title: "What's the Best First Guess in Wordle?"
+date: 2022-01-10
+description: Maximizing letter probability and minimizing entropy bby
+author: Jonny Saunders
+image: /blog/assets/images/letter_heatmap_horiz.png
+tags:
+  - data
+  - python
+  - wordle
+  - wasting my time
+  - entropy
+  - nlp
+---
+
+I was stuck at home and bored today, and saw that someone had posted showing that the list of words for each day in [wordle](https://www.powerlanguage.co.uk/wordle/) is actually hardcoded in the source of the site, so I tried a few ways of estimating a best first word to play so that I would never have to bear the shame of failing to solve an online word puzzle again.
+
+Sorry this is such hell on mobile, I'm in the process of rebuilding my website and so this is a combination of ancient overengineering as well as being sorta a half-stitched together partially-transitioning website.
+
+## tl;dr slate or canoe
+
+depending on how you measure it.
+
+A few companion files:
+
+* [`global_entropy.pck.xz`]('/blog/assets/hosted/global_entropy.pck.xz') - to save you some time on a lengthy calculation
+* [`wordle_helpers.py`]('/blog/assets/hosted/global_entropy.pck.xz') - all the code is in this page, but thought i'd include a few of the helper functions that had to be offloaded to a separate file to deal with jupyter notebook's incompatibiltiy with multiprocessing.
+
+
+
+<div class="jupyter-notebook" style="position: relative; width: calc(100% + 50px); left: -25px; margin: 0px auto; padding-bottom: 5000px;"><div class="jupyter-notebook-iframe-container" style="padding-bottom: 4990px;"> </div>
+<iframe src="../../../../assets/notebooks/2022-01-10-wordle-notebook.html" style="position: absolute; top: 0; left: 0; border-style: none;" onload="this.parentElement.style.paddingBottom = (this.contentWindow.document.documentElement.scrollHeight + 10) + 'px'" width="100%" height="100%"></iframe></div>
