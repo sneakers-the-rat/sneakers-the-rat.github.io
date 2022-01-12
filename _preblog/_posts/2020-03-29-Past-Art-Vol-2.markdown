@@ -3,7 +3,7 @@ layout: post
 title: "Past Art Vol 2: About a Year of It"
 date: 2020-03-29
 description: Collecting the scraps from about a year of wasting my time
-image: /blog/assets/images/artvol2/endless_love.png
+image: /assets/images/artvol2/endless_love.png
 toc: 
   - max_level: 1
 author: Jonny Saunders

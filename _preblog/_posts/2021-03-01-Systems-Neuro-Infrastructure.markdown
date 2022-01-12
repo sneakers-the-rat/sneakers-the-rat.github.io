@@ -3,7 +3,7 @@ layout: post
 title: "Building the Basic Infrastructure That a Layperson Would Expect Systems Neuroscientists to Have Would Revolutionize the Discipline: A Vision for ONICE"
 date: 2021-03-01
 description: This could be us but u playin
-image: /blog/assets/images/onice_logo.png
+image: /assets/images/onice_logo.png
 toc: 
   - max_level: 2
 author: Jonny Saunders
@@ -12,7 +12,7 @@ tags:
   - infrastructure
 ---
 
-<div style="background-color:#ffcccc;padding:20px;border:1px red solid;"><h1>Note:</h1> This was something I wrote hastily a long time ago, and my thinking has *dramatically changed* since this was written. I am keeping it around for historical reasons, to remind myself of growth. A fuller manuscript is forthcoming :) -jonny 21-10-14</div>
+<div style="background-color:#ffcccc;padding:20px;border:1px red solid;"><h1>Note:</h1> This was something I wrote hastily a long time ago, and my thinking has *dramatically changed* since this was written (read: i think most of this is wrong or at least too coy to be useful). I am keeping it around for historical reasons, to remind myself of growth. A fuller manuscript is forthcoming :) -jonny 21-10-14</div>
 
 # We Would Run A Factory Into The Ground
 

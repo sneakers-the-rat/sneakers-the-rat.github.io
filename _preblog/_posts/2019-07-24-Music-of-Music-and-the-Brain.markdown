@@ -3,7 +3,7 @@ layout: post
 title: "Music of Music and the Brain"
 date: 2019-07-24
 description: The music from my Music and the Brain course this summer
-image: /blog/assets/images/matb_header.png
+image: /assets/images/matb_header.png
 author: Jonny Saunders
 toc: false
 tags:

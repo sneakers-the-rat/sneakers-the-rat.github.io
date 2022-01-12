@@ -3,7 +3,7 @@ layout: post
 title: "An Adversarial (re)Analysis of Zhou/Firestone 2019"
 date: 2019-04-09
 description: Reanalyzing Zhou & Firestone's adversarial image experiments
-image: /blog/assets/images/zhou_header.png
+image: /assets/images/zhou_header.png
 author: Jonny Saunders
 toc: true
 tags:

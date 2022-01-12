@@ -3,7 +3,7 @@ layout: post
 title: "NSF GRFP Advice and My Annotated Proposal"
 date: 2019-08-25
 description: 
-image: /blog/assets/images/GRFP_logo.png
+image: /assets/images/GRFP_logo.png
 author: Jonny Saunders
 tags:
   - science

@@ -3,7 +3,7 @@ layout: post
 title: "Crudely converting OpenEphys to Neurodata Without Borders"
 date: 2019-03-12
 description: coercing our lab's idiosyncratic data structure to Neurodata Without Borders
-image: /blog/assets/images/neurodata_header.png
+image: /assets/images/neurodata_header.png
 author: Jonny Saunders
 tags:
   - neurodata without borders

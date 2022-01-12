@@ -3,7 +3,7 @@ layout: post
 title: "Automating Poll Tweets in the New Layout Hellscape"
 date: 2019-07-23
 description: 
-image: /blog/assets/images/schillbot_header.png
+image: /assets/images/schillbot_header.png
 author: Jonny Saunders
 tags:
   - twitter

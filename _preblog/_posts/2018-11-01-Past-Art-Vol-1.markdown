@@ -3,7 +3,7 @@ layout: post
 title: "Past Art, Vol. 1: Insomia"
 date: 2018-11-01
 description: selected insomnia art from the past few years
-image: /blog/assets/images/artvol1/audioedit.png
+image: /assets/images/artvol1/audioedit.png
 author: Jonny Saunders
 tags:
   - art

@@ -4,7 +4,7 @@ title: "Public Records in Oregon"
 date: 2021-10-14
 description: How to get what the state dont want you to have!
 author: Jonny Saunders
-image: /blog/assets/images/oregonian_foia.png
+image: /assets/images/oregonian_foia.png
 toc: 
   - max_level: 1
 tags:
