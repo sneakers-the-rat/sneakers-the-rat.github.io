@@ -3,16 +3,15 @@
 //---------------------------------------------- 
 main,
 footer {
-  opacity: 0;
+  animation: fadeInAnimation ease-in 600ms;
+}
 
-  .js-page-loaded & {
-    opacity: 1;
-    transition: opacity 600ms ease-in-out;
-  }
-
-  .js-page-exiting & {
+@keyframes fadeInAnimation {
+  0% {
     opacity: 0;
-    transition: opacity 400ms ease-in-out;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
