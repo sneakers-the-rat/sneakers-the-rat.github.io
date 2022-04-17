@@ -18,7 +18,7 @@
     "react-app-rewired": "^2.1.6",
     "react-checkbox-tree": "^1.6.0",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1",
+    "react-scripts": "^5.0.1",
     "react-split": "^2.0.9",
     "recursive-readdir": "^2.2.2",
     "webpack-copy-plugin": "^0.0.4"
@@ -44,5 +44,5 @@
       "last 1 safari version"
     ]
   },
-  "homepage":"https://jon-e.net/projects/records/"
+  "homepage": "https://jon-e.net/projects/records/"
 }
