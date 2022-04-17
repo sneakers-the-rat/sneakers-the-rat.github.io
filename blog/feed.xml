@@ -6,9 +6,382 @@
 </description>
     <link>/bloghttps://jon-e.net</link>
     <atom:link href="https://jon-e.net/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 11 Jan 2022 16:54:49 -0800</pubDate>
-    <lastBuildDate>Tue, 11 Jan 2022 16:54:49 -0800</lastBuildDate>
+    <pubDate>Sat, 16 Apr 2022 19:18:59 -0700</pubDate>
+    <lastBuildDate>Sat, 16 Apr 2022 19:18:59 -0700</lastBuildDate>
     <generator>Jekyll v3.9.1</generator>
+    
+      <item>
+        <title>A Halfway Decent LaTeX Writing Setup</title>
+        <description>&lt;p&gt;I wouldn’t necessarily &lt;em&gt;recommend&lt;/em&gt; writing anything in LaTeX unless you’re already in the cult, but if you are, this is how I’ve managed to write in a way that doesn’t make me curse us having taught electrified rocks about letters in the first place.&lt;/p&gt;
+
+&lt;p&gt;In short, we’ll be able to&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;One-click add a citation to our document and download a pdf using Zotero&lt;/li&gt;
+  &lt;li&gt;Edit nicely with LaTeXTools and Sublime Text&lt;/li&gt;
+  &lt;li&gt;Compile our document on save with Tectonic&lt;/li&gt;
+  &lt;li&gt;Sync back and forth from the pdf and the source!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;prereqs&quot;&gt;Prereqs&lt;/h1&gt;
+
+&lt;p&gt;We’ll need some software!&lt;/p&gt;
+
+&lt;p&gt;I’m using a mac, but most key combinations in windows just swap &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cmd&lt;/code&gt; for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ctrl&lt;/code&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.zotero.org/&quot;&gt;Zotero&lt;/a&gt; - Reference and PDF management - &lt;a href=&quot;https://www.zotero.org/download/&quot;&gt;download&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;We’ll also need the &lt;a href=&quot;http://zotfile.com/&quot;&gt;zotfile&lt;/a&gt; and &lt;a href=&quot;https://retorque.re/zotero-better-bibtex/&quot;&gt;Better BibTeX&lt;/a&gt; plugins, as well as the relevant zotero browser extension.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.sublimetext.com/&quot;&gt;Sublime Text&lt;/a&gt; - Text editor! - &lt;a href=&quot;https://www.sublimetext.com/download&quot;&gt;download&lt;/a&gt; or with homebrew: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;brew install --cask sublime-text&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Within sublime text we’ll be using some plugins, so install the plugin manager &lt;a href=&quot;https://packagecontrol.io/installation&quot;&gt;Package Control&lt;/a&gt;. From within sublime, open the command palette &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cmd+shift+p&lt;/code&gt;, type &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Install Package Control&lt;/code&gt; (an autocomplete menu should get you to the right place before you finish typing the full thing) then press &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;enter&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;Install &lt;a href=&quot;LaTeXTools&quot;&gt;https://packagecontrol.io/packages/LaTeXTools&lt;/a&gt; - open command palette again, type &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Package Control: Install Package&lt;/code&gt;, type &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;LaTeXTools&lt;/code&gt;, then &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;enter&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;Repeat the above to also install &lt;a href=&quot;https://packagecontrol.io/packages/LaTeX-cwl&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;LaTeX-cwl&lt;/code&gt;&lt;/a&gt; for code completions! and &lt;a href=&quot;https://packagecontrol.io/packages/Hooks&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Hooks&lt;/code&gt;&lt;/a&gt; for building on saving&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://skim-app.sourceforge.io/&quot;&gt;Skim&lt;/a&gt; - PDF Viewer that supports forward and back syncing with the document (windows users try SumatraPDF).&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://tectonic-typesetting.github.io/en-US/&quot;&gt;Tectonic&lt;/a&gt; - LaTeX Builder - &lt;a href=&quot;https://tectonic-typesetting.github.io/book/latest/installation/index.html&quot;&gt;installation instructions&lt;/a&gt;, or with homebrew: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;brew install tectonic&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;document-structure&quot;&gt;Document Structure&lt;/h1&gt;
+
+&lt;h2 id=&quot;new-tectonic-project&quot;&gt;New Tectonic Project&lt;/h2&gt;
+
+&lt;p&gt;Let’s make a document!&lt;/p&gt;
+
+&lt;p&gt;Tectonic uses its own directory structure and a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Tectonic.toml&lt;/code&gt; file to configure its builds. To create it, use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tectonic -X new &amp;lt;document name&amp;gt;&lt;/code&gt;. For the sake of this example we’ll call ours &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;my_document&lt;/code&gt;. After doing so, you should have a folder that looks like this:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;my_document/
+├── Tectonic.toml
+└── src
+    ├── _postamble.tex
+    ├── _preamble.tex
+    └── index.tex
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;By default, the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Tectonic.toml&lt;/code&gt; file will look like this:&lt;/p&gt;
+
+&lt;div class=&quot;language-toml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nn&quot;&gt;[doc]&lt;/span&gt;
+&lt;span class=&quot;py&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;my_document&apos;&lt;/span&gt;
+&lt;span class=&quot;py&quot;&gt;bundle&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;https://data1.fullyjustified.net/tlextras-2020.0r0.tar&apos;&lt;/span&gt;
+
+&lt;span class=&quot;nn&quot;&gt;[[output]]&lt;/span&gt;
+&lt;span class=&quot;py&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;default&apos;&lt;/span&gt;
+&lt;span class=&quot;py&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;pdf&apos;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;First we’ll change our output document name, also calling it &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;my_document&lt;/code&gt; rather than &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;default&lt;/code&gt;. You can also change the name of each of the document subsections, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_preamble.tex&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;index.tex&lt;/code&gt;, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_postamble.tex&lt;/code&gt; by setting them explicitly here. For example:&lt;/p&gt;
+
+&lt;div class=&quot;language-toml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nn&quot;&gt;[doc]&lt;/span&gt;
+&lt;span class=&quot;py&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;my_document&apos;&lt;/span&gt;
+&lt;span class=&quot;py&quot;&gt;bundle&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;https://data1.fullyjustified.net/tlextras-2020.0r0.tar&apos;&lt;/span&gt;
+
+&lt;span class=&quot;nn&quot;&gt;[[output]]&lt;/span&gt;
+&lt;span class=&quot;py&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;my_document&apos;&lt;/span&gt;
+&lt;span class=&quot;py&quot;&gt;index&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;my_document.tex&apos;&lt;/span&gt;
+&lt;span class=&quot;py&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;pdf&apos;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Then if we build the document with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tectonic -X build&lt;/code&gt; then we’ll get something like this:&lt;/p&gt;
+
+&lt;div class=&quot;language-text highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;my_document/
+├── Tectonic.toml
+├── build
+│   └── my_document
+│       └── my_document.pdf
+└── src
+    ├── _postamble.tex
+    ├── _preamble.tex
+    └── my_document.tex
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;subsections&quot;&gt;Subsections&lt;/h2&gt;
+
+&lt;p&gt;Tectonic helps us out by splitting out the preamble and postamble of LaTeX documents, but the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;index&lt;/code&gt; file then contains the whole ass document which can get huge and unmanageable. Instead we can split our document into subsections and use the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\input&lt;/code&gt; command to combine them.&lt;/p&gt;
+
+&lt;p&gt;Let’s make the basic structure for our intro, results, and conclusion. We’ll also probably want to include some figures, so we can also make a directory for that too!&lt;/p&gt;
+
+&lt;div class=&quot;language-text highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;../my_document/
+├── Tectonic.toml
+├── build
+│   └── my_document
+│       ├── my_document.log
+│       └── my_document.pdf
+└── src
+    ├── _postamble.tex
+    ├── _preamble.tex
+    ├── figures
+    │   ├── figure_1.png
+    │   └── figure_2.png
+    ├── my_document.tex
+    └── sections
+        ├── conclusion.tex
+        ├── intro.tex
+        └── results.tex
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Since &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\input&lt;/code&gt; effectively copies and pastes the text directly, you can include your figures with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\includegraphics{figures/figure_1.png}&lt;/code&gt; without needing to jump up and out of relative directories. You can also make additional layers of nesting for very long documents, prepend numbers to the filenames to keep them in order, etc. Whatever works for you!&lt;/p&gt;
+
+&lt;p&gt;While we’re editing, to speed up navigation around multiple files, we can take advantage of Sublime Text’s &lt;a href=&quot;https://docs.sublimetext.io/guide/usage/file-management/navigation.html#goto-anything&quot;&gt;goto&lt;/a&gt; features – &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cmd+p&lt;/code&gt; and then start typing a filename, and there are more syntax commands to jump to specific places in the document (see linked docs).&lt;/p&gt;
+
+&lt;h1 id=&quot;references--pdfs-with-zotero&quot;&gt;References &amp;amp; PDFs with Zotero&lt;/h1&gt;
+
+&lt;p&gt;Let’s make our lit review easier and one-click add a reference and download a PDF with zotero.&lt;/p&gt;
+
+&lt;p&gt;First we can make a new collection or subcollection for references within zotero, click the yellow folder icon in the top left of the window, or else right click in the library pane and click “New subcollection” within an existing collection.&lt;/p&gt;
+
+&lt;h2 id=&quot;grab-pdfs-from-sci-hub&quot;&gt;Grab PDFs from Sci-Hub&lt;/h2&gt;
+
+&lt;p&gt;Then we configure zotero to use Sci-Hub to automatically grab PDFs for papers if they can’t be found using its usual methods. Open the config editor: Zotero &amp;gt; Preferences… &amp;gt; Advanced &amp;gt; Config Editor. Search for the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;extensions.zotero.findPDFs.resolvers&lt;/code&gt; configuration option, double click copy the following JSON configuration, and click OK:&lt;/p&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;     
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Sci-Hub&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;     
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;method&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;GET&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;     
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;url&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;https://sci-hub.se/{doi}&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;     
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;mode&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;html&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;     
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;selector&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;#pdf&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;     
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;attribute&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;src&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;     
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;automatic&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; 
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;If we have configured Zotfile (see documentation on the &lt;a href=&quot;http://zotfile.com/&quot;&gt;zotfile site&lt;/a&gt;) to automatically grab new downloads, rename them, and add them to the citation, then when you click the zotero icon in your browser you should automatically get a PDF in a nice and tidy place!&lt;/p&gt;
+
+&lt;h2 id=&quot;better-bibtex---autoupdate-bibliographies&quot;&gt;Better BibTex - Autoupdate bibliographies&lt;/h2&gt;
+
+&lt;p&gt;Now let’s get our reference in our document!&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Right click on the collection from within Zotero,&lt;/li&gt;
+  &lt;li&gt;Click “Export Collection…”&lt;/li&gt;
+  &lt;li&gt;Select “Better BibLaTeX”&lt;/li&gt;
+  &lt;li&gt;Check “Keep updated”&lt;/li&gt;
+  &lt;li&gt;and then export it to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;src&lt;/code&gt; directory of our document.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Within the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_preamble.tex&lt;/code&gt;  we prepare our citation style, as well as do some other nice things like enabling backlinks from our references to the sections where they’re used.&lt;/p&gt;
+
+&lt;div class=&quot;language-latex highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;\documentclass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;article&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;[usenames, svgnames]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;xcolor&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;[
+  colorlinks = true,
+    hyperfootnotes=true,
+    urlcolor = DarkOrchid,
+    citecolor = DarkOrchid,
+    backref = section
+]&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;hyperref&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;natbib&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\bibliographystyle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;plainnat&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;\title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;My Document&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;\begin{document}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;And then our &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;my_document.tex&lt;/code&gt; again:&lt;/p&gt;
+
+&lt;div class=&quot;language-latex highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;\input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;sections/intro&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;\input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;sections/results&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;\input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;sections/conclusion&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;\bibliography&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;my&lt;span class=&quot;p&quot;&gt;_&lt;/span&gt;document&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Since Better BibLaTeX will auto-update our .bib file, Now we can get a reference, automatically get a PDF, automatically update our bibliography file for our paper, and then immediately cite something!&lt;/p&gt;
+
+&lt;h1 id=&quot;editing-with-sublime-text--latextools&quot;&gt;Editing with Sublime Text &amp;amp; LaTeXTools&lt;/h1&gt;
+
+&lt;p&gt;When you’re working with sublime text, it’s useful to open the whole folder rather than individual files. You can also use a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sublime-project&lt;/code&gt; file, which allegedly lets you set project-wide settings with LaTeXTools, but I’ve never gotten that to work. To do that you either use the File &amp;gt; Open… command and open the folder, or else use from the cli &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;subl ./my_document&lt;/code&gt;. This way, if you open the sidebar (default &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cmd+shift+a&lt;/code&gt;), you can see the whole document structure and group together files from a project within individual windows.&lt;/p&gt;
+
+&lt;h2 id=&quot;latextools-setup&quot;&gt;LaTeXTools Setup&lt;/h2&gt;
+
+&lt;p&gt;LaTeXTools is a lovely, unwieldy, and I think no longer maintained package, so we need to use it with care. Out of the box it will give you some useful completions and shortcuts, but we need to do a few things to make it work the way we want it.&lt;/p&gt;
+
+&lt;p&gt;By default it should be configured to do forward and backwards sync with skim, but you need to do some additional setup for Skim to do the reverse seeking, follow the instructions in the &lt;a href=&quot;https://latextools.readthedocs.io/en/latest/install/#installation&quot;&gt;LaTeXTools Installation docs&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;headers&quot;&gt;Headers&lt;/h3&gt;
+
+&lt;p&gt;At the start of each of our subsections, we’ll need to an indication to LaTeXTools that it should consider the top-level &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.tex&lt;/code&gt; file as the document root – this lets it find the bibliography file for autocompletion, among other things.&lt;/p&gt;
+
+&lt;div class=&quot;language-latex highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;%!TEX root = ../my_document.tex&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;We also need to tell it that the resulting PDF of our tectonic build will be in a different place than the source directory. This only needs to happen once, in the main &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;my_document.tex&lt;/code&gt; file&lt;/p&gt;
+
+&lt;div class=&quot;language-latex highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;%!TEX jobname = my_document&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;%!TEX output_directory = ../build/my_document&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;script-build-on-save&quot;&gt;Script Build on Save&lt;/h3&gt;
+
+&lt;p&gt;To tell latextools that we want to build with Tectonic, we have to configure it to use a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;script builder&lt;/code&gt; rather than its usual combination of pdflatex et al.&lt;/p&gt;
+
+&lt;p&gt;To edit the LaTeXTools settings, from sublime text go to Sublime Text &amp;gt; Preferences… &amp;gt; Package Settings &amp;gt; LaTeXTools &amp;gt; Settings - User. Change these configuration options (varying depending on your operating system:&lt;/p&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;builder&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;script&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;builder_settings&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+    &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;General&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;settings:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;See&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;README&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;or&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;third-party&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;documentation&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+    &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;(built-ins):&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;shows&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;the&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;each&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;command&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;the&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;panel&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;display_log&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;program&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;xelatex&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+    &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;Platform-specific&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;settings:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;osx&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;script_commands&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;echo $file; tectonic -X build --keep-logs&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;windows&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;See&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;README&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;or&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;third-party&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;documentation&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;linux&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;See&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;README&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;or&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;third-party&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;documentation&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;We have do &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;echo $file;&lt;/code&gt; before running tectonic because annoyingly if &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$file&lt;/code&gt; isn’t present in the script command, LaTeXTools just sticks it on the end of the command automatically.&lt;/p&gt;
+
+&lt;p&gt;Then to automatically build the document every time we save, open the LaTeX-specific preferences at Sublime Text &amp;gt; Preferences &amp;gt; Settings - Syntax Specific (because we only want to do this for .tex files) and add:&lt;/p&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;on_post_save_async_language&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;command&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;build&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;scope&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;window&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;See the &lt;a href=&quot;https://packagecontrol.io/packages/Hooks&quot;&gt;Hooks&lt;/a&gt; docs for more information on the syntax.&lt;/p&gt;
+
+&lt;h2 id=&quot;synctex&quot;&gt;SyncTeX&lt;/h2&gt;
+
+&lt;p&gt;Synctex lets you jump back and forth from your source code to your document, taking you to the position in the rendered document where your cursor is in the source, or taking you to the point in the source where you clicked.&lt;/p&gt;
+
+&lt;p&gt;To enable generating SyncTeX hooks for your document, put &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\synctex=1&lt;/code&gt; in your preamble, so:&lt;/p&gt;
+
+&lt;div class=&quot;language-latex highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;\documentclass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;article&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;[usenames, svgnames]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;xcolor&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;[
+  colorlinks = true,
+    hyperfootnotes=true,
+    urlcolor = DarkOrchid,
+    citecolor = DarkOrchid,
+    backref = section
+]&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;hyperref&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;natbib&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\bibliographystyle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;plainnat&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;\synctex&lt;/span&gt;=1
+
+&lt;span class=&quot;k&quot;&gt;\title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;My Document&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;\begin{document}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;You’ll then see a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;my_document.synctex.gz&lt;/code&gt; file on next build.&lt;/p&gt;
+
+&lt;p&gt;This should work out of the box with LaTeXTools, but there’s an obnoxious &lt;a href=&quot;https://github.com/SublimeText/LaTeXTools/issues/1539&quot;&gt;indentation bug&lt;/a&gt; with an &lt;a href=&quot;https://github.com/SublimeText/LaTeXTools/pull/1540&quot;&gt;unmerged pull request&lt;/a&gt; that we have to patch ourselves.&lt;/p&gt;
+
+&lt;p&gt;Installed packages, on mac, are located at &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/Users/&amp;lt;username&amp;gt;/Library/Application Support/Sublime Text 3/Packages&lt;/code&gt;, or you can get there by opening up the preferences for any package and then using File &amp;gt; Open which should dump you in the location of the preferences file (where the packages are).&lt;/p&gt;
+
+&lt;p&gt;Within &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;LaTeXTools&lt;/code&gt;, edit lines 101 and 103 to have correct indentation according to &lt;a href=&quot;https://github.com/SublimeText/LaTeXTools/pull/1540/files&quot;&gt;the PR&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;n&quot;&gt;file_name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;file_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;is_tex_file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;file_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;from_keybinding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;To jump &lt;strong&gt;source &amp;gt; document&lt;/strong&gt;: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cmd+l,j&lt;/code&gt; (that’s do &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cmd+l&lt;/code&gt; to issue a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;l&lt;/code&gt;atextools command, and then afterwards press &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;j&lt;/code&gt; for jump).&lt;/li&gt;
+  &lt;li&gt;To jump &lt;strong&gt;document &amp;gt; source&lt;/strong&gt; (with Skim): &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cmd+Shift+click&lt;/code&gt; on the text you want to jump to the source of.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;a-few-nice-to-haves&quot;&gt;A few “Nice To Haves”&lt;/h1&gt;
+
+&lt;h2 id=&quot;hashed-document-version&quot;&gt;Hashed Document Version&lt;/h2&gt;
+
+&lt;p&gt;I version control my documents so that I don’t self-destruct, and like to use git tags to label different epochs of the draft. You can use git hooks to automatically dump the version of the document into a .tex file and then include it in your document.&lt;/p&gt;
+
+&lt;p&gt;For example, in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.git/hooks/post-commit&lt;/code&gt; file, put:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/bin/sh&lt;/span&gt;
+git describe &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; proposal/src/git-version.tex
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Then from your document, using the titling package:&lt;/p&gt;
+
+&lt;div class=&quot;language-latex highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;titling&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;\postdate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; - Version: &lt;span class=&quot;k&quot;&gt;\texttt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; git-version.tex&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Which yields something like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/images/document_version.png&quot; alt=&quot;A block of text with a red line and the word &amp;quot;TODO&amp;quot; to the left of it&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;todo-environment&quot;&gt;TODO environment&lt;/h2&gt;
+
+&lt;p&gt;When I’m drafting, I like to leave notes to myself in-place, but to differentiate them from finished text I’ve made a few different environments to make different kind of notes stand out. One of them is a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;todo&lt;/code&gt; environment, which adds a red bar along the left of the text like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/images/todo_environment.png&quot; alt=&quot;A block of text with a red line and the word &amp;quot;TODO&amp;quot; to the left of it&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Add this to your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_preamble.tex&lt;/code&gt; (but really put it in its own file where you keep custom environments and then load it in your preamble)&lt;/p&gt;
+
+&lt;div class=&quot;language-latex highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;framed&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\usepackage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;rotating&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;% todo leftbar&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\newenvironment&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;todo&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;%&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\def\FrameCommand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\hspace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;-2em&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;%&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;\begin{sideways}&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;%&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\textcolor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;red&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\textsf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\small&lt;/span&gt; TODO&lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;%&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;\end{sideways}&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;%&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;\hspace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;0.5em&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\textcolor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;red&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\vrule&lt;/span&gt; width 0.5pt&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\hspace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;0.5em&lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\MakeFramed&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\advance\hsize&lt;/span&gt;-&lt;span class=&quot;k&quot;&gt;\width&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;\FrameRestore&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;\endMakeFramed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Then you use it like&lt;/p&gt;
+
+&lt;div class=&quot;language-latex highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;\begin{todo}&lt;/span&gt;
+Hello i have this to do
+&lt;span class=&quot;nt&quot;&gt;\end{todo}&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;latextools-shortcuts&quot;&gt;LaTeXTools shortcuts&lt;/h2&gt;
+
+&lt;p&gt;LaTeXTools has a few useful &lt;a href=&quot;https://latextools.readthedocs.io/en/latest/keybindings/&quot;&gt;keybindings&lt;/a&gt; that really help if you get used to them. One shortcut I like is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cmd+l, e&lt;/code&gt; to create an environment from the current text, eg&lt;/p&gt;
+
+&lt;div class=&quot;language-text highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;enumerate
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;becomes&lt;/p&gt;
+
+&lt;div class=&quot;language-latex highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;\begin{enumerate}&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;\end{enumerate}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+</description>
+        <pubDate>Sat, 16 Apr 2022 00:00:00 -0700</pubDate>
+        <link>https://jon-e.net/blog/2022/04/16/a-halfway-decent-latex-setup/</link>
+        <guid isPermaLink="true">https://jon-e.net/blog/2022/04/16/a-halfway-decent-latex-setup/</guid>
+        
+        
+      </item>
     
       <item>
         <title>What&apos;s the Best First Guess in Wordle?</title>

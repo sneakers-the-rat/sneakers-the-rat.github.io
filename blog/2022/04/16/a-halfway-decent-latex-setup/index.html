@@ -1,0 +1,654 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html><html lang="en"><head><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>A Halfway Decent LaTeX Writing Setup | Blog</title><meta name="description" content="Things i gone and done "><meta itemprop="name" content="Jonny Saunders"><meta itemprop="description" content="For when you love pain enough to use LaTeX but still want to get anything done"><meta itemprop="image" content="/blog/assets/images/nlight.png"><meta property="og:url" content="https://jon-e.net/blog/2022/04/16/a-halfway-decent-latex-setup/"><meta property="og:type" content="website"><meta property="og:title" content="A Halfway Decent LaTeX Writing Setup | Blog"><meta property="og:site_name" content="Blog"><meta property="og:description" content="For when you love pain enough to use LaTeX but still want to get anything done"><meta property="og:image" content="https://jon-e.net/blog/assets/images/nlight.png"><meta name="twitter:url" content="https://jon-e.net/blog/2022/04/16/a-halfway-decent-latex-setup/"><meta name="twitter:url" content=""><meta name="twitter:card" content="summary"><meta name="twitter:title" content="A Halfway Decent LaTeX Writing Setup | Blog"><meta name="twitter:site" content="Blog"><meta name="twitter:description" content="For when you love pain enough to use LaTeX but still want to get anything done"><meta name="twitter:creator" content="@json_dirs"><meta property="twitter:image" content="https://jon-e.net/blog/assets/images/nlight.png"><link rel="icon" type="image/x-icon" href="/blog/assets/images/favicon.ico"> <!-- jquery --> <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script> <!-- Fancybox --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" /> <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script> <!-- Bootstrap TOC --><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"><link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.0/dist/bootstrap-toc.min.css"> <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.0/dist/bootstrap-toc.min.js"></script><link rel="stylesheet" href="/blog/assets/css/app.min.css"><style> .hljs{display:block;overflow-x:auto;padding:0.5em;background:#23241f}.hljs,.hljs-tag,.hljs-subst{color:#f8f8f2}.hljs-strong,.hljs-emphasis{color:#a8a8a2}.hljs-bullet,.hljs-quote,.hljs-number,.hljs-regexp,.hljs-literal,.hljs-link{color:#ae81ff}.hljs-code,.hljs-title,.hljs-section,.hljs-selector-class{color:#a6e22e}.hljs-strong{font-weight:bold}.hljs-emphasis{font-style:italic}.hljs-keyword,.hljs-selector-tag,.hljs-name,.hljs-attr{color:#f92672}.hljs-symbol,.hljs-attribute{color:#66d9ef}.hljs-params,.hljs-class .hljs-title{color:#f8f8f2}.hljs-string,.hljs-type,.hljs-built_in,.hljs-builtin-name,.hljs-selector-id,.hljs-selector-attr,.hljs-selector-pseudo,.hljs-addition,.hljs-variable,.hljs-template-variable{color:#e6db74}.hljs-comment,.hljs-deletion,.hljs-meta{color:#75715e}</style><!-- <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.13.1/build/highlight.min.js"></script> --> <!-- <script>hljs.initHighlightingOnLoad();</script> --> <!-- Global site tag (gtag.js) - Google Analytics --> <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127799940-1"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-127799940-1'); </script><link rel="alternate" type="application/rss+xml" title="Blog" href="/blog/feed.xml"><link rel="canonical" href="/blog/2022/04/16/a-halfway-decent-latex-setup/"></head></head><body id="a-halfway-decent-latex-writing-setup" class="post-layout"><header class="header"> <a class="header__title" href="https://jon-e.net/blog/">Blog</a><nav><ul class="header__list"><li><a href="/blog/">Stories</a></li><li><span class="popup__open">Contact</span></li></ul></nav></header><main class="💈"><div class="post"><article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting"><div class="post__header section-padding--double"><div class="grid-small"><h2 itemprop="name headline">A Halfway Decent LaTeX Writing Setup</h2><time class="post__date" datetime="2022-04-16T00:00:00-07:00" itemprop="datePublished">16 Apr 2022</time></div></div><!--<div data-spy="scroll" data-target="#toc" class="post__content section-padding"> --> <!--<div class="container post-container"> --><div class="post-container"> <!--<div class="row"> --> <!--<div class="col-md-9 col-sm-12 post__content section-padding" id="markdown" itemprop="articleBody"> --><div class="post__content section-padding" id="markdown" itemprop="articleBody"><p>I wouldn’t necessarily <em>recommend</em> writing anything in LaTeX unless you’re already in the cult, but if you are, this is how I’ve managed to write in a way that doesn’t make me curse us having taught electrified rocks about letters in the first place.</p><p>In short, we’ll be able to</p><ul><li>One-click add a citation to our document and download a pdf using Zotero</li><li>Edit nicely with LaTeXTools and Sublime Text</li><li>Compile our document on save with Tectonic</li><li>Sync back and forth from the pdf and the source!</li></ul><h1 id="prereqs">Prereqs</h1><p>We’ll need some software!</p><p>I’m using a mac, but most key combinations in windows just swap <code class="language-plaintext highlighter-rouge">cmd</code> for <code class="language-plaintext highlighter-rouge">ctrl</code>.</p><ul><li><a href="https://www.zotero.org/">Zotero</a> - Reference and PDF management - <a href="https://www.zotero.org/download/">download</a><ul><li>We’ll also need the <a href="http://zotfile.com/">zotfile</a> and <a href="https://retorque.re/zotero-better-bibtex/">Better BibTeX</a> plugins, as well as the relevant zotero browser extension.</li></ul></li><li><a href="https://www.sublimetext.com/">Sublime Text</a> - Text editor! - <a href="https://www.sublimetext.com/download">download</a> or with homebrew: <code class="language-plaintext highlighter-rouge">brew install --cask sublime-text</code><ul><li>Within sublime text we’ll be using some plugins, so install the plugin manager <a href="https://packagecontrol.io/installation">Package Control</a>. From within sublime, open the command palette <code class="language-plaintext highlighter-rouge">cmd+shift+p</code>, type <code class="language-plaintext highlighter-rouge">Install Package Control</code> (an autocomplete menu should get you to the right place before you finish typing the full thing) then press <code class="language-plaintext highlighter-rouge">enter</code></li><li>Install <a href="LaTeXTools">https://packagecontrol.io/packages/LaTeXTools</a> - open command palette again, type <code class="language-plaintext highlighter-rouge">Package Control: Install Package</code>, type <code class="language-plaintext highlighter-rouge">LaTeXTools</code>, then <code class="language-plaintext highlighter-rouge">enter</code></li><li>Repeat the above to also install <a href="https://packagecontrol.io/packages/LaTeX-cwl"><code class="language-plaintext highlighter-rouge">LaTeX-cwl</code></a> for code completions! and <a href="https://packagecontrol.io/packages/Hooks"><code class="language-plaintext highlighter-rouge">Hooks</code></a> for building on saving</li></ul></li><li><a href="https://skim-app.sourceforge.io/">Skim</a> - PDF Viewer that supports forward and back syncing with the document (windows users try SumatraPDF).</li><li><a href="https://tectonic-typesetting.github.io/en-US/">Tectonic</a> - LaTeX Builder - <a href="https://tectonic-typesetting.github.io/book/latest/installation/index.html">installation instructions</a>, or with homebrew: <code class="language-plaintext highlighter-rouge">brew install tectonic</code></li></ul><h1 id="document-structure">Document Structure</h1><h2 id="new-tectonic-project">New Tectonic Project</h2><p>Let’s make a document!</p><p>Tectonic uses its own directory structure and a <code class="language-plaintext highlighter-rouge">Tectonic.toml</code> file to configure its builds. To create it, use <code class="language-plaintext highlighter-rouge">tectonic -X new &lt;document name&gt;</code>. For the sake of this example we’ll call ours <code class="language-plaintext highlighter-rouge">my_document</code>. After doing so, you should have a folder that looks like this:</p><div class="language-plaintext highlighter-rouge"><div class="highlight">
+
+<pre class="highlight"><code>my_document/
+├── Tectonic.toml
+└── src
+    ├── _postamble.tex
+    ├── _preamble.tex
+    └── index.tex
+</code></pre>
+
+</div></div><p>By default, the <code class="language-plaintext highlighter-rouge">Tectonic.toml</code> file will look like this:</p><div class="language-toml highlighter-rouge"><div class="highlight">
+
+<pre class="highlight"><code><span class="nn">[doc]</span>
+<span class="py">name</span> <span class="p">=</span> <span class="s">'my_document'</span>
+<span class="py">bundle</span> <span class="p">=</span> <span class="s">'https://data1.fullyjustified.net/tlextras-2020.0r0.tar'</span>
+
+<span class="nn">[[output]]</span>
+<span class="py">name</span> <span class="p">=</span> <span class="s">'default'</span>
+<span class="py">type</span> <span class="p">=</span> <span class="s">'pdf'</span>
+</code></pre>
+
+</div></div><p>First we’ll change our output document name, also calling it <code class="language-plaintext highlighter-rouge">my_document</code> rather than <code class="language-plaintext highlighter-rouge">default</code>. You can also change the name of each of the document subsections, <code class="language-plaintext highlighter-rouge">_preamble.tex</code>, <code class="language-plaintext highlighter-rouge">index.tex</code>, and <code class="language-plaintext highlighter-rouge">_postamble.tex</code> by setting them explicitly here. For example:</p><div class="language-toml highlighter-rouge"><div class="highlight">
+
+<pre class="highlight"><code><span class="nn">[doc]</span>
+<span class="py">name</span> <span class="p">=</span> <span class="s">'my_document'</span>
+<span class="py">bundle</span> <span class="p">=</span> <span class="s">'https://data1.fullyjustified.net/tlextras-2020.0r0.tar'</span>
+
+<span class="nn">[[output]]</span>
+<span class="py">name</span> <span class="p">=</span> <span class="s">'my_document'</span>
+<span class="py">index</span> <span class="p">=</span> <span class="s">'my_document.tex'</span>
+<span class="py">type</span> <span class="p">=</span> <span class="s">'pdf'</span>
+</code></pre>
+
+</div></div><p>Then if we build the document with <code class="language-plaintext highlighter-rouge">tectonic -X build</code> then we’ll get something like this:</p><div class="language-text highlighter-rouge"><div class="highlight">
+
+<pre class="highlight"><code>my_document/
+├── Tectonic.toml
+├── build
+│   └── my_document
+│       └── my_document.pdf
+└── src
+    ├── _postamble.tex
+    ├── _preamble.tex
+    └── my_document.tex
+
+</code></pre>
+
+</div></div><h2 id="subsections">Subsections</h2><p>Tectonic helps us out by splitting out the preamble and postamble of LaTeX documents, but the <code class="language-plaintext highlighter-rouge">index</code> file then contains the whole ass document which can get huge and unmanageable. Instead we can split our document into subsections and use the <code class="language-plaintext highlighter-rouge">\input</code> command to combine them.</p><p>Let’s make the basic structure for our intro, results, and conclusion. We’ll also probably want to include some figures, so we can also make a directory for that too!</p><div class="language-text highlighter-rouge"><div class="highlight">
+
+<pre class="highlight"><code>../my_document/
+├── Tectonic.toml
+├── build
+│   └── my_document
+│       ├── my_document.log
+│       └── my_document.pdf
+└── src
+    ├── _postamble.tex
+    ├── _preamble.tex
+    ├── figures
+    │   ├── figure_1.png
+    │   └── figure_2.png
+    ├── my_document.tex
+    └── sections
+        ├── conclusion.tex
+        ├── intro.tex
+        └── results.tex
+</code></pre>
+
+</div></div><p>Since <code class="language-plaintext highlighter-rouge">\input</code> effectively copies and pastes the text directly, you can include your figures with <code class="language-plaintext highlighter-rouge">\includegraphics{figures/figure_1.png}</code> without needing to jump up and out of relative directories. You can also make additional layers of nesting for very long documents, prepend numbers to the filenames to keep them in order, etc. Whatever works for you!</p><p>While we’re editing, to speed up navigation around multiple files, we can take advantage of Sublime Text’s <a href="https://docs.sublimetext.io/guide/usage/file-management/navigation.html#goto-anything">goto</a> features – <code class="language-plaintext highlighter-rouge">cmd+p</code> and then start typing a filename, and there are more syntax commands to jump to specific places in the document (see linked docs).</p><h1 id="references--pdfs-with-zotero">References &amp; PDFs with Zotero</h1><p>Let’s make our lit review easier and one-click add a reference and download a PDF with zotero.</p><p>First we can make a new collection or subcollection for references within zotero, click the yellow folder icon in the top left of the window, or else right click in the library pane and click “New subcollection” within an existing collection.</p><h2 id="grab-pdfs-from-sci-hub">Grab PDFs from Sci-Hub</h2><p>Then we configure zotero to use Sci-Hub to automatically grab PDFs for papers if they can’t be found using its usual methods. Open the config editor: Zotero &gt; Preferences… &gt; Advanced &gt; Config Editor. Search for the <code class="language-plaintext highlighter-rouge">extensions.zotero.findPDFs.resolvers</code> configuration option, double click copy the following JSON configuration, and click OK:</p><div class="language-json highlighter-rouge"><div class="highlight">
+
+<pre class="highlight"><code><span class="p">{</span><span class="w">     
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Sci-Hub"</span><span class="p">,</span><span class="w">     
+  </span><span class="nl">"method"</span><span class="p">:</span><span class="s2">"GET"</span><span class="p">,</span><span class="w">     
+  </span><span class="nl">"url"</span><span class="p">:</span><span class="s2">"https://sci-hub.se/{doi}"</span><span class="p">,</span><span class="w">     
+  </span><span class="nl">"mode"</span><span class="p">:</span><span class="s2">"html"</span><span class="p">,</span><span class="w">     
+  </span><span class="nl">"selector"</span><span class="p">:</span><span class="s2">"#pdf"</span><span class="p">,</span><span class="w">     
+  </span><span class="nl">"attribute"</span><span class="p">:</span><span class="s2">"src"</span><span class="p">,</span><span class="w">     
+  </span><span class="nl">"automatic"</span><span class="p">:</span><span class="kc">true</span><span class="w"> 
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+</div></div><p>If we have configured Zotfile (see documentation on the <a href="http://zotfile.com/">zotfile site</a>) to automatically grab new downloads, rename them, and add them to the citation, then when you click the zotero icon in your browser you should automatically get a PDF in a nice and tidy place!</p><h2 id="better-bibtex---autoupdate-bibliographies">Better BibTex - Autoupdate bibliographies</h2><p>Now let’s get our reference in our document!</p><ul><li>Right click on the collection from within Zotero,</li><li>Click “Export Collection…”</li><li>Select “Better BibLaTeX”</li><li>Check “Keep updated”</li><li>and then export it to the <code class="language-plaintext highlighter-rouge">src</code> directory of our document.</li></ul><p>Within the <code class="language-plaintext highlighter-rouge">_preamble.tex</code> we prepare our citation style, as well as do some other nice things like enabling backlinks from our references to the sections where they’re used.</p><div class="language-latex highlighter-rouge"><div class="highlight">
+
+<pre class="highlight"><code><span class="k">\documentclass</span><span class="p">{</span>article<span class="p">}</span>
+<span class="k">\usepackage</span><span class="na">[usenames, svgnames]</span><span class="p">{</span>xcolor<span class="p">}</span>
+<span class="k">\usepackage</span>[
+  colorlinks = true,
+    hyperfootnotes=true,
+    urlcolor = DarkOrchid,
+    citecolor = DarkOrchid,
+    backref = section
+]<span class="p">{</span>hyperref<span class="p">}</span>
+<span class="k">\usepackage</span><span class="p">{</span>natbib<span class="p">}</span>
+<span class="k">\bibliographystyle</span><span class="p">{</span>plainnat<span class="p">}</span>
+
+<span class="k">\title</span><span class="p">{</span>My Document<span class="p">}</span>
+<span class="nt">\begin{document}</span>
+</code></pre>
+
+</div></div><p>And then our <code class="language-plaintext highlighter-rouge">my_document.tex</code> again:</p><div class="language-latex highlighter-rouge"><div class="highlight">
+
+<pre class="highlight"><code><span class="k">\input</span><span class="p">{</span>sections/intro<span class="p">}</span>
+
+<span class="k">\input</span><span class="p">{</span>sections/results<span class="p">}</span>
+
+<span class="k">\input</span><span class="p">{</span>sections/conclusion<span class="p">}</span>
+
+<span class="k">\bibliography</span><span class="p">{</span>my<span class="p">_</span>document<span class="p">}</span>
+</code></pre>
+
+</div></div><p>Since Better BibLaTeX will auto-update our .bib file, Now we can get a reference, automatically get a PDF, automatically update our bibliography file for our paper, and then immediately cite something!</p><h1 id="editing-with-sublime-text--latextools">Editing with Sublime Text &amp; LaTeXTools</h1><p>When you’re working with sublime text, it’s useful to open the whole folder rather than individual files. You can also use a <code class="language-plaintext highlighter-rouge">sublime-project</code> file, which allegedly lets you set project-wide settings with LaTeXTools, but I’ve never gotten that to work. To do that you either use the File &gt; Open… command and open the folder, or else use from the cli <code class="language-plaintext highlighter-rouge">subl ./my_document</code>. This way, if you open the sidebar (default <code class="language-plaintext highlighter-rouge">cmd+shift+a</code>), you can see the whole document structure and group together files from a project within individual windows.</p><h2 id="latextools-setup">LaTeXTools Setup</h2><p>LaTeXTools is a lovely, unwieldy, and I think no longer maintained package, so we need to use it with care. Out of the box it will give you some useful completions and shortcuts, but we need to do a few things to make it work the way we want it.</p><p>By default it should be configured to do forward and backwards sync with skim, but you need to do some additional setup for Skim to do the reverse seeking, follow the instructions in the <a href="https://latextools.readthedocs.io/en/latest/install/#installation">LaTeXTools Installation docs</a>.</p><h3 id="headers">Headers</h3><p>At the start of each of our subsections, we’ll need to an indication to LaTeXTools that it should consider the top-level <code class="language-plaintext highlighter-rouge">.tex</code> file as the document root – this lets it find the bibliography file for autocompletion, among other things.</p><div class="language-latex highlighter-rouge"><div class="highlight">
+
+<pre class="highlight"><code><span class="c">%!TEX root = ../my_document.tex</span>
+</code></pre>
+
+</div></div><p>We also need to tell it that the resulting PDF of our tectonic build will be in a different place than the source directory. This only needs to happen once, in the main <code class="language-plaintext highlighter-rouge">my_document.tex</code> file</p><div class="language-latex highlighter-rouge"><div class="highlight">
+
+<pre class="highlight"><code><span class="c">%!TEX jobname = my_document</span>
+<span class="c">%!TEX output_directory = ../build/my_document</span>
+</code></pre>
+
+</div></div><h3 id="script-build-on-save">Script Build on Save</h3><p>To tell latextools that we want to build with Tectonic, we have to configure it to use a <code class="language-plaintext highlighter-rouge">script builder</code> rather than its usual combination of pdflatex et al.</p><p>To edit the LaTeXTools settings, from sublime text go to Sublime Text &gt; Preferences… &gt; Package Settings &gt; LaTeXTools &gt; Settings - User. Change these configuration options (varying depending on your operating system:</p><div class="language-json highlighter-rouge"><div class="highlight">
+
+<pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"builder"</span><span class="p">:</span><span class="w"> </span><span class="s2">"script"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"builder_settings"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+
+    </span><span class="err">//</span><span class="w"> </span><span class="err">General</span><span class="w"> </span><span class="err">settings:</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">See</span><span class="w"> </span><span class="err">README</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="err">third-party</span><span class="w"> </span><span class="err">documentation</span><span class="w">
+
+    </span><span class="err">//</span><span class="w"> </span><span class="err">(built-ins):</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="err">shows</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">log</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">each</span><span class="w"> </span><span class="err">command</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">output</span><span class="w"> </span><span class="err">panel</span><span class="w">
+    </span><span class="nl">"display_log"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"program"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xelatex"</span><span class="p">,</span><span class="w">
+
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Platform-specific</span><span class="w"> </span><span class="err">settings:</span><span class="w">
+    </span><span class="nl">"osx"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"script_commands"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"echo $file; tectonic -X build --keep-logs"</span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+
+    </span><span class="nl">"windows"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="err">//</span><span class="w"> </span><span class="err">See</span><span class="w"> </span><span class="err">README</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="err">third-party</span><span class="w"> </span><span class="err">documentation</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+
+    </span><span class="nl">"linux"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="err">//</span><span class="w"> </span><span class="err">See</span><span class="w"> </span><span class="err">README</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="err">third-party</span><span class="w"> </span><span class="err">documentation</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre>
+
+</div></div><p>We have do <code class="language-plaintext highlighter-rouge">echo $file;</code> before running tectonic because annoyingly if <code class="language-plaintext highlighter-rouge">$file</code> isn’t present in the script command, LaTeXTools just sticks it on the end of the command automatically.</p><p>Then to automatically build the document every time we save, open the LaTeX-specific preferences at Sublime Text &gt; Preferences &gt; Settings - Syntax Specific (because we only want to do this for .tex files) and add:</p><div class="language-json highlighter-rouge"><div class="highlight">
+
+<pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"on_post_save_async_language"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"command"</span><span class="p">:</span><span class="w"> </span><span class="s2">"build"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"scope"</span><span class="p">:</span><span class="w"> </span><span class="s2">"window"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+</div></div><p>See the <a href="https://packagecontrol.io/packages/Hooks">Hooks</a> docs for more information on the syntax.</p><h2 id="synctex">SyncTeX</h2><p>Synctex lets you jump back and forth from your source code to your document, taking you to the position in the rendered document where your cursor is in the source, or taking you to the point in the source where you clicked.</p><p>To enable generating SyncTeX hooks for your document, put <code class="language-plaintext highlighter-rouge">\synctex=1</code> in your preamble, so:</p><div class="language-latex highlighter-rouge"><div class="highlight">
+
+<pre class="highlight"><code><span class="k">\documentclass</span><span class="p">{</span>article<span class="p">}</span>
+<span class="k">\usepackage</span><span class="na">[usenames, svgnames]</span><span class="p">{</span>xcolor<span class="p">}</span>
+<span class="k">\usepackage</span>[
+  colorlinks = true,
+    hyperfootnotes=true,
+    urlcolor = DarkOrchid,
+    citecolor = DarkOrchid,
+    backref = section
+]<span class="p">{</span>hyperref<span class="p">}</span>
+<span class="k">\usepackage</span><span class="p">{</span>natbib<span class="p">}</span>
+<span class="k">\bibliographystyle</span><span class="p">{</span>plainnat<span class="p">}</span>
+
+<span class="k">\synctex</span>=1
+
+<span class="k">\title</span><span class="p">{</span>My Document<span class="p">}</span>
+<span class="nt">\begin{document}</span>
+</code></pre>
+
+</div></div><p>You’ll then see a <code class="language-plaintext highlighter-rouge">my_document.synctex.gz</code> file on next build.</p><p>This should work out of the box with LaTeXTools, but there’s an obnoxious <a href="https://github.com/SublimeText/LaTeXTools/issues/1539">indentation bug</a> with an <a href="https://github.com/SublimeText/LaTeXTools/pull/1540">unmerged pull request</a> that we have to patch ourselves.</p><p>Installed packages, on mac, are located at <code class="language-plaintext highlighter-rouge">/Users/&lt;username&gt;/Library/Application Support/Sublime Text 3/Packages</code>, or you can get there by opening up the preferences for any package and then using File &gt; Open which should dump you in the location of the preferences file (where the packages are).</p><p>Within <code class="language-plaintext highlighter-rouge">LaTeXTools</code>, edit lines 101 and 103 to have correct indentation according to <a href="https://github.com/SublimeText/LaTeXTools/pull/1540/files">the PR</a></p><div class="language-python highlighter-rouge"><div class="highlight">
+
+<pre class="highlight"><code>    <span class="n">file_name</span> <span class="o">=</span> <span class="n">view</span><span class="p">.</span><span class="n">file_name</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">is_tex_file</span><span class="p">(</span><span class="n">file_name</span><span class="p">):</span>
+      <span class="k">if</span> <span class="n">from_keybinding</span><span class="p">:</span>
+</code></pre>
+
+</div></div><ul><li>To jump <strong>source &gt; document</strong>: <code class="language-plaintext highlighter-rouge">cmd+l,j</code> (that’s do <code class="language-plaintext highlighter-rouge">cmd+l</code> to issue a <code class="language-plaintext highlighter-rouge">l</code>atextools command, and then afterwards press <code class="language-plaintext highlighter-rouge">j</code> for jump).</li><li>To jump <strong>document &gt; source</strong> (with Skim): <code class="language-plaintext highlighter-rouge">cmd+Shift+click</code> on the text you want to jump to the source of.</li></ul><h1 id="a-few-nice-to-haves">A few “Nice To Haves”</h1><h2 id="hashed-document-version">Hashed Document Version</h2><p>I version control my documents so that I don’t self-destruct, and like to use git tags to label different epochs of the draft. You can use git hooks to automatically dump the version of the document into a .tex file and then include it in your document.</p><p>For example, in the <code class="language-plaintext highlighter-rouge">.git/hooks/post-commit</code> file, put:</p><div class="language-bash highlighter-rouge"><div class="highlight">
+
+<pre class="highlight"><code><span class="c">#!/bin/sh</span>
+git describe <span class="o">&gt;</span> proposal/src/git-version.tex
+</code></pre>
+
+</div></div><p>Then from your document, using the titling package:</p><div class="language-latex highlighter-rouge"><div class="highlight">
+
+<pre class="highlight"><code><span class="k">\usepackage</span><span class="p">{</span>titling<span class="p">}</span>
+
+<span class="k">\postdate</span><span class="p">{</span> - Version: <span class="k">\texttt</span><span class="p">{</span> <span class="k">\input</span><span class="p">{</span> git-version.tex<span class="p">}</span> <span class="p">}</span> <span class="p">}</span>
+</code></pre>
+
+</div></div><p>Which yields something like this:</p><p><img src="/blog/assets/images/document_version.png" alt="A block of text with a red line and the word &quot;TODO&quot; to the left of it" /></p><h2 id="todo-environment">TODO environment</h2><p>When I’m drafting, I like to leave notes to myself in-place, but to differentiate them from finished text I’ve made a few different environments to make different kind of notes stand out. One of them is a <code class="language-plaintext highlighter-rouge">todo</code> environment, which adds a red bar along the left of the text like this:</p><p><img src="/blog/assets/images/todo_environment.png" alt="A block of text with a red line and the word &quot;TODO&quot; to the left of it" /></p><p>Add this to your <code class="language-plaintext highlighter-rouge">_preamble.tex</code> (but really put it in its own file where you keep custom environments and then load it in your preamble)</p><div class="language-latex highlighter-rouge"><div class="highlight">
+
+<pre class="highlight"><code><span class="k">\usepackage</span><span class="p">{</span>framed<span class="p">}</span>
+<span class="k">\usepackage</span><span class="p">{</span>rotating<span class="p">}</span>
+
+<span class="c">% todo leftbar</span>
+<span class="k">\newenvironment</span><span class="p">{</span>todo<span class="p">}{</span> <span class="c">%</span>
+<span class="k">\def\FrameCommand</span><span class="p">{</span><span class="k">\hspace</span><span class="p">{</span>-2em<span class="p">}</span><span class="c">%</span>
+<span class="nt">\begin{sideways}</span><span class="c">%</span>
+<span class="k">\textcolor</span><span class="p">{</span>red<span class="p">}{</span><span class="k">\textsf</span><span class="p">{</span><span class="k">\small</span> TODO<span class="p">}}</span><span class="c">%</span>
+<span class="nt">\end{sideways}</span><span class="c">%</span>
+<span class="k">\hspace</span><span class="p">{</span>0.5em<span class="p">}</span><span class="k">\textcolor</span><span class="p">{</span>red<span class="p">}{</span><span class="k">\vrule</span> width 0.5pt<span class="p">}</span> <span class="k">\hspace</span><span class="p">{</span>0.5em<span class="p">}}</span><span class="k">\MakeFramed</span> <span class="p">{</span><span class="k">\advance\hsize</span>-<span class="k">\width</span> <span class="k">\FrameRestore</span><span class="p">}}</span>
+<span class="p">{</span><span class="k">\endMakeFramed</span><span class="p">}</span>
+</code></pre>
+
+</div></div><p>Then you use it like</p><div class="language-latex highlighter-rouge"><div class="highlight">
+
+<pre class="highlight"><code><span class="nt">\begin{todo}</span>
+Hello i have this to do
+<span class="nt">\end{todo}</span>
+
+</code></pre>
+
+</div></div><h2 id="latextools-shortcuts">LaTeXTools shortcuts</h2><p>LaTeXTools has a few useful <a href="https://latextools.readthedocs.io/en/latest/keybindings/">keybindings</a> that really help if you get used to them. One shortcut I like is <code class="language-plaintext highlighter-rouge">cmd+l, e</code> to create an environment from the current text, eg</p><div class="language-text highlighter-rouge"><div class="highlight">
+
+<pre class="highlight"><code>enumerate
+</code></pre>
+
+</div></div><p>becomes</p><div class="language-latex highlighter-rouge"><div class="highlight">
+
+<pre class="highlight"><code><span class="nt">\begin{enumerate}</span>
+
+<span class="nt">\end{enumerate}</span>
+</code></pre>
+
+</div></div></div><!--<div class="col-md-3 hidden-sm"> --><div class="toc-container section-padding hidden-sm"><div class="sticky-top post-toc markdown-class"> <!--<h4>Contents</h4>--><ul id="toc" class="section-nav"><li class="toc-entry toc-h1"><a href="#prereqs">Prereqs</a></li><li class="toc-entry toc-h1"><a href="#document-structure">Document Structure</a><ul><li class="toc-entry toc-h2"><a href="#new-tectonic-project">New Tectonic Project</a></li><li class="toc-entry toc-h2"><a href="#subsections">Subsections</a></li></ul></li><li class="toc-entry toc-h1"><a href="#references--pdfs-with-zotero">References &amp; PDFs with Zotero</a><ul><li class="toc-entry toc-h2"><a href="#grab-pdfs-from-sci-hub">Grab PDFs from Sci-Hub</a></li><li class="toc-entry toc-h2"><a href="#better-bibtex---autoupdate-bibliographies">Better BibTex - Autoupdate bibliographies</a></li></ul></li><li class="toc-entry toc-h1"><a href="#editing-with-sublime-text--latextools">Editing with Sublime Text &amp; LaTeXTools</a><ul><li class="toc-entry toc-h2"><a href="#latextools-setup">LaTeXTools Setup</a><ul><li class="toc-entry toc-h3"><a href="#headers">Headers</a></li><li class="toc-entry toc-h3"><a href="#script-build-on-save">Script Build on Save</a></li></ul></li><li class="toc-entry toc-h2"><a href="#synctex">SyncTeX</a></li></ul></li><li class="toc-entry toc-h1"><a href="#a-few-nice-to-haves">A few “Nice To Haves”</a><ul><li class="toc-entry toc-h2"><a href="#hashed-document-version">Hashed Document Version</a></li><li class="toc-entry toc-h2"><a href="#todo-environment">TODO environment</a></li><li class="toc-entry toc-h2"><a href="#latextools-shortcuts">LaTeXTools shortcuts</a></li></ul></li></ul></div></div></div><div class="row"><ul class="post__social"><li><a href="https://www.facebook.com/sharer/sharer.php?u=https://jon-e.net/blog/2022/04/16/a-halfway-decent-latex-setup/" target="_blank"><i class="fa fa-facebook"></i></a></li><li><a href="https://twitter.com/intent/tweet?&text=A Halfway Decent LaTeX Writing Setup+https://jon-e.net/blog/2022/04/16/a-halfway-decent-latex-setup/+by+Jonny Saunders" target="_blank"><i class="fa fa-twitter"></i></a></li><li><a href="https://plus.google.com/share?url=https://jon-e.net/blog/2022/04/16/a-halfway-decent-latex-setup/" target="_blank"><i class="fa fa-google-plus"></i></a></li><li><a href="https://www.linkedin.com/shareArticle?mini=true&source=A Halfway Decent LaTeX Writing Setup&summary=For when you love pain enough to use LaTeX but still want to get anything done&url=https://jon-e.net/blog/2022/04/16/a-halfway-decent-latex-setup/" target="_blank"><i class="fa fa-linkedin"></i></a></li><li><a href="https://www.stumbleupon.com/badge/?url=https://jon-e.net/blog/2022/04/16/a-halfway-decent-latex-setup/" target="_blank"><i class="fa fa-stumbleupon"></i></a></li><li><a href="https://www.reddit.com/submit?url=https://jon-e.net/blog/2022/04/16/a-halfway-decent-latex-setup/" target="_blank"><i class="fa fa-reddit-alien"></i></a></li><li><a href="https://www.tumblr.com/share/link?url=https://jon-e.net/blog/2022/04/16/a-halfway-decent-latex-setup/" target="_blank"><i class="fa fa-tumblr"></i></a></li><li><a href="https://www.pinterest.com/pin/create/link/?description=For when you love pain enough to use LaTeX but still want to get anything done&media=&url=https://jon-e.net/blog/2022/04/16/a-halfway-decent-latex-setup/" target="_blank"><i class="fa fa-pinterest"></i></a></li></ul></div><!--<ul class="post__social"><li><a href="https://www.facebook.com/sharer/sharer.php?u=https://jon-e.net/blog/2022/04/16/a-halfway-decent-latex-setup/" target="_blank"><i class="fa fa-facebook"></i></a></li><li><a href="https://twitter.com/intent/tweet?&text=A Halfway Decent LaTeX Writing Setup+https://jon-e.net/blog/2022/04/16/a-halfway-decent-latex-setup/+by+Jonny Saunders" target="_blank"><i class="fa fa-twitter"></i></a></li><li><a href="https://plus.google.com/share?url=https://jon-e.net/blog/2022/04/16/a-halfway-decent-latex-setup/" target="_blank"><i class="fa fa-google-plus"></i></a></li><li><a href="https://www.linkedin.com/shareArticle?mini=true&source=A Halfway Decent LaTeX Writing Setup&summary=For when you love pain enough to use LaTeX but still want to get anything done&url=https://jon-e.net/blog/2022/04/16/a-halfway-decent-latex-setup/" target="_blank"><i class="fa fa-linkedin"></i></a></li><li><a href="https://www.stumbleupon.com/badge/?url=https://jon-e.net/blog/2022/04/16/a-halfway-decent-latex-setup/" target="_blank"><i class="fa fa-stumbleupon"></i></a></li><li><a href="https://www.reddit.com/submit?url=https://jon-e.net/blog/2022/04/16/a-halfway-decent-latex-setup/" target="_blank"><i class="fa fa-reddit-alien"></i></a></li><li><a href="https://www.tumblr.com/share/link?url=https://jon-e.net/blog/2022/04/16/a-halfway-decent-latex-setup/" target="_blank"><i class="fa fa-tumblr"></i></a></li><li><a href="https://www.pinterest.com/pin/create/link/?description=For when you love pain enough to use LaTeX but still want to get anything done&media=&url=https://jon-e.net/blog/2022/04/16/a-halfway-decent-latex-setup/" target="_blank"><i class="fa fa-pinterest"></i></a></li></ul>--> <!--</div>--> <!--</div>--> <!--<div class="post__content section-padding"><div class="grid"><div id="markdown" itemprop="articleBody"><p>I wouldn’t necessarily <em>recommend</em> writing anything in LaTeX unless you’re already in the cult, but if you are, this is how I’ve managed to write in a way that doesn’t make me curse us having taught electrified rocks about letters in the first place.</p><p>In short, we’ll be able to</p><ul><li>One-click add a citation to our document and download a pdf using Zotero</li><li>Edit nicely with LaTeXTools and Sublime Text</li><li>Compile our document on save with Tectonic</li><li>Sync back and forth from the pdf and the source!</li></ul><h1 id="prereqs">Prereqs</h1><p>We’ll need some software!</p><p>I’m using a mac, but most key combinations in windows just swap <code class="language-plaintext highlighter-rouge">cmd</code> for <code class="language-plaintext highlighter-rouge">ctrl</code>.</p><ul><li><a href="https://www.zotero.org/">Zotero</a> - Reference and PDF management - <a href="https://www.zotero.org/download/">download</a><ul><li>We’ll also need the <a href="http://zotfile.com/">zotfile</a> and <a href="https://retorque.re/zotero-better-bibtex/">Better BibTeX</a> plugins, as well as the relevant zotero browser extension.</li></ul></li><li><a href="https://www.sublimetext.com/">Sublime Text</a> - Text editor! - <a href="https://www.sublimetext.com/download">download</a> or with homebrew: <code class="language-plaintext highlighter-rouge">brew install --cask sublime-text</code><ul><li>Within sublime text we’ll be using some plugins, so install the plugin manager <a href="https://packagecontrol.io/installation">Package Control</a>. From within sublime, open the command palette <code class="language-plaintext highlighter-rouge">cmd+shift+p</code>, type <code class="language-plaintext highlighter-rouge">Install Package Control</code> (an autocomplete menu should get you to the right place before you finish typing the full thing) then press <code class="language-plaintext highlighter-rouge">enter</code></li><li>Install <a href="LaTeXTools">https://packagecontrol.io/packages/LaTeXTools</a> - open command palette again, type <code class="language-plaintext highlighter-rouge">Package Control: Install Package</code>, type <code class="language-plaintext highlighter-rouge">LaTeXTools</code>, then <code class="language-plaintext highlighter-rouge">enter</code></li><li>Repeat the above to also install <a href="https://packagecontrol.io/packages/LaTeX-cwl"><code class="language-plaintext highlighter-rouge">LaTeX-cwl</code></a> for code completions! and <a href="https://packagecontrol.io/packages/Hooks"><code class="language-plaintext highlighter-rouge">Hooks</code></a> for building on saving</li></ul></li><li><a href="https://skim-app.sourceforge.io/">Skim</a> - PDF Viewer that supports forward and back syncing with the document (windows users try SumatraPDF).</li><li><a href="https://tectonic-typesetting.github.io/en-US/">Tectonic</a> - LaTeX Builder - <a href="https://tectonic-typesetting.github.io/book/latest/installation/index.html">installation instructions</a>, or with homebrew: <code class="language-plaintext highlighter-rouge">brew install tectonic</code></li></ul><h1 id="document-structure">Document Structure</h1><h2 id="new-tectonic-project">New Tectonic Project</h2><p>Let’s make a document!</p><p>Tectonic uses its own directory structure and a <code class="language-plaintext highlighter-rouge">Tectonic.toml</code> file to configure its builds. To create it, use <code class="language-plaintext highlighter-rouge">tectonic -X new &lt;document name&gt;</code>. For the sake of this example we’ll call ours <code class="language-plaintext highlighter-rouge">my_document</code>. After doing so, you should have a folder that looks like this:</p><div class="language-plaintext highlighter-rouge"><div class="highlight">
+
+<pre class="highlight"><code>my_document/
+├── Tectonic.toml
+└── src
+    ├── _postamble.tex
+    ├── _preamble.tex
+    └── index.tex
+</code></pre>
+
+</div></div><p>By default, the <code class="language-plaintext highlighter-rouge">Tectonic.toml</code> file will look like this:</p><div class="language-toml highlighter-rouge"><div class="highlight">
+
+<pre class="highlight"><code><span class="nn">[doc]</span>
+<span class="py">name</span> <span class="p">=</span> <span class="s">'my_document'</span>
+<span class="py">bundle</span> <span class="p">=</span> <span class="s">'https://data1.fullyjustified.net/tlextras-2020.0r0.tar'</span>
+
+<span class="nn">[[output]]</span>
+<span class="py">name</span> <span class="p">=</span> <span class="s">'default'</span>
+<span class="py">type</span> <span class="p">=</span> <span class="s">'pdf'</span>
+</code></pre>
+
+</div></div><p>First we’ll change our output document name, also calling it <code class="language-plaintext highlighter-rouge">my_document</code> rather than <code class="language-plaintext highlighter-rouge">default</code>. You can also change the name of each of the document subsections, <code class="language-plaintext highlighter-rouge">_preamble.tex</code>, <code class="language-plaintext highlighter-rouge">index.tex</code>, and <code class="language-plaintext highlighter-rouge">_postamble.tex</code> by setting them explicitly here. For example:</p><div class="language-toml highlighter-rouge"><div class="highlight">
+
+<pre class="highlight"><code><span class="nn">[doc]</span>
+<span class="py">name</span> <span class="p">=</span> <span class="s">'my_document'</span>
+<span class="py">bundle</span> <span class="p">=</span> <span class="s">'https://data1.fullyjustified.net/tlextras-2020.0r0.tar'</span>
+
+<span class="nn">[[output]]</span>
+<span class="py">name</span> <span class="p">=</span> <span class="s">'my_document'</span>
+<span class="py">index</span> <span class="p">=</span> <span class="s">'my_document.tex'</span>
+<span class="py">type</span> <span class="p">=</span> <span class="s">'pdf'</span>
+</code></pre>
+
+</div></div><p>Then if we build the document with <code class="language-plaintext highlighter-rouge">tectonic -X build</code> then we’ll get something like this:</p><div class="language-text highlighter-rouge"><div class="highlight">
+
+<pre class="highlight"><code>my_document/
+├── Tectonic.toml
+├── build
+│   └── my_document
+│       └── my_document.pdf
+└── src
+    ├── _postamble.tex
+    ├── _preamble.tex
+    └── my_document.tex
+
+</code></pre>
+
+</div></div><h2 id="subsections">Subsections</h2><p>Tectonic helps us out by splitting out the preamble and postamble of LaTeX documents, but the <code class="language-plaintext highlighter-rouge">index</code> file then contains the whole ass document which can get huge and unmanageable. Instead we can split our document into subsections and use the <code class="language-plaintext highlighter-rouge">\input</code> command to combine them.</p><p>Let’s make the basic structure for our intro, results, and conclusion. We’ll also probably want to include some figures, so we can also make a directory for that too!</p><div class="language-text highlighter-rouge"><div class="highlight">
+
+<pre class="highlight"><code>../my_document/
+├── Tectonic.toml
+├── build
+│   └── my_document
+│       ├── my_document.log
+│       └── my_document.pdf
+└── src
+    ├── _postamble.tex
+    ├── _preamble.tex
+    ├── figures
+    │   ├── figure_1.png
+    │   └── figure_2.png
+    ├── my_document.tex
+    └── sections
+        ├── conclusion.tex
+        ├── intro.tex
+        └── results.tex
+</code></pre>
+
+</div></div><p>Since <code class="language-plaintext highlighter-rouge">\input</code> effectively copies and pastes the text directly, you can include your figures with <code class="language-plaintext highlighter-rouge">\includegraphics{figures/figure_1.png}</code> without needing to jump up and out of relative directories. You can also make additional layers of nesting for very long documents, prepend numbers to the filenames to keep them in order, etc. Whatever works for you!</p><p>While we’re editing, to speed up navigation around multiple files, we can take advantage of Sublime Text’s <a href="https://docs.sublimetext.io/guide/usage/file-management/navigation.html#goto-anything">goto</a> features – <code class="language-plaintext highlighter-rouge">cmd+p</code> and then start typing a filename, and there are more syntax commands to jump to specific places in the document (see linked docs).</p><h1 id="references--pdfs-with-zotero">References &amp; PDFs with Zotero</h1><p>Let’s make our lit review easier and one-click add a reference and download a PDF with zotero.</p><p>First we can make a new collection or subcollection for references within zotero, click the yellow folder icon in the top left of the window, or else right click in the library pane and click “New subcollection” within an existing collection.</p><h2 id="grab-pdfs-from-sci-hub">Grab PDFs from Sci-Hub</h2><p>Then we configure zotero to use Sci-Hub to automatically grab PDFs for papers if they can’t be found using its usual methods. Open the config editor: Zotero &gt; Preferences… &gt; Advanced &gt; Config Editor. Search for the <code class="language-plaintext highlighter-rouge">extensions.zotero.findPDFs.resolvers</code> configuration option, double click copy the following JSON configuration, and click OK:</p><div class="language-json highlighter-rouge"><div class="highlight">
+
+<pre class="highlight"><code><span class="p">{</span><span class="w">     
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Sci-Hub"</span><span class="p">,</span><span class="w">     
+  </span><span class="nl">"method"</span><span class="p">:</span><span class="s2">"GET"</span><span class="p">,</span><span class="w">     
+  </span><span class="nl">"url"</span><span class="p">:</span><span class="s2">"https://sci-hub.se/{doi}"</span><span class="p">,</span><span class="w">     
+  </span><span class="nl">"mode"</span><span class="p">:</span><span class="s2">"html"</span><span class="p">,</span><span class="w">     
+  </span><span class="nl">"selector"</span><span class="p">:</span><span class="s2">"#pdf"</span><span class="p">,</span><span class="w">     
+  </span><span class="nl">"attribute"</span><span class="p">:</span><span class="s2">"src"</span><span class="p">,</span><span class="w">     
+  </span><span class="nl">"automatic"</span><span class="p">:</span><span class="kc">true</span><span class="w"> 
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+</div></div><p>If we have configured Zotfile (see documentation on the <a href="http://zotfile.com/">zotfile site</a>) to automatically grab new downloads, rename them, and add them to the citation, then when you click the zotero icon in your browser you should automatically get a PDF in a nice and tidy place!</p><h2 id="better-bibtex---autoupdate-bibliographies">Better BibTex - Autoupdate bibliographies</h2><p>Now let’s get our reference in our document!</p><ul><li>Right click on the collection from within Zotero,</li><li>Click “Export Collection…”</li><li>Select “Better BibLaTeX”</li><li>Check “Keep updated”</li><li>and then export it to the <code class="language-plaintext highlighter-rouge">src</code> directory of our document.</li></ul><p>Within the <code class="language-plaintext highlighter-rouge">_preamble.tex</code> we prepare our citation style, as well as do some other nice things like enabling backlinks from our references to the sections where they’re used.</p><div class="language-latex highlighter-rouge"><div class="highlight">
+
+<pre class="highlight"><code><span class="k">\documentclass</span><span class="p">{</span>article<span class="p">}</span>
+<span class="k">\usepackage</span><span class="na">[usenames, svgnames]</span><span class="p">{</span>xcolor<span class="p">}</span>
+<span class="k">\usepackage</span>[
+  colorlinks = true,
+    hyperfootnotes=true,
+    urlcolor = DarkOrchid,
+    citecolor = DarkOrchid,
+    backref = section
+]<span class="p">{</span>hyperref<span class="p">}</span>
+<span class="k">\usepackage</span><span class="p">{</span>natbib<span class="p">}</span>
+<span class="k">\bibliographystyle</span><span class="p">{</span>plainnat<span class="p">}</span>
+
+<span class="k">\title</span><span class="p">{</span>My Document<span class="p">}</span>
+<span class="nt">\begin{document}</span>
+</code></pre>
+
+</div></div><p>And then our <code class="language-plaintext highlighter-rouge">my_document.tex</code> again:</p><div class="language-latex highlighter-rouge"><div class="highlight">
+
+<pre class="highlight"><code><span class="k">\input</span><span class="p">{</span>sections/intro<span class="p">}</span>
+
+<span class="k">\input</span><span class="p">{</span>sections/results<span class="p">}</span>
+
+<span class="k">\input</span><span class="p">{</span>sections/conclusion<span class="p">}</span>
+
+<span class="k">\bibliography</span><span class="p">{</span>my<span class="p">_</span>document<span class="p">}</span>
+</code></pre>
+
+</div></div><p>Since Better BibLaTeX will auto-update our .bib file, Now we can get a reference, automatically get a PDF, automatically update our bibliography file for our paper, and then immediately cite something!</p><h1 id="editing-with-sublime-text--latextools">Editing with Sublime Text &amp; LaTeXTools</h1><p>When you’re working with sublime text, it’s useful to open the whole folder rather than individual files. You can also use a <code class="language-plaintext highlighter-rouge">sublime-project</code> file, which allegedly lets you set project-wide settings with LaTeXTools, but I’ve never gotten that to work. To do that you either use the File &gt; Open… command and open the folder, or else use from the cli <code class="language-plaintext highlighter-rouge">subl ./my_document</code>. This way, if you open the sidebar (default <code class="language-plaintext highlighter-rouge">cmd+shift+a</code>), you can see the whole document structure and group together files from a project within individual windows.</p><h2 id="latextools-setup">LaTeXTools Setup</h2><p>LaTeXTools is a lovely, unwieldy, and I think no longer maintained package, so we need to use it with care. Out of the box it will give you some useful completions and shortcuts, but we need to do a few things to make it work the way we want it.</p><p>By default it should be configured to do forward and backwards sync with skim, but you need to do some additional setup for Skim to do the reverse seeking, follow the instructions in the <a href="https://latextools.readthedocs.io/en/latest/install/#installation">LaTeXTools Installation docs</a>.</p><h3 id="headers">Headers</h3><p>At the start of each of our subsections, we’ll need to an indication to LaTeXTools that it should consider the top-level <code class="language-plaintext highlighter-rouge">.tex</code> file as the document root – this lets it find the bibliography file for autocompletion, among other things.</p><div class="language-latex highlighter-rouge"><div class="highlight">
+
+<pre class="highlight"><code><span class="c">%!TEX root = ../my_document.tex</span>
+</code></pre>
+
+</div></div><p>We also need to tell it that the resulting PDF of our tectonic build will be in a different place than the source directory. This only needs to happen once, in the main <code class="language-plaintext highlighter-rouge">my_document.tex</code> file</p><div class="language-latex highlighter-rouge"><div class="highlight">
+
+<pre class="highlight"><code><span class="c">%!TEX jobname = my_document</span>
+<span class="c">%!TEX output_directory = ../build/my_document</span>
+</code></pre>
+
+</div></div><h3 id="script-build-on-save">Script Build on Save</h3><p>To tell latextools that we want to build with Tectonic, we have to configure it to use a <code class="language-plaintext highlighter-rouge">script builder</code> rather than its usual combination of pdflatex et al.</p><p>To edit the LaTeXTools settings, from sublime text go to Sublime Text &gt; Preferences… &gt; Package Settings &gt; LaTeXTools &gt; Settings - User. Change these configuration options (varying depending on your operating system:</p><div class="language-json highlighter-rouge"><div class="highlight">
+
+<pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"builder"</span><span class="p">:</span><span class="w"> </span><span class="s2">"script"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"builder_settings"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+
+    </span><span class="err">//</span><span class="w"> </span><span class="err">General</span><span class="w"> </span><span class="err">settings:</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">See</span><span class="w"> </span><span class="err">README</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="err">third-party</span><span class="w"> </span><span class="err">documentation</span><span class="w">
+
+    </span><span class="err">//</span><span class="w"> </span><span class="err">(built-ins):</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="err">shows</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">log</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">each</span><span class="w"> </span><span class="err">command</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">output</span><span class="w"> </span><span class="err">panel</span><span class="w">
+    </span><span class="nl">"display_log"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"program"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xelatex"</span><span class="p">,</span><span class="w">
+
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Platform-specific</span><span class="w"> </span><span class="err">settings:</span><span class="w">
+    </span><span class="nl">"osx"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"script_commands"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"echo $file; tectonic -X build --keep-logs"</span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+
+    </span><span class="nl">"windows"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="err">//</span><span class="w"> </span><span class="err">See</span><span class="w"> </span><span class="err">README</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="err">third-party</span><span class="w"> </span><span class="err">documentation</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+
+    </span><span class="nl">"linux"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="err">//</span><span class="w"> </span><span class="err">See</span><span class="w"> </span><span class="err">README</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="err">third-party</span><span class="w"> </span><span class="err">documentation</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre>
+
+</div></div><p>We have do <code class="language-plaintext highlighter-rouge">echo $file;</code> before running tectonic because annoyingly if <code class="language-plaintext highlighter-rouge">$file</code> isn’t present in the script command, LaTeXTools just sticks it on the end of the command automatically.</p><p>Then to automatically build the document every time we save, open the LaTeX-specific preferences at Sublime Text &gt; Preferences &gt; Settings - Syntax Specific (because we only want to do this for .tex files) and add:</p><div class="language-json highlighter-rouge"><div class="highlight">
+
+<pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"on_post_save_async_language"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"command"</span><span class="p">:</span><span class="w"> </span><span class="s2">"build"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"scope"</span><span class="p">:</span><span class="w"> </span><span class="s2">"window"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+</div></div><p>See the <a href="https://packagecontrol.io/packages/Hooks">Hooks</a> docs for more information on the syntax.</p><h2 id="synctex">SyncTeX</h2><p>Synctex lets you jump back and forth from your source code to your document, taking you to the position in the rendered document where your cursor is in the source, or taking you to the point in the source where you clicked.</p><p>To enable generating SyncTeX hooks for your document, put <code class="language-plaintext highlighter-rouge">\synctex=1</code> in your preamble, so:</p><div class="language-latex highlighter-rouge"><div class="highlight">
+
+<pre class="highlight"><code><span class="k">\documentclass</span><span class="p">{</span>article<span class="p">}</span>
+<span class="k">\usepackage</span><span class="na">[usenames, svgnames]</span><span class="p">{</span>xcolor<span class="p">}</span>
+<span class="k">\usepackage</span>[
+  colorlinks = true,
+    hyperfootnotes=true,
+    urlcolor = DarkOrchid,
+    citecolor = DarkOrchid,
+    backref = section
+]<span class="p">{</span>hyperref<span class="p">}</span>
+<span class="k">\usepackage</span><span class="p">{</span>natbib<span class="p">}</span>
+<span class="k">\bibliographystyle</span><span class="p">{</span>plainnat<span class="p">}</span>
+
+<span class="k">\synctex</span>=1
+
+<span class="k">\title</span><span class="p">{</span>My Document<span class="p">}</span>
+<span class="nt">\begin{document}</span>
+</code></pre>
+
+</div></div><p>You’ll then see a <code class="language-plaintext highlighter-rouge">my_document.synctex.gz</code> file on next build.</p><p>This should work out of the box with LaTeXTools, but there’s an obnoxious <a href="https://github.com/SublimeText/LaTeXTools/issues/1539">indentation bug</a> with an <a href="https://github.com/SublimeText/LaTeXTools/pull/1540">unmerged pull request</a> that we have to patch ourselves.</p><p>Installed packages, on mac, are located at <code class="language-plaintext highlighter-rouge">/Users/&lt;username&gt;/Library/Application Support/Sublime Text 3/Packages</code>, or you can get there by opening up the preferences for any package and then using File &gt; Open which should dump you in the location of the preferences file (where the packages are).</p><p>Within <code class="language-plaintext highlighter-rouge">LaTeXTools</code>, edit lines 101 and 103 to have correct indentation according to <a href="https://github.com/SublimeText/LaTeXTools/pull/1540/files">the PR</a></p><div class="language-python highlighter-rouge"><div class="highlight">
+
+<pre class="highlight"><code>    <span class="n">file_name</span> <span class="o">=</span> <span class="n">view</span><span class="p">.</span><span class="n">file_name</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">is_tex_file</span><span class="p">(</span><span class="n">file_name</span><span class="p">):</span>
+      <span class="k">if</span> <span class="n">from_keybinding</span><span class="p">:</span>
+</code></pre>
+
+</div></div><ul><li>To jump <strong>source &gt; document</strong>: <code class="language-plaintext highlighter-rouge">cmd+l,j</code> (that’s do <code class="language-plaintext highlighter-rouge">cmd+l</code> to issue a <code class="language-plaintext highlighter-rouge">l</code>atextools command, and then afterwards press <code class="language-plaintext highlighter-rouge">j</code> for jump).</li><li>To jump <strong>document &gt; source</strong> (with Skim): <code class="language-plaintext highlighter-rouge">cmd+Shift+click</code> on the text you want to jump to the source of.</li></ul><h1 id="a-few-nice-to-haves">A few “Nice To Haves”</h1><h2 id="hashed-document-version">Hashed Document Version</h2><p>I version control my documents so that I don’t self-destruct, and like to use git tags to label different epochs of the draft. You can use git hooks to automatically dump the version of the document into a .tex file and then include it in your document.</p><p>For example, in the <code class="language-plaintext highlighter-rouge">.git/hooks/post-commit</code> file, put:</p><div class="language-bash highlighter-rouge"><div class="highlight">
+
+<pre class="highlight"><code><span class="c">#!/bin/sh</span>
+git describe <span class="o">&gt;</span> proposal/src/git-version.tex
+</code></pre>
+
+</div></div><p>Then from your document, using the titling package:</p><div class="language-latex highlighter-rouge"><div class="highlight">
+
+<pre class="highlight"><code><span class="k">\usepackage</span><span class="p">{</span>titling<span class="p">}</span>
+
+<span class="k">\postdate</span><span class="p">{</span> - Version: <span class="k">\texttt</span><span class="p">{</span> <span class="k">\input</span><span class="p">{</span> git-version.tex<span class="p">}</span> <span class="p">}</span> <span class="p">}</span>
+</code></pre>
+
+</div></div><p>Which yields something like this:</p><p><img src="/blog/assets/images/document_version.png" alt="A block of text with a red line and the word &quot;TODO&quot; to the left of it" /></p><h2 id="todo-environment">TODO environment</h2><p>When I’m drafting, I like to leave notes to myself in-place, but to differentiate them from finished text I’ve made a few different environments to make different kind of notes stand out. One of them is a <code class="language-plaintext highlighter-rouge">todo</code> environment, which adds a red bar along the left of the text like this:</p><p><img src="/blog/assets/images/todo_environment.png" alt="A block of text with a red line and the word &quot;TODO&quot; to the left of it" /></p><p>Add this to your <code class="language-plaintext highlighter-rouge">_preamble.tex</code> (but really put it in its own file where you keep custom environments and then load it in your preamble)</p><div class="language-latex highlighter-rouge"><div class="highlight">
+
+<pre class="highlight"><code><span class="k">\usepackage</span><span class="p">{</span>framed<span class="p">}</span>
+<span class="k">\usepackage</span><span class="p">{</span>rotating<span class="p">}</span>
+
+<span class="c">% todo leftbar</span>
+<span class="k">\newenvironment</span><span class="p">{</span>todo<span class="p">}{</span> <span class="c">%</span>
+<span class="k">\def\FrameCommand</span><span class="p">{</span><span class="k">\hspace</span><span class="p">{</span>-2em<span class="p">}</span><span class="c">%</span>
+<span class="nt">\begin{sideways}</span><span class="c">%</span>
+<span class="k">\textcolor</span><span class="p">{</span>red<span class="p">}{</span><span class="k">\textsf</span><span class="p">{</span><span class="k">\small</span> TODO<span class="p">}}</span><span class="c">%</span>
+<span class="nt">\end{sideways}</span><span class="c">%</span>
+<span class="k">\hspace</span><span class="p">{</span>0.5em<span class="p">}</span><span class="k">\textcolor</span><span class="p">{</span>red<span class="p">}{</span><span class="k">\vrule</span> width 0.5pt<span class="p">}</span> <span class="k">\hspace</span><span class="p">{</span>0.5em<span class="p">}}</span><span class="k">\MakeFramed</span> <span class="p">{</span><span class="k">\advance\hsize</span>-<span class="k">\width</span> <span class="k">\FrameRestore</span><span class="p">}}</span>
+<span class="p">{</span><span class="k">\endMakeFramed</span><span class="p">}</span>
+</code></pre>
+
+</div></div><p>Then you use it like</p><div class="language-latex highlighter-rouge"><div class="highlight">
+
+<pre class="highlight"><code><span class="nt">\begin{todo}</span>
+Hello i have this to do
+<span class="nt">\end{todo}</span>
+
+</code></pre>
+
+</div></div><h2 id="latextools-shortcuts">LaTeXTools shortcuts</h2><p>LaTeXTools has a few useful <a href="https://latextools.readthedocs.io/en/latest/keybindings/">keybindings</a> that really help if you get used to them. One shortcut I like is <code class="language-plaintext highlighter-rouge">cmd+l, e</code> to create an environment from the current text, eg</p><div class="language-text highlighter-rouge"><div class="highlight">
+
+<pre class="highlight"><code>enumerate
+</code></pre>
+
+</div></div><p>becomes</p><div class="language-latex highlighter-rouge"><div class="highlight">
+
+<pre class="highlight"><code><span class="nt">\begin{enumerate}</span>
+
+<span class="nt">\end{enumerate}</span>
+</code></pre>
+
+</div></div></div><ul class="post__social"><li><a href="https://www.facebook.com/sharer/sharer.php?u=https://jon-e.net/blog/2022/04/16/a-halfway-decent-latex-setup/" target="_blank"><i class="fa fa-facebook"></i></a></li><li><a href="https://twitter.com/intent/tweet?&text=A Halfway Decent LaTeX Writing Setup+https://jon-e.net/blog/2022/04/16/a-halfway-decent-latex-setup/+by+Jonny Saunders" target="_blank"><i class="fa fa-twitter"></i></a></li><li><a href="https://plus.google.com/share?url=https://jon-e.net/blog/2022/04/16/a-halfway-decent-latex-setup/" target="_blank"><i class="fa fa-google-plus"></i></a></li><li><a href="https://www.linkedin.com/shareArticle?mini=true&source=A Halfway Decent LaTeX Writing Setup&summary=For when you love pain enough to use LaTeX but still want to get anything done&url=https://jon-e.net/blog/2022/04/16/a-halfway-decent-latex-setup/" target="_blank"><i class="fa fa-linkedin"></i></a></li><li><a href="https://www.stumbleupon.com/badge/?url=https://jon-e.net/blog/2022/04/16/a-halfway-decent-latex-setup/" target="_blank"><i class="fa fa-stumbleupon"></i></a></li><li><a href="https://www.reddit.com/submit?url=https://jon-e.net/blog/2022/04/16/a-halfway-decent-latex-setup/" target="_blank"><i class="fa fa-reddit-alien"></i></a></li><li><a href="https://www.tumblr.com/share/link?url=https://jon-e.net/blog/2022/04/16/a-halfway-decent-latex-setup/" target="_blank"><i class="fa fa-tumblr"></i></a></li><li><a href="https://www.pinterest.com/pin/create/link/?description=For when you love pain enough to use LaTeX but still want to get anything done&media=&url=https://jon-e.net/blog/2022/04/16/a-halfway-decent-latex-setup/" target="_blank"><i class="fa fa-pinterest"></i></a></li></ul></div>--></div><!-- Everything inside the #author tags pulls data from the author --><div class="section-padding--none"><div class="grid"><hr class="sep"/></div></div><div class="section-padding"><div class="grid-small"> <span class="post__author">Posted by <a href="http://jon-e.net" title="More By Jonny Saunders">Jonny Saunders</a></span><p class="post__bio">bad at programming and neuroscience in beautiful Oregon.</p></div></div><!-- If you use Disqus comments, just uncomment this block. The only thing you need to change is "test-apkdzgmqhj" - which should be replaced with your own Disqus site-id.<div class="post__comments section-padding"><div class="grid-small"><div id="disqus_thread"></div><script> var disqus_config = function () { this.page.url = 'https://jon-e.net/blog/2022/04/16/a-halfway-decent-latex-setup/'; this.page.identifier = 'https://jon-e.net/blog/2022/04/16/a-halfway-decent-latex-setup/'; }; (function() { var d = document, s = d.createElement('script'); s.src = 'https://jon-e.disqus.com/embed.js'; s.setAttribute('data-timestamp', + new Date()); (d.head || d.body).appendChild(s); })(); </script></div></div>--></article></div><!-- Links to Previous/Next posts --></main><!-- The footer at the very bottom of the screen --><footer class="footer section-padding"><div class="grid"><div class="subscribe" id="subscribe"><div class="subscribe__container"> <span class="subscribe__title">Subscribe</span><p class="subscribe__text">Get a weekly email of posts I’ve added to the site.</p><form method="POST" action="&amp;c=?" id="mc-signup" name="mc-embedded-subscribe-form" novalidate> <!-- This is required for the form to work correctly --><div style="position: absolute; left: -5000px;" aria-hidden="true"> <input type="text" name="" tabindex="-1" value=""></div><div class="form-group"> <input id="mce-EMAIL" type="email" name="EMAIL" placeholder="Email Address"></div><div class="form__btn"> <input id="mc-submit" type="submit" value="Sign Up" name="subscribe"></div></form><p class="subscribe__error hidden"></p></div></div><hr class="sep--white"/><div class="footer__container"><ul class="footer__tags"><li><a class="footer__link" href="/blog/tag/science">Science</a></li><li><a class="footer__link" href="/blog/tag/art">Art</a></li><li><a class="footer__link" href="/blog/tag/glitch">Glitch</a></li><li><a class="footer__link" href="/blog/tag/design">Design</a></li><li><a class="footer__link" href="/blog/tag/webscraping">Webscraping</a></li></ul><ul class="footer__social"><li><a href="https://twitter.com/json_dirs" target="_blank"><i class="fa fa-twitter"></i></a></li><li><a href="https://github.com/sneakers-the-rat" target="_blank"><i class="fa fa-github"></i></a></li></ul></div></div></footer><section class="contact popup"><div class="popup__close"><div class="popup__exit"></div></div><div class="contact__container popup__container"><div class="contact__img"><figure class="absolute-bg" style="background-image: url(/blog/assets/images/emailin_me.gif);"></figure></div><div class="contact__content"><div class="contact__mast section-padding--half"><div class="grid"><h2>Contact</h2></div></div><div class="section-padding--none"><hr class="sep"/></div><div class="contact__form section-padding--half"><div class="grid-xlarge"> <form id="form" class="form" action="https://formcarry.com/s/x7yoFO6sk0n" method="POST"><div class="form__subcontainer"><div> <label for="form-first-name">First Name</label> <input type="text" name="first-name" id="form-first-name" required></div><div> <label for="form-last-name">Last Name</label> <input type="text" name="last-name" id="form-last-name" required></div></div><div> <label for="form-email">E-Mail</label> <input type="email" name="email" id="form-email" required></div><div> <label for="form-message">Message</label> <textarea name="message" id="form-message" rows="3"></textarea></div><div class="form__submit"><div class="form__btn"> <input type="submit" value="Send"></div></div><p class="form__message"></p></form></div></div></div></div></section><script src="/blog/assets/js/app.min.js"></script></body></html>
+
+					
+
+					

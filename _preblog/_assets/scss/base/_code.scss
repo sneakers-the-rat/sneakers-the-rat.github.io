@@ -16,6 +16,13 @@ pre,
 samp {
   font-family: 'Fira Code', Courier, monospace;
   font-size: $font-small;
+  color: #b83270;
+  background-color: #f5f5f5;
+  border-radius:2px;
+  margin: {
+    left: 2px;
+    right: 2px;
+  }
 }
 
 pre {
@@ -55,9 +62,9 @@ pre {
   }
 }
 
-code {
+.highlight code {
   padding: 0.25em 0.5em;
-
+  color: #eee;
   //color: $color-black;
   //background: $color-lightgrey;
 }
