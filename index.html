@@ -14,7 +14,7 @@
               crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body prefix="rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs: http://www.w3.org/2000/01/rdf-schema# foaf: http://xmlns.com/foaf/0.1/ schema: http://schema.org/" typeof="foaf:PersonalProfileDocument">
     <!-- <div class="container"> -->
     <div id="stripes">
         <div class="all-container">
@@ -61,6 +61,30 @@
         <script type="text/javascript" src="js/jquery.ripples.js"></script>
     <script type="text/javascript" src="js/start_ripple.js"></script>
     <a rel="me" href="https://social.coop/@jonny" style="display:none;">Mastodon</a>
+    <footer style="display:none;">
+        <span rel="foaf:primaryTopic" resource="#i"></span>
+        <address about="#i" id="i" typeof="foaf:Person">
+            <span property="foaf:name rdfs:label">Jonny Saunders</span>
+            <span property="foaf:givenName">Jonny</span> 
+            <span property="foaf:familyName">Saunders</span>
+            <span property="foaf:mbox_sha1sum">e586978ccfa3628710d47decf7734cc77bbc4214</span>
+            <span property="foaf:homepage">https://jon-e.net</span>
+            <ul >
+                <span property="foaf:account" typeof="foaf:OnlineAccount" resource="#twitter">
+                    <span property="foaf:accountServiceHomepage" resource="https://twitter.com/"></span>
+                    <span property="foaf:accountName">json_dirs</span>
+                </span>
+                <span property="foaf:account" typeof="foaf:OnlineAccount" resource="#masto">
+                    <span property="foaf:accountServiceHomepage" resource="https://social.coop/"></span>
+                    <span property="foaf:accountName">jonny</span>
+                </span>
+                <span property="foaf:account" typeof="foaf:OnlineAccount" resource="#github">
+                    <span property="foaf:accountServiceHomepage" resource="https://github.com/"></span>
+                    <span property="foaf:accountName">sneakers-the-rat</span>
+                </span>
+            </ul>
+        </address>
+    </footer>
 </body>
 
 </html>
